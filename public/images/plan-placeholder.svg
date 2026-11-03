@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Imagen no disponible</title>
+  <desc id="desc">Ilustración decorativa en tonos rosados para una tarjeta de Por Hacer.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f8dce8"/><stop offset="1" stop-color="#fff4f7"/></linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="930" cy="155" r="82" fill="#fff" opacity=".55"/>
+  <path d="M0 560 Q210 410 410 560 T820 540 T1200 500 V720 H0Z" fill="#e8aac1" opacity=".42"/>
+  <path d="M0 620 Q210 500 430 625 T850 610 T1200 570 V720 H0Z" fill="#ce7599" opacity=".33"/>
+  <rect x="495" y="270" width="210" height="175" rx="22" fill="#fff" opacity=".82"/>
+  <path d="M530 395 580 340l32 31 36-43 31 67H530Z" fill="#df99b3"/>
+  <circle cx="645" cy="316" r="15" fill="#f0c4d4"/>
+  <text x="600" y="500" text-anchor="middle" fill="#8a4563" font-family="sans-serif" font-size="28" font-weight="600">Una idea por descubrir</text>
+</svg>
