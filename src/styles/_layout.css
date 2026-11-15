@@ -1,0 +1,140 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 0.0625rem solid var(--border-subtle);
+  padding: 1rem 3rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar nav {
+  justify-self: center;
+}
+
+.navbar > .btn-primary {
+  justify-self: end;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nav-brand:focus-visible {
+  outline: 2px solid var(--pastel-accent-hover);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.brand-badge {
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: var(--pastel-accent);
+  color: white;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+}
+
+.nav-brand h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.nav-links li {
+  flex: 0 0 8rem;
+}
+
+.nav-btn {
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: var(--button-pink-soft);
+  color: var(--button-pink-hover);
+}
+
+.nav-btn.active {
+  background-color: var(--button-pink);
+  color: #FFFFFF;
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+  .navbar {
+    padding-inline: 1rem;
+  }
+
+  .nav-links li {
+    flex-basis: 6.25rem;
+  }
+
+  .nav-btn {
+    padding-inline: 0.35rem;
+  }
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.stats-pill {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--pastel-accent-hover);
+  background-color: var(--pastel-primary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+}
+
+.main-content {
+  flex: 1;
+  max-width: 82rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+

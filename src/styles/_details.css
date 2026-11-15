@@ -1,0 +1,78 @@
+.plan-detail-modal {
+  max-width: 42rem;
+  max-height: min(90vh, 56rem);
+  overflow-y: auto;
+  display: grid;
+  gap: 1rem;
+  border-radius: var(--radius-lg);
+}
+
+.plan-detail-modal .modal-header {
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+.plan-detail-modal .modal-header h2 {
+  margin-top: 0.55rem;
+  line-height: 1.35;
+}
+
+.plan-detail-image {
+  width: 100%;
+  max-height: 19rem;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.plan-detail-description {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.plan-detail-facts {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.plan-detail-facts > div {
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--palette-blush);
+}
+
+.plan-detail-facts dt {
+  margin-bottom: 0.2rem;
+  color: var(--pastel-accent-hover);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.plan-detail-facts dd {
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.detail-itinerary-items {
+  display: grid;
+  gap: 0.6rem;
+  padding-left: 1rem;
+}
+
+.detail-itinerary-items li span {
+  display: block;
+  color: var(--text-muted);
+}
+
+.plan-detail-modal .modal-actions {
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+
+.plan-detail-modal .modal-actions > * {
+  flex: 1 1 auto;
+  text-decoration: none;
+}
+

@@ -1,0 +1,74 @@
+/* La escritura ornamental queda reservada para la marca y los encabezados principales. */
+.welcome-text h2,
+.discovery-section .section-header h2 {
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.section-header h2,
+.idea-tools-heading h2 {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.nav-brand h1,
+.brand-badge {
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.nav-btn,
+.navbar > .btn-primary {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.nav-btn {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.navbar > .btn-primary {
+  font-size: 0.9rem;
+}
+
+.nav-brand h1 {
+  line-height: 1.5;
+  transform: translateY(0.08em);
+}
+
+.brand-badge {
+  font-size: 1.25rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.welcome-text h2 {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  line-height: 1.15;
+}
+
+.discovery-section .section-header h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.2;
+}
+
+/* Mantiene una lectura liviana para el contenido, con pesos disponibles para énfasis. */
+body {
+  font-weight: 300;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}

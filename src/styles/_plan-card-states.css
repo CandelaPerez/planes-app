@@ -1,0 +1,220 @@
+.cards-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr));
+}
+
+.rating-summary,
+.personal-rating {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.1rem 0 0.7rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.rating-stars {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.rating-stars .star {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--border-subtle);
+  font-size: 1.15rem;
+}
+
+.rating-stars .star.selected {
+  color: var(--palette-rose);
+}
+
+.rating-stars.interactive .star {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: transform 0.15s ease;
+}
+
+.rating-stars.interactive .star:hover:not(:disabled) {
+  transform: scale(1.14);
+}
+
+.rating-stars.interactive .star:disabled {
+  cursor: wait;
+}
+
+.personal-rating {
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.personal-rating strong {
+  color: var(--text-main);
+}
+
+.personal-rating p {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.budget-badge,
+.status-label {
+  border-radius: var(--radius-full);
+  padding: 0.2rem 0.65rem;
+  color: var(--text-main);
+  background: var(--status-pending);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.budget-badge {
+  color: var(--text-main);
+  background: var(--action-neutral);
+}
+
+.status-label.done {
+  color: #FFFFFF;
+  background: var(--status-done-soft);
+  box-shadow: inset 0 -2px 0 var(--status-done-soft);
+}
+
+.status-label:not(.done) {
+  color: #FFFFFF;
+  background: var(--status-pending-soft);
+  box-shadow: inset 0 -2px 0 var(--status-pending-soft);
+}
+
+.plan-actions {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.plan-primary-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.plan-primary-actions .btn {
+  min-width: 0;
+  min-height: 2.8rem;
+  padding: 0.45rem 0.35rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+.plan-primary-actions .btn-secondary {
+  background-color: var(--dark-accent);
+  color: #FFFFFF;
+}
+
+.plan-primary-actions .btn-secondary:hover {
+  background-color: var(--palette-oxblood);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.plan-actions .btn-status-done {
+  border: 1px solid var(--border-soft);
+  background: var(--action-neutral);
+  color: var(--text-main);
+}
+
+.plan-actions .btn-status-done:hover {
+  background: var(--border-soft);
+}
+
+.plan-actions .plan-status-action {
+  width: 100%;
+  min-height: 2.8rem;
+}
+
+.plan-actions .plan-status-action.btn-secondary {
+  background: var(--action-neutral);
+  color: var(--text-main);
+}
+
+.plan-actions .plan-status-action.btn-secondary:hover {
+  background: var(--border-soft);
+}
+
+.plan-actions .plan-calendar-action {
+  display: inline-flex;
+  width: 100%;
+  min-height: 2.7rem;
+  justify-content: center;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  background: var(--action-neutral);
+  color: var(--text-main);
+}
+
+.plan-actions .plan-calendar-action:hover {
+  background: var(--border-soft);
+}
+
+.plan-actions .plan-calendar-action.is-scheduled {
+  border-color: var(--border-soft);
+  background: var(--action-neutral);
+  color: var(--text-main);
+}
+
+.card-img-wrapper .saved-plan-delete {
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--border-soft);
+  background: var(--action-neutral);
+  color: var(--text-subtle);
+  font-size: 0.7rem;
+  box-shadow: none;
+}
+
+.card-img-wrapper .saved-plan-delete:hover {
+  background: var(--card-bg);
+  color: var(--text-main);
+  border-color: var(--text-subtle);
+}
+
+.card-img-wrapper .plan-edit-action {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  display: inline-flex;
+  width: 2.8rem;
+  height: 2.8rem;
+  padding: 0.45rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--palette-blush);
+  color: var(--palette-plum);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-img-wrapper .plan-edit-action::before {
+  content: '✏️';
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.card-img-wrapper .plan-edit-action::before {
+  content: 'edit';
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.35rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+}
+
+.fav-btn.is-favorite {
+  color: var(--palette-rose);
+}
+

@@ -56,7 +56,13 @@ export async function fetchDistinctPlanPhotos(ideas, excludedPhotoIds = []) {
     if (!image) return;
     const id = `catalog:${image}`;
     if (!excludedPhotoIds.includes(id) && !uniquePhotos.has(id)) {
-      uniquePhotos.set(id, { id, image: idea.image, source: 'https://unsplash.com/license', credit: 'Unsplash' });
+      const isWikimedia = image.includes('commons.wikimedia.org');
+      uniquePhotos.set(id, {
+        id,
+        image: idea.image,
+        source: isWikimedia ? 'https://commons.wikimedia.org/' : 'https://unsplash.com/license',
+        credit: isWikimedia ? 'Wikimedia Commons' : 'Unsplash',
+      });
     }
   });
   const photosByTopic = new Map(PHOTO_SEARCHES.map(({ key }) => [

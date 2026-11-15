@@ -1,0 +1,59 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+button:not(:disabled):hover,
+.btn:not(:disabled):hover,
+a.btn:hover {
+  filter: brightness(0.92);
+}
+
+.btn-primary {
+  background-color: var(--button-pink);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: var(--button-pink-hover);
+  color: #FFFFFF;
+}
+
+.btn-saved,
+.btn-saved:hover,
+.btn-saved:disabled {
+  background-color: var(--status-success-bg);
+  color: var(--status-success);
+  cursor: default;
+}
+
+.btn-secondary {
+  background-color: var(--button-pink-soft);
+  color: var(--button-secondary-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--button-pink-soft-hover);
+  color: #FFFFFF;
+}
+
+.btn-danger {
+  background-color: var(--status-danger-bg);
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.875rem;
+}
+
+.btn-danger:hover {
+  background-color: var(--palette-mauve);
+}
+

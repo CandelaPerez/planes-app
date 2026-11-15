@@ -1,0 +1,87 @@
+.section-header {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 0.3rem solid var(--palette-oxblood);
+  border-radius: var(--radius-sm);
+  background: var(--palette-blush);
+}
+
+.discovery-section {
+  width: 100vw;
+  margin: 2.5rem calc(50% - 50vw) 0;
+  padding: 2rem max(2rem, calc((100vw - 78rem) / 2));
+  background: var(--text-main);
+}
+
+.discovery-section .section-header {
+  border-left: 0;
+  background: transparent;
+  color: #FFFFFF;
+}
+
+.discovery-section .section-header p {
+  color: #FFFFFF;
+}
+
+.idea-tools .btn-secondary {
+  background-color: var(--primary-cta);
+  color: #FFFFFF;
+}
+
+.idea-tools .btn-secondary:hover {
+  background-color: var(--button-pink-hover);
+  color: #FFFFFF;
+}
+
+.idea-tools .btn-suggestion {
+  background-color: var(--action-neutral);
+  color: var(--text-main);
+  border: 1px solid var(--border-soft);
+}
+
+.idea-tools .btn-suggestion:hover {
+  background-color: var(--border-soft);
+  color: var(--text-main);
+}
+
+.section-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.plans-summary-banner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.summary-item {
+  background-color: white;
+  padding: 1.2rem;
+  border-radius: var(--radius-md);
+  border: 0.0625rem solid var(--border-subtle);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.summary-num {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--pastel-accent-hover);
+}
+
+.summary-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+

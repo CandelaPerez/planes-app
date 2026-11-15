@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInAnonymously } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { getDownloadURL, getStorage, ref as storageRef, uploadBytes, uploadString } from 'firebase/storage';
 import { collection, collectionGroup, doc, getDoc, getFirestore, onSnapshot, query, runTransaction, serverTimestamp, setDoc, updateDoc, deleteDoc } from 'firebase/firestore';
 
@@ -18,19 +18,27 @@ const app = firebaseConfigured ? initializeApp(config) : null;
 export const auth = app ? getAuth(app) : null;
 export const db = app ? getFirestore(app) : null;
 export const storage = app ? getStorage(app) : null;
-let signInInFlight;
-
-export async function startAnonymousSession() {
+export function watchAuth(onUser, onError) {
   if (!auth) throw new Error('Falta configurar Firebase en el archivo .env.local.');
-  if (auth.currentUser) return auth.currentUser;
-  if (!signInInFlight) {
-    signInInFlight = signInAnonymously(auth).then((credential) => credential.user).finally(() => { signInInFlight = null; });
-  }
-  return signInInFlight;
+  return onAuthStateChanged(auth, onUser, onError);
+}
+
+export async function registerAccount(email, password) {
+  if (!auth) throw new Error('Falta configurar Firebase en el archivo .env.local.');
+  return createUserWithEmailAndPassword(auth, email, password);
+}
+
+export async function loginAccount(email, password) {
+  if (!auth) throw new Error('Falta configurar Firebase en el archivo .env.local.');
+  return signInWithEmailAndPassword(auth, email, password);
+}
+
+export async function logoutAccount() {
+  if (auth) await signOut(auth);
 }
 
 export async function syncCatalog(ideas) {
-  await Promise.all(ideas.map((idea) => runTransaction(db, async (transaction) => {
+  const results = await Promise.allSettled(ideas.map((idea) => runTransaction(db, async (transaction) => {
     const ref = doc(db, 'plans', idea.id);
     const snapshot = await transaction.get(ref);
     if (!snapshot.exists()) {
@@ -41,6 +49,13 @@ export async function syncCatalog(ideas) {
       transaction.set(ref, { ...cleanIdea, isCatalog: true, createdAt: serverTimestamp() });
     }
   })));
+  const failures = results.filter((result) => result.status === 'rejected');
+  if (failures.length) {
+    // A local catalog entry can precede its Firestore rules/deployment. Keep
+    // the app usable with the merged local catalog while surfacing other errors.
+    const unexpected = failures.find(({ reason }) => reason?.code !== 'permission-denied');
+    if (unexpected) throw unexpected.reason;
+  }
 }
 
 export function watchCatalog(onData, onError) {
@@ -65,7 +80,16 @@ export async function savePlan(uid, plan) {
   const ref = plan.id
     ? doc(db, 'users', uid, 'savedPlans', plan.id)
     : doc(collection(db, 'users', uid, 'savedPlans'));
-  await setDoc(ref, { ...plan, id: ref.id, updatedAt: serverTimestamp() });
+  const withoutUndefined = (value) => {
+    if (Array.isArray(value)) return value.map(withoutUndefined).filter((item) => item !== undefined);
+    if (value && Object.getPrototypeOf(value) === Object.prototype) {
+      return Object.fromEntries(Object.entries(value)
+        .filter(([, item]) => item !== undefined)
+        .map(([key, item]) => [key, withoutUndefined(item)]));
+    }
+    return value;
+  };
+  await setDoc(ref, { ...withoutUndefined(plan), id: ref.id, updatedAt: serverTimestamp() });
   return ref.id;
 }
 

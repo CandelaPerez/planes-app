@@ -12,7 +12,8 @@ service cloud.firestore {
         'cat_16', 'cat_17', 'cat_18', 'cat_19', 'cat_20', 'cat_21', 'cat_22',
         'cat_23', 'cat_24', 'cat_25', 'cat_26', 'cat_27', 'cat_28', 'cat_29',
         'cat_30', 'cat_31', 'cat_32', 'cat_33', 'cat_34', 'cat_35', 'cat_36',
-        'cat_37', 'cat_38'
+        'cat_37', 'cat_38', 'cat_39', 'cat_40', 'cat_41', 'cat_42',
+        'cat_43', 'cat_44', 'cat_45', 'cat_46'
       ];
     }
 

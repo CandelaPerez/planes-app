@@ -1,20 +1,28 @@
-# Configurar Firebase para Por Hacer
+﻿# Firebase setup for Por Hacer
 
-La aplicación usa Authentication anónima, Cloud Firestore y Cloud Storage.
+The project configuration is already present in `.env.local`. Keep that file private and do not commit it.
 
-1. En Firebase Console, crea una aplicación web y activa **Authentication → Anonymous**.
-2. Crea una base de datos de **Cloud Firestore** en modo producción.
-3. Publica `firestore.rules` en **Firestore → Rules** y `storage.rules` en **Storage → Rules**.
-4. Copia `.env.example` a `.env.local`, cambia `VITE_USE_FIREBASE=true` y completa los seis valores de configuración de la aplicación web de Firebase. No subas `.env.local` al repositorio.
-5. Inicia con `npm run dev`. En el primer inicio de sesión anónimo, la app crea en Firestore los documentos iniciales del catálogo.
+## Firebase Console
 
-## Datos
+1. Open the Firebase project whose web app values are in `.env.local`.
+2. In **Authentication > Sign-in method**, enable **Email/Password**.
+3. Create a **Cloud Firestore** database (production mode is fine).
+4. Create the **Cloud Storage** bucket.
+5. Publish this repository's `firestore.rules` in **Firestore > Rules**.
+6. Publish this repository's `storage.rules` in **Storage > Rules**.
+7. In **Project settings > Your apps**, confirm the web app config matches `.env.local`.
 
-- `plans/{planId}` contiene el catálogo público de planes (`isCatalog`, título, ubicación, categoría, presupuesto e imagen). El promedio y la cantidad de valoraciones se calculan desde los documentos `ratings`; no se guardan cifras iniciales inventadas.
-- `plans/{planId}/ratings/{uid}` contiene una valoración de 1 a 5 por identidad anónima y plan. Repetir la valoración actualiza el mismo documento.
-- `users/{uid}/savedPlans/{planId}` contiene los planes privados guardados por esa identidad, el estado, favorito, recuerdo y valoración personal. Los documentos con `catalogId` apuntan a la propuesta pública original.
-- Los archivos de bitácora se guardan en `users/{uid}/plans/{planId}/{fileName}` en Cloud Storage.
+## Run the app
 
-Los planes que estaban en `localStorage` se migran una sola vez a `savedPlans` al iniciar sesión y luego se elimina esa copia local. Si `VITE_USE_FIREBASE=false`, la app permanece en modo vista previa y guarda los cambios solo en este navegador.
+Restart the Vite dev server after changing `.env.local` (`npm run dev`). The app should first show sign-in and registration. Register with an email and a password of at least 6 characters. After authentication, it creates the catalog documents and opens the home screen and menu.
 
-Las reglas permiten lectura del catálogo y las valoraciones a usuarios autenticados anónimamente, limitan cada lista personal a su UID y exigen un plan marcado como realizado antes de aceptar una valoración. Revisá las reglas antes de desplegar cambios en producción.
+If you see `auth/operation-not-allowed`, enable Email/Password in Authentication. If Firestore shows `permission-denied`, publish `firestore.rules`. If photo uploads fail, check that Storage is enabled and `storage.rules` are published.
+
+## Data
+
+- `plans/{planId}` stores the shared plan catalog.
+- `plans/{planId}/ratings/{uid}` stores a user's rating for a plan.
+- `users/{uid}/savedPlans/{planId}` stores that user's saved plans, status, favorites, memories, and personal rating.
+- `users/{uid}/plans/{planId}/{fileName}` stores photos in Cloud Storage.
+
+The app migrates saved plans from this browser's legacy local storage on sign-in. Existing data attached to an old anonymous Firebase account will not automatically transfer to a new email/password account.
