@@ -8,7 +8,40 @@ La aplicación muestra **84 lugares con fotografías reales verificadas**: 23 de
 
 Inicio usa la selección incluida en src/data/verifiedCatalog.json y src/data/tourismPlaces.json, junto con los manifiestos baDataPilot.json y baDataPhotos.json. Los 129 identificadores antiguos y el archivo histórico de 6.670 registros no alimentan el catálogo visible. La carga no depende de descargar ese archivo histórico ni de una API externa durante la visita.
 
-## Ejecutar
+## Tecnologías
+
+React 19, Vite 8, JavaScript y CSS responsive. Firebase Authentication gestiona las sesiones, Cloud Firestore almacena los datos personales y Cloud Storage conserva las fotografías subidas. Se utiliza ESLint y pruebas de Node. Requiere Node 20.19 o posterior dentro de la rama 20, o Node 22.12 o superior; se recomienda una versión LTS compatible.
+
+## Instalación rápida
+
+```bash
+git clone https://github.com/CandelaPerez/planes-app.git
+cd planes-app
+npm ci
+```
+
+En PowerShell, copiar la plantilla:
+
+```powershell
+Copy-Item .env.example .env.local
+```
+
+En macOS o Linux: `cp .env.example .env.local`.
+
+Seleccionar el proyecto en Firebase, registrar una aplicación web y habilitar Authentication con correo y contraseña, Cloud Firestore y Cloud Storage. Completar en .env.local las siete variables de .env.example con la configuración web del mismo proyecto. Nunca colocar claves privadas ni cuentas de servicio en variables VITE_: sus valores se incorporan al cliente.
+
+```bash
+npm run dev
+```
+
+Para comprobar la versión de producción local:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Configuración y ejecución detallada
 
 Requiere una versión de Node compatible con el Vite instalado. La verificación de esta entrega se realizó con Node 24.21.0.
 
@@ -74,3 +107,21 @@ La documentación histórica de docs describe etapas anteriores y no debe confun
 src/AppFirebase.jsx coordina las vistas. components contiene controles compartidos; hooks, filtros; services, Firebase y catálogo; utils, proyecciones no destructivas y utilidades; styles, hojas de estilo. public contiene las fotografías locales, fuentes y recursos. scripts y tests contienen las comprobaciones. docs contiene instrucciones e informes.
 
 No subir .env, .env.local, node_modules, dist, .browser-check ni credenciales administrativas. .env.example y las reglas sí forman parte de la entrega.
+
+## Seguridad del repositorio
+
+Las reglas incluidas en firestore.rules no permiten acceso anónimo general: los documentos personales requieren el UID propietario y las valoraciones verifican identidad y valores permitidos. La lectura del catálogo y de valoraciones requiere autenticación. Las reglas locales no certifican las que están desplegadas en Firebase; verificar ambas por separado. storage.rules también está incluida. Actualizar la web no publica estas reglas.
+
+.gitignore excluye .env, sus variantes locales, node_modules, dist, .browser-check, .vercel y los ZIP de entrega. .env.example contiene ejemplos y debe permanecer versionado. Las fotografías, sus licencias, la documentación y las pruebas forman parte del proyecto.
+
+## Subir la documentación final a GitHub
+
+```bash
+git status --short
+git diff -- README.md
+git add README.md
+git commit -m "docs: completar README de Por Hacer para entrega final"
+git push origin main
+```
+
+Ejecutar el push solo al decidir publicar: si el repositorio está conectado a Vercel puede activar un despliegue automático. Los commits locales anteriores también se enviarán. No es necesario modificar los datos de Firebase para actualizar la documentación.
