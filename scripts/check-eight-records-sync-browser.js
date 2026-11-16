@@ -93,17 +93,18 @@ try {
   };
   const email='eight-records-'+Date.now()+'@porhacer.example';
   accounts.password='Synthetic-eight-records-2026';
-  await until("!!document.querySelector('.auth-card')");
+  await until("!!document.querySelector('.auth-card input[type=email]')");
   if(responsive){
     for(const width of [375,390,430,768,1366]){
       await call('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:width<=430});
       assert.ok(await evaluate("document.documentElement.scrollWidth<=innerWidth"));
       assert.ok(await evaluate("(()=>{const r=document.querySelector('.auth-card').getBoundingClientRect();return r.left>=0&&r.right<=innerWidth;})()"));
       await evaluate("document.querySelectorAll('.auth-mode-switch button')[1].click()");
-      assert.equal(await evaluate("document.querySelectorAll('.auth-card input[type=password]').length"),2);
+      await until("document.querySelectorAll('.auth-card input[type=password]').length===2");
       assert.ok(await evaluate("document.documentElement.scrollWidth<=innerWidth"));
       if(width===390)await captureResponsive('responsive-firebase-390-register');
       await evaluate("document.querySelectorAll('.auth-mode-switch button')[0].click()");
+      await until("document.querySelectorAll('.auth-card input[type=password]').length===1");
     }
     await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
   }
@@ -137,7 +138,7 @@ try {
     assert.equal(new Set(report.documents.map(d=>d.id)).size,8);return report;
   };
   await verify();const original=await docs();
-  await call('Page.reload',{ignoreCache:true});await until("!!document.querySelector('.nav-account')");
+  await evaluate("window.__porHacerReloadMarker=true");await call('Page.reload',{ignoreCache:true});await until("!window.__porHacerReloadMarker&&document.readyState==='complete'");await until("!!document.querySelector('.nav-account')");
   await until("window.porHacerDiagnostico&&!!document.querySelector('.discovery-section .plan-card')");await verify();
   if(responsive){
     for(const width of [375,390,430]){
@@ -177,13 +178,13 @@ try {
   const edited=await docs();
   await evaluate("window.confirm=()=>true;document.querySelector('#saved-plan-"+itinerary.id+" .saved-plan-delete').click()");
   await until("document.querySelectorAll('.itinerary-edit-button').length===4");assert.equal((await docs()).length,7);
-  await call('Page.reload',{ignoreCache:true});await until("!!document.querySelector('.nav-account')");
+  await evaluate("window.__porHacerReloadMarker=true");await call('Page.reload',{ignoreCache:true});await until("!window.__porHacerReloadMarker&&document.readyState==='complete'");await until("!!document.querySelector('.nav-account')");
   assert.equal((await docs()).length,7);assert.ok(!(await docs()).some(p=>p.id===itinerary.id));
   // Restore only this synthetic fixture, using the same ID, to finish at 3 + 5.
   const restore=edited.find(p=>p.id===itinerary.id);delete restore.updatedAt;
   await evaluate("import('/src/services/firebase.js').then(s=>s.savePlan(s.auth.currentUser.uid,"+JSON.stringify(restore)+"))");
   await until("!!document.querySelector('.discovery-section .plan-card')");await verify();
-  await call('Page.reload',{ignoreCache:true});await until("!!document.querySelector('.nav-account')");await until("!!document.querySelector('.discovery-section .plan-card')");await verify();
+  await evaluate("window.__porHacerReloadMarker=true");await call('Page.reload',{ignoreCache:true});await until("!window.__porHacerReloadMarker&&document.readyState==='complete'");await until("!!document.querySelector('.nav-account')");await until("!!document.querySelector('.discovery-section .plan-card')");await verify();
   if(responsive){
     for(const width of [375,390,430,768,1366]){
       await call('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:width<=430});

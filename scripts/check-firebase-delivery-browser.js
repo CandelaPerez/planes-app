@@ -113,7 +113,7 @@ try {
   await evaluate("document.querySelector('.schedule-modal form').requestSubmit()");
   await until("!!document.querySelector('.calendar-event-card')");assert.ok((await document()).scheduledAt);
   const persisted=await document();
-  await call('Page.reload',{ignoreCache:true});await until("!!document.querySelector('.nav-account')");
+  await evaluate("window.__porHacerReloadMarker=true");await call('Page.reload',{ignoreCache:true});await until("!window.__porHacerReloadMarker&&document.readyState==='complete'");await until("!!document.querySelector('.nav-account')");
   await click('Mis planes');await until("!!document.querySelector('#saved-plan-"+target+"')");
   assert.deepEqual(await document(),persisted);
   assert.ok(await evaluate("document.querySelector('#saved-plan-"+target+" .fav-btn').classList.contains('is-favorite')&&document.querySelector('#saved-plan-"+target+" .status-label').classList.contains('done')"));
@@ -122,7 +122,7 @@ try {
   await click('Recuerdos');await until("!!document.querySelector('.photo-card')");assert.ok(!await evaluate("document.body.textContent.includes('Plan antiguo')"));
   await click('Mis planes');await evaluate("window.confirm=()=>true");await cardClick('.saved-plan-delete');
   await until("!document.querySelector('#saved-plan-"+target+"')");assert.equal(await document(),undefined);
-  await call('Page.reload',{ignoreCache:true});await until("!!document.querySelector('.nav-account')");
+  await evaluate("window.__porHacerReloadMarker=true");await call('Page.reload',{ignoreCache:true});await until("!window.__porHacerReloadMarker&&document.readyState==='complete'");await until("!!document.querySelector('.nav-account')");
   await click('Mis planes');await until("!!document.querySelector('.personal-section-switch')");assert.equal(await document(),undefined);
   // Removing a saved current plan deliberately leaves its rating untouched.
   assert.equal((await evaluate("import('/src/services/firebase.js').then(s=>s.testRating('"+target+"'))")).value,4);
