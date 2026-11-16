@@ -98,7 +98,7 @@ try {
   await itinerarySection();await until("document.querySelectorAll('.itinerary-edit-button').length===2");
   const before=(await docs()).find(p=>p.id===accounts.itineraryId);
   await edit(accounts.itineraryId);
-  assert.equal(await evaluate("document.querySelectorAll('.itinerary-editor-items > li').length"),2);
+  assert.equal(await evaluate("document.querySelectorAll('.itinerary-editor-items > li').length"),1);
   await text('.itinerary-editor input[maxlength]','Cancelado');
   await evaluate("document.querySelector('.itinerary-editor-items li button[aria-label^=Quitar]').click()");
   await click('Cancelar');await until("!document.querySelector('.itinerary-editor')");
@@ -106,11 +106,10 @@ try {
   await edit(accounts.itineraryId);
   await text('.itinerary-editor input[maxlength]','Salida reorganizada');
   assert.equal(await evaluate("document.querySelectorAll('.itinerary-editor textarea,.itinerary-editor input[type=datetime-local],.itinerary-editor input[type=search],.itinerary-editor-catalog').length"),0);
-  await evaluate("document.querySelector('.itinerary-editor-items li button[aria-label^=Quitar]').click()");
   await click('Guardar cambios');await until("!document.querySelector('.itinerary-editor')");
   let edited=(await docs()).find(p=>p.id===accounts.itineraryId);
   assert.equal(edited.title,'Salida reorganizada');assert.equal(edited.description,before.description);
-  assert.deepEqual(edited.items.map(p=>p.id),[accounts.customId]);
+  assert.deepEqual(edited.items,before.items);
   assert.equal(edited.favorite,true);assert.equal(edited.comment,before.comment);assert.equal(edited.image,before.image);
   assert.equal(edited.scheduledAt,before.scheduledAt);
   assert.equal((await docs()).length,6);
@@ -124,13 +123,13 @@ try {
   assert.equal((await docs()).find(p=>p.id===accounts.itineraryId).scheduledAt,before.scheduledAt);
   await click('Cerrar sesion');await login(accounts.emailA);await itinerarySection();
   await until("document.body.textContent.includes('Salida reorganizada')");
-  assert.deepEqual((await docs()).find(p=>p.id===accounts.itineraryId).items.map(p=>p.id),[accounts.customId]);
+  assert.deepEqual((await docs()).find(p=>p.id===accounts.itineraryId).items,before.items);
   await evaluate("window.confirm=()=>true;document.querySelector('#saved-plan-"+created.id+" .saved-plan-delete').click()");
   await until("!document.querySelector('#saved-plan-"+created.id+"')");assert.equal((await docs()).length,5);
   await click('Cerrar sesion');await login(accounts.emailB);
   const rejection=await evaluate("import('/src/services/firebase.js').then(async s=>{try{await s.updateSavedPlan("+JSON.stringify(accounts.uidA)+","+JSON.stringify(accounts.itineraryId)+",{title:'Unauthorized'});return 'allowed';}catch(e){return e.code;}})");
   assert.equal(rejection,'permission-denied');assert.equal((await docs()).length,1);
   assert.deepEqual(exceptions,[]);
-  const result={emulator:true,create:true,cancelWithoutWrites:true,editSameDocument:true,addingDisabled:true,removeLegacy:true,reorderingDisabled:true,customPreserved:true,personalStatePreserved:true,schedulePreserved:true,reload:true,logoutLogin:true,delete:true,noDuplicates:true,mobile:true,accountIsolation:true,productionTouched:false};
+  const result={emulator:true,create:true,cancelWithoutWrites:true,editSameDocument:true,addingDisabled:true,hiddenLegacyPreserved:true,reorderingDisabled:true,customPreserved:true,personalStatePreserved:true,schedulePreserved:true,reload:true,logoutLogin:true,delete:true,noDuplicates:true,mobile:true,accountIsolation:true,productionTouched:false};
   await writeFile(new URL('itinerary-browser-result.json',folder),JSON.stringify(result,null,2));console.log(JSON.stringify(result));
 }finally{socket?.close();browser.kill();await server.close();}

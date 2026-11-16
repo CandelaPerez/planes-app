@@ -30,7 +30,7 @@ try{
  const custom={id:crypto.randomUUID(),title:'Merienda en el Café Tortoni',description:'Plan personalizado de prueba',location:'Mi ubicación',category:'Gastronomía',image:personalPhoto,savedOrigin:'custom',status:'pendiente',favorite:true};
  const old={id:'old-catalog-document',catalogId:'cat_1',title:'Plan antiguo',status:'realizado',image:personalPhoto,comment:'Historia antigua conservada',rating:5,scheduledAt:'2027-02-05T12:00:00Z'};
  const oldCoverage={id:'coverage_1_1_1',title:'Cobertura antigua',status:'pendiente',favorite:true};
- const itinerary={id:crypto.randomUUID(),type:'itinerary',title:'Itinerario protegido',items:[old],image:personalPhoto,status:'pendiente'};
+ const itinerary={id:crypto.randomUUID(),type:'itinerary',title:'Itinerario protegido',items:[old,payload],image:personalPhoto,status:'pendiente'};
  for(const plan of [custom,old,oldCoverage,itinerary])await firebase.savePlan(uidA,plan);
  await firebase.saveRating(uidA,idea.id,4,idea.id);
  const collect=uid=>new Promise((resolve,reject)=>{let off;const timer=setTimeout(()=>{off?.();reject(Error('Snapshot timeout'));},15000);off=firebase.watchSavedPlans(uid,plans=>{clearTimeout(timer);off();resolve(plans);},reason=>{clearTimeout(timer);reject(reason);});});
@@ -38,7 +38,7 @@ try{
  assert.equal(raw.length,5);assert.equal(view.hiddenLegacy.length,2);assert.equal(view.plans.length,3);
  assert.equal(view.plans.find(p=>p.catalogId===idea.id).image,idea.image);
  assert.equal(view.plans.find(p=>p.id===custom.id).image,personalPhoto);
- assert.deepEqual(view.plans.find(p=>p.id===itinerary.id).items,[old]);
+ assert.deepEqual(view.plans.find(p=>p.id===itinerary.id).items.map(p=>p.id),[idea.id]);
  assert.equal((await getDocFromServer(doc(firebase.db,'users',uidA,'savedPlans',idea.id))).data().image,personalPhoto);
  const nextCatalog=catalog.map(p=>p.id===idea.id?{...p,image:'/images/test-refreshed-photo.jpg'}:p);
  assert.equal(savedPlansView(raw,nextCatalog).plans.find(p=>p.catalogId===idea.id).image,'/images/test-refreshed-photo.jpg');

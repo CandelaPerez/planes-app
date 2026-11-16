@@ -150,8 +150,8 @@ export default function AppFirebase() {
     if (personalFilter === 'favorites') return plan.favorite;
     return true;
   });
-  const completedCount = userPlans.filter((plan) => plan.status === 'realizado').length;
-  const calendarPlans = userPlans.filter((plan) => plan.scheduledAt).sort((a, b) => new Date(a.scheduledAt) - new Date(b.scheduledAt));
+  const completedCount = personalPlans.filter((plan) => plan.status === 'realizado').length;
+  const calendarPlans = personalPlans.filter((plan) => plan.scheduledAt).sort((a, b) => new Date(a.scheduledAt) - new Date(b.scheduledAt));
   const calendarDays = useMemo(() => {
     const first = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth(), 1);
     const offset = (first.getDay() + 6) % 7;
@@ -313,7 +313,11 @@ export default function AppFirebase() {
     if (activeAccount.current !== account) throw Error('La sesión cambió. Volvé a abrir el itinerario.');
     const original = userPlans.find(plan => plan.id === editingItinerary?.id && plan.type === 'itinerary');
     if (!original) throw Error('El itinerario ya no está disponible.');
-    const updates = itineraryUpdates(original, draft);
+    // Hidden historical activities stay stored; saving the visible editor must
+    // only remove activities the user could actually see and choose to remove.
+    const selected = new Set(draft.items.map(item => savedCatalogId(item)));
+    const items = (original.items || []).filter(item => !savedView.catalogById.has(savedCatalogId(item)) || selected.has(savedCatalogId(item)));
+    const updates = itineraryUpdates(original, { ...draft, items });
     if (firebaseConfigured) await updateSavedPlan(account, original.id, updates);
     else setUserPlans(plans => plans.map(plan => plan.id === original.id ? { ...plan, ...updates } : plan));
     if (activeAccount.current === account) setNotice('Cambios del itinerario guardados.');
@@ -410,6 +414,10 @@ export default function AppFirebase() {
   }
 
   const displayPlanImage = (plan, memory = false) => {
+    if (memory && plan.type !== 'itinerary') {
+      const original = userPlans.find(saved => saved.id === plan.id);
+      if (original?.image) return original.image;
+    }
     if (memory && plan.image) return plan.image;
     if (savedPlanKind(plan) === 'current-catalog') {
       const current = savedView.catalogById.get(savedCatalogId(plan));
@@ -543,7 +551,7 @@ export default function AppFirebase() {
         <div className="calendar-agenda"><div className="calendar-agenda-heading"><h3>{calendarMonth.toLocaleDateString('es-AR', { month: 'long', year: 'numeric' })}</h3><span>{calendarMonthPlans.length} {calendarMonthPlans.length === 1 ? 'plan' : 'planes'}</span></div>{calendarMonthPlans.length === 0 ? <div className="empty-state calendar-empty"><h3>No tienes planes agendados este mes</h3><p>Agrega una fecha desde una tarjeta en Mis planes.</p><button className="btn btn-primary" onClick={() => setActiveTab('plans')}>Ir a Mis planes</button></div> : <div className="calendar-agenda-list">{calendarMonthPlans.map((plan) => <article className="calendar-event-card" key={plan.id}><img src={displayPlanImage(plan)} alt={plan.title} onError={(event) => savedImageError(event, plan)} /><div className="calendar-event-info"><span className="calendar-event-date">{new Date(plan.scheduledAt).toLocaleDateString('es-AR', { weekday: 'short', day: 'numeric', month: 'short' })}</span><span className="calendar-event-time">{new Date(plan.scheduledAt).toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' })}</span><h4>{plan.title}</h4><p>{plan.location}</p></div><button className="btn btn-secondary" onClick={() => { const catalogRecord = catalogRecords.get(plan.catalogId); setSelectedIdea({ ...catalogRecord, ...plan, address: catalogRecord?.address || plan.location, openingHours: catalogRecord?.openingHours, duration: catalogRecord?.duration, visitTips: catalogRecord?.visitTips, officialUrl: catalogRecord?.officialUrl, image: displayPlanImage(plan), isSavedPlan: true }); }}>Ver detalles</button></article>)}</div>}</div></div>
       </section>}
 
-      {activeTab === 'bitacora' && <section><div className="section-header personal-page-heading"><h2>Bitácora y recuerdos</h2><p>{completedCount} experiencias realizadas</p></div>{completedCount === 0 ? <div className="empty-state"><h3>Aún no hay experiencias realizadas</h3><p>Cuando completes un plan, aparecerá aquí.</p></div> : <div className="cards-grid">{userPlans.filter((plan) => plan.status === 'realizado').map((plan) => <article className="photo-card" key={plan.id}><div className="photo-wrapper"><img src={displayPlanImage(plan, true)} alt={plan.title} onError={(event) => savedImageError(event, plan)} /><span className="photo-badge">{plan.category}</span></div><div className="photo-details"><h3>{plan.title}</h3>{plan.photograph && plan.image === plan.photograph.localPath && <p className="photo-credit"><PlacePhotoCredit plan={plan} /></p>}<p>{plan.location} · {plan.photoDate || 'Reciente'}</p><label className="comment-label">Tu recuerdo<textarea rows="3" placeholder="Escribe un recuerdo de este día…" defaultValue={plan.comment || ''} onBlur={(event) => { if (event.target.value !== (plan.comment || '')) updateComment(plan, event.target.value); }} /></label><label className="btn btn-secondary photo-upload">Cambiar fotografía<input type="file" accept="image/*" onChange={(event) => changePlanPhoto(plan, event.target.files?.[0])} /></label><div className="personal-rating"><strong>Mi puntuación</strong><Stars value={plan.rating || 0} interactive disabled={busy} onChange={(value) => ratePlan(plan, value)} /></div></div></article>)}</div>}</section>}
+      {activeTab === 'bitacora' && <section><div className="section-header personal-page-heading"><h2>Bitácora y recuerdos</h2><p>{completedCount} experiencias realizadas</p></div>{completedCount === 0 ? <div className="empty-state"><h3>Aún no hay experiencias realizadas</h3><p>Cuando completes un plan, aparecerá aquí.</p></div> : <div className="cards-grid">{personalPlans.filter((plan) => plan.status === 'realizado').map((plan) => <article className="photo-card" key={plan.id}><div className="photo-wrapper"><img src={displayPlanImage(plan, true)} alt={plan.title} onError={(event) => savedImageError(event, plan)} /><span className="photo-badge">{plan.category}</span></div><div className="photo-details"><h3>{plan.title}</h3>{plan.photograph && plan.image === plan.photograph.localPath && <p className="photo-credit"><PlacePhotoCredit plan={plan} /></p>}<p>{plan.location} · {plan.photoDate || 'Reciente'}</p><label className="comment-label">Tu recuerdo<textarea rows="3" placeholder="Escribe un recuerdo de este día…" defaultValue={plan.comment || ''} onBlur={(event) => { if (event.target.value !== (plan.comment || '')) updateComment(plan, event.target.value); }} /></label><label className="btn btn-secondary photo-upload">Cambiar fotografía<input type="file" accept="image/*" onChange={(event) => changePlanPhoto(plan, event.target.files?.[0])} /></label><div className="personal-rating"><strong>Mi puntuación</strong><Stars value={plan.rating || 0} interactive disabled={busy} onChange={(value) => ratePlan(plan, value)} /></div></div></article>)}</div>}</section>}
     </main>
     {activeTab === 'home' && <CreditsAndSources />}
 

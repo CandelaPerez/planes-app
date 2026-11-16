@@ -85,7 +85,7 @@ try {
   const login=async email=>{await until("!!document.querySelector('.auth-card input[type=email]')");await fill('.auth-card input[type=email]',email);await fill('.auth-card input[type=password]',accounts.password);await evaluate("document.querySelector('.auth-card form').requestSubmit()");await until("!!document.querySelector('.nav-account')");};
   await login(accounts.emailA);
   await click('Mis planes');
-  await until("document.querySelectorAll('.plan-card').length===2 && document.body.textContent.includes('2 planes del catálogo anterior')");
+  await until("document.querySelectorAll('.plan-card').length===2 && !document.body.textContent.includes('2 planes del cat')");
   assert.ok(await evaluate("!document.querySelector('#saved-plan-old-catalog-document') && !document.querySelector('#saved-plan-coverage_1_1_1')"));
   assert.equal(await evaluate("document.querySelector('#saved-plan-badata-food-1362 img').getAttribute('src')"),'/images/ba-data-pilot/badata-food-1362.jpg');
   assert.equal(await evaluate("document.querySelector('#saved-plan-"+accounts.customId+" img').getAttribute('src')"),accounts.personalPhoto);
@@ -97,7 +97,7 @@ try {
   await evaluate("document.querySelector('.modal-content form').requestSubmit()");
   await until("!document.querySelector('.modal-content') && document.querySelector('#saved-plan-badata-food-1362').textContent.includes('Nombre personal conservado')");
   await click('Recuerdos');
-  await until("document.querySelectorAll('.photo-card').length===2");
+  await until("document.querySelectorAll('.photo-card').length===1");
   assert.ok(await evaluate("[...document.querySelectorAll('.photo-card img')].every(i=>i.getAttribute('src').startsWith('data:image/'))"));
   await click('Mis planes');
   await evaluate("document.querySelectorAll('.personal-section-switch button')[1].click()");

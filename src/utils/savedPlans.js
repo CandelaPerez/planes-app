@@ -54,9 +54,22 @@ export function savedPlansView(storedPlans, catalog) {
   const catalogById = new Map(catalog.map((plan) => [plan.id, plan]));
   const groups = new Map();
   const hiddenLegacy = [];
+  const hiddenUnavailable = [];
+  const hiddenItineraries = [];
   for (const stored of storedPlans) {
     if (savedPlanKind(stored) === 'legacy-catalog') { hiddenLegacy.push(stored); continue; }
-    const plan = reconcileSavedPlan(stored, catalogById);
+    if (savedPlanKind(stored) === 'current-catalog' && !catalogById.has(savedCatalogId(stored))) {
+      hiddenUnavailable.push(stored); continue;
+    }
+    let plan = reconcileSavedPlan(stored, catalogById);
+    if (stored.type === 'itinerary') {
+      const items = (stored.items || []).filter(item => catalogById.has(savedCatalogId(item)))
+        .map(item => reconcileSavedPlan(item, catalogById));
+      if (!items.length) { hiddenItineraries.push(stored); continue; }
+      const personalCover = stored.image && !(stored.items || []).some(item => item.image === stored.image);
+      plan = { ...stored, items, image: personalCover ? stored.image : items[0].image,
+        location: [...new Set(items.map(item => item.location).filter(Boolean))].join(' · ') };
+    }
     const key = savedPlanKind(plan) === 'current-catalog' ? `catalog:${savedCatalogId(plan)}` : `document:${plan.id}`;
     const previous = groups.get(key);
     // A stable representative prevents toggling a favorite/status from switching
@@ -65,7 +78,8 @@ export function savedPlansView(storedPlans, catalog) {
     if (!previous || (plan.id === canonical && previous.id !== canonical)
       || (previous.id !== canonical && String(plan.id).localeCompare(String(previous.id), 'en') < 0)) groups.set(key, plan);
   }
-  return { plans: [...groups.values()], hiddenLegacy, duplicateCount: storedPlans.length - hiddenLegacy.length - groups.size, catalogById };
+  return { plans: [...groups.values()], hiddenLegacy, hiddenUnavailable, hiddenItineraries,
+    duplicateCount: storedPlans.length - hiddenLegacy.length - hiddenUnavailable.length - hiddenItineraries.length - groups.size, catalogById };
 }
 
 export function catalogPlanToSave(idea) {

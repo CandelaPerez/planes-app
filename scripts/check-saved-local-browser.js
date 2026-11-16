@@ -86,11 +86,11 @@ try {
 
   const personalPhoto='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="20" height="20" fill="blue"/></svg>');
   const place=reviewedPlans.find(p=>p.id==='badata-food-1362');
-  const current={...catalogPlanToSave(place),image:personalPhoto,favorite:true,status:'realizado',comment:'Recuerdo actual',rating:4};
+  const current={...catalogPlanToSave(place),image:personalPhoto,favorite:true,status:'realizado',comment:'Recuerdo actual',rating:4,scheduledAt:new Date().toISOString()};
   const legacy={id:'cat_1',catalogId:'cat_1',title:'Plan precargado antiguo',image:personalPhoto,comment:'Recuerdo antiguo',status:'realizado',favorite:true,scheduledAt:new Date().toISOString()};
   const legacyCoverage={id:'old-coverage',externalId:'coverage_1_1_1',title:'Cobertura antigua',status:'pendiente'};
   const custom={id:'6bd8c5bb-26d8-419a-9ce4-67b22fbde01a',title:'Merienda en el Café Tortoni',description:'Mi evento privado',image:personalPhoto,location:'Mi casa',category:'Gastronomía',status:'pendiente'};
-  const itinerary={id:'protected-itinerary',type:'itinerary',title:'Itinerario anterior protegido',items:[legacy],image:personalPhoto,status:'pendiente'};
+  const itinerary={id:'protected-itinerary',type:'itinerary',title:'Itinerario anterior protegido',items:[legacy,current],image:personalPhoto,status:'pendiente'};
   const duplicate={...current,id:'historical-duplicate',comment:'Documento duplicado protegido'};
   const seed=[legacy,legacyCoverage,current,custom,itinerary,duplicate];
   const originalSeed=structuredClone(seed);
@@ -134,18 +134,18 @@ try {
   const mobileShot=await call('Page.captureScreenshot',{format:'png'});await writeFile(new URL('clean-itinerary-mobile.png',folder),new Uint8Array(Uint8Array.from(atob(mobileShot.data),c=>c.charCodeAt(0))));
   await click('Quitar');await click('Guardar cambios');await until("!document.querySelector('.itinerary-editor')");
   const saved=await evaluate("JSON.parse(localStorage.getItem('porhacer_preview_plans'))");
-  assert.equal(saved.length,seed.length);assert.deepEqual(saved.find(p=>p.id===itinerary.id),{...itinerary,title:'Renamed',items:[]});
-  itinerary.title='Renamed';itinerary.items=[];
+  assert.equal(saved.length,seed.length);assert.deepEqual(saved.find(p=>p.id===itinerary.id),{...itinerary,title:'Renamed',items:[legacy]});
+  itinerary.title='Renamed';itinerary.items=[legacy];
   await call('Emulation.setDeviceMetricsOverride',{width:1366,height:900,deviceScaleFactor:1,mobile:false});
   await click('Calendario');await until("document.querySelectorAll('.calendar-event-card').length===1");
-  assert.ok(await evaluate("document.querySelector('.calendar-event-card').textContent.includes('Plan precargado antiguo')"));
-  await click('Recuerdos');await until("document.querySelectorAll('.photo-card').length===3");
+  assert.ok(await evaluate("!document.querySelector('.calendar-event-card').textContent.includes('Plan precargado antiguo')"));
+  await click('Recuerdos');await until("document.querySelectorAll('.photo-card').length===1");
   assert.ok(await evaluate("[...document.querySelectorAll('.photo-card img')].every(i=>i.getAttribute('src').startsWith('data:image/'))"));
   await call('Page.reload',{ignoreCache:true});await until("!!document.querySelector('.credits-footer')");
   await click('Mis planes');await until("document.querySelectorAll('.plan-card').length===2");
   assert.deepEqual(await evaluate("JSON.parse(localStorage.getItem('porhacer_preview_plans'))"),seed);
   assert.deepEqual(await evaluate("JSON.parse(localStorage.getItem('porhacer_user_plans'))"),originalSeed);
   assert.deepEqual(exceptions,[]);
-  const result={localPreview:true,legacyHiddenInFixture:2,duplicateGroupedInFixture:1,rawRecordsRetained:seed.length,localBackup:'passed',matchingCustomTitlePreserved:true,photoRefresh:'passed',personalMemoryPhotos:'passed',legacyCalendarAndMemoriesPreserved:true,restrictedEditor:true,cancelWithoutWrites:true,editSameId:true,noDuplicates:true,mobile:true,reload:'passed',javascriptExceptions:exceptions};
+  const result={localPreview:true,legacyHiddenInFixture:2,duplicateGroupedInFixture:1,rawRecordsRetained:seed.length,localBackup:'passed',matchingCustomTitlePreserved:true,photoRefresh:'passed',personalMemoryPhotos:'passed',legacyCalendarAndMemoriesHidden:true,restrictedEditor:true,cancelWithoutWrites:true,editSameId:true,noDuplicates:true,mobile:true,reload:'passed',javascriptExceptions:exceptions};
   await writeFile(new URL('saved-local-browser-result.json',folder),JSON.stringify(result,null,2));console.log(JSON.stringify(result));
 }finally{socket?.close();browser.kill();if(typeof server.close==='function')await server.close();else await new Promise(resolve=>server.httpServer.close(resolve));}

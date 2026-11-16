@@ -22,13 +22,14 @@ test('legacy detection uses stable IDs and preserves custom, ambiguous and itine
 test('saved view hides legacy records without deleting or changing raw personal data',()=>{
  const old={id:'old-doc',catalogId:'cat_1',status:'realizado',favorite:true,comment:'Recuerdo antiguo',scheduledAt:'2027-01-02T12:00:00Z',image:'personal.jpg',rating:5};
  const current={...catalogPlanToSave(place),image:'https://example.com/stale-generic.jpg',favorite:true,comment:'Mi recuerdo',scheduledAt:'2027-02-03T13:00:00Z',status:'realizado',rating:4};
- const itinerary={id:'trip',type:'itinerary',title:'Viaje original',items:[old],status:'pendiente',image:'itinerary.jpg'};
+ const itinerary={id:'trip',type:'itinerary',title:'Viaje original',items:[old,current],status:'pendiente',image:'itinerary.jpg'};
  const raw=[old,current,custom,itinerary],before=structuredClone(raw),view=savedPlansView(raw,catalog);
  assert.equal(view.hiddenLegacy.length,1);
  assert.equal(view.plans.length,3);
  assert.equal(view.plans.find(p=>p.id===place.id).image,place.image);
  assert.deepEqual(view.plans.find(p=>p.id===custom.id),custom);
- assert.deepEqual(view.plans.find(p=>p.id==='trip'),itinerary);
+ assert.equal(view.plans.find(p=>p.id==='trip').items.length,1);
+ assert.equal(view.plans.find(p=>p.id==='trip').items[0].id,current.id);
  for(const key of ['favorite','comment','scheduledAt','status','rating'])assert.equal(view.plans.find(p=>p.id===place.id)[key],current[key]);
  assert.deepEqual(raw,before);
 });
@@ -42,7 +43,8 @@ test('current metadata and photo refresh while edited titles and document IDs su
  const automatic={...catalogPlanToSave(place)};
  assert.equal(reconcileSavedPlan(automatic,new Map([[place.id,latest]])).title,latest.title);
  const retired={...catalogPlanToSave(place),catalogId:'badata-food-999999',id:'saved-retired'};
- assert.ok(savedPlansView([retired],catalog).plans.some(p=>p.id==='saved-retired'));
+ assert.equal(savedPlansView([retired],catalog).plans.length,0);
+ assert.equal(savedPlansView([retired],catalog).hiddenUnavailable.length,1);
 });
 
 test('repeated catalog snapshots use the same stable key and duplicate views do not overwrite documents',()=>{
@@ -72,4 +74,19 @@ test('a saved image is not considered a verified snapshot solely because its URL
  assert.equal(verifiedSavedPhoto(catalogPlanToSave(place)),place.image);
  assert.equal(verifiedSavedPhoto({id:'badata-food-999999',image:'https://example.com/works.jpg'}),'');
  assert.equal(verifiedSavedPhoto({...catalogPlanToSave(place),catalogId:'badata-food-999999'}),'','Reject a photograph whose local ID belongs to a different place');
+});
+
+test('all personal sections share a non-mutating view of current places and custom plans',()=>{
+ const old={id:'cat_1',status:'realizado',scheduledAt:'2027-01-01T12:00:00Z',comment:'Protected'};
+ const retired={...catalogPlanToSave(place),id:'retired',catalogId:'badata-food-999999',status:'realizado'};
+ const current={...catalogPlanToSave(place),status:'realizado',scheduledAt:old.scheduledAt};
+ const personal={...custom,status:'realizado',scheduledAt:old.scheduledAt};
+ const mixed={id:'mixed',type:'itinerary',items:[old,current,custom,retired]};
+ const empty={id:'empty',type:'itinerary',items:[old,custom]};
+ const raw=[old,retired,current,personal,mixed,empty],before=structuredClone(raw);
+ const view=savedPlansView(raw,catalog);
+ assert.deepEqual(view.plans.map(p=>p.id),[current.id,personal.id,mixed.id]);
+ assert.deepEqual(view.plans.find(p=>p.id==='mixed').items.map(p=>p.id),[current.id]);
+ assert.deepEqual(view.plans.filter(p=>p.scheduledAt).map(p=>p.id),[current.id,personal.id]);
+ assert.deepEqual(raw,before);
 });
