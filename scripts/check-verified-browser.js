@@ -147,6 +147,26 @@ try {
     await checkResults(reviewedPlans.filter(plan=>placeTypeFor(plan)===type.name));
   }
   await selectFilter('Filtrar por tipo de lugar','Todos');
+  await selectFilter('Filtrar por zona','Zona Sur');
+  await selectFilter('Filtrar por tipo de lugar','Todos');
+  await chooseCategory('Gastronom\u00eda');
+  const southIds=['badata-food-913','badata-food-905','badata-culture-49'];
+  const southPlans=reviewedPlans.filter(plan=>southIds.includes(plan.id));
+  await checkResults(southPlans);
+  assert.deepEqual((await allTitles()).sort(),southPlans.map(p=>p.title).sort());
+  await until("[...document.querySelectorAll('.discovery-section .plan-card img')].every(i=>i.complete&&i.naturalWidth>0)");
+  assert.deepEqual((await evaluate("[...document.querySelectorAll('.discovery-section .plan-card img')].map(i=>i.getAttribute('src'))")).sort(),southPlans.map(p=>p.image).sort());
+  assert.ok(await evaluate("[...document.querySelectorAll('.discovery-section .plan-card')].every(c=>!c.querySelector('[data-photo-credit]')&&!/Foto:|CC BY|Archivo:/.test(c.textContent))"));
+  await evaluate("document.querySelector('.discovery-section').scrollIntoView({block:'start',behavior:'instant'})");
+  const southShot=await call('Page.captureScreenshot',{format:'png'});await writeFile(new URL('south-gastronomy-desktop.png',folder),Buffer.from(southShot.data,'base64'));
+  await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+  for(const plan of southPlans){await searchFor(plan.originalName);await checkResults([plan]);await until("document.querySelector('.discovery-section .plan-card img')?.complete&&document.querySelector('.discovery-section .plan-card img')?.naturalWidth>0");}
+  await searchFor('');await checkResults(southPlans);
+  await evaluate("document.querySelector('.discovery-section').scrollIntoView({block:'start',behavior:'instant'})");
+  const southMobile=await call('Page.captureScreenshot',{format:'png'});await writeFile(new URL('south-gastronomy-mobile.png',folder),Buffer.from(southMobile.data,'base64'));
+  await call('Emulation.setDeviceMetricsOverride',{width:1366,height:900,deviceScaleFactor:1,mobile:false});
+  await chooseCategory('Todas');await selectFilter('Filtrar por zona','Todas');
+
   await selectFilter('Ordenar por','alpha');
   await checkResults(reviewedPlans);
   const ascending = [...reviewedPlans].sort((a,b)=>a.title.localeCompare(b.title,'es')).map(plan=>plan.title);

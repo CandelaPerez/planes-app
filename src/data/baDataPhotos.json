@@ -2272,6 +2272,107 @@
         "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
         "gps": null
       }
+    },
+    {
+      "id": "badata-food-913",
+      "originalName": "LA FLOR DE BARRACAS",
+      "address": "SUAREZ AV. 2095",
+      "category": "Gastronomía",
+      "lat": -34.64182558,
+      "lon": -58.37949,
+      "fingerprint": "1eabd973de44232ec0bf20f6035a319389021a101fa0685ef4ea3e9ff7456cca",
+      "photo": {
+        "localPath": "/images/ba-data-batches/badata-food-913.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Caf%C3%A9_hist%C3%B3rico_La_Flor_de_Barracas.jpg/960px-Caf%C3%A9_hist%C3%B3rico_La_Flor_de_Barracas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Caf%C3%A9_hist%C3%B3rico_La_Flor_de_Barracas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_hist%C3%B3rico_La_Flor_de_Barracas.jpg",
+        "commonsTitle": "File:Café histórico La Flor de Barracas.jpg",
+        "author": "Mariaa.silva",
+        "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Mariaa.silva&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Mariaa.silva (page does not exist)\">Mariaa.silva</a>",
+        "uploader": "Mariaa.silva",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "photoDate": "2017-10-28 13:13:33",
+        "description": "Edificio: café histórico - Suárez 2095, C1288AFC CABA, Argentina",
+        "verifiedAt": "2026-11-16T21:39:59.857Z",
+        "evidence": "Vidriera inspeccionada con nombre LA FLOR DE BARRACAS legible. La ficha Commons identifica Suárez 2095, dirección exacta de BA Data y Turismo de la Ciudad.",
+        "identitySources": [
+          "https://turismo.buenosaires.gob.ar/en/atractivo/la-flor-de-barracas",
+          "https://data.buenosaires.gob.ar/dataset/oferta-establecimientos-gastronomicos"
+        ],
+        "sha256": "afaf37e8f48c34c08e5da1f3259a97e08a74654da27949a77a5c2c6d90c4cb19",
+        "bytes": 161311,
+        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "gps": null
+      }
+    },
+    {
+      "id": "badata-food-905",
+      "originalName": "EL PROGRESO",
+      "address": "MONTES DE OCA, MANUEL 1702",
+      "category": "Gastronomía",
+      "lat": -34.64674421,
+      "lon": -58.37294038,
+      "fingerprint": "7744f7bee4b7ae0539460d735a9f1d5ed5580a94eb8c73e5ec36904cf77d7ece",
+      "photo": {
+        "localPath": "/images/ba-data-batches/badata-food-905.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/ElProgresoCentral.jpg/960px-ElProgresoCentral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/de/ElProgresoCentral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ElProgresoCentral.jpg",
+        "commonsTitle": "File:ElProgresoCentral.jpg",
+        "author": "NicolasP3F",
+        "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:NicolasP3F\" title=\"User:NicolasP3F\">NicolasP3F</a>",
+        "uploader": "NicolasP3F",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "photoDate": "2024-05-02 17:44:51",
+        "description": "\"El Progreso\" es un tradicional bar de Barracas, inaugurado en 1942 y ubicado en la intersección de Av. Montes de Oca y California.",
+        "verifiedAt": "2026-11-16T21:39:59.857Z",
+        "evidence": "Fachada inspeccionada: cartel EL PROGRESO entre CAFE y BAR. Commons identifica Montes de Oca y California, esquina confirmada por Turismo; BA Data y ficha oficial coinciden en Montes de Oca 1702.",
+        "identitySources": [
+          "https://turismo.buenosaires.gob.ar/en/node/40999",
+          "https://data.buenosaires.gob.ar/dataset/oferta-establecimientos-gastronomicos"
+        ],
+        "sha256": "07ac9761c93df336b7cdef7550d58c669bb60ecd75ef47c9c09b7131950d8633",
+        "bytes": 165704,
+        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "gps": null
+      }
+    },
+    {
+      "id": "badata-culture-49",
+      "originalName": "BAR EL ESTAÑO 1880",
+      "address": "VALLE, ARISTOBULO DEL 1100, CABA",
+      "category": "Cultura",
+      "lat": -34.635408,
+      "lon": -58.36821,
+      "fingerprint": "48187327cd8e5bbf9c919f32748695efa8b7010c1eaf08b554411a3e9fd6584d",
+      "photo": {
+        "localPath": "/images/ba-data-batches/badata-culture-49.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Caf%C3%A9_El_Esta%C3%B1o_1880_La_Boca_01.JPG/960px-Caf%C3%A9_El_Esta%C3%B1o_1880_La_Boca_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Caf%C3%A9_El_Esta%C3%B1o_1880_La_Boca_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_El_Esta%C3%B1o_1880_La_Boca_01.JPG",
+        "commonsTitle": "File:Café El Estaño 1880 La Boca 01.JPG",
+        "author": "Roberto Fiadone",
+        "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Roberto_Fiadone\" title=\"User:Roberto Fiadone\">Roberto Fiadone</a>",
+        "uploader": "Roberto Fiadone",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "photoDate": "2014-11-22 15:43:38",
+        "description": "This is a photo of an Argentine monument identified by the ID",
+        "verifiedAt": "2026-11-16T21:39:59.857Z",
+        "evidence": "Fachada inspeccionada: cartel EL ESTAÑO 1880, placa de Aristóbulo del Valle y número 1100 visibles. Coincide con BA Data, categoría Commons del establecimiento y ficha de Turismo en Aristóbulo del Valle 1100, La Boca.",
+        "identitySources": [
+          "https://turismo.buenosaires.gob.ar/es/gastronomico/bar-el-esta%C3%B1o-1880",
+          "https://data.buenosaires.gob.ar/dataset/espacios-culturales"
+        ],
+        "sha256": "1625e5879224672e34cb8457b777debab63e30cc3e83311808b27eb27c250304",
+        "bytes": 390661,
+        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "gps": null
+      },
+      "displayCategory": "Gastronomía",
+      "classificationEvidence": "BA Data publica subtipo BAR. Turismo de la Ciudad confirma que El Estaño 1880 es café y restaurante en Aristóbulo del Valle 1100; se conserva la categoría original como sourceCategory."
     }
   ],
   "generatedAt": "2026-11-16T11:30:43.058Z"

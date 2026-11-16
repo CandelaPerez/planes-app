@@ -72,7 +72,7 @@ test('filters combine with categories/search; both sorts cover full results and 
     assert.deepEqual(ids({ zone: 'Zona Norte', category: 'Cultura', placeType: 'Gastronomía' }), []);
     assert.equal(ids({ category: 'Viajes', search: 'iconos' }).length, plans.filter(p=>p.category==='Viajes').length);
     assert.equal(ids({ category: 'Viajes', placeType: 'Sitios turísticos' }).length, plans.filter(p=>p.category==='Viajes').length);
-    assert.equal(ids({ zone: 'Zona Sur' }).length,9);
+    assert.equal(ids({ zone: 'Zona Sur' }).length,12);
     assert.equal(ids({ placeType: 'Museos' }).length,15);
     for (const filters of [{}, { placeType: 'Museos' }, { zone: 'Zona Centro' }]) {
       const expected = results(filters).visibleIdeas.sort((a, b) => a.title.localeCompare(b.title, 'es')).map(plan => plan.id);

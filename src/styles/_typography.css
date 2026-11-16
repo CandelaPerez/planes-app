@@ -72,3 +72,22 @@ select,
 textarea {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
+
+.personal-page-heading h2 {
+  font-family: 'Shadows Into Light', cursive;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.2;
+}
+.personal-plans-section .saved-plan-details {
+  background: #365e91;
+  border-color: #365e91;
+  color: #fff;
+}
+.personal-plans-section .saved-plan-details:hover {
+  background: #294a75;
+  border-color: #294a75;
+  color: #fff;
+}

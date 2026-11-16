@@ -30,7 +30,7 @@ function zoneFor(location, ambaZone = '') {
   return 'CABA';
 }
 const priceRank = (budget) => ({ Gratis: 0, '$': 1, Bajo: 1, '$$': 2, Medio: 2, '$$$': 3, Alto: 3 }[budget] ?? 4);
-const priceLabel = (budget) => budget === 'Gratis' ? 'Gratis' : budget === '$' ? '$ Bajo' : budget === '$$' ? '$$ Medio' : budget === '$$$' ? '$$$ Alto' : budget;
+const priceLabel = (budget) => !budget || budget.normalize('NFD').replace(/\p{Diacritic}/gu, '').trim().toLocaleLowerCase('es') === 'sin informacion' ? null : budget === 'Gratis' ? 'Gratis' : budget === '$' ? '$ Bajo' : budget === '$$' ? '$$ Medio' : budget === '$$$' ? '$$$ Alto' : budget;
 const categoryClass = (category = 'varios') => category.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().replace(/\s+/g, '');
 const budgetLevel = (budget) => !budget || budget.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleLowerCase('es') === 'sin informacion' ? 'Sin información' : priceRank(budget) <= 1 ? 'Bajo' : priceRank(budget) === 2 ? 'Medio' : priceRank(budget) === 3 ? 'Alto' : 'Sin información';
 const ratingDescriptions = ['No me gustó', 'Estuvo bien, pero no fue lo que esperaba', 'Estuvo bien', 'Me gustó mucho', 'Fue una experiencia excelente'];

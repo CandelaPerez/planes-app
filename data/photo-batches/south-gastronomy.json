@@ -1,0 +1,368 @@
+{
+  "version": 1,
+  "verifiedAt": "2026-11-16T21:39:59.857Z",
+  "previousPlans": [
+    {
+      "id": "badata-food-2554",
+      "sha256": "7c46100ca96cd2d64a783566ddbdf989717e236c256e939794cedfcf8f809672"
+    },
+    {
+      "id": "badata-food-1362",
+      "sha256": "7527a09e0047ba47d3e2c9186a30df3002b570ac5965595022d5bb3eb4008b52"
+    },
+    {
+      "id": "badata-food-139",
+      "sha256": "6f7673e4677af0f8c344ee2545c065e5abf7db920cad4e2dc2e6b89de9a0e9e5"
+    },
+    {
+      "id": "badata-food-1985",
+      "sha256": "05533d9b643b2e6d4fe4d8c423e0a68ba24778a6ee16b3065171969e5152313c"
+    },
+    {
+      "id": "badata-food-2567",
+      "sha256": "7d3c824642a876fe3c992a64c6cb1dc9eb0bfbca16c104100a71c2af5faec77a"
+    },
+    {
+      "id": "badata-food-2231",
+      "sha256": "aaa35c3f198d532590f617d6954714d357915ccc1c0b5a4604f972b1468f469a"
+    },
+    {
+      "id": "badata-food-565",
+      "sha256": "2cd5ea2e65906795efd7f668eb66d8a59ad9ecd4701950a93ff2b4030593971d"
+    },
+    {
+      "id": "badata-food-170",
+      "sha256": "db6bec37e8fda7ea798a12343d0c81daf848d4cb307dd3add8a2ab77f604bbec"
+    },
+    {
+      "id": "badata-food-947",
+      "sha256": "4f6791bf64adae572d1f7a3c6e2dc93170c34ea2265a5e725459626196baf9ab"
+    },
+    {
+      "id": "badata-food-2296",
+      "sha256": "757f945888d74fb10be60f467fad5575fe43943b692141776c70486b654566ee"
+    },
+    {
+      "id": "badata-food-1780",
+      "sha256": "6baf4614ca021a4fae28a17b893030a82b98083159c5fa283e615004fc13a173"
+    },
+    {
+      "id": "badata-food-638",
+      "sha256": "32e1cb8b177a1436ab57371d746c7ad649b575cb5bd61c674071bd608fb9402e"
+    },
+    {
+      "id": "badata-food-2379",
+      "sha256": "f7ad511d75c6fcae0049aa20c951bb2c18a5f83eb05bad1cb5dee92d646662a9"
+    },
+    {
+      "id": "badata-culture-30",
+      "sha256": "3ef55520d542e737b08628889070addf49341c4e048f7a3ab3b71cff64a69c90"
+    },
+    {
+      "id": "badata-culture-71",
+      "sha256": "c32e42a9d4215a06f3088dfec5dacea3ebec32cb8a4ef6607020d2f6e239d8bd"
+    },
+    {
+      "id": "badata-culture-76",
+      "sha256": "c2eaf182b2237082afa749cf7a3560cf23d18e333a0d1b87aa3f3564ce22633d"
+    },
+    {
+      "id": "badata-culture-78",
+      "sha256": "7acc40b6947a1e42c37854a42cf0e772ed06b61d149c9abe80c1c52a0c3ee5b4"
+    },
+    {
+      "id": "badata-culture-82",
+      "sha256": "01682254a013f219a25334adfcc0d9035847539a5cd3d6400f667c9d919c32b6"
+    },
+    {
+      "id": "badata-culture-189",
+      "sha256": "998e18d834ff11260eba67e7f5746a7d83a88a914094c7e5c5e234b9f7306b6a"
+    },
+    {
+      "id": "badata-culture-201",
+      "sha256": "d7121c86f318cb9885c0557a3494e0fea6b4314b78d519277255fa0b607f93e5"
+    },
+    {
+      "id": "badata-culture-1103",
+      "sha256": "f35b3dd993be60aa12f197e8ff0b0fc3dbf9d1822e3c02051f80dde5796580bd"
+    },
+    {
+      "id": "badata-culture-1379",
+      "sha256": "1816ada38e4e134086837accef5af5a0d720344c0d3b70aadd32fcb960c011a2"
+    },
+    {
+      "id": "badata-culture-1758",
+      "sha256": "deb152bd471257a1f55d51a2c87ca4c7d46ee810e434c8396c43e8f61cc36d93"
+    },
+    {
+      "id": "badata-culture-1985",
+      "sha256": "0bbee51bc037c3ae960cf0ff1cb6c7e67c0dcbade467252704c3cddee0e8f0e5"
+    },
+    {
+      "id": "badata-culture-2467",
+      "sha256": "0b8dae4996fabd5b312e016a978e4a1d4a66a2cde182c012d1000b614f66f6f6"
+    },
+    {
+      "id": "badata-culture-2545",
+      "sha256": "9368f89ed4620ae5c8749d3fdfc1f502f72036a13ab03a6da773890cca1e6172"
+    },
+    {
+      "id": "badata-culture-2568",
+      "sha256": "a2733a3879cdf66e52fdf85a07ce917ca13e0915baad10e1486376cd385e62e1"
+    },
+    {
+      "id": "badata-culture-2578",
+      "sha256": "b6955b3bcabae25d65722c5c5ea856c34d4499fc098d51532720af692deabcca"
+    },
+    {
+      "id": "badata-culture-2583",
+      "sha256": "f08bb4ff778ccc3ce58574e718d2bbf4e85513eec946cce5cc45ae23713c2180"
+    },
+    {
+      "id": "badata-culture-2599",
+      "sha256": "c1c570d58db1e939bb6805763ec0628be229063aac7e7ffa2c8792ff3b364576"
+    },
+    {
+      "id": "badata-culture-2600",
+      "sha256": "2d4a03f6ac896f8f55c26b48a31dfcebf7277033f04d54b7f5de91b32436fa5d"
+    },
+    {
+      "id": "badata-culture-2601",
+      "sha256": "90e0e5a8efa4cd38818018c2e79fa35f77630585c951a50452f35ed68fa03e18"
+    },
+    {
+      "id": "badata-culture-2603",
+      "sha256": "0306601356a197ec06bc36dcf6631d34b32aaebdc0ac6ddea6e9fe61d50b3437"
+    },
+    {
+      "id": "badata-culture-2674",
+      "sha256": "f6c731d255f9111170c4966ec8c7e980ed5c52c844b1d8d64f0c08c0d1971f9e"
+    },
+    {
+      "id": "badata-culture-2675",
+      "sha256": "f37e2691ddee2af3c098225b9f5f0b518709b13866f58c13dc1ac19cf6aee895"
+    },
+    {
+      "id": "badata-culture-2677",
+      "sha256": "b62c32f094081a9018afa91dd8377c7b78f074b3c946b62892297fec169a01be"
+    },
+    {
+      "id": "badata-culture-2688",
+      "sha256": "7b06698c8e1ad0d19456a48e3598d0f1d285a0eb38de5a65c3ee2086afb2a35f"
+    },
+    {
+      "id": "badata-culture-2694",
+      "sha256": "7db954f19f362a091fce3b69950a826ba41a22346bc73252fd3042ae7d1337c2"
+    },
+    {
+      "id": "badata-culture-2711",
+      "sha256": "102f4433ce1fe38f362f48059b25f81da94c4ffb84088f87212031bb4b303704"
+    },
+    {
+      "id": "badata-culture-2717",
+      "sha256": "f8f7f5b2195a3ca85e77e0815e8a1ae83a8dce2e48b1bb056017ba5fe6a34204"
+    },
+    {
+      "id": "badata-culture-2989",
+      "sha256": "b9bf70a736eab1b616e2ac568435b39ddb2e9a4b0da2c4ae59afc1ae1da17ed4"
+    },
+    {
+      "id": "badata-green-9",
+      "sha256": "eb46a96530a68e91b8d37933f8829dd438a7c2491bec488ca4ad0fb8cd1e527c"
+    },
+    {
+      "id": "badata-green-171",
+      "sha256": "887ced07e79b0127c3ac13a7e5e6a04ccca38623b510931e7cc0aabfbd2d5c2c"
+    },
+    {
+      "id": "badata-green-610",
+      "sha256": "9fb1b9a2af61f1f68a4efbbbfa194624094187105acd45960e98e5b19272e8a3"
+    },
+    {
+      "id": "badata-green-813",
+      "sha256": "99b8c2210c41a28caad5f12000ea17ba001404c8d301885b1e8af812a11aa6bc"
+    },
+    {
+      "id": "badata-green-871",
+      "sha256": "f78e729ecd0bdea4fad9fcd308532375b1153d7e3ba922f3d6b583a0ab62feda"
+    },
+    {
+      "id": "badata-green-872",
+      "sha256": "eb5a0886fd3de6f965f3a20377a0b2b90cd344b028aff62dd8593632604fcd29"
+    },
+    {
+      "id": "badata-green-873",
+      "sha256": "ca4e2ae3a7f521568db4999e920f5d92b6a85e50e1a997ff9a5c2fb00153053c"
+    },
+    {
+      "id": "badata-green-874",
+      "sha256": "a90234d2b1d9ce150f759358479cc273bc89ef64960fb067470021136a504e7c"
+    },
+    {
+      "id": "badata-green-880",
+      "sha256": "a423f937d8b9d00acc88030a04282310545fda3b3fb745f4fb044fb46fc523af"
+    },
+    {
+      "id": "badata-green-882",
+      "sha256": "22005f595de6862c73fa9b3fe3a3c0f5263d9bd297585c88f50d4a8925f17764"
+    },
+    {
+      "id": "badata-green-883",
+      "sha256": "f16253de24910c32f8ee0c1334a0a4714ec372d1b789d54aeb5afc1930e96061"
+    },
+    {
+      "id": "badata-green-885",
+      "sha256": "a1c631b59beb5947c5a86a68a92227bbdc7d6dbbf23dfa39e4f7bd0dec3c546e"
+    },
+    {
+      "id": "badata-green-887",
+      "sha256": "e825a31935bcba23242055597bdcfa13193e7c358213c58771fe3a97fe4fa3f2"
+    },
+    {
+      "id": "badata-green-906",
+      "sha256": "da64ccf134bcfc06db2c72c0d24604bc183d3831305c217032b02559db430c36"
+    },
+    {
+      "id": "badata-green-943",
+      "sha256": "1befaa55854c044a06edc5790bebb3d8d8717c6016494b9d2d65cf9e49a13ad1"
+    },
+    {
+      "id": "badata-green-1104",
+      "sha256": "e6d2287f70e486ecad5c09a3b2f6cd46393907c26780d69be55193aeefbaeeca"
+    },
+    {
+      "id": "badata-green-1106",
+      "sha256": "468e30af064b71d064104712a425572dbbbc2fb08e5c182600a7e58ff8258461"
+    },
+    {
+      "id": "badata-green-1274",
+      "sha256": "2bf97b40f576fbdb7390ac6beb5cdb467d5118565ed303dfc1447d0eb68b951a"
+    },
+    {
+      "id": "badata-green-1312",
+      "sha256": "5eb2abb52f73944be47b1d84eb107d52fd4bf7d4b383f333d31e09b1a47e28b6"
+    },
+    {
+      "id": "badata-green-1330",
+      "sha256": "765eb44ef8d9f56110c7606a66858753b7250604457114a7fa95ee6de0668cc1"
+    },
+    {
+      "id": "badata-green-1444",
+      "sha256": "c0e29898f4bb2cd04ee3c2384602801936aa866498209d8e4221fb299c3619e3"
+    },
+    {
+      "id": "badata-green-1490",
+      "sha256": "b8c3db9a7919a5f492afae1132613fb65401e7fdc15337686dba56f95e3c9275"
+    },
+    {
+      "id": "badata-green-1529",
+      "sha256": "a6aa8c675c064353848644c05ba6a264b94b28c8f4009655d560a4451842d31a"
+    },
+    {
+      "id": "tourism-wikidata-q478926",
+      "sha256": "d123d4af06ccece5413be50142843289a1cf840bc4dffaea379a718475c8d09e"
+    },
+    {
+      "id": "tourism-wikidata-q2336867",
+      "sha256": "b2041bfafb6bdab37eddd29ccc7c4858c699c43b8122ea4064a0bbb9bc5cb21f"
+    },
+    {
+      "id": "tourism-wikidata-q499855",
+      "sha256": "446013a492853699de076bae00081fc9a8f6ddf92ff166c1a440a39bbd50b4bd"
+    },
+    {
+      "id": "tourism-wikidata-q646142",
+      "sha256": "ba1acd2300c6e54723d5998577fee60eb6134ecffe015ba8c56dbb0c387c533a"
+    },
+    {
+      "id": "tourism-wikidata-q967929",
+      "sha256": "db25efab7bf6230201dc02af7b5bcc512c8e5e5ff3ae7f56fe07918171583653"
+    },
+    {
+      "id": "tourism-wikidata-q570385",
+      "sha256": "1e3deee55f1baa63c6e219ca3b77c6dbd8e8544ea8d81cc49fc14ba7c2ce34eb"
+    },
+    {
+      "id": "tourism-wikidata-q831389",
+      "sha256": "5a9fa7098994c2339a7e101412ab238e7010ea0a10ece450efd03632d627346e"
+    },
+    {
+      "id": "tourism-wikidata-q1029566",
+      "sha256": "6a88159b28ae52b013302d19f3635a7caf61116afb6f2e65b319b14188456655"
+    },
+    {
+      "id": "tourism-wikidata-q831322",
+      "sha256": "ec0dda994c42dda44aa18bc7cc347bcc22e7e6c0bd686292e64210ae98f5f8de"
+    },
+    {
+      "id": "tourism-wikidata-q1138028",
+      "sha256": "7ae75ba616985711a5e395b88ccc800df836f57fc7481aecdf37e978863e56ff"
+    },
+    {
+      "id": "tourism-wikidata-q4579815",
+      "sha256": "83ef56eb8c99dc25512e4e74aeec753ce934bc879e5ca66b77b6209ba75810b4"
+    },
+    {
+      "id": "tourism-wikidata-q3361112",
+      "sha256": "77f5b60e34d47ae23adaf4ae430ec8dba2f1a3d85313b8c7fd938fa1eb33b28b"
+    },
+    {
+      "id": "tourism-wikidata-q2886930",
+      "sha256": "e5dc15e69f2d3c063e50c3bcb82b8c1aa7e659373e0cd268b8eb7eb0d2b3693e"
+    },
+    {
+      "id": "tourism-wikidata-q1668230",
+      "sha256": "40ebe84775e42dda0e6cc7e6c11ccfcf5f9ab6d19a0f0751eda6ae8356a9fe4d"
+    },
+    {
+      "id": "tourism-wikidata-q263127",
+      "sha256": "94ece5e07135a95386600b58ed5f613c32f1044737069a3bde4cb32b8ee9f4a8"
+    },
+    {
+      "id": "tourism-wikidata-q8243908",
+      "sha256": "9e14d283c0de50be9316dd6ab2fe151eb67773f9d2a3393c2426672ee60415b5"
+    },
+    {
+      "id": "tourism-wikidata-q5410626",
+      "sha256": "25926b90d3a143671f7acd3e501255c9ef952115fc1a072dd0401cd18a0d09dd"
+    }
+  ],
+  "additions": [
+    {
+      "id": "badata-food-913",
+      "name": "LA FLOR DE BARRACAS",
+      "address": "SUAREZ AV. 2095",
+      "barrio": "Barracas",
+      "identitySources": [
+        "https://turismo.buenosaires.gob.ar/en/atractivo/la-flor-de-barracas",
+        "https://data.buenosaires.gob.ar/dataset/oferta-establecimientos-gastronomicos"
+      ],
+      "commonsTitle": "File:Café histórico La Flor de Barracas.jpg",
+      "sha256": "afaf37e8f48c34c08e5da1f3259a97e08a74654da27949a77a5c2c6d90c4cb19"
+    },
+    {
+      "id": "badata-food-905",
+      "name": "EL PROGRESO",
+      "address": "MONTES DE OCA, MANUEL 1702",
+      "barrio": "Barracas",
+      "identitySources": [
+        "https://turismo.buenosaires.gob.ar/en/node/40999",
+        "https://data.buenosaires.gob.ar/dataset/oferta-establecimientos-gastronomicos"
+      ],
+      "commonsTitle": "File:ElProgresoCentral.jpg",
+      "sha256": "07ac9761c93df336b7cdef7550d58c669bb60ecd75ef47c9c09b7131950d8633"
+    },
+    {
+      "id": "badata-culture-49",
+      "name": "BAR EL ESTAÑO 1880",
+      "address": "VALLE, ARISTOBULO DEL 1100, CABA",
+      "barrio": "BOCA",
+      "identitySources": [
+        "https://turismo.buenosaires.gob.ar/es/gastronomico/bar-el-esta%C3%B1o-1880",
+        "https://data.buenosaires.gob.ar/dataset/espacios-culturales"
+      ],
+      "commonsTitle": "File:Café El Estaño 1880 La Boca 01.JPG",
+      "sha256": "1625e5879224672e34cb8457b777debab63e30cc3e83311808b27eb27c250304"
+    }
+  ]
+}
