@@ -31,7 +31,7 @@ test('129 original ideas render, filter and retain valid detail fields without e
     assert.equal(new Set(CATALOG.map(({ id }) => id)).size, 129);
     assert.ok(CATALOG.every((plan) => plan.title && plan.description && plan.category && plan.location && plan.budget && plan.image));
     const html = renderToString(createElement(App));
-    assert.match(html.replaceAll('<!-- -->', ''), /129 ideas/);
+    assert.match(html.replaceAll('<!-- -->', ''), /0 planes con fotografía real verificada/);
     assert.ok(!/OpenStreetMap|Overpass|Planes para hacer hoy|api-preview/.test(html));
     function Results({ search = '', category = 'Todas', zone = 'Todas', budget = 'Todos' }) {
       const { visibleIdeas } = usePlanFilters({ catalog: CATALOG, search, category, zone, budget, sortBy: 'alpha', ratings: [], planPhotos: {} });

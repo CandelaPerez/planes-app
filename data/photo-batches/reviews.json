@@ -1,58 +1,80 @@
 [
   {
     "id": "badata-food-2554",
-    "file": "File:Bar Britanico Buenos Aires.JPG"
+    "file": "File:Bar Britanico Buenos Aires.JPG",
+    "evidence": "Inspección visual: cartel Bar Británico y fachada. La descripción Commons identifica Brasil 399, San Telmo, exactamente la dirección BA Data.",
+    "approvedSha256": "106825345cb90cb84ce56f789643826675fe8e9d0ac9da00ffb77f547bf59c55"
   },
   {
     "id": "badata-food-2567",
-    "file": "File:Bar El Federal, Carlos Calvo 599.jpg"
+    "file": "File:Bar El Federal, Carlos Calvo 599.jpg",
+    "evidence": "Inspección visual: cartel El Federal en interior. La descripción Commons identifica Carlos Calvo 599, Buenos Aires, exactamente la dirección BA Data.",
+    "approvedSha256": "839442f295b145a5249f26f7102663495c3a07d1675efc2c71ca77c732a7d214"
   },
   {
     "id": "badata-food-2231",
-    "file": "File:Gato negro.jpg"
+    "file": "File:Gato negro.jpg",
+    "evidence": "Inspección visual: interior de especiería. La descripción Commons identifica El Gato Negro, Corrientes 1669, Buenos Aires, exactamente el nombre y dirección BA Data. La identidad depende de la ficha, no solamente de los objetos visibles.",
+    "approvedSha256": "03a251f13838d77f65bca9e4f3e4553e4bd69db6211c76aa5d672c222011bb32"
   },
   {
     "id": "badata-food-1780",
-    "file": "File:La biela.JPG"
+    "file": "File:La biela.JPG",
+    "evidence": "Inspección visual: cartel La Biela y fachada. Ficha identifica La Biela de Recoleta. GPS -34.587722,-58.390833 junto a BA Data -34.58783506,-58.39075439, Quintana 600.",
+    "approvedSha256": "22a0f3c825e257b4e06f126215eeddc5ad302c4e90a7a5c8a9382cb7f8957a8e"
   },
   {
     "id": "badata-food-2379",
-    "file": "File:Bar Los Galgos.jpg"
+    "file": "File:Bar Los Galgos.jpg",
+    "evidence": "Inspección visual: cartel Los Galgos y esquina. Ficha identifica Los Galgos, San Nicolás, Buenos Aires. GPS -34.603219,-58.392553 a unos 34 metros del registro Lavalle 1791.",
+    "approvedSha256": "33e5850255200b46abb517348b1576112858be1bd5a750632e9baf564ee2d5d9"
   },
   {
     "id": "badata-food-947",
-    "file": "File:Cartel Esquina Homero Manzi.jpg"
+    "file": "File:Cartel Esquina Homero Manzi.jpg",
+    "evidence": "Inspección visual: cartel Esquina Homero Manzi junto a nomenclador de avenida Boedo. Ficha identifica el bar en Boedo, Buenos Aires. Compatible con San Juan 3601 publicado por BA Data; no se atribuye GPS ausente.",
+    "approvedSha256": "a3c07797e2d21fa4df2ef2cd3b57a09b8947dc43aff7afdaa79e2321aeffdeae"
   },
   {
     "id": "badata-culture-2989",
-    "file": "File:Teatro Colon-rear.jpg"
+    "file": "File:Teatro Colon-rear.jpg",
+    "evidence": "Inspección visual de fachada posterior del Teatro Colón. Ficha identifica Teatro Colón, Buenos Aires. GPS -34.601083,-58.383083 a unos 59 metros del registro BA Data; fachada posterior del mismo edificio, no otro teatro.",
+    "approvedSha256": "5c09d6ed108ece2d3903b9c35abb8bb397a227d3307a10771ac130a640ef4661"
   },
   {
     "id": "badata-culture-2675",
-    "file": "File:Cabildo de Buenos Aires 2023.jpg"
+    "file": "File:Cabildo de Buenos Aires 2023.jpg",
+    "evidence": "Inspección visual: edificio del Cabildo de Buenos Aires y torre característica frente a Plaza de Mayo. Ficha identifica Buenos Aires Cabildo Building. Corresponde al museo del Cabildo publicado en Bolívar 65. Sin GPS en la ficha.",
+    "approvedSha256": "293918e7fc227c06d20aa681a4c875cf9fd2d04dd61880c19442f43e17f334b2"
   },
   {
     "id": "badata-culture-2717",
-    "file": "File:Planetario y su alrededor.jpg"
+    "file": "File:Planetario y su alrededor.jpg",
+    "evidence": "Inspección visual: cúpula y edificio del Planetario Galileo Galilei junto al lago. Ficha indica vista del Planetario desde avenida Sarmiento. GPS -34.569844,-58.410348 del punto de toma, a unos 178 metros del registro del edificio.",
+    "approvedSha256": "55071bc6ee9434da824aba96d9bebf597bbaf89cbbb13e78132574fb1844f344"
   },
   {
     "id": "badata-culture-2578",
-    "file": "File:MACN24021402.JPG"
-  },
-  {
-    "id": "badata-culture-1379",
-    "file": "File:Usina del arte buenosaires.jpg"
+    "file": "File:MACN24021402.JPG",
+    "evidence": "Inspección visual de edificio y acceso del museo. Ficha identifica explícitamente Museo Argentino de Ciencias Naturales Bernardino Rivadavia dentro de Parque Centenario, Caballito, Buenos Aires; coincide con nombre y entorno del registro Ángel Gallardo 490. Sin GPS publicado.",
+    "approvedSha256": "d68af25b67a45e0672808ef60a6fb24f72000fa66b05a0da7a80ee02f93dc33c"
   },
   {
     "id": "badata-culture-1985",
-    "file": "File:Yenny Ateneo Grand Splendid.jpg"
+    "file": "File:Yenny Ateneo Grand Splendid.jpg",
+    "evidence": "Inspección visual: carteles Ateneo y Grand Splendid en fachada. Ficha identifica librería Ateneo Grand Splendid, Santa Fe 1860, Buenos Aires, dirección exacta BA Data. GPS -34.595739,-58.394253 junto al registro.",
+    "approvedSha256": "61f809086d6dc37547b7e179053933863019c5798e0a100b7b9b86bed585fb82"
   },
   {
     "id": "badata-culture-2467",
-    "file": "File:Palacio Barolo dramatic view.jpg"
+    "file": "File:Palacio Barolo dramatic view.jpg",
+    "evidence": "Inspección visual de fachada y torre del Palacio Barolo. Ficha identifica Palacio Barolo desde avenida de Mayo. GPS -34.609279,-58.38561 junto al registro BA Data de avenida de Mayo 1368.",
+    "approvedSha256": "4f5f284c07d6f597a87a054e9eca092dd58f6330bea7d57a6b124b1c0988bbfb"
   },
   {
     "id": "badata-green-880",
-    "file": "File:Parque Lezama 2019.jpg"
+    "file": "File:Parque Lezama 2019.jpg",
+    "evidence": "Inspección visual del paseo ajardinado y balaustradas. Ficha identifica Parque Lezama, San Telmo, Buenos Aires; coincide con el espacio verde BA Data delimitado por Brasil, Defensa, Paseo Colón y Martín García. Sin GPS publicado.",
+    "approvedSha256": "10b906a35e60e6eed6a4d871987e1fd693085a76794dd7bc58988fc17d092221"
   }
 ]

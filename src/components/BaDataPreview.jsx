@@ -2,7 +2,7 @@ import PlacePhotoCredit from './PlacePhotoCredit';
 import { useEffect, useMemo, useState } from 'react';
 import { loadBaDataPreview } from '../services/baData';
 import usePlanFilters from '../hooks/usePlanFilters';
-import { ideaImageFallback, categoryClass, priceLabel } from '../utils/planUtils';
+import { categoryClass, priceLabel } from '../utils/planUtils';
 
 const CATEGORIES = ['Todas', 'Gastronomía', 'Cultura', 'Aire Libre', 'Viajes'];
 const NO_RATINGS = [];
@@ -37,11 +37,11 @@ export default function BaDataPreview() {
     <header className="navbar"><button type="button" className="nav-brand" onClick={() => window.location.assign('/')}><span className="brand-badge">PH</span><h1>Por Hacer</h1></button><nav><a className="btn btn-secondary" href="/">Volver al catálogo original</a></nav></header>
     <main className="main-content">
       <div className="preview-banner" role="status"><strong>Vista previa BA Data</strong><span>Solo lectura. Tus 129 planes originales y tus datos de Firebase siguen intactos.</span></div>
-      <div className="section-header"><h2>Descubrir planes · BA Data</h2><p>{data ? `${catalog.length.toLocaleString('es-AR')} registros oficiales con nombre y ubicación verificable.` : 'Cargando la copia local de los recursos oficiales…'}</p></div>
+      <div className="section-header"><h2>Descubrir planes · BA Data</h2><p>{data ? `${catalog.length.toLocaleString('es-AR')} planes con fotografía real verificada.` : 'Cargando la copia local de los recursos oficiales…'}</p></div>
       {error && <div className="app-alert error" role="alert">{error} Podés volver al catálogo original.</div>}
       {data && <>
         <div className="preview-banner"><strong>Fechas de los archivos, no de cada establecimiento</strong><span>{data.sources.map((source) => `${source.category}: ${date(source.resourceLastModified)}`).join(' · ')}. La fecha de descarga no acredita que el lugar siga abierto. Viajes contiene paradas del bus turístico; no ubicaciones de cada atractivo cercano.</span></div>
-        <div className="category-filter" role="group" aria-label="Filtrar por categoría">{CATEGORIES.map((item) => <button key={item} type="button" className={`category-filter-btn ${category === item ? 'active' : ''}`} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}</div>
+        <div className="category-filter" role="group" aria-label="Filtrar por categoría">{CATEGORIES.filter((item) => item === 'Todas' || catalog.some((plan) => plan.category === item)).map((item) => <button key={item} type="button" className={`category-filter-btn ${category === item ? 'active' : ''}`} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}</div>
         <div className="filter-bar discovery-filters">
           <input aria-label="Buscar por nombre o ubicación" type="search" placeholder="Buscar lugar o barrio…" value={search} onChange={(event) => setSearch(event.target.value)} />
           <select aria-label="Filtrar por zona" value={zone} onChange={(event) => setZone(event.target.value)}><option value="Todas">Todas las zonas</option>{zones.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}</select>
@@ -50,7 +50,7 @@ export default function BaDataPreview() {
         </div>
         <p className="photo-credit" role="status">{visibleIdeas.length.toLocaleString('es-AR')} resultados. Fuente: BA Data, Gobierno de la Ciudad de Buenos Aires · <a href="https://creativecommons.org/licenses/by/2.5/ar/" target="_blank" rel="noreferrer">CC BY 2.5 AR</a>.</p>
         {!visibleIdeas.length ? <div className="empty-state"><h3>No hay resultados para estos filtros</h3><p>Los recursos no publican presupuestos. No se asignaron precios estimados.</p></div> : <div className="cards-grid">{visibleIdeas.slice(0, count).map((place) => <article className="plan-card" key={place.id}>
-          <div className="card-img-wrapper"><img className="card-img" src={place.image} alt={place.originalName || place.title} loading="lazy" onError={(event) => ideaImageFallback(event, place)} /></div>
+          <div className="card-img-wrapper"><img className="card-img" src={place.image} alt={place.originalName || place.title} loading="lazy" onError={() => { setData((previous) => ({ ...previous, plans: previous.plans.filter((plan) => plan.id !== place.id) })); setError("No se pudo cargar una fotografía; se excluyó el plan afectado."); }} /></div>
           <div className="card-content"><div className="card-meta"><span className={`badge badge-${categoryClass(place.category)}`}>{place.category}</span><span className="budget-badge">{priceLabel(place.budget)}</span></div>
             <h3 className="card-title">{place.title}</h3>{place.subtype && <p className="card-desc">{place.subtype}</p>}
             <span className="photo-credit"><PlacePhotoCredit plan={place} /></span>

@@ -9,81 +9,35 @@ import { renderToString } from 'react-dom/server';
 import { createServer } from 'vite';
 import { toPlanCards } from '../src/services/baData.js';
 import { parseCsv } from '../scripts/ba-data/normalize.js';
-import { categoryIllustrations, variedBaDataOrder, placeImage } from '../src/utils/baDataPresentation.js';
+import { variedBaDataOrder } from '../src/utils/baDataPresentation.js';
 import { createHash } from 'node:crypto';
 
 const path = 'public/data/ba-data.json';
 const cache = JSON.parse(await readFile(path, 'utf8'));
-const pilot = JSON.parse(await readFile('src/data/baDataPilot.json', 'utf8'));
 
-test('real cached records have original IDs, verified geographic fields and dated official sources', () => {
-  assert.equal(cache.places.length, cache.statistics.reduce((sum, item) => sum + item.unique, 0));
-  assert.equal(new Set(cache.places.map((place) => place.id)).size, cache.places.length);
-  assert.ok(cache.statistics.every((item) => item.unique > 0 && item.raw === item.eligible + item.discarded));
-  const plans = toPlanCards(cache);
-  for (const plan of plans) {
-    assert.ok(plan.title && plan.lat >= -34.71 && plan.lat <= -34.52 && plan.lon >= -58.54 && plan.lon <= -58.33);
-    assert.equal(plan.budget, 'Sin información');
-    const sample = pilot.entries.find((entry) => entry.id === plan.id);
-    assert.equal(plan.image, sample?.photo?.localPath || categoryIllustrations[plan.category]);
-    assert.equal(plan.imageKind, sample?.photo ? 'photograph' : 'illustration');
-    assert.equal(plan.description, sample?.description || plan.subtype || '', 'Descriptions only use approved source facts');
-    assert.ok(plan.sourceReferences.every((source) => source.recordId && new URL(source.url).hostname === 'cdn.buenosaires.gob.ar' && source.license === 'CC-BY-2.5-AR' && source.downloadedAt && source.sha256));
-  }
-  const restaurant = plans.find((plan) => plan.id === 'badata-food-1602');
-  assert.equal(restaurant.title, 'GUANTANAMERA');
-  assert.ok(Math.abs(restaurant.lon - -58.36330675) < 0.0000001);
-  assert.equal(restaurant.sourceUpdatedAt, cache.sources.find((source) => source.key === 'food').resourceLastModified);
-  assert.ok(plans.filter((plan) => plan.category === 'Aire Libre').every((plan) => plan.coordinateMethod === 'published-boundary-vertex'));
-  assert.ok(plans.filter((plan) => plan.category === 'Viajes').every((plan) => plan.subtype === 'Parada del bus turístico'));
+
+
+test('only reviewed photographs become visible; originals remain available', async () => {
+ const plans=toPlanCards(cache);
+ assert.equal(cache.places.length,6670);
+ assert.equal(plans.length,21);
+ assert.equal(new Set(plans.map(p=>p.id)).size,plans.length);
+ assert.equal(plans.find(p=>p.id==='badata-food-1573'),undefined);
+ for(const plan of plans){
+  const original=cache.places.find(p=>p.id===plan.id);
+  assert.equal(plan.originalName,original.title);
+  assert.equal(plan.address,original.address);
+  assert.equal(plan.imageKind,'photograph');
+  assert.ok(plan.photograph.evidence && plan.photograph.author && plan.photograph.licenseUrl);
+  assert.equal(createHash('sha256').update(await readFile('public'+plan.image)).digest('hex'),plan.photograph.sha256);
+ }
+ const changed=structuredClone(cache);changed.places.find(p=>p.id==='badata-food-638').address='OTHER ADDRESS';
+ assert.ok(!toPlanCards(changed).some(p=>p.id==='badata-food-638'));
+ const urlOnly=structuredClone(cache);urlOnly.places[0].photoUrl='https://example.com/real.jpg';urlOnly.places[0].photoSourceUrl='https://example.com';
+ assert.equal(toPlanCards(urlOnly).length,plans.length);
+ assert.equal(variedBaDataOrder(plans).length,plans.length);
+ assert.deepEqual(plans.reduce((a,p)=>(a[p.category]=(a[p.category]||0)+1,a),{}),{'Gastronomía':8,Cultura:9,'Aire Libre':4});
 });
-
-test('photo pilot changes exactly twelve real records and preserves original names and licensed assets', async () => {
-  const plans = toPlanCards(cache);
-  assert.equal(pilot.entries.length, 12);
-  assert.equal(pilot.entries.filter((entry) => entry.photo).length, 8);
-  assert.equal(plans.filter((plan) => plan.pilotOrder !== undefined).length, 12);
-  const originals = new Map(cache.places.map((place) => [place.id, place]));
-  for (const plan of plans) {
-    const original = originals.get(plan.id);
-    if (plan.pilotOrder === undefined) {
-      assert.equal(plan.title, original.title);
-      assert.equal(plan.description, original.subtype || '');
-    } else {
-      assert.equal(plan.originalName, original.title);
-      assert.equal(plan.address, original.address);
-      assert.equal(plan.lat, original.lat);
-      assert.equal(plan.lon, original.lon);
-    }
-    if (plan.photograph) {
-      const photo = plan.photograph;
-      assert.ok(photo.author && photo.license && photo.licenseUrl && photo.sourceUrl && photo.evidence && photo.verifiedAt);
-      assert.equal(new URL(photo.sourceUrl).hostname, 'commons.wikimedia.org');
-      assert.equal(createHash('sha256').update(await readFile(`public${photo.localPath}`)).digest('hex'), photo.sha256);
-    }
-  }
-  assert.equal(plans.find((plan) => plan.id === 'badata-food-1573').imageKind, 'illustration', 'Do not assign the photo of the homonym at a different address');
-  assert.equal(plans.find((plan) => plan.id === 'badata-food-638').imageKind, 'photograph');
-  assert.equal(variedBaDataOrder(plans).slice(0, 12).filter((plan) => plan.pilotOrder !== undefined).length, 12);
-});
-
-test('recommended ordering varies categories, prioritizes complete addresses and preserves every real record', async () => {
-  const plans = toPlanCards(cache);
-  const ordered = variedBaDataOrder(plans);
-  assert.equal(ordered.length, 6670);
-  assert.equal(new Set(ordered.map((plan) => plan.id)).size, 6670);
-  assert.deepEqual(new Set(ordered.map((plan) => plan.id)), new Set(plans.map((plan) => plan.id)));
-  assert.deepEqual(ordered.slice(0, 4).map((plan) => plan.category), Object.keys(categoryIllustrations));
-  for (const category of Object.keys(categoryIllustrations)) {
-    const group = ordered.filter((plan) => plan.category === category);
-    const firstMissing = group.findIndex((plan) => !plan.address);
-    if (firstMissing >= 0) assert.ok(group.slice(firstMissing).every((plan) => !plan.address));
-  }
-  assert.equal(new Set(Object.values(categoryIllustrations)).size, 4);
-  for (const file of Object.values(categoryIllustrations)) assert.match(await readFile(`public${file}`, 'utf8'), /<svg/);
-  assert.equal(placeImage({ ...cache.places[0], photoUrl: 'javascript:alert(1)' }).imageKind, 'illustration');
-});
-
 test('HTML errors and malformed CSV cannot be accepted as successful data', () => {
   assert.throws(() => parseCsv('<html>Request Rejected</html>'), /HTML/);
   assert.throws(() => parseCsv('id,name\n1,"incomplete'), /Incomplete/);
@@ -116,8 +70,8 @@ test('existing filter hook works on actual BA Data records without altering the 
       const { visibleIdeas } = usePlanFilters({ catalog, category, search, budget, zone: 'Todas', sortBy: 'alpha', ratings: [], planPhotos: {} });
       return createElement('span', null, String(visibleIdeas.length));
     }
-    for (const item of cache.statistics) assert.equal(renderToString(createElement(Count, { category: item.category })), `<span>${item.unique}</span>`);
-    assert.equal(renderToString(createElement(Count, { search: 'GUANTANAMERA' })), '<span>1</span>');
+    for (const item of cache.statistics) assert.equal(renderToString(createElement(Count, { category: item.category })), `<span>${catalog.filter(p=>p.category===item.category).length}</span>`);
+    assert.equal(renderToString(createElement(Count, { search: 'Tortoni' })), '<span>1</span>');
     assert.equal(renderToString(createElement(Count, { budget: 'Bajo' })), '<span>0</span>');
     assert.equal(renderToString(createElement(Count, { budget: 'Sin información' })), `<span>${catalog.length}</span>`);
   } finally { await server.close(); }

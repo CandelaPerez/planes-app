@@ -34,7 +34,16 @@ try {
     progress = { version: 1, batch: 1, cap: 100, createdAt: new Date().toISOString(), queue, records: {}, searches: {}, lastRequestAt: 0 };
     await persist(progress);
   }
-  if (progress.version !== 1 || progress.queue.length !== 100 || progress.cap !== 100) throw new Error('Invalid batch checkpoint');
+  if (progress.version !== 1 || progress.queue.length !== progress.cap) throw new Error('Invalid batch checkpoint');
+  if (globalThis.process.argv.includes('--next-batch')) {
+    if (progress.queue.some((item) => !progress.records[item.id])) throw new Error('Finish current batch before opening the next one');
+    const seen = new Set([...pilot.entries.map((entry) => entry.id), ...progress.queue.map((item) => item.id)]);
+    const remaining = variedBaDataOrder(catalog.places.map((place) => ({ ...place, sourceName: 'BA Data' }))).filter((place) => !seen.has(place.id)).slice(0, 100);
+    progress.queue.push(...remaining.map((place) => ({ id: place.id, originalName: place.title, address: place.address, category: place.category, lat: place.lat, lon: place.lon, fingerprint: fingerprint(place) })));
+    progress.batch += 1;
+    progress.cap = progress.queue.length;
+    await persist(progress);
+  }
   const byId = new Map(catalog.places.map((place) => [place.id, place]));
   const pending = progress.queue.filter((place) => !progress.records[place.id]);
   let queried = 0;

@@ -54,9 +54,7 @@ docs/                 Configuración e informes
 ```
 
 `src/services/firebase.js` conserva la implementación de Authentication, Firestore y Storage.
-El catálogo principal muestra 6.670 registros oficiales de BA Data desde una copia local persistente, conservando los 129 originales como respaldo ante fallos de carga. No consulta APIs externas durante las visitas. Ver [integración, pruebas y vista previa de BA Data](docs/BA_DATA.md).
-
-La primera muestra visual incluye [12 tarjetas y 8 fotografías verificadas](docs/PILOTO_FOTOS.md). Para verla, elegir “Recomendados” y pulsar “Ver más” una vez; no se amplió la transformación al resto del catálogo.
+El catálogo principal muestra únicamente planes con fotografías reales verificadas y alojadas localmente. Conserva los 6.670 registros de BA Data y los 129 originales; ante un fallo muestra un error sin sustituir las tarjetas. Ver [catálogo fotográfico y procesamiento por lotes](docs/CATALOGO_FOTOGRAFICO.md).
 
 ## Entrega
 

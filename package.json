@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/audit-ba-data-photos.js && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "photos:batch": "node scripts/update-ba-data-photos.js",
+    "photos:review": "node scripts/review-ba-data-photos.js",
+    "photos:audit": "node scripts/audit-ba-data-photos.js"
   },
   "dependencies": {
     "firebase": "^13.1.0",

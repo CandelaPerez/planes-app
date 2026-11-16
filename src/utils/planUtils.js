@@ -1,5 +1,4 @@
 import { CATALOG, catalogImages } from '../data/catalog';
-import { categoryIllustrations } from './baDataPresentation.js';
 
 function cityFor(location) {
   const place = String(location || '').toLocaleLowerCase('es');
@@ -43,9 +42,9 @@ function ideaImageFallback(event, idea) {
   const image = event.currentTarget;
   if (idea.sourceName) {
     image.onerror = null;
-    image.src = categoryIllustrations[idea.category] || '/images/plan-placeholder.svg';
-    const credit = image.closest('.plan-card, .modal-content')?.querySelector('[data-photo-credit]') || image.closest('.plan-card')?.querySelector('.photo-credit');
-    if (credit) credit.textContent = `Imagen ilustrativa · ${idea.location || ''}`;
+    image.hidden = true;
+    const credit = image.closest('.plan-card, .modal-content')?.querySelector('[data-photo-credit]');
+    if (credit) credit.textContent = 'No se pudo cargar la fotografía verificada.';
     return;
   }
   const retryCount = Number(image.dataset.imageRetry || 0);

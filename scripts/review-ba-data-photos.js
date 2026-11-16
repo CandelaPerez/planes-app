@@ -4,6 +4,7 @@ const root = new URL('../', import.meta.url);
 const state = JSON.parse(await readFile(new URL('data/photo-batches/progress.json', root), 'utf8'));
 const reviews = JSON.parse(await readFile(new URL('data/photo-batches/reviews.json', root), 'utf8'));
 const publishing = globalThis.process.argv.includes('--publish');
+const catalog = JSON.parse(await readFile(new URL('public/data/ba-data.json', root), 'utf8'));
 const output = new URL('src/data/baDataPhotos.json', root);
 const candidatesDirectory = new URL('.browser-check/photo-batch/', root);
 await mkdir(candidatesDirectory, { recursive:true });
@@ -14,6 +15,9 @@ try {
   for (const review of reviews) {
     const record = state.records[review.id];
     if (!record) throw new Error(`Record not processed: ${review.id}`);
+    const place = catalog.places.find((item) => item.id === record.id);
+    const fingerprint = place && createHash('sha256').update(JSON.stringify([place.id, place.title, place.address, place.lat, place.lon])).digest('hex');
+    if (fingerprint !== record.fingerprint || place.category !== record.category) throw new Error(`${review.id}: BA Data changed; review again`);
     const candidate = state.searches[record.searchKey].candidates.find((candidate) => candidate.file === review.file);
     if (!candidate || !licenseAllowed(candidate)) throw new Error(`Candidate or reusable JPEG license not approved: ${review.id}`);
     const url = new URL(candidate.url); url.search = '';
@@ -25,9 +29,9 @@ try {
     try { bytes = await readFile(localCandidate); } catch (error) {
       if (error.code !== 'ENOENT' || publishing) throw error;
       const response = await fetch(url, {headers:{'User-Agent':'PorHacerAcademicPhotoBatch/1.0 (operator-assisted academic project)'},signal:AbortSignal.timeout(20000)});
-      if (!response.ok || !response.headers.get('content-type')?.startsWith('image/jpeg')) throw new Error(`Photograph download failed: HTTP ${response.status}`);
+      if (!response.ok || !response.headers.get('content-type')?.startsWith('image/jpeg')) throw new Error(`Photograph download failed: HTTP ${response.status}`, { cause: error });
       const chunks = []; let total = 0;
-      for await (const chunk of response.body) { total += chunk.length; if (total > 1200000) throw new Error('Image exceeds 1.2 MB limit'); chunks.push(chunk); }
+      for await (const chunk of response.body) { total += chunk.length; if (total > 1200000) throw new Error('Image exceeds 1.2 MB limit', { cause: error }); chunks.push(chunk); }
       bytes = new Uint8Array(total); let offset=0; for (const chunk of chunks) { bytes.set(chunk,offset); offset+=chunk.length; }
       await writeFile(localCandidate,bytes);
       await new Promise((resolve) => setTimeout(resolve,1500));
@@ -39,7 +43,7 @@ try {
       await mkdir(new URL('public/images/ba-data-batches/',root),{recursive:true});
       await writeFile(new URL(`public${localPath}`,root),bytes);
       const photo = {localPath,url:url.href,originalUrl:candidate.originalUrl,sourceUrl:candidate.sourceUrl,commonsTitle:candidate.file,author:candidate.author,authorMetadata:candidate.authorMetadata,uploader:candidate.uploader,license:candidate.license,licenseUrl,photoDate:candidate.photoDate,description:candidate.description,verifiedAt:new Date().toISOString(),evidence:review.evidence,sha256,bytes:bytes.length,presentation:'Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.',gps:candidate.gps};
-      const entry = {id:record.id,originalName:record.originalName,address:record.address,category:record.category,fingerprint:record.fingerprint,photo};
+      const entry = {id:record.id,originalName:record.originalName,address:record.address,category:record.category,lat:record.lat,lon:record.lon,fingerprint:record.fingerprint,photo};
       manifest.entries = manifest.entries.filter((item) => item.id !== record.id).concat(entry);
     }
     console.log(JSON.stringify({id:review.id,mode:publishing?'published':'prepared-for-visual-review',file:review.file,bytes:bytes.length,sha256}));
@@ -48,6 +52,10 @@ try {
     manifest.generatedAt = new Date().toISOString();
     const temporary = new URL('src/data/baDataPhotos.json.tmp',root);
     await writeFile(temporary,JSON.stringify(manifest,null,2)); await rename(temporary,output);
+    for (const review of reviews) state.records[review.id] = { ...state.records[review.id], status: 'verified-photo', reviewedAt: manifest.generatedAt };
+    const checkpoint = new URL('data/photo-batches/progress.json.tmp', root);
+    await writeFile(checkpoint, JSON.stringify(state, null, 2));
+    await rename(checkpoint, new URL('data/photo-batches/progress.json', root));
     console.log(JSON.stringify({verifiedAdditional:manifest.entries.length}));
   }
 } catch (error) { console.error(`Photo review stopped; previous published manifest retained: ${error.message}`);globalThis.process.exitCode=1; }

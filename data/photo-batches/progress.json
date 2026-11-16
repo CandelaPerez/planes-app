@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "batch": 1,
-  "cap": 100,
+  "batch": 2,
+  "cap": 200,
   "createdAt": "2026-11-16T00:59:53.163Z",
   "queue": [
     {
@@ -903,6 +903,906 @@
       "lat": -34.61120849,
       "lon": -58.38734659,
       "fingerprint": "69a21aed75f5c89964c16706c83532bb2aa96ea8c6e12d3fb8a0a7f455808088"
+    },
+    {
+      "id": "badata-food-1602",
+      "originalName": "GUANTANAMERA",
+      "address": "MOREAU DE JUSTO, ALICIA AV. 2092",
+      "category": "Gastronomía",
+      "lat": -34.62296347,
+      "lon": -58.36330675,
+      "fingerprint": "e8d2897b889e2949fff93bc324670805f83049e9a73f9563258f55b4351f1994"
+    },
+    {
+      "id": "badata-culture-1",
+      "originalName": "ALEMANIA",
+      "address": "CASARES AV. y CASTEX, CABA",
+      "category": "Cultura",
+      "lat": -34.57558,
+      "lon": -58.40855,
+      "fingerprint": "aee21d8cd8b967bd8b61bbc2abfe030e17ee1ae385ebc7c814775f3c33a2dec7"
+    },
+    {
+      "id": "badata-green-2",
+      "originalName": "Escuela Scalabrini Ortiz",
+      "address": "CONDE - MATIENZO, BENJAMIN, TTE. - FREIRE, RAMON, CAP. GRAL.",
+      "category": "Aire Libre",
+      "lat": -34.57924873718935,
+      "lon": -58.44535560170446,
+      "fingerprint": "3a34039a9e9e71c8115d0a798c386a8a8c29fdbe7fd4e3a7f4f9664ccacd5411"
+    },
+    {
+      "id": "badata-culture-2",
+      "originalName": "ALLENDE, SALVADOR",
+      "address": "TAMBORINI, JOSE PASCUAL y HOLMBERG, CABA",
+      "category": "Cultura",
+      "lat": -34.56202,
+      "lon": -58.48278,
+      "fingerprint": "e49a8ca93bd16220605245cfad95593f670c23b069e5d7b6755783fcc2730ed1"
+    },
+    {
+      "id": "badata-green-6",
+      "originalName": "Polideportivo Colegiales",
+      "address": "CONDE - MATIENZO, BENJAMIN, TTE. - FREIRE, RAMON, CAP. GRAL.",
+      "category": "Aire Libre",
+      "lat": -34.57987067238085,
+      "lon": -58.44480742530068,
+      "fingerprint": "b6057087bb46cc0ca01f32b21c6cd15f9a0d7523ac6ff5048f1aa28d0b117686"
+    },
+    {
+      "id": "badata-culture-3",
+      "originalName": "ANFITEATRO ESCALINATA",
+      "address": "2 DE ABRIL DE 1982 6901, CABA",
+      "category": "Cultura",
+      "lat": -34.67867,
+      "lon": -58.4921,
+      "fingerprint": "dff6b64b63dd44a436d6ff00a9cdc246777d3a16ab14b0bf7de88c50e9cf4cef"
+    },
+    {
+      "id": "badata-green-9",
+      "originalName": "Plaza Rafael Hernández",
+      "address": "ECHEVERRIA - VUELTA DE OBLIGADO - MOM, POLICARPO",
+      "category": "Aire Libre",
+      "lat": -34.562232328733664,
+      "lon": -58.45528767703161,
+      "fingerprint": "b469416d630145234d5243b3732e1a6dda74f4d230d088bd04cb40d0d7fc2d1e"
+    },
+    {
+      "id": "badata-culture-4",
+      "originalName": "ANFITEATRO EVA PERON",
+      "address": "MARECHAL, LEOPOLDO 832, CABA",
+      "category": "Cultura",
+      "lat": -34.60825,
+      "lon": -58.43747,
+      "fingerprint": "4c8bff08d95ef5cc0db358311652fd376d69b760ddc71cfc75a8eb62af1d4c86"
+    },
+    {
+      "id": "badata-green-10",
+      "originalName": "Plaza Pques. Nacionales Argentinos",
+      "address": "ECHEVERRIA - CASTAÑEDA - SUCRE, ANTONIO J. DE, MCAL. - FIGUEROA ALCORTA PRES., AV.",
+      "category": "Aire Libre",
+      "lat": -34.55314301162357,
+      "lon": -58.437138709427856,
+      "fingerprint": "c22ac44c61391fb5fbb429954c5e34e6dbb7f0e9452fc25c2cae559ec43234da"
+    },
+    {
+      "id": "badata-culture-5",
+      "originalName": "ANFITEATRO VILLA CILDAÑEZ",
+      "address": "ALVAREZ, CRISOSTOMO 4401, CABA",
+      "category": "Cultura",
+      "lat": -34.66032,
+      "lon": -58.47331,
+      "fingerprint": "ca0ab172e9ee3a9e72adc4a95c9553a1b7395e98c96223c83871250b99ead449"
+    },
+    {
+      "id": "badata-green-13",
+      "originalName": "República de Montenegro",
+      "address": "DEL LIBERTADOR, AV. - SARMIENTO, AV. (FRENTE MONUMENTO A LOS ESPA¤OLES)",
+      "category": "Aire Libre",
+      "lat": -34.57463398124689,
+      "lon": -58.414661830496144,
+      "fingerprint": "7033b857e97fd05fd3b0f0d1fe17a74fba5d5c78d4cbb5f85a97e9c3a1035038"
+    },
+    {
+      "id": "badata-culture-6",
+      "originalName": "ÁNGEL GRIS",
+      "address": "AVELLANEDA AV. 1850, CABA",
+      "category": "Cultura",
+      "lat": -34.621525,
+      "lon": -58.456729,
+      "fingerprint": "8d96620b8421c610add07566e9fd6d28ce71681493ae2be60a2458d8b4dce5f2"
+    },
+    {
+      "id": "badata-green-26",
+      "originalName": "Plaza Barrio Marcelo T de Alvear",
+      "address": "DIRECTORIO, AV.  - OLIVERA, AV.  - RODO, JOSE E. - FERNANDEZ (BARRIO MARCELO T. DE ALVEAR)",
+      "category": "Aire Libre",
+      "lat": -34.644495550124354,
+      "lon": -58.483842489328495,
+      "fingerprint": "e95d5bcb7e0d0909ea9247d13f2ec69b13cd1be1d5b7612ddd93029828d3df5f"
+    },
+    {
+      "id": "badata-culture-7",
+      "originalName": "CIUDAD DE UDINE",
+      "address": "CHIVILCOY 1450, CABA",
+      "category": "Cultura",
+      "lat": -34.620489,
+      "lon": -58.491874,
+      "fingerprint": "f2a08c99ae7b6b1e75394e8ee91beee3bb183f46a7944c92ea4acb59b32db59e"
+    },
+    {
+      "id": "badata-green-36",
+      "originalName": "Eloy Alfaro",
+      "address": "DEL LIBERTADOR, AV. - MIGUELETES - GARCIA, TEODORO",
+      "category": "Aire Libre",
+      "lat": -34.562838867156515,
+      "lon": -58.43993750929723,
+      "fingerprint": "6697ca4945dec1749cc25fc2239616ec589420d7dce95d4dbf9b434ca6cc1dc1"
+    },
+    {
+      "id": "badata-culture-8",
+      "originalName": "CORTAZAR, JULIO",
+      "address": "SERRANO y HONDURAS, CABA",
+      "category": "Cultura",
+      "lat": -34.58863,
+      "lon": -58.43033,
+      "fingerprint": "6539a32dfbd6cb0f741305886537c20a8eb8fac2934c2824731ad90ada315808"
+    },
+    {
+      "id": "badata-green-42",
+      "originalName": "Jorge N. Williams",
+      "address": "LOZANO, PEDRO - HELGUERA - GUTIERREZ, RICARDO",
+      "category": "Aire Libre",
+      "lat": -34.600931590333445,
+      "lon": -58.49440347531731,
+      "fingerprint": "27a48d293d32e5d932497f3a4c58ed6e710b536761e58755f343e2637b1f5ae9"
+    },
+    {
+      "id": "badata-culture-9",
+      "originalName": "DE LOS COLEGIALES",
+      "address": "MATIENZO, BENJAMIN, TENIENTE 2901, CABA",
+      "category": "Cultura",
+      "lat": -34.576883,
+      "lon": -58.443802,
+      "fingerprint": "d9278b43ab9a6c98906c192157306b6756655295a56fa8dab0e08caa4f1cd2f2"
+    },
+    {
+      "id": "badata-green-53",
+      "originalName": "Plaza Tupac Amarú",
+      "address": "SAN PEDRITO, AV. - PERON, EVA, AV. - PRIMERA JUNTA (D) - LAFUENTE, AV.",
+      "category": "Aire Libre",
+      "lat": -34.64243591016257,
+      "lon": -58.461479112461014,
+      "fingerprint": "37fb102d57115d86defc9236046fcb27018994838978bad9987e6eb28a460b32"
+    },
+    {
+      "id": "badata-culture-10",
+      "originalName": "DEL CABALLITO",
+      "address": "REPETTO, NICOLAS, DR. y YERBAL, CABA",
+      "category": "Cultura",
+      "lat": -34.6199,
+      "lon": -58.44332,
+      "fingerprint": "267736c053bee80b7cb5b6f45bc488e23c4d4d5b83090e9c0a57c21b2850ce10"
+    },
+    {
+      "id": "badata-green-70",
+      "originalName": "Plaza Irlanda",
+      "address": "GAONA, AV. - ALVAREZ, DONATO, TTE. GRAL., AV. - NEUQUEN - SEGUI, F.J., ALMTE.",
+      "category": "Aire Libre",
+      "lat": -34.61564212633433,
+      "lon": -58.45742520972287,
+      "fingerprint": "16d7bb1e4d0b6c01d37c910e51cdc1cdf61950b9a11295d8b4f8e8dc2891a6cd"
+    },
+    {
+      "id": "badata-culture-11",
+      "originalName": "DONADO 1726",
+      "address": "DONADO 1726, CABA",
+      "category": "Cultura",
+      "lat": -34.576384,
+      "lon": -58.472104,
+      "fingerprint": "6021f5d59b4aa604a5f9f5d305b2fd32511792a02eb21740ba7ab7774901e5ca"
+    },
+    {
+      "id": "badata-green-77",
+      "originalName": "R. Raffo Bonta",
+      "address": "EMPEDRADO - SANTO TOME - BOLIVIA",
+      "category": "Aire Libre",
+      "lat": -34.602537511574894,
+      "lon": -58.482988978083156,
+      "fingerprint": "acf5f43434bc86f6e58833c2465715bc0750f375c1cb722adc33ff0037cd93d3"
+    },
+    {
+      "id": "badata-culture-12",
+      "originalName": "DONATO ÁLVAREZ",
+      "address": "ALVAREZ, DONATO, TTE. GRAL. 130, CABA",
+      "category": "Cultura",
+      "lat": -34.624227,
+      "lon": -58.454759,
+      "fingerprint": "3e85146efab6bd7442277f376226aa99225ba28cf6b0f8dd004309ee77bca876"
+    },
+    {
+      "id": "badata-green-107",
+      "originalName": "Plaza Alemania",
+      "address": "DEL LIBERTADOR, AV. - CASARES, AV. - CASTEX - CAVIA",
+      "category": "Aire Libre",
+      "lat": -34.576029328675816,
+      "lon": -58.40851624089236,
+      "fingerprint": "09db0b8f5f6e2901b721c2250a9395476724fcc89827d7dab834ea3cfd49b111"
+    },
+    {
+      "id": "badata-culture-13",
+      "originalName": "DÚO GARDEL - RAZZANO - PATIO LAUTARO",
+      "address": "LAUTARO 800, CABA",
+      "category": "Cultura",
+      "lat": -34.635754,
+      "lon": -58.453584,
+      "fingerprint": "a12f11500f01738c0ac1f2ebca5aa47c9480e72439b16b2c2f55fbe72a62f57f"
+    },
+    {
+      "id": "badata-green-117",
+      "originalName": "Plaza Brig. Gral. J. M. Zapiola",
+      "address": "ACHA, MARIANO - JURAMENTO - DONADO - ECHEVERRIA",
+      "category": "Aire Libre",
+      "lat": -34.574049457876704,
+      "lon": -58.47480767219063,
+      "fingerprint": "bec462d5e628fd80b76239d23c6e07be7bc0cc1ea9f4f173171a76c7a02d2b8c"
+    },
+    {
+      "id": "badata-culture-14",
+      "originalName": "ERNESTO \"CHE\" GUEVARA",
+      "address": "BENEDETTI, OSVALDO E., DIP.NAC. 102, CABA",
+      "category": "Cultura",
+      "lat": -34.635552,
+      "lon": -58.482733,
+      "fingerprint": "7d6c5b88a1c904790f10926b5069d8555160b0eb3df8b952c24eed7374fc6cbb"
+    },
+    {
+      "id": "badata-green-138",
+      "originalName": "Espacio Recreativo Leito",
+      "address": "YRUPE -MONTE - AMANCAY",
+      "category": "Aire Libre",
+      "lat": -34.66799522155335,
+      "lon": -58.49644478115033,
+      "fingerprint": "d4ca9ae343fbe8a1aa8b966ce536de88c4a7413e6238bd15c18920d4886c0b45"
+    },
+    {
+      "id": "badata-culture-15",
+      "originalName": "GRAL. JUAN GREGORIO DE LAS HERAS",
+      "address": "JUNCAL y DIAZ, CNEL. AV., CABA",
+      "category": "Cultura",
+      "lat": -34.58655,
+      "lon": -58.40832,
+      "fingerprint": "82f33d4b311b016b76b553d26d243f2042d374261e91c3bfe09989b9b38b60e4"
+    },
+    {
+      "id": "badata-green-139",
+      "originalName": "Eleodoro Marenco",
+      "address": "YRUPE - COSQUIN - MONTE - AMANCAY",
+      "category": "Aire Libre",
+      "lat": -34.667870167987274,
+      "lon": -58.497299361720266,
+      "fingerprint": "4848c477a1d042f83e75de621357a9e2475a4f58755d6422fb8833de29bc7592"
+    },
+    {
+      "id": "badata-food-2095",
+      "originalName": "ABC",
+      "address": "LAVALLE 545",
+      "category": "Gastronomía",
+      "lat": -34.60214078,
+      "lon": -58.37445146,
+      "fingerprint": "a66e7257790fefc8a8712ba6cad2de70b86319a289e6d6e173854b444e5ec112"
+    },
+    {
+      "id": "badata-culture-16",
+      "originalName": "INTENDENTE FRANCISCO SEEBER",
+      "address": "CERVIÑO AV. y COLOMBIA AV., CABA",
+      "category": "Cultura",
+      "lat": -34.575864,
+      "lon": -58.418354,
+      "fingerprint": "89efa3878c2ab1969ed19cf29c64615a187908b29b2606cba0dfca65e6ff91a2"
+    },
+    {
+      "id": "badata-green-160",
+      "originalName": "Ing. Agr. Benito J. Carrasco",
+      "address": "OBLIGADO, RAFAEL, AV. COSTANERA (MURALLON) -SALGUERO, JERONIMO, PROLONGACION IMAGINARIA - SARMIENTO, AV., PROLONGACION IMAGINARIA  - RIO DE LA PLATA",
+      "category": "Aire Libre",
+      "lat": -34.56844872110196,
+      "lon": -58.400071518866234,
+      "fingerprint": "d5516eb10204963ee2ef3e2be0e702aeee771ff1a9a246aab2816603959b2ffc"
+    },
+    {
+      "id": "badata-food-1950",
+      "originalName": "ABRIL",
+      "address": "ARENALES 900",
+      "category": "Gastronomía",
+      "lat": -34.59414798,
+      "lon": -58.37981478,
+      "fingerprint": "ff092c5da4e41c51e3a191dece9aa879b402a04796571aeea566e8f1499b3098"
+    },
+    {
+      "id": "badata-culture-17",
+      "originalName": "PARQUE CENTENARIO",
+      "address": "PATRICIAS ARGENTINAS AV., CABA, CABA",
+      "category": "Cultura",
+      "lat": -34.6067319,
+      "lon": -58.4384396,
+      "fingerprint": "a4a211d2eae09d277e6f332aa410b399f6c727f48cd182ac0fb91d29db769a9c"
+    },
+    {
+      "id": "badata-green-171",
+      "originalName": "Parque Brig. Gral. Cornelio Saavedra",
+      "address": "GARCIA DEL RIO, AV. - MELIAN, AV. - VILELA - PEREZ, ROQUE - BESARES - CONDE - PINTO - FREIRE, RAMON, CAP. GRAL.",
+      "category": "Aire Libre",
+      "lat": -34.55189629240314,
+      "lon": -58.48128782079968,
+      "fingerprint": "18411297142f5799972446e9f4d5af0034334ec9b3facc962520e6c3b70055c3"
+    },
+    {
+      "id": "badata-food-2549",
+      "originalName": "ABRIL BRISTO",
+      "address": "BALCARCE 722",
+      "category": "Gastronomía",
+      "lat": -34.61614207,
+      "lon": -58.37021291,
+      "fingerprint": "cbafb348658f814b260ff9e1ec991b27ac4355997000e8484a9cca7ffdd9a794"
+    },
+    {
+      "id": "badata-culture-18",
+      "originalName": "PARQUE IRLANDA",
+      "address": "GAONA AV. 2250, CABA",
+      "category": "Cultura",
+      "lat": -34.613458,
+      "lon": -58.458377,
+      "fingerprint": "93a44e6fcec05e9c8027987054dd3e177bbf55ee73c4fd6921b7ad08d8e09c57"
+    },
+    {
+      "id": "badata-green-177",
+      "originalName": "Plaza de la Integración Latinoamericana",
+      "address": "MORENO, PERITO, AV. Y VARELA",
+      "category": "Aire Libre",
+      "lat": -34.65082305300938,
+      "lon": -58.443277034458454,
+      "fingerprint": "35c6d8cf7302268363867cd2c33bfc37b10cec0c9e21c9d2689727ee6b3d262a"
+    },
+    {
+      "id": "badata-bus-18",
+      "originalName": "10. Parque Lezama",
+      "address": "Brasil Av. 369, entre Defensa y Balcarce",
+      "category": "Viajes",
+      "lat": -34.62539866675111,
+      "lon": -58.37058140961701,
+      "fingerprint": "4ca34bb3cb1ce859793b336a6a979cdd4e88d1e8a8575b4c33480447d1900b9c"
+    },
+    {
+      "id": "badata-food-1122",
+      "originalName": "ABUELO MATIAS",
+      "address": "SAN PEDRITO 1094",
+      "category": "Gastronomía",
+      "lat": -34.64275814,
+      "lon": -58.46085396,
+      "fingerprint": "b3e22da0b832ee9d24ccd894ae342bf5e7eb9c3fe1145e08d36216fe79aa2894"
+    },
+    {
+      "id": "badata-culture-19",
+      "originalName": "PARQUE LEZAMA",
+      "address": "BRASIL AV. 300, CABA",
+      "category": "Cultura",
+      "lat": -34.625291,
+      "lon": -58.36971,
+      "fingerprint": "399621e04783416259dd715eb6727fd3b0d5f14b5aefac116e257f45acd0ebf2"
+    },
+    {
+      "id": "badata-green-180",
+      "originalName": "Plaza Dr. Juan B Terán",
+      "address": "NOGOYA - GORDILLO, JOSE, CNEL. - MELINCUE - MARTINEZ, JUAN E.",
+      "category": "Aire Libre",
+      "lat": -34.620932476616765,
+      "lon": -58.519230915647974,
+      "fingerprint": "9275256e288accd64fc801c464dd8dcc33cdb25f61fb9532ca8d84da0c57c962"
+    },
+    {
+      "id": "badata-food-7",
+      "originalName": "ACABAR",
+      "address": "HONDURAS 5733",
+      "category": "Gastronomía",
+      "lat": -34.58301901,
+      "lon": -58.43766997,
+      "fingerprint": "c166e67849893f94106fea7b262438690340ba26831bde0537dfdd6ca3f26c5e"
+    },
+    {
+      "id": "badata-culture-20",
+      "originalName": "PARQUE SARMIENTO",
+      "address": "BALBIN, RICARDO, DR. AV. y PAZ, GRAL. AV., CABA",
+      "category": "Cultura",
+      "lat": -34.5501,
+      "lon": -58.50043,
+      "fingerprint": "317dee2a6a8f09e84c7f70f54784ec4d272664f46a579b12725bb0872382fa2b"
+    },
+    {
+      "id": "badata-green-181",
+      "originalName": "Parque Florentino Ameghino",
+      "address": "CASEROS, AV. - SANTA CRUZ - USPALLATA - MONASTERIO",
+      "category": "Aire Libre",
+      "lat": -34.637225128897704,
+      "lon": -58.39405634989343,
+      "fingerprint": "fe58e2663979e5549d09adc72688c071e961cb4332db3c3f7293b3df5f67bfb9"
+    },
+    {
+      "id": "badata-bus-20",
+      "originalName": "09. Estación Fluvial",
+      "address": "Manso Juana y Grierson, Cecilia, entre Juana Manso y Olga Cossetini",
+      "category": "Viajes",
+      "lat": -34.59805776421315,
+      "lon": -58.364709515672544,
+      "fingerprint": "e40b62f8b9974f6aebf88027ae5c95c9e64cb32af3a20104949b9494cd99252e"
+    },
+    {
+      "id": "badata-food-2096",
+      "originalName": "ACAPULCO",
+      "address": "LAVALLE 757",
+      "category": "Gastronomía",
+      "lat": -34.60234646,
+      "lon": -58.37750139,
+      "fingerprint": "8cb43df80f0db1ffb186ed8a2c8f2b3f7061a51982e9b969d080011ee2535838"
+    },
+    {
+      "id": "badata-culture-21",
+      "originalName": "PLAZA ALBERDI",
+      "address": "DIRECTORIO AV. y DE LA TORRE, LISANDRO, CABA",
+      "category": "Cultura",
+      "lat": -34.66013,
+      "lon": -58.50311,
+      "fingerprint": "6521304cb6bce02d3b99bdc1fc64d18b97e16f88ac5237403eedcd8e488dd910"
+    },
+    {
+      "id": "badata-green-188",
+      "originalName": "Patio Félix Liceaga",
+      "address": "CENTENERA - ZUVIRIA - AU 25 DE MAYO",
+      "category": "Aire Libre",
+      "lat": -34.63046085135813,
+      "lon": -58.43813036595896,
+      "fingerprint": "afa7d4e1f6c61bfc247f0e1432ccf55f73f5e2d4ca179c63ffc941d64b886fe9"
+    },
+    {
+      "id": "badata-bus-21",
+      "originalName": "12. Puerto Madero - Puente de la Mujer",
+      "address": "Manso Juana 850, entre Manuela Sáenz y Marta Lynch",
+      "category": "Viajes",
+      "lat": -34.60783808416866,
+      "lon": -58.36313022062197,
+      "fingerprint": "796da48102f472d2a8b6996b06ded9ba945ca21767c3daf716aea95c7598e55e"
+    },
+    {
+      "id": "badata-food-1336",
+      "originalName": "ACAPULCO",
+      "address": "MORENO 1800",
+      "category": "Gastronomía",
+      "lat": -34.61269406,
+      "lon": -58.39159269,
+      "fingerprint": "ea96b0c78ff0b2f00635879380168c8fe41e1ab193ad975637fc091aae83970c"
+    },
+    {
+      "id": "badata-culture-22",
+      "originalName": "PLAZA FRANCISCO CANARO",
+      "address": "COCHABAMBA 1902, CABA",
+      "category": "Cultura",
+      "lat": -34.624105,
+      "lon": -58.392833,
+      "fingerprint": "57b5ddc4d538b0242a89a72f536483c4034844a67c32d5917a9cb4586d1528e8"
+    },
+    {
+      "id": "badata-green-200",
+      "originalName": "Delia Avilés de Elizalde",
+      "address": "COCHABAMBA E / PASCO Y PICHINCHA",
+      "category": "Aire Libre",
+      "lat": -34.6244723788291,
+      "lon": -58.396438328338,
+      "fingerprint": "a7873c2d89ee56da366213a06a24fb959300b2a40ad59aab4986bc4c5b51bed9"
+    },
+    {
+      "id": "badata-bus-22",
+      "originalName": "13. Estación Fluvial - Reserva Ecológica",
+      "address": "Manso Juana y Grierson, Cecilia, entre Juana Manso y Olga Cossetini",
+      "category": "Viajes",
+      "lat": -34.598061397644095,
+      "lon": -58.36477873173546,
+      "fingerprint": "435b47ffd81a0fd57a1239e6572684254aedd8c6b18641dde4aefde7c0d13e39"
+    },
+    {
+      "id": "badata-food-2823",
+      "originalName": "ACCADEMIA della pizza",
+      "address": "TRIUNVIRATO AV. 4495",
+      "category": "Gastronomía",
+      "lat": -34.57558625,
+      "lon": -58.48398043,
+      "fingerprint": "245c7de7bba3384478fac266f3b90447d7a31ac6dec025b7afb0b8f2730c15d8"
+    },
+    {
+      "id": "badata-culture-23",
+      "originalName": "PLAZA ISLA LAS MALVINAS",
+      "address": "CABOTO, CABA, CABA",
+      "category": "Cultura",
+      "lat": -34.6271322,
+      "lon": -58.3614253,
+      "fingerprint": "a6aa006189b5913cbb486e53d5554cfc1fc77a97dcbb897d943adb4b07d8c2a8"
+    },
+    {
+      "id": "badata-green-201",
+      "originalName": "Matilde Vara de Anguita",
+      "address": "SARANDI - BAJADA AU 25 DE MAYO - PROPIEDAD  PARTICULAR",
+      "category": "Aire Libre",
+      "lat": -34.62432289216313,
+      "lon": -58.39365553384577,
+      "fingerprint": "ea1b97efbe457cfccb4adf88a9fb114ee27580fcf851bd8f353c578d30abb59b"
+    },
+    {
+      "id": "badata-bus-23",
+      "originalName": "10. Galerías Pacífico",
+      "address": "Cordoba Av. 787, entre Maipú y Esmeralda",
+      "category": "Viajes",
+      "lat": -34.59878703135806,
+      "lon": -58.377951893713636,
+      "fingerprint": "68b4b63b2f026714c0888e7779dbd5b7473539f28687933567b05e655ebc3e46"
+    },
+    {
+      "id": "badata-culture-24",
+      "originalName": "PLAZA MARIANO BOEDO",
+      "address": "ESTADOS UNIDOS 3300, CABA",
+      "category": "Cultura",
+      "lat": -34.62218903,
+      "lon": -58.41258921,
+      "fingerprint": "d99fe84be1cc652591cc08aff6782a79c89fe2d08b94ef93f644ac44ea720aea"
+    },
+    {
+      "id": "badata-green-202",
+      "originalName": "Plaza Nuestra Señora de la Asunción",
+      "address": "GAONA, AV. - GAVILAN - CARACAS - VIALE, LUIS",
+      "category": "Aire Libre",
+      "lat": -34.6154502596982,
+      "lon": -58.46655473704622,
+      "fingerprint": "10a43f847b2ec27718df3575b38b3354bae0454e3f66a5f80624153e9fb715cd"
+    },
+    {
+      "id": "badata-bus-24",
+      "originalName": "14. Galerías Pacífico",
+      "address": "Cordoba Av. 466, entre San Martín y Reconquista",
+      "category": "Viajes",
+      "lat": -34.598696464814445,
+      "lon": -58.373884854721986,
+      "fingerprint": "d247f72dffda00ea9256cf04364521d74dad5f8f03a19c2336721f20c349c2be"
+    },
+    {
+      "id": "badata-food-1638",
+      "originalName": "ACQUANOVA",
+      "address": "DIAZ, CNEL. AV. 1879",
+      "category": "Gastronomía",
+      "lat": -34.5894053,
+      "lon": -58.41028019,
+      "fingerprint": "de6738e38774a49ff0a4d9df26ba785e22c02397b8ca9857404753f770ef31e0"
+    },
+    {
+      "id": "badata-culture-25",
+      "originalName": "PLAZA MONS. MIGUEL DE ANDREA",
+      "address": "ANCHORENA, TOMAS MANUEL DE, DR. 901, CABA",
+      "category": "Cultura",
+      "lat": -34.598004,
+      "lon": -58.408052,
+      "fingerprint": "c4090e79992133e45194f2b02ba777d4e941072569f896ceffecc60d6be60c53"
+    },
+    {
+      "id": "badata-green-203",
+      "originalName": "Elsa Rabinovich de Levenson",
+      "address": "NORTE DE AU 25 DE MAYO ENTRE SARANDI Y RINCON",
+      "category": "Aire Libre",
+      "lat": -34.62372626135092,
+      "lon": -58.39401825957661,
+      "fingerprint": "2b83b39df2e17425d7ed24af1715c57dcc3801a2ec55c1a4cdfbb57100cf3a7a"
+    },
+    {
+      "id": "badata-bus-25",
+      "originalName": "12. Plaza San Martín - Retiro",
+      "address": "Santa Fe Av. 808",
+      "category": "Viajes",
+      "lat": -34.5952260254009,
+      "lon": -58.37882374553313,
+      "fingerprint": "3c42b0e14674098cca17781361772ab0298e2400028ea27eb92e2a9353bc2169"
+    },
+    {
+      "id": "badata-food-1639",
+      "originalName": "ACROPOLIS",
+      "address": "CORDOBA AV. 3493",
+      "category": "Gastronomía",
+      "lat": -34.59777248,
+      "lon": -58.41567048,
+      "fingerprint": "381fae92d234f373fec95f6d3271184ffd1df319d137823c64fdfcd49fa337ec"
+    },
+    {
+      "id": "badata-culture-26",
+      "originalName": "PLAZA SALGUERO",
+      "address": "SALGUERO, JERONIMO 741, CABA",
+      "category": "Cultura",
+      "lat": -34.601568,
+      "lon": -58.419229,
+      "fingerprint": "b4617c266b45ce97b5be5d64b1c2afadf59bef203ed1ed10079f43d1b1323313"
+    },
+    {
+      "id": "badata-green-206",
+      "originalName": "Plazoleta Clubes del Barrio",
+      "address": "ALCORTA, AMANCIO, AV.  E/ ROMERO Y OCHOA, ENRIQUE",
+      "category": "Aire Libre",
+      "lat": -34.65558995400823,
+      "lon": -58.41387827946036,
+      "fingerprint": "57cb938b64846dac107362ed7ba60e4990820eff2a27d57383e12f9021dc7912"
+    },
+    {
+      "id": "badata-bus-26",
+      "originalName": "15. Av 9 de Julio",
+      "address": "Pellegrini, Carlos 963, entre Paraguay y Marcelo T. de Alvear",
+      "category": "Viajes",
+      "lat": -34.59714000850916,
+      "lon": -58.38127881539866,
+      "fingerprint": "c0f736f7eac771264b0f7b74eb886fb1ce3f7e37ba8f00a1830c2808d6517fcb"
+    },
+    {
+      "id": "badata-food-1124",
+      "originalName": "ACUARIO",
+      "address": "VARELA AV. 920",
+      "category": "Gastronomía",
+      "lat": -34.63970263,
+      "lon": -58.45826625,
+      "fingerprint": "f598149143656d4fd7fb9a04e7db5633c0d92706b1dab9d3ea85de52ee0cf417"
+    },
+    {
+      "id": "badata-culture-27",
+      "originalName": "PLAZOLETA BOMBEROS VOLUNTARIOS",
+      "address": "ARAOZ DE LAMADRID, GREGORIO, GRAL. 783, CABA",
+      "category": "Cultura",
+      "lat": -34.639123,
+      "lon": -58.363414,
+      "fingerprint": "60ebef3d99e83e263c225ec0aae75ecd1a6ead2c5ded7bc5b91a0506ddb4461b"
+    },
+    {
+      "id": "badata-green-211",
+      "originalName": "Plazoleta Padre Mario Luis Migone",
+      "address": "ALCORTA, AMANCIO, AV.  E/ MAGNAUD, JUEZ Y BONAVENA, OSCAR N.",
+      "category": "Aire Libre",
+      "lat": -34.651332440852045,
+      "lon": -58.40660850202146,
+      "fingerprint": "e0dd067583a44f876bafb9e8655e0d1caeb069fdd20a69f710896398e3af7d41"
+    },
+    {
+      "id": "badata-bus-27",
+      "originalName": "13. Floralis Genérica",
+      "address": "Figueroa Alcorta, Pres. Av. 2799, entre Quiroga/ Austria y Juan A. Biblioni",
+      "category": "Viajes",
+      "lat": -34.58167631087841,
+      "lon": -58.39575020779917,
+      "fingerprint": "d231d59c1bbc0189ddaaac1f52eb5483b17ba4027c7e98ce782ec23df7b3e270"
+    },
+    {
+      "id": "badata-food-489",
+      "originalName": "ADANN",
+      "address": "HERNANDEZ, JOSE 2345",
+      "category": "Gastronomía",
+      "lat": -34.56527464,
+      "lon": -58.45261731,
+      "fingerprint": "515a8518b02d2324f1c0e02dc503179f03e56d03b64fdb72c8b37052964c9c4a"
+    },
+    {
+      "id": "badata-culture-28",
+      "originalName": "TUPAC AMARU",
+      "address": "LAFUENTE AV. y PRIMERA JUNTA, CABA",
+      "category": "Cultura",
+      "lat": -34.64234,
+      "lon": -58.46252,
+      "fingerprint": "5f492656cac8a5b443205311ab171e1d02748e81c80dd9c64e422450e38e1314"
+    },
+    {
+      "id": "badata-green-241",
+      "originalName": "Plazoleta Simón Lazara",
+      "address": "BOEDO, AV.   Y MORENO",
+      "category": "Aire Libre",
+      "lat": -34.61469969085798,
+      "lon": -58.416956784914234,
+      "fingerprint": "3f3ef0ed0d2d17b80194f1f9fb5a1fb713a38eee3bc04303887d41a5cb2f3bc6"
+    },
+    {
+      "id": "badata-bus-28",
+      "originalName": "14. MALBA",
+      "address": "Figueroa Alcorta, Pres. Av. 3465, entre Jerónimo Salguero y San Martín de Tours",
+      "category": "Viajes",
+      "lat": -34.57686204285909,
+      "lon": -58.40424073807059,
+      "fingerprint": "8337c68ecf81c79d15cec8ae61a223e2ef5174963fcd45867b2932bdacfbe3c8"
+    },
+    {
+      "id": "badata-food-1641",
+      "originalName": "AFICHE",
+      "address": "ALVEAR, MARCELO T. De 2119",
+      "category": "Gastronomía",
+      "lat": -34.59714629,
+      "lon": -58.39785245,
+      "fingerprint": "2c0ba89915beb04f4c872b28a52566abe7a28f033234e132bd8ec89216a290eb"
+    },
+    {
+      "id": "badata-culture-29",
+      "originalName": "UNIDAD NACIONAL",
+      "address": "GALLO, DELFIN 5746, CABA",
+      "category": "Cultura",
+      "lat": -34.677227,
+      "lon": -58.476075,
+      "fingerprint": "582918a02efde2f92772f926feaf72de3a8bdcacbe064166413227c3b175f643"
+    },
+    {
+      "id": "badata-green-245",
+      "originalName": "Plaza J. J. Paso",
+      "address": "OLAGUER Y FELIU, VIRREY - MOLDES - ZABALA - VIAS DEL FCGB",
+      "category": "Aire Libre",
+      "lat": -34.57061406222461,
+      "lon": -58.451385328788575,
+      "fingerprint": "2adc69a34721fa9be0e61d4ae5d5136ccce49768c5734eff7540df6f6f5429f9"
+    },
+    {
+      "id": "badata-bus-29",
+      "originalName": "16. Plaza San Martín - Retiro",
+      "address": "Florida 1065, entre Corina Kavanagh y Dr Ricardo Rojas",
+      "category": "Viajes",
+      "lat": -34.59518343100643,
+      "lon": -58.37464641163191,
+      "fingerprint": "2379305f06c15ed0547e29f3dbe5bae60be39ec785d9af57f810573eae91718a"
+    },
+    {
+      "id": "badata-green-255",
+      "originalName": "Belisario Roldán",
+      "address": "SANTO TOME - GANA - CALDEN",
+      "category": "Aire Libre",
+      "lat": -34.6281321175969,
+      "lon": -58.528647990694964,
+      "fingerprint": "c255460b7050f531b2c3fefe069dcc2df072849e628eb84735974968057236ed"
+    },
+    {
+      "id": "badata-bus-30",
+      "originalName": "17. Parque Thays - Museo de Arquitectura y Diseño",
+      "address": "Del Libertador Av. y Montevideo, entre Libertad y Montevideo",
+      "category": "Viajes",
+      "lat": -34.58769933641633,
+      "lon": -58.383427673915364,
+      "fingerprint": "c3e11ce59ceaaf0aca56138efd1bbbd5d08fe92ba181db64eb85a39a6002a22f"
+    },
+    {
+      "id": "badata-food-1222",
+      "originalName": "AGARRATE CATALINA",
+      "address": "CABOTO 537",
+      "category": "Gastronomía",
+      "lat": -34.62879751,
+      "lon": -58.35939587,
+      "fingerprint": "7c180147f2e617d0d22fbbcf945b9cada174aa34825b2653bf449081e64fd5bd"
+    },
+    {
+      "id": "badata-green-268",
+      "originalName": "Cap. Domingo A. Millan",
+      "address": "QUESADA - PLAZA - SAN FRANCISCO DE ASIS",
+      "category": "Aire Libre",
+      "lat": -34.56275239216381,
+      "lon": -58.48123621041913,
+      "fingerprint": "881fcd8b46ea816d96b731ebc466778d05b81de6ec6679c74bd2cff8b1b3f2f7"
+    },
+    {
+      "id": "badata-bus-31",
+      "originalName": "15. Planetario",
+      "address": "Sarmiento Av. 4250, entre Av Pres. Figueroa Alcorta y Casares",
+      "category": "Viajes",
+      "lat": -34.57051355446734,
+      "lon": -58.41113300173694,
+      "fingerprint": "f5d09751abca697d70d57148656eb7ca34937bd9bf7ed205301f028097ddf428"
+    },
+    {
+      "id": "badata-food-1951",
+      "originalName": "AGRAZ",
+      "address": "POSADAS 1232",
+      "category": "Gastronomía",
+      "lat": -34.58936478,
+      "lon": -58.38406857,
+      "fingerprint": "2eebcc46a58b832e134220b12768da0e2f82162a20c4cf7a262244b0283a5941"
+    },
+    {
+      "id": "badata-green-269",
+      "originalName": "Plaza de la Misericordia",
+      "address": "DIRECTORIO, AV. - LAUTARO - BILBAO, FRANCISCO - CAMACUA",
+      "category": "Aire Libre",
+      "lat": -34.632985680679944,
+      "lon": -58.45554271060202,
+      "fingerprint": "cc32ce1c1e1d55978900df8761b4469b0bff71e4d4af1b3323506d1b4f1b7e0b"
+    },
+    {
+      "id": "badata-bus-32",
+      "originalName": "16. Club de Pescadores",
+      "address": "Obligado Rafael, Av.Costanera 2200",
+      "category": "Viajes",
+      "lat": -34.5636819613119,
+      "lon": -58.40401434747257,
+      "fingerprint": "f6a6646f7964969f4aebf372e46ea651d3b331457d4ff498d868852fd90719f5"
+    },
+    {
+      "id": "badata-food-1591",
+      "originalName": "AIRES DE PATAGONIA",
+      "address": "MOREAU DE JUSTO, ALICIA AV. 1798",
+      "category": "Gastronomía",
+      "lat": -34.62010255,
+      "lon": -58.36546876,
+      "fingerprint": "3d75fc93d939ce02a282bcb3066c655cd592f60b2bc66c0cbc6ae44f97572d95"
+    },
+    {
+      "id": "badata-culture-33",
+      "originalName": "ACONCAGUA",
+      "address": "ESTADOS UNIDOS 502, CABA",
+      "category": "Cultura",
+      "lat": -34.618532,
+      "lon": -58.373143,
+      "fingerprint": "097094c605cd074b95405484c1fad024a5f42cd900f6810d19e5d6484b2d4c28"
+    },
+    {
+      "id": "badata-green-281",
+      "originalName": "Plaza Reina de Holanda",
+      "address": "MANSO, JUANA - LORENZINI, CAROLA - DEALESSI, PIERINA",
+      "category": "Aire Libre",
+      "lat": -34.608057392367954,
+      "lon": -58.364116387967925,
+      "fingerprint": "25851b386ee64b28a66890577be8d49ea9b021dc3e8123ab4534a1abd6cf6b73"
+    },
+    {
+      "id": "badata-bus-33",
+      "originalName": "18. MALBA",
+      "address": "Figueroa Alcorta, Pres. Av. 3465,  entre Jerónimo Salguero y San Martín de Tours",
+      "category": "Viajes",
+      "lat": -34.57683344555577,
+      "lon": -58.4042883352058,
+      "fingerprint": "c8a877e5200140db4c20c9a995ae5bcb069b09f55063d74a902b452a1b77bda6"
+    },
+    {
+      "id": "badata-culture-34",
+      "originalName": "ALENJO",
+      "address": "BOEDO AV. 825, CABA",
+      "category": "Cultura",
+      "lat": -34.622842,
+      "lon": -58.416416,
+      "fingerprint": "81bd65c7e3e8d496426151c6958305227f45be09535ab7c456be595f52cb21ff"
+    },
+    {
+      "id": "badata-green-288",
+      "originalName": "Dr. Avelino Gutiérrez",
+      "address": "MITRE, EMILIO - PERON, EVA, AV.",
+      "category": "Aire Libre",
+      "lat": -34.63103645969953,
+      "lon": -58.44242470492003,
+      "fingerprint": "1301e547c785da22527d49a2e0e5c4c8d43b5b2673f979a1ce8c37612cba7a6f"
+    },
+    {
+      "id": "badata-bus-34",
+      "originalName": "17. Aeropuerto - Monumento a Cristóbal Colón",
+      "address": "Obligado Rafael, Av.Costanera 4200",
+      "category": "Viajes",
+      "lat": -34.557642627148546,
+      "lon": -58.410896481229535,
+      "fingerprint": "796b6a301cb7823f2917e5986f86cce8a3b98520009c3b0e282cd102989aa97e"
+    },
+    {
+      "id": "badata-food-677",
+      "originalName": "ALA...",
+      "address": "BELGRANO AV. 1836",
+      "category": "Gastronomía",
+      "lat": -34.61395387,
+      "lon": -58.3923528,
+      "fingerprint": "dae1b0015322b3cedc273a0037ab3983cb97cd7c64ac80a5ee7afb4a1b9f703e"
+    },
+    {
+      "id": "badata-culture-35",
+      "originalName": "AMERICAN BAR",
+      "address": "SAENZ PEÑA, ROQUE, PRES. DIAGONAL NORTE AV. 632, CABA",
+      "category": "Cultura",
+      "lat": -34.607122,
+      "lon": -58.375366,
+      "fingerprint": "169df30776d08af98c9debeec61eced9dde818b7dd40a73102f1e932345af462"
     }
   ],
   "records": {
@@ -915,8 +1815,9 @@
       "lon": -58.37083484,
       "fingerprint": "d620e3b01fb3531786d9367c6c18da6f0b33bf30cdd430fd8ea7778cbf757c13",
       "searchKey": "35750cb633b3543e7e28913ebde82dbf3411de6a9ee00359274426e120a5ea09",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T00:59:54.076Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T00:59:54.076Z",
+      "reviewedAt": "2026-11-16T10:38:13.452Z"
     },
     "badata-food-2567": {
       "id": "badata-food-2567",
@@ -927,8 +1828,9 @@
       "lon": -58.37414081,
       "fingerprint": "8d9222f2c0d391731faa5e187d80c480e049d456d8fa82f9b29330dca65924d9",
       "searchKey": "60eec26c1bdebb48b151c78b4c0c0f2d67cea9282c428c506ce51ecf4e3911e2",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T00:59:55.405Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T00:59:55.405Z",
+      "reviewedAt": "2026-11-16T10:38:13.453Z"
     },
     "badata-food-2231": {
       "id": "badata-food-2231",
@@ -939,8 +1841,9 @@
       "lon": -58.39030366,
       "fingerprint": "b547436821f5f356dda05b96c771decd0d5e0d14a012e99cb44838000c6bf7b2",
       "searchKey": "804d8a17eb611f9c79bec108c429e7bc6a1ed4748fa6fa7109a426470b0fbfbe",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T00:59:56.987Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T00:59:56.987Z",
+      "reviewedAt": "2026-11-16T10:38:13.453Z"
     },
     "badata-food-1780": {
       "id": "badata-food-1780",
@@ -951,8 +1854,9 @@
       "lon": -58.39075439,
       "fingerprint": "c2e492360cb727a99dbd9124ba3aa84f53c9d7b149cc20d357eb53a1ed733839",
       "searchKey": "9ace5bd01110bb1a7dd090764dfa9a0f0d05230fe5038c735fa6ff614b960d35",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T00:59:58.379Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T00:59:58.379Z",
+      "reviewedAt": "2026-11-16T10:38:13.453Z"
     },
     "badata-food-2340": {
       "id": "badata-food-2340",
@@ -975,8 +1879,9 @@
       "lon": -58.39221247,
       "fingerprint": "56f8dd4e06b2e70d8e3719b463eb43327969022f747c3d9f95ef7965e0919094",
       "searchKey": "44916ff5e1ba951f7f91caf6bbfb5dfc3e4e19b08a2bc5f497acb9b6a8a23ff2",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:00:01.446Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:00:01.446Z",
+      "reviewedAt": "2026-11-16T10:38:13.453Z"
     },
     "badata-food-947": {
       "id": "badata-food-947",
@@ -987,8 +1892,9 @@
       "lon": -58.41633475,
       "fingerprint": "6c706c33aeb1bc4691add7caaf401ed6043369cb3be5a79b7af685c964d84004",
       "searchKey": "17ec0ce46151d3b9464d6599ba0b2c3897e7b34b6e774c32b428973a64a78ade",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:00:03.034Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:00:03.034Z",
+      "reviewedAt": "2026-11-16T10:38:13.453Z"
     },
     "badata-culture-2989": {
       "id": "badata-culture-2989",
@@ -999,8 +1905,9 @@
       "lon": -58.382442,
       "fingerprint": "2215e4a70d48c3875d1d015694038e5725b6746f74071443fcf08ee0b94c4e4f",
       "searchKey": "077fb7210e03fee1e4aefe51ca10d496134c46393f3d89704229e7ced5552efc",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:00:04.710Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:00:04.710Z",
+      "reviewedAt": "2026-11-16T10:38:13.453Z"
     },
     "badata-culture-2675": {
       "id": "badata-culture-2675",
@@ -1011,8 +1918,9 @@
       "lon": -58.373567,
       "fingerprint": "9b58dbb017509f4654fb0b56ad1cd3c76fca3e5c09034072224204c9565fa439",
       "searchKey": "66ba97929827fb67fa18eb95bb14b9d0e950cc1639f82c2fec2d275e49babdb4",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:00:06.058Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:00:06.058Z",
+      "reviewedAt": "2026-11-16T10:38:13.453Z"
     },
     "badata-culture-2717": {
       "id": "badata-culture-2717",
@@ -1023,8 +1931,9 @@
       "lon": -58.4115468,
       "fingerprint": "f902c41f3e58a97d2366c2872cf5b97690cda2c6bd70b7364909c0517cfe5e7d",
       "searchKey": "d59a0b9a74ec5ec7fd5d925322d5251512fb2989c5205ed19fd5f61ad663d3d6",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:00:07.489Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:00:07.489Z",
+      "reviewedAt": "2026-11-16T10:38:13.453Z"
     },
     "badata-culture-2578": {
       "id": "badata-culture-2578",
@@ -1035,8 +1944,9 @@
       "lon": -58.438053,
       "fingerprint": "daecb2809e37834060d98414deafab08da7715843848adc6df2f34b16a1f3a64",
       "searchKey": "8af2fc39716b4bcd7c2e379c1cda3bf58de450cd5e646d5f8e48929caacc8068",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:00:26.541Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:00:26.541Z",
+      "reviewedAt": "2026-11-16T10:38:13.453Z"
     },
     "badata-culture-1379": {
       "id": "badata-culture-1379",
@@ -1047,8 +1957,9 @@
       "lon": -58.356388,
       "fingerprint": "9df6d488bb21e23706dcc7eac633c8b32a913dbb1551044a653ae1b217103af9",
       "searchKey": "af58383f6b5c4ed725f8469a2d2f27e87eaf0edcdd63cb301d5798da7dcb23d4",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:00:27.556Z"
+      "status": "deferred-review",
+      "checkedAt": "2026-11-16T01:00:27.556Z",
+      "reviewReason": "Imagen inspeccionada, pero descripción insuficiente (the building). Requiere evidencia adicional de correspondencia; no publicar."
     },
     "badata-culture-1985": {
       "id": "badata-culture-1985",
@@ -1059,8 +1970,9 @@
       "lon": -58.39422,
       "fingerprint": "f787b673ecc0c60e3e59c5ca38b1ab20053c8f6ba93c66575dc70046d50d79f0",
       "searchKey": "f17cee7793a3e0f81517a6b80ed9f9b54beffcd140a4132a87b8709fe7af51e6",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:00:29.097Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:00:29.097Z",
+      "reviewedAt": "2026-11-16T10:38:13.453Z"
     },
     "badata-culture-2467": {
       "id": "badata-culture-2467",
@@ -1071,8 +1983,9 @@
       "lon": -58.38576,
       "fingerprint": "2c37ec32d2ce0c6019f675ddb3f09f25103fbafc1fa95d381000c77e6c5a4448",
       "searchKey": "60a593cb49724f9fb5991195dc0acf84d737a86f0e5ff01c3918de5c41c47b1f",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:00:30.457Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:00:30.457Z",
+      "reviewedAt": "2026-11-16T10:38:13.453Z"
     },
     "badata-green-880": {
       "id": "badata-green-880",
@@ -1083,8 +1996,9 @@
       "lon": -58.368686237872936,
       "fingerprint": "ee02a0e2353cd310b3e81975fa4570f13feaa44c2312cb5cd3052e19ed6530b8",
       "searchKey": "0a67c04fa9b4ca75b225d1cba19cd2f02af52ac5638059bf86a4cbfbe0d51e66",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:00:32.063Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:00:32.063Z",
+      "reviewedAt": "2026-11-16T10:38:13.453Z"
     },
     "badata-green-1106": {
       "id": "badata-green-1106",
@@ -2105,6 +3019,126 @@
       "searchKey": "c42a9a48b65244eaa757ab7a616f21df99cd6229134103135498119f1e27d6c2",
       "status": "no-candidates",
       "checkedAt": "2026-11-16T01:09:20.778Z"
+    },
+    "badata-food-1602": {
+      "id": "badata-food-1602",
+      "originalName": "GUANTANAMERA",
+      "address": "MOREAU DE JUSTO, ALICIA AV. 2092",
+      "category": "Gastronomía",
+      "lat": -34.62296347,
+      "lon": -58.36330675,
+      "fingerprint": "e8d2897b889e2949fff93bc324670805f83049e9a73f9563258f55b4351f1994",
+      "searchKey": "179c0287460c4358e24dad3c689f1c733ecb1fe4272d8d6b1b624683237aa0c0",
+      "status": "no-candidates",
+      "checkedAt": "2026-11-16T10:34:22.696Z"
+    },
+    "badata-culture-1": {
+      "id": "badata-culture-1",
+      "originalName": "ALEMANIA",
+      "address": "CASARES AV. y CASTEX, CABA",
+      "category": "Cultura",
+      "lat": -34.57558,
+      "lon": -58.40855,
+      "fingerprint": "aee21d8cd8b967bd8b61bbc2abfe030e17ee1ae385ebc7c814775f3c33a2dec7",
+      "searchKey": "067a4726d131484d0f601c24ca066c085c617994bcf6d7010a043807a937514a",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:34:29.444Z"
+    },
+    "badata-green-2": {
+      "id": "badata-green-2",
+      "originalName": "Escuela Scalabrini Ortiz",
+      "address": "CONDE - MATIENZO, BENJAMIN, TTE. - FREIRE, RAMON, CAP. GRAL.",
+      "category": "Aire Libre",
+      "lat": -34.57924873718935,
+      "lon": -58.44535560170446,
+      "fingerprint": "3a34039a9e9e71c8115d0a798c386a8a8c29fdbe7fd4e3a7f4f9664ccacd5411",
+      "searchKey": "59ed7ceb90fba282dad811184d589d16ef0c7dd636770a0c06caf00a9073259c",
+      "status": "no-candidates",
+      "checkedAt": "2026-11-16T10:34:34.990Z"
+    },
+    "badata-culture-2": {
+      "id": "badata-culture-2",
+      "originalName": "ALLENDE, SALVADOR",
+      "address": "TAMBORINI, JOSE PASCUAL y HOLMBERG, CABA",
+      "category": "Cultura",
+      "lat": -34.56202,
+      "lon": -58.48278,
+      "fingerprint": "e49a8ca93bd16220605245cfad95593f670c23b069e5d7b6755783fcc2730ed1",
+      "searchKey": "cf2d9fb0d45eadae7cb09f5234b439082780b99e66dc7f3a743380fc76c3a38a",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:34:41.118Z"
+    },
+    "badata-green-6": {
+      "id": "badata-green-6",
+      "originalName": "Polideportivo Colegiales",
+      "address": "CONDE - MATIENZO, BENJAMIN, TTE. - FREIRE, RAMON, CAP. GRAL.",
+      "category": "Aire Libre",
+      "lat": -34.57987067238085,
+      "lon": -58.44480742530068,
+      "fingerprint": "b6057087bb46cc0ca01f32b21c6cd15f9a0d7523ac6ff5048f1aa28d0b117686",
+      "searchKey": "10b435df3ec27380dad9c93b3bc0ac5ef1e9c79635716e3f7f151075e7814d4d",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:34:46.803Z"
+    },
+    "badata-culture-3": {
+      "id": "badata-culture-3",
+      "originalName": "ANFITEATRO ESCALINATA",
+      "address": "2 DE ABRIL DE 1982 6901, CABA",
+      "category": "Cultura",
+      "lat": -34.67867,
+      "lon": -58.4921,
+      "fingerprint": "dff6b64b63dd44a436d6ff00a9cdc246777d3a16ab14b0bf7de88c50e9cf4cef",
+      "searchKey": "c0b735b24b9f00f57d5fbee472aba6b7cdd94645933bf3b53965471529597478",
+      "status": "no-candidates",
+      "checkedAt": "2026-11-16T10:34:52.842Z"
+    },
+    "badata-green-9": {
+      "id": "badata-green-9",
+      "originalName": "Plaza Rafael Hernández",
+      "address": "ECHEVERRIA - VUELTA DE OBLIGADO - MOM, POLICARPO",
+      "category": "Aire Libre",
+      "lat": -34.562232328733664,
+      "lon": -58.45528767703161,
+      "fingerprint": "b469416d630145234d5243b3732e1a6dda74f4d230d088bd04cb40d0d7fc2d1e",
+      "searchKey": "0162c7f2ed88a4bc1d9548a3543d776483fe21c8ca464497bc0fcddfd867d872",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:34:58.976Z"
+    },
+    "badata-culture-4": {
+      "id": "badata-culture-4",
+      "originalName": "ANFITEATRO EVA PERON",
+      "address": "MARECHAL, LEOPOLDO 832, CABA",
+      "category": "Cultura",
+      "lat": -34.60825,
+      "lon": -58.43747,
+      "fingerprint": "4c8bff08d95ef5cc0db358311652fd376d69b760ddc71cfc75a8eb62af1d4c86",
+      "searchKey": "77c43f0c4d4243177fc4cc2131a196cc661377aa5b648e5015ff03afdc1d2652",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:35:05.036Z"
+    },
+    "badata-green-10": {
+      "id": "badata-green-10",
+      "originalName": "Plaza Pques. Nacionales Argentinos",
+      "address": "ECHEVERRIA - CASTAÑEDA - SUCRE, ANTONIO J. DE, MCAL. - FIGUEROA ALCORTA PRES., AV.",
+      "category": "Aire Libre",
+      "lat": -34.55314301162357,
+      "lon": -58.437138709427856,
+      "fingerprint": "c22ac44c61391fb5fbb429954c5e34e6dbb7f0e9452fc25c2cae559ec43234da",
+      "searchKey": "281654c89543847ef733f0e724bc96130b5b57e95976a8f2e28b3ab910f7adfa",
+      "status": "no-candidates",
+      "checkedAt": "2026-11-16T10:35:10.821Z"
+    },
+    "badata-culture-5": {
+      "id": "badata-culture-5",
+      "originalName": "ANFITEATRO VILLA CILDAÑEZ",
+      "address": "ALVAREZ, CRISOSTOMO 4401, CABA",
+      "category": "Cultura",
+      "lat": -34.66032,
+      "lon": -58.47331,
+      "fingerprint": "ca0ab172e9ee3a9e72adc4a95c9553a1b7395e98c96223c83871250b99ead449",
+      "searchKey": "fb7f22ffcd6f0b3a8b1b12336f0c28210c59fbabe6d6734ae738433c126b5927",
+      "status": "no-candidates",
+      "checkedAt": "2026-11-16T10:35:16.944Z"
     }
   },
   "searches": {
@@ -5754,7 +6788,246 @@
       "query": "\"AÃƒâ€˜ARO CERO\" \"Buenos Aires\"",
       "checkedAt": "2026-11-16T01:09:20.778Z",
       "candidates": []
+    },
+    "179c0287460c4358e24dad3c689f1c733ecb1fe4272d8d6b1b624683237aa0c0": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22GUANTANAMERA%22+%22Buenos+Aires%22&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "\"GUANTANAMERA\" \"Buenos Aires\"",
+      "checkedAt": "2026-11-16T10:34:22.696Z",
+      "candidates": []
+    },
+    "067a4726d131484d0f601c24ca066c085c617994bcf6d7010a043807a937514a": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22ALEMANIA%22+%22Buenos+Aires%22&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "\"ALEMANIA\" \"Buenos Aires\"",
+      "checkedAt": "2026-11-16T10:34:29.444Z",
+      "candidates": [
+        {
+          "file": "File:German democratic football vs argentina.jpg",
+          "pageId": 66077656,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/German_democratic_football_vs_argentina.jpg/960px-German_democratic_football_vs_argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/German_democratic_football_vs_argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:German_democratic_football_vs_argentina.jpg",
+          "author": "Unknown authorUnknown author",
+          "authorMetadata": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+          "uploader": "Fma12",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "restrictions": "",
+          "photoDate": "1977-07-12",
+          "description": "The German Democratic Republic football team that played the Argentine side at Boca Juniors stadium. The German squad was beat by 2-0, with an attendance of 50,000 spectators.",
+          "categories": "German Democratic Republic national association football team|PD-AR-Photo|Works copyrighted in the U.S.|1977 in Buenos Aires|Template Unknown (author)|Group photographs of association football teams in Argentina in 1977|Sports clothing of the German Democratic Republic",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 103503
+        },
+        {
+          "file": "File:Revista chilena de historia natural (IA revistachilenade61902muse).pdf",
+          "pageId": 92459222,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Revista_chilena_de_historia_natural_%28IA_revistachilenade61902muse%29.pdf/page1-500px-Revista_chilena_de_historia_natural_%28IA_revistachilenade61902muse%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Revista_chilena_de_historia_natural_%28IA_revistachilenade61902muse%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Revista_chilena_de_historia_natural_(IA_revistachilenade61902muse).pdf",
+          "author": "Museo de Historia Natural de Valparaíso (Valparaíso, Chile)",
+          "authorMetadata": "<div class=\"fn value\">\nMuseo de Historia Natural de Valparaíso (Valparaíso, Chile)</div>",
+          "uploader": "Fæ",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "restrictions": "",
+          "photoDate": "",
+          "description": "Published: Santiago de Chile : Imp. y Lit. La Ilustracion, -1923\nIncludes bibliographies\nVol. 16, 18 and 26 never published\nJuly/Aug. 1898-Feb. 1906 issued by Museo de Historia Natural de Valparaíso\nSubjects: Natural history; Natural history",
+          "categories": "Revista Chilena de Historia Natural|Scans from the Internet Archive/unverified|PD US expired|Files from the Biodiversity Heritage Library|Scans from the Internet Archive|1902 books from Chile|Books uploaded by Fæ|Books without Wikidata item|Books from the Biodiversity Heritage Library",
+          "gps": null,
+          "mime": "application/pdf",
+          "originalBytes": 28918597
+        },
+        {
+          "file": "File:Penhouse (1494310600).jpg",
+          "pageId": 95794590,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Penhouse_%281494310600%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Penhouse_%281494310600%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Penhouse_(1494310600).jpg",
+          "author": "Montecruz Foto from Berlin, Alemania",
+          "authorMetadata": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/28328732@N00\">Montecruz Foto</a> from Berlin, Alemania",
+          "uploader": "JotaCartas",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "restrictions": "",
+          "photoDate": "2007-09-30 14:06",
+          "description": "Bauen, hotel recuperado. hotel sin patrones!\n\nEsta es la vista desde el penhouse, la suit presidencial, en desuso, no la utilizan y dejaron quedarse a los 4 pesos ahi.",
+          "categories": "Buenos Aires|Flickr images reviewed by FlickreviewR 2",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 307653
+        }
+      ]
+    },
+    "59ed7ceb90fba282dad811184d589d16ef0c7dd636770a0c06caf00a9073259c": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Escuela+Scalabrini+Ortiz%22+%22Buenos+Aires%22&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "\"Escuela Scalabrini Ortiz\" \"Buenos Aires\"",
+      "checkedAt": "2026-11-16T10:34:34.990Z",
+      "candidates": []
+    },
+    "cf2d9fb0d45eadae7cb09f5234b439082780b99e66dc7f3a743380fc76c3a38a": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22ALLENDE%2C+SALVADOR%22+%22Buenos+Aires%22&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "\"ALLENDE, SALVADOR\" \"Buenos Aires\"",
+      "checkedAt": "2026-11-16T10:34:41.118Z",
+      "candidates": [
+        {
+          "file": "File:Teresa Parodi en 25 de mayo- Fiesta patria popular en la plaza de todos (14250886296).jpg",
+          "pageId": 59908980,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Teresa_Parodi_en_25_de_mayo-_Fiesta_patria_popular_en_la_plaza_de_todos_%2814250886296%29.jpg/960px-Teresa_Parodi_en_25_de_mayo-_Fiesta_patria_popular_en_la_plaza_de_todos_%2814250886296%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Teresa_Parodi_en_25_de_mayo-_Fiesta_patria_popular_en_la_plaza_de_todos_%2814250886296%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Teresa_Parodi_en_25_de_mayo-_Fiesta_patria_popular_en_la_plaza_de_todos_(14250886296).jpg",
+          "author": "Ministerio de Cultura de la Nación Argentina",
+          "authorMetadata": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/52498302@N08\">Ministerio de Cultura de la Nación Argentina</a>",
+          "uploader": "Cacen Gymraeg",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "restrictions": "",
+          "photoDate": "2014-05-25 20:00",
+          "description": "Buenos Aires, 25 de mayo de 2014 - La fiesta patria del 25 de mayo se realizó en Plaza de Mayo con shows para chicos, recitales, espectáculos de danza, programas de la TV Pública en vivo, y un gran cierre musical a cargo de un seleccionado de artistas representantivos de las músicas del país, desde la cumbia hasta el tango: “La asombrosa banda de Zamba”, el grupo Desmán –ganador del concurso federal de bandas juveniles “Maravillosa Música”–, el espectáculo “Payadores vs. Raperos”, el trío de rock Científicos del palo, y la participación de la banda del Regimiento de Granaderos a Caballo \"General San Martín\", interpretando un repertorio popular.  La segunda parte del espectáculo contó con el Combinado Argentino de Danza musicalizado por Metabombo y Tremor, la actuación del coro toba Qom Chelaalapi, y un desfile de indumentaria con diseño argentino. Bajo el lema  “Somos Cultura”, el cierre, producido por Lito Vitale, con la participación de Pedro Aznar, Kevin Johansen, Gladys La Bomba Tucumana, Hilda Lizarazu, David Lebon, Juan Carlos Baglietto, Susana Rinaldi, Silvina Garré, Patricia Sosa, Litto Nebbia, Fabiana Cantilo, Víctor Heredia, Sandra Mihanovich, la Bersuit, Nicolás Ledesma, Joaquín Benitez, Alejandro Lerner, Palo Pandolfo, Tonolec, Orozco Barrientos, Peteco Carabajal, Orquesta Popular de Càmara Los Amigos del Chango, Verónica Condomi, Koki y Pajarín Saavedra, Gabo Ferro, Liliana Vitale, La Bomba del Tiempo, Carajo y Adriana Varela, la Bersuit, entre otros artistas y bandas de primer nivel.\n\nFotos: Mauro Rico/ Ministerio de Cultura de la Nación.",
+          "categories": "Teresa Parodi|Day of First National Government|Flickr images reviewed by FlickreviewR|May 2014 Argentina photographs|Galería de los Patriotas Latinoamericanos|Files from Ministerio de Cultura de la Nación Argentina Flickr stream|Natalia Paratore|Portraits of Salvador Allende",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 15356296
+        }
+      ]
+    },
+    "10b435df3ec27380dad9c93b3bc0ac5ef1e9c79635716e3f7f151075e7814d4d": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Polideportivo+Colegiales%22+%22Buenos+Aires%22&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "\"Polideportivo Colegiales\" \"Buenos Aires\"",
+      "checkedAt": "2026-11-16T10:34:46.803Z",
+      "candidates": [
+        {
+          "file": "File:Stadiono Colegiales (Bonaero).jpg",
+          "pageId": 73835944,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Stadiono_Colegiales_%28Bonaero%29.jpg/960px-Stadiono_Colegiales_%28Bonaero%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Stadiono_Colegiales_%28Bonaero%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stadiono_Colegiales_(Bonaero).jpg",
+          "author": "RG72",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:RG72\" title=\"User:RG72\">RG72</a>",
+          "uploader": "RG72",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2014-07-31 19:46:42",
+          "description": "Futsal court in \"Polideportivo Colegiales\" (owned by the GCBA) located in the Colegiales neighborhood of Buenos Aires, Argentina.",
+          "categories": "Futsal in Argentina|Esperanta Selektitaro match during World Esperanto Congress 2014|Self-published work|Spanish inscriptions in Argentina|Files with coordinates missing SDC location of creation|Association football in Argentina in 2014|Argentina photographs taken on 2014-07-31|Night in Buenos Aires|2 words",
+          "gps": {
+            "lat": -34.579994,
+            "lon": -58.444511
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 2755626
+        }
+      ]
+    },
+    "c0b735b24b9f00f57d5fbee472aba6b7cdd94645933bf3b53965471529597478": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22ANFITEATRO+ESCALINATA%22+%22Buenos+Aires%22&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "\"ANFITEATRO ESCALINATA\" \"Buenos Aires\"",
+      "checkedAt": "2026-11-16T10:34:52.842Z",
+      "candidates": []
+    },
+    "0162c7f2ed88a4bc1d9548a3543d776483fe21c8ca464497bc0fcddfd867d872": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Plaza+Rafael+Hern%C3%A1ndez%22+%22Buenos+Aires%22&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "\"Plaza Rafael Hernández\" \"Buenos Aires\"",
+      "checkedAt": "2026-11-16T10:34:58.976Z",
+      "candidates": [
+        {
+          "file": "File:PlazaRafaelHernandez2.jpg",
+          "pageId": 108348762,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/PlazaRafaelHernandez2.jpg/960px-PlazaRafaelHernandez2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/PlazaRafaelHernandez2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:PlazaRafaelHernandez2.jpg",
+          "author": "Fulviusbsas",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Fulviusbsas\" title=\"User:Fulviusbsas\">Fulviusbsas</a>",
+          "uploader": "Fulviusbsas",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2021-05-16 14:54:07",
+          "description": "Rafael Hernández Square in Belgrano, Buenos Aires",
+          "categories": "Self-published work|Plaza Rafael Hernández",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 2554343
+        },
+        {
+          "file": "File:PlazaRafaelHernandez1.jpg",
+          "pageId": 108348763,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/PlazaRafaelHernandez1.jpg/960px-PlazaRafaelHernandez1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/PlazaRafaelHernandez1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:PlazaRafaelHernandez1.jpg",
+          "author": "Fulviusbsas",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Fulviusbsas\" title=\"User:Fulviusbsas\">Fulviusbsas</a>",
+          "uploader": "Fulviusbsas",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2021-05-16 14:54:27",
+          "description": "Rafael Hernández Square in Belgrano, Buenos Aires",
+          "categories": "Self-published work|Park signs in Buenos Aires|Plaza Rafael Hernández",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 2622472
+        }
+      ]
+    },
+    "77c43f0c4d4243177fc4cc2131a196cc661377aa5b648e5015ff03afdc1d2652": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22ANFITEATRO+EVA+PERON%22+%22Buenos+Aires%22&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "\"ANFITEATRO EVA PERON\" \"Buenos Aires\"",
+      "checkedAt": "2026-11-16T10:35:05.036Z",
+      "candidates": [
+        {
+          "file": "File:Anfiteatro Eva Perón (1953).JPG",
+          "pageId": 9645734,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Anfiteatro_Eva_Per%C3%B3n_%281953%29.JPG/960px-Anfiteatro_Eva_Per%C3%B3n_%281953%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Anfiteatro_Eva_Per%C3%B3n_%281953%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anfiteatro_Eva_Per%C3%B3n_(1953).JPG",
+          "author": "Unknown authorUnknown author",
+          "authorMetadata": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+          "uploader": "Fma12",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "restrictions": "",
+          "photoDate": "1953",
+          "description": "The Eva Perón Amphitheater, in Buenos Aires' Parque Centenario. Designed by then-Mayor Jorge Sabaté and inaugurated in 1953, the 10,000-seat outdoor venue was abandoned following President Juan Perón's 1955 overthrow and was destroyed by fire (likely arson) in 1959. It was replaced with a modern amphitheater by the same name, inaugurated on June 9, 2009.",
+          "categories": "Parque Centenario, Buenos Aires|PBT|PD-AR-Photo|Destroyed in 1959|Things named after Eva Perón|PD-1996|Amphitheatres in Argentina|1953 in Buenos Aires|Template Unknown (author)|Built in Argentina in 1953|Fire-damaged buildings in Argentina|Modernist architecture in Buenos Aires|Black and white photographs of Buenos Aires|Demolished buildings in Buenos Aires|Historical images of theaters in Buenos Aires|Jorge Sabaté",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 175024
+        },
+        {
+          "file": "File:Orquesta Estable del Teatro Colón en el Anfiteatro del Parque Centenario Buenos Aires.jpg",
+          "pageId": 184657763,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Orquesta_Estable_del_Teatro_Col%C3%B3n_en_el_Anfiteatro_del_Parque_Centenario_Buenos_Aires.jpg/960px-Orquesta_Estable_del_Teatro_Col%C3%B3n_en_el_Anfiteatro_del_Parque_Centenario_Buenos_Aires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Orquesta_Estable_del_Teatro_Col%C3%B3n_en_el_Anfiteatro_del_Parque_Centenario_Buenos_Aires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orquesta_Estable_del_Teatro_Col%C3%B3n_en_el_Anfiteatro_del_Parque_Centenario_Buenos_Aires.jpg",
+          "author": "Juanjo Bruzza / GCBA",
+          "authorMetadata": "Juanjo Bruzza / GCBA",
+          "uploader": "Diego A. Prats",
+          "license": "CC BY 2.5 ar",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/deed.en",
+          "restrictions": "",
+          "photoDate": "2025-12-20",
+          "description": "Orquesta Estable del Teatro Colón en el Anfiteatro del Parque Centenario.",
+          "categories": "Parque Centenario, Buenos Aires|Images from the Government of Buenos Aires City|Orquesta Estable del Teatro Colón",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 1196609
+        }
+      ]
+    },
+    "281654c89543847ef733f0e724bc96130b5b57e95976a8f2e28b3ab910f7adfa": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Plaza+Pques.+Nacionales+Argentinos%22+%22Buenos+Aires%22&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "\"Plaza Pques. Nacionales Argentinos\" \"Buenos Aires\"",
+      "checkedAt": "2026-11-16T10:35:10.821Z",
+      "candidates": []
+    },
+    "fb7f22ffcd6f0b3a8b1b12336f0c28210c59fbabe6d6734ae738433c126b5927": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22ANFITEATRO+VILLA+CILDA%C3%91EZ%22+%22Buenos+Aires%22&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "\"ANFITEATRO VILLA CILDAÑEZ\" \"Buenos Aires\"",
+      "checkedAt": "2026-11-16T10:35:16.944Z",
+      "candidates": []
     }
   },
-  "lastRequestAt": 1794791360076
+  "lastRequestAt": 1794825316264
 }

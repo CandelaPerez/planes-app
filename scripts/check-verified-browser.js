@@ -1,0 +1,118 @@
+import assert from 'node:assert/strict';
+import { spawn } from 'node:child_process';
+import { mkdir, mkdtemp, writeFile, readFile } from 'node:fs/promises';
+import { createServer, preview } from 'vite';
+import { Buffer } from 'node:buffer';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+
+// Real Chromium/CDP check, no account login or writes to Firebase.
+const folder = new URL('../.browser-check/', import.meta.url);
+await mkdir(folder, { recursive: true });
+const baData = globalThis.process.argv.includes('--ba-data');
+const baDataHome = globalThis.process.argv.includes('--ba-data-home');
+const production = globalThis.process.argv.includes('--production') || baData;
+const server = production
+  ? await preview({ preview: { host: '127.0.0.1', port: 0 } })
+  : await createServer({ define: { 'import.meta.env.VITE_USE_FIREBASE': '"false"' }, server: { host: '127.0.0.1', port: 0, hmr: false, ws: false, watch: { ignored: ['**/.browser-check/**'] } } });
+if (!production) await server.listen();
+const origin = `http://127.0.0.1:${server.httpServer.address().port}`;
+if (production || baDataHome) {
+  const response = await fetch(`${origin}/data/ba-data.json`);
+  assert.equal(response.status, 200);
+  assert.equal((await response.json()).places.length, 6670);
+}
+const executable = globalThis.process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
+const profile = await mkdtemp(join(tmpdir(), 'porhacer-browser-'));
+const browser = spawn(executable, ['--headless=new', '--disable-gpu', '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', '--no-first-run', '--no-default-browser-check', '--remote-debugging-port=0', `--user-data-dir=${profile}`, 'about:blank'], { windowsHide: true });
+let socket;
+try {
+  const address = await new Promise((resolve, reject) => {
+    const timeout = setTimeout(() => reject(new Error('Chrome startup timed out')), 15_000);
+    browser.once('error', (error) => { clearTimeout(timeout); reject(error); });
+    browser.stderr.on('data', (data) => {
+      const match = /DevTools listening on (ws:\/\/\S+)/.exec(String(data));
+      if (match) { clearTimeout(timeout); resolve(match[1]); }
+    });
+  });
+  const targets = await (await fetch(`http://${new URL(address).host}/json/list`)).json();
+  socket = new WebSocket(targets.find((target) => target.type === 'page').webSocketDebuggerUrl);
+  await new Promise((resolve, reject) => { socket.onopen = resolve; socket.onerror = reject; });
+  let sequence = 0;
+  const pending = new Map();
+  const exceptions = [];
+  socket.onmessage = ({ data }) => {
+    const message = JSON.parse(data);
+    if (message.method === 'Runtime.exceptionThrown') exceptions.push(message.params.exceptionDetails.text);
+    if (message.method === 'Runtime.exceptionThrown') console.error(JSON.stringify(message.params.exceptionDetails));
+    if (message.id && pending.has(message.id)) {
+      const { resolve, reject, timer } = pending.get(message.id);
+      clearTimeout(timer);
+      pending.delete(message.id);
+      if (message.error) reject(new Error(message.error.message)); else resolve(message.result);
+    }
+  };
+  const command = (method, params = {}, sessionId) => new Promise((resolve, reject) => {
+    const id = ++sequence;
+    const timer = setTimeout(() => { pending.delete(id); reject(new Error(`${method} timed out`)); }, 15_000);
+    pending.set(id, { resolve, reject, timer });
+    socket.send(JSON.stringify({ id, method, params, ...(sessionId ? { sessionId } : {}) }));
+  });
+  const call = (method, params) => command(method, params);
+  const evaluate = async (expression) => {
+    const { result, exceptionDetails } = await call('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true });
+    if (exceptionDetails) throw new Error(JSON.stringify(exceptionDetails));
+    return result.value;
+  };
+  const until = async (expression) => {
+    const deadline = Date.now() + 12_000;
+    while (Date.now() < deadline) {
+      try {
+        if (await evaluate(expression)) return;
+      } catch (error) {
+        if (!/navigated|Execution context was destroyed|Cannot find context/i.test(error.message)) throw error;
+      }
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    }
+    throw new Error(`Condition not met: ${expression}`);
+  };
+  await call('Page.enable');
+  await call('Page.bringToFront');
+  await call('Runtime.enable');
+  await call('Network.enable');
+
+  await call('Network.setBlockedURLs', {urls:['https://*']});
+  await call('Emulation.setDeviceMetricsOverride',{width:1366,height:900,deviceScaleFactor:1,mobile:false});
+  await call('Page.navigate',{url:origin});
+  await until("document.querySelector('#discover-plans')?.textContent.includes('21 planes')");
+  await until("[...document.querySelectorAll('.plan-card img')].every(i=>i.complete&&i.naturalWidth>0)");
+  const manifests=await Promise.all(['baDataPilot.json','baDataPhotos.json'].map(async f=>JSON.parse(await readFile(new URL('../src/data/'+f,import.meta.url),'utf8'))));
+  const images=manifests.flatMap(m=>m.entries.filter(e=>e.photo).map(e=>e.photo.localPath));
+  assert.ok(await evaluate('Promise.all('+JSON.stringify(images)+'.map(src=>new Promise(resolve=>{const image=new Image();image.onload=()=>resolve(image.naturalWidth>0);image.onerror=()=>resolve(false);image.src=src;}))).then(results=>results.every(Boolean))'));
+  assert.equal(await evaluate("getComputedStyle(document.querySelector('.cards-grid')).gridTemplateColumns.split(' ').length"),3);
+  assert.ok(await evaluate("[...document.querySelectorAll('.plan-card img')].every(i=>i.getAttribute('src').startsWith('/images/ba-data-'))"));
+  await evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent==='Ver m\u00e1s').click()");
+  await until("document.querySelectorAll('.plan-card').length===12");
+  for(const [category,total] of [['Cultura',9],['Gastronom\u00eda',8],['Aire Libre',4]]){
+   await evaluate("[...document.querySelectorAll('.category-filter button')].find(b=>b.textContent==="+JSON.stringify(category)+").click()");
+   await until("document.body.textContent.includes('"+total+" resultados')");
+  }
+  await evaluate("[...document.querySelectorAll('.category-filter button')].find(b=>b.textContent==='Todas').click()");
+  await evaluate("(()=>{const input=document.querySelector('input[type=search]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'Tortoni');input.dispatchEvent(new Event('input',{bubbles:true}));})()");
+  await until("document.querySelectorAll('.plan-card').length===1");
+  await until("document.querySelector('.plan-card img').complete && document.querySelector('.plan-card img').naturalWidth>0");
+  await evaluate("[...document.querySelectorAll('.plan-card button')].find(b=>b.textContent.includes('Agregar a mis planes')).click()");
+  assert.ok(await evaluate("JSON.parse(localStorage.getItem('porhacer_preview_plans')).some(p=>p.catalogId==='badata-food-1362'&&p.photograph.evidence)"));
+  await evaluate("document.querySelector('#discover-plans').scrollIntoView()");
+  const shot=await call('Page.captureScreenshot',{format:'png'});await writeFile(new URL('verified-desktop.png',folder),Buffer.from(shot.data,'base64'));
+  await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+  assert.ok(await evaluate('document.documentElement.scrollWidth<=innerWidth'));
+  const mobile=await call('Page.captureScreenshot',{format:'png'});await writeFile(new URL('verified-mobile.png',folder),Buffer.from(mobile.data,'base64'));
+  await call('Network.setBlockedURLs',{urls:['https://*','*/data/ba-data.json']});
+  await call('Page.reload',{ignoreCache:true});
+  await until("document.body.textContent.includes('No se pudo cargar el cat\u00e1logo fotogr\u00e1fico')");
+  assert.equal(await evaluate("document.querySelectorAll('.discovery-section .plan-card').length"),0);
+  assert.ok(await evaluate("JSON.parse(localStorage.getItem('porhacer_preview_plans')).some(p=>p.catalogId==='badata-food-1362')"));
+  assert.deepEqual(exceptions,[]);
+  console.log(JSON.stringify({images:'loaded',filters:'passed',pagination:'passed',save:'passed',savedSurvivesCatalogFailure:true,errorWithoutFallback:true,desktopColumns:3,mobileOverflow:false,javascriptExceptions:exceptions}));
+} finally { socket?.close();browser.kill();if(typeof server.close==='function')await server.close();else await new Promise(resolve=>server.httpServer.close(resolve)); }

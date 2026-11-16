@@ -31,7 +31,9 @@
         "sha256": "6fa5070289dc77f5fb9e3598412bdb213bc6e5ffa6635ba8291a283876868ba5",
         "bytes": 659871,
         "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
-      }
+      },
+      "lat": -34.60882556,
+      "lon": -58.37812207
     },
     {
       "id": "badata-food-638",
@@ -61,7 +63,9 @@
         "sha256": "94dda301880ba03ea0f935d979f7bd1d90fbd805c3868d9261b48a252d3187cb",
         "bytes": 157209,
         "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
-      }
+      },
+      "lat": -34.61131564,
+      "lon": -58.42077385
     },
     {
       "id": "badata-food-1573",
@@ -102,7 +106,9 @@
         "sha256": "282dfb457b7155df9701089832c336d044d11e5b1e05fb159eb3e1a4efa9c432",
         "bytes": 199361,
         "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
-      }
+      },
+      "lat": -34.621892,
+      "lon": -58.370727
     },
     {
       "id": "badata-culture-2694",
@@ -132,7 +138,9 @@
         "sha256": "d8c0b26bfbb96a31269f0f6740587ee08eb2e0745eb1e394472d9f3b5fd938d1",
         "bytes": 167158,
         "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
-      }
+      },
+      "lat": -34.583673,
+      "lon": -58.394746
     },
     {
       "id": "badata-culture-2568",
@@ -162,7 +170,9 @@
         "sha256": "a691ae957505559dcf7e98d107fce17ff030a837e8b38b1b7081e2c247f4e290",
         "bytes": 127556,
         "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
-      }
+      },
+      "lat": -34.577246,
+      "lon": -58.40377
     },
     {
       "id": "badata-green-871",
@@ -192,7 +202,9 @@
         "sha256": "9d9d390abaa2af452948a7f1388e6686d409fe10646a5e8d7f024ce1eb307008",
         "bytes": 216266,
         "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
-      }
+      },
+      "lat": -34.60857189058353,
+      "lon": -58.43602732629859
     },
     {
       "id": "badata-green-1490",
@@ -222,7 +234,9 @@
         "sha256": "b65d7bab1b3741c1a26945ff4bb20e534ab4d2fe52179fb02bd41ceacf6c8cc6",
         "bytes": 326437,
         "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
-      }
+      },
+      "lat": -34.572654397620376,
+      "lon": -58.416032428260834
     },
     {
       "id": "badata-green-1330",
@@ -252,7 +266,9 @@
         "sha256": "64f3d582676b5a6e1e82234077cc628aaf379610c42fcecc6102b0e574ac97be",
         "bytes": 250170,
         "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
-      }
+      },
+      "lat": -34.58405532684954,
+      "lon": -58.41724926260923
     },
     {
       "id": "badata-bus-1",
