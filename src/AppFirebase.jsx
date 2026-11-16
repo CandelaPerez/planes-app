@@ -1,3 +1,4 @@
+import { inspectSavedPlansSync } from './services/syncDiagnostics.js';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import usePlanFilters from './hooks/usePlanFilters';
 import { savedPlansView, savedCatalogId, savedPlanKind, catalogPlanToSave, persistPreviewPlans, verifiedSavedPhoto } from './utils/savedPlans.js';
@@ -139,6 +140,19 @@ export default function AppFirebase() {
   const updateDiscoveryFilter = (setter, value) => { setter(value); setVisibleIdeasPage({ filterKey: '', count: 6 }); };
   const savedView = useMemo(() => savedPlansView(userPlans, catalog), [userPlans, catalog]);
   const personalPlans = savedView.plans;
+  useEffect(() => {
+    const diagnose = async () => {
+      const account = activeAccount.current;
+      const report = await inspectSavedPlansSync();
+      if (account !== activeAccount.current) throw Error('La cuenta cambi\u00f3 durante el diagn\u00f3stico.');
+      return { ...report, screen: { uid: userId, rawDocuments: userPlans.length,
+        visiblePlans: personalPlans.filter(plan => plan.type !== 'itinerary').length,
+        visibleItineraries: personalPlans.filter(plan => plan.type === 'itinerary').length,
+        loading } };
+    };
+    window.porHacerDiagnostico = diagnose;
+    return () => { if (window.porHacerDiagnostico === diagnose) delete window.porHacerDiagnostico; };
+  }, [userId, userPlans, personalPlans, loading]);
   const findSavedIdea = (id) => personalPlans.find((plan) => savedCatalogId(plan) === id);
   const catalogDetailsFor = (plan) => savedView.catalogById.get(savedCatalogId(plan))
     || (savedPlanKind(plan) === 'legacy-catalog' ? catalogRecords.get(savedCatalogId(plan)) : undefined);
