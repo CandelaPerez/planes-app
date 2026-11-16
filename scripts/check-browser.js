@@ -10,12 +10,18 @@ import { join } from 'node:path';
 const folder = new URL('../.browser-check/', import.meta.url);
 await mkdir(folder, { recursive: true });
 const baData = globalThis.process.argv.includes('--ba-data');
+const baDataHome = globalThis.process.argv.includes('--ba-data-home');
 const production = globalThis.process.argv.includes('--production') || baData;
 const server = production
   ? await preview({ preview: { host: '127.0.0.1', port: 0 } })
   : await createServer({ define: { 'import.meta.env.VITE_USE_FIREBASE': '"false"' }, server: { host: '127.0.0.1', port: 0, hmr: false, ws: false, watch: { ignored: ['**/.browser-check/**'] } } });
 if (!production) await server.listen();
 const origin = `http://127.0.0.1:${server.httpServer.address().port}`;
+if (production || baDataHome) {
+  const response = await fetch(`${origin}/data/ba-data.json`);
+  assert.equal(response.status, 200);
+  assert.equal((await response.json()).places.length, 6670);
+}
 const executable = globalThis.process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const profile = await mkdtemp(join(tmpdir(), 'porhacer-browser-'));
 const browser = spawn(executable, ['--headless=new', '--disable-gpu', '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', '--no-first-run', '--no-default-browser-check', '--remote-debugging-port=0', `--user-data-dir=${profile}`, 'about:blank'], { windowsHide: true });
@@ -74,13 +80,13 @@ try {
   await call('Page.bringToFront');
   await call('Runtime.enable');
   await call('Network.enable');
-  await call('Network.setBlockedURLs', { urls: ['https://*'] });
+  await call('Network.setBlockedURLs', { urls: ['https://*', ...(!production && !baDataHome ? ['*/data/ba-data.json'] : [])] });
   await call('Emulation.setDeviceMetricsOverride', { width: 1366, height: 900, deviceScaleFactor: 1, mobile: false });
   await call('Page.navigate', { url: baData ? `${origin}/ba-data-preview.html` : origin });
-  if (baData) {
+  if (baData || baDataHome) {
     const cache = JSON.parse(await readFile(new URL('../public/data/ba-data.json', import.meta.url), 'utf8'));
     await until(`document.querySelectorAll('.plan-card').length>0`);
-    assert.ok(await evaluate(`document.body.textContent.includes('${cache.places.length.toLocaleString('es-AR')} registros oficiales')`));
+    await until(baDataHome ? `document.querySelector('#discover-plans').textContent.includes('${cache.places.length} lugares de BA Data')` : `document.body.textContent.includes('${cache.places.length.toLocaleString('es-AR')} registros oficiales')`);
     for (const item of cache.statistics) {
       await evaluate(`[...document.querySelectorAll('.category-filter button')].find(button=>button.textContent===${JSON.stringify(item.category)}).click()`);
       await until(`[...document.querySelectorAll('.plan-card .badge')].every(badge=>badge.textContent===${JSON.stringify(item.category)})`);
@@ -91,19 +97,51 @@ try {
       await evaluate(`document.querySelector('.modal-close').click()`);
     }
     await evaluate(`[...document.querySelectorAll('.category-filter button')].find(button=>button.textContent==='Todas').click()`);
+    if (baDataHome) {
+      await until(`document.querySelectorAll('.plan-card').length===6`);
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent==='Ver más').click()`);
+      await until(`document.querySelectorAll('.plan-card').length===12`);
+      await evaluate(`(()=>{const select=document.querySelector('select[aria-label="Filtrar por zona"]');select.value='CABA';select.dispatchEvent(new Event('change',{bubbles:true}));})()`);
+      await until(`document.querySelector('p[role=status]').textContent.includes('6.670 resultados')`);
+    }
     await evaluate(`(()=>{const input=document.querySelector('input[type=search]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'GUANTANAMERA');input.dispatchEvent(new Event('input',{bubbles:true}));})()`);
     await until(`document.querySelectorAll('.plan-card').length===1 && document.querySelector('.plan-card').textContent.includes('GUANTANAMERA')`);
     await evaluate(`(()=>{const select=document.querySelector('select[aria-label="Filtrar por presupuesto"]');select.value='Bajo';select.dispatchEvent(new Event('change',{bubbles:true}));})()`);
     await until(`!!document.querySelector('.empty-state')`);
     await evaluate(`(()=>{const select=document.querySelector('select[aria-label="Filtrar por presupuesto"]');select.value='Todos';select.dispatchEvent(new Event('change',{bubbles:true}));})()`);
     await until(`document.querySelectorAll('.plan-card').length===1`);
+    if (baDataHome) {
+      await evaluate(`[...document.querySelectorAll('.plan-card button')].find(button=>button.textContent.includes('Agregar a mis planes')).click()`);
+      await until(`JSON.parse(localStorage.getItem('porhacer_preview_plans')||'[]').some(plan=>plan.catalogId==='badata-food-1602')`);
+      const saved = await evaluate(`JSON.parse(localStorage.getItem('porhacer_preview_plans')).find(plan=>plan.catalogId==='badata-food-1602')`);
+      assert.equal(saved.title, 'GUANTANAMERA');
+      assert.equal(saved.sourceReferences[0].recordId, '1602');
+      assert.equal(await evaluate(`getComputedStyle(document.querySelector('.cards-grid')).gridTemplateColumns.split(' ').length`), 3);
+      await evaluate(`[...document.querySelectorAll('.plan-card button')].find(button=>button.textContent==='En mis planes').click()`);
+      await until(`document.querySelector('.section-header').textContent.includes('Mis planes')`);
+      assert.ok(await evaluate(`document.querySelector('.plan-card').textContent.includes('GUANTANAMERA')`));
+      await evaluate(`document.querySelector('.fav-btn').click()`);
+      await until(`document.querySelector('.fav-btn').classList.contains('is-favorite')`);
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent==='Agregar a calendario').click()`);
+      await until(`!!document.querySelector('.schedule-modal form')`);
+      await evaluate(`document.querySelector('.schedule-modal form').requestSubmit()`);
+      await until(`document.querySelector('.calendar-event-card')?.textContent.includes('GUANTANAMERA')`);
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent==='Mis planes').click()`);
+      await until(`!!document.querySelector('.plan-status-action')`);
+      await evaluate(`document.querySelector('.plan-status-action').click()`);
+      await until(`document.querySelector('.plan-status-action').textContent==='Marcar pendiente'`);
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent==='Recuerdos').click()`);
+      await until(`document.querySelector('.photo-card')?.textContent.includes('GUANTANAMERA')`);
+      await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent==='Mis planes').click()`);
+      await until(`!!document.querySelector('.plan-card')`);
+    }
     await call('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
     assert.ok(await evaluate(`document.documentElement.scrollWidth<=innerWidth`));
     await evaluate(`document.querySelector('.plan-card').scrollIntoView()`);
     const screenshot = await call('Page.captureScreenshot', { format: 'png' });
     await writeFile(new URL('ba-data-preview-mobile.png', folder), Buffer.from(screenshot.data, 'base64'));
     assert.deepEqual(exceptions, []);
-    console.log(JSON.stringify({ baDataPreview: 'passed', realRecords: cache.places.length, categoryFilters: 'passed', searchAndBudget: 'passed', sourceDetails: 'passed', externalHttpsBlocked: true, firebaseTouched: false, javascriptExceptions: exceptions }));
+    console.log(JSON.stringify({ baDataPreview: 'passed', baDataHome: baDataHome ? 'passed, including local save, favorites, calendar and memories' : 'not tested', realRecords: cache.places.length, categoryFilters: 'passed', searchAndBudget: 'passed', sourceDetails: 'passed', externalHttpsBlocked: true, firebaseTouched: false, javascriptExceptions: exceptions }));
   } else if (production) {
     await until(`!!document.querySelector('.auth-card input[type=email], #discover-plans')`);
     assert.ok(await evaluate(`document.body.textContent.includes('Por Hacer')`));

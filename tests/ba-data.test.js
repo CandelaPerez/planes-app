@@ -22,7 +22,7 @@ test('real cached records have original IDs, verified geographic fields and date
     assert.ok(plan.title && plan.lat >= -34.71 && plan.lat <= -34.52 && plan.lon >= -58.54 && plan.lon <= -58.33);
     assert.equal(plan.budget, 'Sin información');
     assert.equal(plan.image, '/images/plan-placeholder.svg');
-    assert.ok(!plan.description, 'No invented descriptions');
+    assert.equal(plan.description, plan.subtype || '', 'Description only repeats the published classification');
     assert.ok(plan.sourceReferences.every((source) => source.recordId && new URL(source.url).hostname === 'cdn.buenosaires.gob.ar' && source.license === 'CC-BY-2.5-AR' && source.downloadedAt && source.sha256));
   }
   const restaurant = plans.find((plan) => plan.id === 'badata-food-1602');
@@ -37,6 +37,11 @@ test('HTML errors and malformed CSV cannot be accepted as successful data', () =
   assert.throws(() => parseCsv('<html>Request Rejected</html>'), /HTML/);
   assert.throws(() => parseCsv('id,name\n1,"incomplete'), /Incomplete/);
   assert.deepEqual(parseCsv('id,name,note\r\n1,"Real, named field","two\nlines"\r\n'), [{ id: '1', name: 'Real, named field', note: 'two\nlines' }]);
+});
+
+test('invalid persistent catalog triggers fallback instead of showing an empty or duplicated catalog', () => {
+  assert.throws(() => toPlanCards({ ...cache, places: [] }), /vacía/);
+  assert.throws(() => toPlanCards({ ...cache, places: [cache.places[0], cache.places[0]] }), /duplicados/);
 });
 
 test('failed refresh preserves the persistent real snapshot byte for byte', async () => {

@@ -33,7 +33,7 @@ export default function usePlanFilters({ catalog, category, zone, budget, search
         default: return (bRating.count > 0) - (aRating.count > 0) || bRating.average - aRating.average || a.title.localeCompare(b.title, 'es');
       }
     });
-    return sorted.map((idea) => ({ ...idea, ...(planPhotos[idea.id] || {}), sourceImage: idea.image, image: planPhotos[idea.id]?.image || idea.image }));
+    return sorted.map((idea) => ({ ...idea, ...(!idea.sourceName ? planPhotos[idea.id] || {} : {}), sourceImage: idea.image, image: !idea.sourceName && planPhotos[idea.id]?.image || idea.image }));
   }, [catalog, category, zone, budget, search, sortBy, ratings, planPhotos]);
   return { zones, visibleIdeas };
 }

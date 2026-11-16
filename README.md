@@ -54,7 +54,7 @@ docs/                 Configuración e informes
 ```
 
 `src/services/firebase.js` conserva la implementación de Authentication, Firestore y Storage.
-El catálogo principal conserva los 129 planes originales. Hay una [vista previa separada de BA Data](docs/BA_DATA.md) en `/ba-data-preview.html`, alimentada por una copia local de recursos oficiales; no consulta APIs externas durante las visitas.
+El catálogo principal muestra 6.670 registros oficiales de BA Data desde una copia local persistente, conservando los 129 originales como respaldo ante fallos de carga. No consulta APIs externas durante las visitas. Ver [integración, pruebas y vista previa de BA Data](docs/BA_DATA.md).
 
 ## Entrega
 

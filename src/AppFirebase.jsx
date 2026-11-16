@@ -3,6 +3,8 @@ import usePlanFilters from './hooks/usePlanFilters';
 import { CATALOG, catalogImages, catalogRecords, categoryImages, planImage, categories } from './data/catalog';
 import { cityFor, priceRank, priceLabel, categoryClass, aggregateRating, ideaImageFallback, planPhotoFallback, localDateValue, readLocalJson, loadPreviewPlans, imageFallback } from './utils/planUtils';
 import Stars from './components/Stars';
+import BaDataSource from './components/BaDataSource';
+import { loadBaDataPreview } from './services/baData';
 import { fetchDistinctPlanPhotos } from './services/planPhotos';
 import { firebaseConfigured, firebaseRequested, watchAuth, registerAccount, loginAccount, logoutAccount, watchCatalog, watchSavedPlans, watchRatings, savePlan, updateSavedPlan, removeSavedPlan, saveRating, uploadPlanPhoto } from './services/firebase';
 export default function AppFirebase() {
@@ -17,7 +19,10 @@ export default function AppFirebase() {
   const [authMode, setAuthMode] = useState('login');
   const [authForm, setAuthForm] = useState({ email: '', password: '', confirmPassword: '' });
   const [authBusy, setAuthBusy] = useState(false);
-  const [catalog, setCatalog] = useState(CATALOG);
+  const [fallbackCatalog, setFallbackCatalog] = useState(CATALOG);
+  const [baCatalog, setBaCatalog] = useState(null);
+  const [catalogNotice, setCatalogNotice] = useState('');
+  const catalog = baCatalog || fallbackCatalog;
   const [planPhotos, setPlanPhotos] = useState(() => readLocalJson('porhacer_distinct_plan_photos_v2', {}));
   const [photoRetry, setPhotoRetry] = useState(0);
   const [userPlans, setUserPlans] = useState(() => firebaseConfigured ? [] : loadPreviewPlans());
@@ -43,6 +48,16 @@ export default function AppFirebase() {
   const [form, setForm] = useState({ title: '', description: '', location: '', category: 'Gastronomía', budget: '$', image: '' });
 
   useEffect(() => {
+    let active = true;
+    loadBaDataPreview().then(({ plans }) => {
+      if (active) { setBaCatalog(plans); setCatalogNotice(''); }
+    }).catch(() => {
+      if (active) setCatalogNotice('No se pudo cargar la copia de BA Data. Mostramos temporalmente los 129 planes originales.');
+    });
+    return () => { active = false; };
+  }, []);
+
+  useEffect(() => {
     if (!firebaseConfigured) {
       return undefined;
     }
@@ -59,7 +74,7 @@ export default function AppFirebase() {
     subscriptions.push(
       watchCatalog((ideas) => {
         const remoteById = new Map(ideas.map((idea) => [idea.id, idea]));
-        setCatalog(CATALOG.map((idea) => ({ ...remoteById.get(idea.id), ...idea, id: idea.id })));
+        setFallbackCatalog(CATALOG.map((idea) => ({ ...remoteById.get(idea.id), ...idea, id: idea.id })));
       }, (reason) => setError(reason.message)),
       watchSavedPlans(userId, (plans) => { setUserPlans(plans); setLoading(false); }, (reason) => { setError(reason.message); setLoading(false); }),
       watchRatings(setRatings, (reason) => setError(reason.message)),
@@ -68,8 +83,10 @@ export default function AppFirebase() {
   }, [userId]);
 
   useEffect(() => {
+    if (!baCatalog && !catalogNotice) return undefined;
     const usedImageUrls = new Set();
     const missingPhotos = catalog.filter((idea) => {
+      if (idea.sourceName) return false;
       const image = String(planPhotos[idea.id]?.image || '').split(/[?#]/)[0];
       if (!image || usedImageUrls.has(image)) return true;
       usedImageUrls.add(image);
@@ -95,7 +112,7 @@ export default function AppFirebase() {
       active = false;
       if (retryTimer) window.clearTimeout(retryTimer);
     };
-  }, [catalog, planPhotos, photoRetry]);
+  }, [catalog, planPhotos, photoRetry, baCatalog, catalogNotice]);
 
   useEffect(() => {
     if (firebaseConfigured) return;
@@ -221,7 +238,7 @@ export default function AppFirebase() {
       return;
     }
     perform(async () => {
-      await savePlan(userId, { ...ideaToSave, ...savedFields, id: undefined, status: 'pendiente', favorite: false, comment: '' });
+      await savePlan(userId, { ...ideaToSave, ...savedFields, id: idea.sourceName ? idea.id : undefined, status: 'pendiente', favorite: false, comment: '' });
     }, 'Idea guardada en Mis planes.');
   }
 
@@ -369,10 +386,10 @@ export default function AppFirebase() {
       description: 'Un plan para realizar en conjunto. Estas son las actividades incluidas:',
       location: [...new Set(itinerary.map((idea) => idea.location))].join(' · '),
       category: 'Itinerario',
-      budget: itinerary.reduce((highest, idea) => priceRank(idea.budget) > priceRank(highest) ? idea.budget : highest, 'Gratis'),
+      budget: itinerary.some((idea) => idea.sourceName && idea.budget === 'Sin información') ? 'Sin información' : itinerary.reduce((highest, idea) => priceRank(idea.budget) > priceRank(highest) ? idea.budget : highest, 'Gratis'),
       image: itinerary[0].image,
       type: 'itinerary',
-      items: itinerary.map(({ id, title, location, category, budget, image }) => ({ id, title, location, category, budget, image })),
+      items: itinerary.map((idea) => ({ ...idea })),
       status: 'pendiente',
       favorite: false,
       comment: '',
@@ -458,8 +475,8 @@ export default function AppFirebase() {
       {activeTab === 'home' && <section>
         <div className="main-welcome-hero"><img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=2200&q=85" alt="Amigos compartiendo una salida" onError={imageFallback} /><div className="welcome-text"><span className="welcome-tag">Ideas para hacer lugar a momentos</span><h2>¿Qué te gustaría descubrir?</h2><p>Explora planes, guárdalos y deja tu valoración cuando los hayas vivido.</p><a className="btn btn-primary" href="#discover-plans">Descubrir planes</a></div></div>
         <div className="idea-tools-panel"><div className="idea-tools-heading"><h2>¿No sabes qué elegir?</h2><p>Encuentra una idea al azar o arma un itinerario para compartir el día.</p></div><div className="idea-tools"><div className={`idea-tool ${randomIdea ? 'idea-tool-with-result' : ''}`}><div><h3>Un plan al azar</h3><p>Deja que una idea te sorprenda.</p>{randomIdea && <div className="random-plan-result"><img src={randomIdea.image} alt={randomIdea.title} onError={(event) => ideaImageFallback(event, randomIdea)} /><div><p className="tool-result"><strong>{randomIdea.title}</strong><br />{randomIdea.address || randomIdea.location}</p><button type="button" className="btn btn-link" onClick={() => setSelectedIdea(randomIdea)}>Ver detalles</button></div></div>}</div><button className="btn btn-secondary btn-suggestion" onClick={suggestIdea}>Sugerir un plan</button>{randomIdea && <button className={`btn ${randomIdeaSaved ? 'btn-saved' : 'btn-primary'}`} onClick={() => addIdea(randomIdea)} disabled={busy || randomIdeaSaved}>{randomIdeaSaved ? 'Idea guardada' : 'Guardar idea'}</button>}</div><div className="idea-tool"><div><h3>Arma un itinerario</h3><p>Combina dos propuestas para compartir el día.</p></div><select aria-label="Compañía para el itinerario" value={itineraryCompany} onChange={(event) => setItineraryCompany(event.target.value)}><option>Todas</option><option>Solo</option><option>Para conocer gente</option><option>Con amigos</option></select><button className="btn btn-secondary btn-suggestion" onClick={makeItinerary}>Sugerir itinerario</button>{itinerary.length > 0 && <><ul className="itinerary-list">{itinerary.map((idea) => <li key={idea.id}><strong>{idea.title}</strong><span>{idea.location}</span></li>)}</ul><button className={`btn ${itinerarySaved ? 'btn-saved' : 'btn-primary'}`} onClick={addItinerary} disabled={busy || itinerarySaved}>{itinerarySaved ? 'Itinerario guardado' : 'Guardar itinerario'}</button></>}</div></div></div>
-        <div className="discovery-section"><div className="section-header" id="discover-plans"><h2>Descubrir planes</h2><p>{catalog.length} ideas con ubicaciones, categorías y presupuestos diversos.</p></div>
-        <div className="category-filter" role="group" aria-label="Filtrar por categoría">{categories.filter((item) => !['Entretenimiento', 'Experiencias'].includes(item)).map((item) => <button key={item} type="button" className={`category-filter-btn ${category === item ? 'active' : ''}`} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}</div>
+        <div className="discovery-section"><div className="section-header" id="discover-plans"><h2>Descubrir planes</h2><p>{catalog.length} {baCatalog ? "lugares de BA Data con nombre y ubicación publicada." : "ideas del catálogo original."}</p></div>
+        {catalogNotice && <p className="photo-credit" role="status">{catalogNotice}</p>}{baCatalog && <p className="photo-credit">Fuente: BA Data, Gobierno de la Ciudad de Buenos Aires · <a href="https://creativecommons.org/licenses/by/2.5/ar/" target="_blank" rel="noreferrer">CC BY 2.5 AR</a>. Viajes: paradas del bus turístico.</p>}<div className="category-filter" role="group" aria-label="Filtrar por categoría">{categories.filter((item) => !['Entretenimiento', 'Experiencias'].includes(item)).map((item) => <button key={item} type="button" className={`category-filter-btn ${category === item ? 'active' : ''}`} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}</div>
         <div className="filter-bar discovery-filters">
           <input aria-label="Buscar por nombre o ubicación" type="search" placeholder="Buscar plan o lugar…" value={search} onChange={(event) => setSearch(event.target.value)} />
           <select aria-label="Filtrar por zona" value={zone} onChange={(event) => setZone(event.target.value)}><option value="Todas">Todas las zonas</option>{zones.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}</select>
@@ -467,11 +484,12 @@ export default function AppFirebase() {
           <select aria-label="Ordenar planes" value={sortBy} onChange={(event) => setSortBy(event.target.value)}><option value="recommended">Recomendados</option><option value="top">Mejor puntuados</option><option value="most">Más valorados</option><option value="cheap">Menor presupuesto</option><option value="expensive">Mayor presupuesto</option><option value="alpha">Alfabéticamente</option></select>
         </div>
         
+        {baCatalog && <p className="photo-credit" role="status">{visibleIdeas.length.toLocaleString('es-AR')} resultados</p>}
         {!loading && visibleIdeas.length === 0 ? <div className="empty-state"><h3>No encontramos planes con esos filtros</h3><p>Prueba otra búsqueda o limpia alguno de los filtros.</p><button className="btn btn-secondary" onClick={() => { setSearch(''); setCategory('Todas'); setZone('Todas'); setBudget('Todos'); }}>Limpiar filtros</button></div> : <div className="cards-grid">{visibleIdeas.slice(0, visibleIdeasCount).map((idea) => {
           const aggregate = aggregateRating(ratings, idea.id);
           const added = userPlans.some((plan) => plan.catalogId === idea.id || plan.externalId === idea.id);
           const savedPlan = userPlans.find((plan) => plan.catalogId === idea.id || plan.externalId === idea.id);
-          return <article className="plan-card" key={idea.id}><div className="card-img-wrapper plan-card-image-trigger" role="button" tabIndex={0} aria-label={`Ver detalles de ${idea.title}`} onClick={() => setSelectedIdea(idea)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedIdea(idea); } }}><img src={idea.image} alt={idea.title} className="card-img" loading="lazy" onError={(event) => ideaImageFallback(event, idea)} /></div><div className="card-content"><div className="card-meta"><span className={`badge badge-${categoryClass(idea.category)}`}>{idea.category}</span><span className="budget-badge">{priceLabel(idea.budget)}</span></div><h3 className="card-title plan-card-title-trigger" onClick={() => setSelectedIdea(idea)}>{idea.title}</h3><p className="card-desc">{idea.description}</p>{idea.credit && <a className="photo-credit" href={idea.source} target="_blank" rel="noreferrer">Foto: {idea.credit}</a>}<div className="rating-summary"><Stars value={aggregate.average} /><span>{aggregate.count ? `${aggregate.average.toFixed(1)} · ${aggregate.count} ${aggregate.count === 1 ? 'valoración' : 'valoraciones'}` : 'Sin valoraciones'}</span></div><div className="card-info-row"><span>⌖ {idea.address || idea.location}</span></div><div className="card-footer plan-card-actions"><button className="btn btn-secondary" onClick={() => setSelectedIdea(idea)}>Ver detalles</button><button className={`btn ${added ? 'btn-secondary' : 'btn-primary'}`} onClick={() => added ? openSavedPlan(savedPlan.id) : addIdea(idea)} disabled={busy}>{added ? 'En mis planes' : '+ Agregar a mis planes'}</button></div></div></article>;
+          return <article className="plan-card" key={idea.id}><div className="card-img-wrapper plan-card-image-trigger" role="button" tabIndex={0} aria-label={`Ver detalles de ${idea.title}`} onClick={() => setSelectedIdea(idea)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedIdea(idea); } }}><img src={idea.image} alt={idea.title} className="card-img" loading="lazy" onError={(event) => ideaImageFallback(event, idea)} /></div><div className="card-content"><div className="card-meta"><span className={`badge badge-${categoryClass(idea.category)}`}>{idea.category}</span><span className="budget-badge">{priceLabel(idea.budget)}</span></div><h3 className="card-title plan-card-title-trigger" onClick={() => setSelectedIdea(idea)}>{idea.title}</h3><p className="card-desc">{idea.description}</p>{idea.sourceName && <p className="photo-credit">Imagen ilustrativa · {idea.location}</p>}{idea.credit && <a className="photo-credit" href={idea.source} target="_blank" rel="noreferrer">Foto: {idea.credit}</a>}<div className="rating-summary"><Stars value={aggregate.average} /><span>{aggregate.count ? `${aggregate.average.toFixed(1)} · ${aggregate.count} ${aggregate.count === 1 ? 'valoración' : 'valoraciones'}` : 'Sin valoraciones'}</span></div><div className="card-info-row"><span>⌖ {idea.address || idea.location}</span></div><div className="card-footer plan-card-actions"><button className="btn btn-secondary" onClick={() => setSelectedIdea(idea)}>Ver detalles</button><button className={`btn ${added ? 'btn-secondary' : 'btn-primary'}`} onClick={() => added ? openSavedPlan(savedPlan.id) : addIdea(idea)} disabled={busy}>{added ? 'En mis planes' : '+ Agregar a mis planes'}</button></div></div></article>;
         })}</div>}{visibleIdeas.length > visibleIdeasCount && <div className="discovery-show-more"><button type="button" className="btn btn-secondary" onClick={() => setVisibleIdeasPage({ filterKey: ideaFilterKey, count: visibleIdeasCount + 6 })}>Ver más</button></div>}
         </div>
         <button type="button" className="calendar-teaser" onClick={() => setActiveTab('calendar')}><div className="calendar-teaser-header"><div><span className="calendar-teaser-kicker">Organiza tus salidas</span><h2>Tu calendario</h2><p>Una vista rápida de tus próximos planes.</p></div><span className="calendar-teaser-link">Abrir calendario <span aria-hidden="true">→</span></span></div>{upcomingCalendarPlans.length ? <div className="calendar-teaser-events">{upcomingCalendarPlans.map((plan) => <div className="calendar-teaser-event" key={plan.id}><img src={displayPlanImage(plan)} alt="" onError={(event) => planPhotoFallback(event, plan, planPhotos)} /><span className="calendar-teaser-date">{new Date(plan.scheduledAt).toLocaleDateString('es-AR', { day: 'numeric', month: 'short' })} · {new Date(plan.scheduledAt).toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' })}</span><strong>{plan.title}</strong></div>)}</div> : <div className="calendar-teaser-empty"><span className="calendar-teaser-icon" aria-hidden="true">▦</span><span>Tus planes agendados aparecerán aquí. Presiona para ver el calendario o agenda una salida desde Mis planes.</span></div>}</button>
@@ -511,7 +529,7 @@ export default function AppFirebase() {
 
     {schedulePlan && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setSchedulePlan(null); }}><section className="modal-content schedule-modal" role="dialog" aria-modal="true" aria-labelledby="schedule-modal-title"><div className="modal-header"><h2 id="schedule-modal-title">Agregar al calendario</h2><button type="button" className="modal-close" onClick={() => setSchedulePlan(null)} aria-label="Cerrar">×</button></div><p className="schedule-plan-title">{schedulePlan.title}</p><form onSubmit={saveSchedule}><label className="form-group">Fecha<input type="date" required value={scheduleDate} onChange={(event) => setScheduleDate(event.target.value)} /></label><label className="form-group">Hora<input type="time" required value={scheduleTime} onChange={(event) => setScheduleTime(event.target.value)} /></label><div className="modal-actions"><button type="button" className="btn btn-secondary" onClick={() => setSchedulePlan(null)}>Cancelar</button><button type="submit" className="btn btn-primary" disabled={busy}>Guardar en calendario</button></div></form></section></div>}
 
-    {selectedIdea && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedIdea(null); }}><section className="modal-content plan-detail-modal" role="dialog" aria-modal="true" aria-labelledby="plan-detail-title"><div className="modal-header"><div><span className={`badge badge-${categoryClass(selectedIdea.category)}`}>{selectedIdea.category || 'Itinerario'}</span><h2 id="plan-detail-title">{selectedIdea.title}</h2></div><button className="modal-close" onClick={() => setSelectedIdea(null)} aria-label="Cerrar detalles">×</button></div><img className="plan-detail-image" src={selectedIdea.image || planImage(selectedIdea)} alt={selectedIdea.title} onError={imageFallback} /><p className="plan-detail-description">{selectedIdea.description}</p><dl className="plan-detail-facts"><div><dt>{selectedIdea.type === 'itinerary' ? 'Ciudad o zona' : 'Dirección o zona'}</dt><dd>{selectedIdea.address || selectedIdea.location}</dd></div>{selectedIdea.type === 'itinerary' && <div><dt>Planes incluidos</dt><dd><ul className="detail-itinerary-items">{(selectedIdea.items || []).map((item) => <li key={item.id}><strong>{item.title}</strong><span>{item.location}</span></li>)}</ul></dd></div>}{selectedIdea.phone && <div><dt>Tel&#233;fono</dt><dd>{selectedIdea.phone}</dd></div>}<div><dt>Horario</dt><dd>{selectedIdea.openingHours || 'Consultá el horario actualizado antes de ir.'}</dd></div><div><dt>Duración sugerida</dt><dd>{selectedIdea.duration || 'Entre 1 y 2 horas'}</dd></div><div><dt>Presupuesto estimado</dt><dd>{priceLabel(selectedIdea.budget)}</dd></div>{selectedIdea.visitTips && <div><dt>Para tener en cuenta</dt><dd>{selectedIdea.visitTips}</dd></div>}</dl><div className="modal-actions"><a className="btn btn-secondary" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${selectedIdea.title} ${selectedIdea.address || selectedIdea.location}`)}`} target="_blank" rel="noreferrer">Ver ubicación en Maps</a>{selectedIdea.officialUrl && <a className="btn btn-secondary" href={selectedIdea.officialUrl} target="_blank" rel="noreferrer">Sitio oficial</a>}{!selectedIdea.isSavedPlan && <button className="btn btn-primary" onClick={() => { const idea = selectedIdea; setSelectedIdea(null); addIdea(idea); }} disabled={userPlans.some((plan) => plan.catalogId === selectedIdea.id) || busy}>{userPlans.some((plan) => plan.catalogId === selectedIdea.id) ? 'En mis planes' : 'Agregar a mis planes'}</button>}</div></section></div>}
+    {selectedIdea && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedIdea(null); }}><section className="modal-content plan-detail-modal" role="dialog" aria-modal="true" aria-labelledby="plan-detail-title"><div className="modal-header"><div><span className={`badge badge-${categoryClass(selectedIdea.category)}`}>{selectedIdea.category || 'Itinerario'}</span><h2 id="plan-detail-title">{selectedIdea.title}</h2></div><button className="modal-close" onClick={() => setSelectedIdea(null)} aria-label="Cerrar detalles">×</button></div><img className="plan-detail-image" src={selectedIdea.image || planImage(selectedIdea)} alt={selectedIdea.title} onError={imageFallback} /><p className="plan-detail-description">{selectedIdea.description}</p><dl className="plan-detail-facts"><div><dt>{selectedIdea.type === 'itinerary' ? 'Ciudad o zona' : 'Dirección o zona'}</dt><dd>{selectedIdea.address || selectedIdea.location}</dd></div>{selectedIdea.type === 'itinerary' && <div><dt>Planes incluidos</dt><dd><ul className="detail-itinerary-items">{(selectedIdea.items || []).map((item) => <li key={item.id}><strong>{item.title}</strong><span>{item.location}</span></li>)}</ul></dd></div>}{selectedIdea.phone && <div><dt>Tel&#233;fono</dt><dd>{selectedIdea.phone}</dd></div>}<div><dt>{selectedIdea.sourceName ? "Horario publicado (verificar vigencia)" : "Horario"}</dt><dd>{selectedIdea.openingHours || 'Consultá el horario actualizado antes de ir.'}</dd></div><div><dt>Duración sugerida</dt><dd>{selectedIdea.duration || (selectedIdea.sourceName ? 'No informada en el recurso.' : 'Entre 1 y 2 horas')}</dd></div><div><dt>Presupuesto estimado</dt><dd>{priceLabel(selectedIdea.budget)}</dd></div>{selectedIdea.visitTips && <div><dt>Para tener en cuenta</dt><dd>{selectedIdea.visitTips}</dd></div>}</dl><BaDataSource plan={selectedIdea} /><div className="modal-actions"><a className="btn btn-secondary" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${selectedIdea.title} ${selectedIdea.address || selectedIdea.location}`)}`} target="_blank" rel="noreferrer">Ver ubicación en Maps</a>{selectedIdea.officialUrl && <a className="btn btn-secondary" href={selectedIdea.officialUrl} target="_blank" rel="noreferrer">Sitio oficial</a>}{!selectedIdea.isSavedPlan && <button className="btn btn-primary" onClick={() => { const idea = selectedIdea; setSelectedIdea(null); addIdea(idea); }} disabled={userPlans.some((plan) => plan.catalogId === selectedIdea.id) || busy}>{userPlans.some((plan) => plan.catalogId === selectedIdea.id) ? 'En mis planes' : 'Agregar a mis planes'}</button>}</div></section></div>}
 
     {editing && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setEditing(null); }}><div className="modal-content"><div className="modal-header"><h2>{editing === 'new' ? 'Crear plan' : 'Editar nombre'}</h2><button className="modal-close" onClick={() => setEditing(null)} aria-label="Cerrar">×</button></div><form onSubmit={submitPlan}><label className="form-group">Nombre<input required maxLength="100" value={form.title} onChange={(event) => setForm({ ...form, title: event.target.value })} /></label>{editingExistingPlan && <p className="form-hint">Solo pod?s cambiar el nombre del plan o itinerario. Los dem?s datos se conservan.</p>}{!editingExistingPlan && <><label className="form-group">Descripción<textarea rows="3" value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} /></label><label className="form-group">Ubicación<input required maxLength="100" value={form.location} onChange={(event) => setForm({ ...form, location: event.target.value })} /></label><label className="form-group">Categoría<select value={form.category} onChange={(event) => setForm({ ...form, category: event.target.value })}>{categories.slice(1).map((item) => <option key={item}>{item}</option>)}</select></label><label className="form-group">Presupuesto<select value={form.budget} onChange={(event) => setForm({ ...form, budget: event.target.value })}><option value="$">Bajo</option><option value="$$">Medio</option><option value="$$$">Alto</option></select></label>{editing === 'new' && <label className="form-group">URL de imagen<input type="url" placeholder="https://…" value={form.image} onChange={(event) => setForm({ ...form, image: event.target.value })} /></label>}</>}<div className="modal-actions"><button type="button" className="btn btn-secondary" onClick={() => setEditing(null)}>Cancelar</button><button type="submit" className="btn btn-primary" disabled={busy}>Guardar</button></div></form></div></div>}
   </div>;

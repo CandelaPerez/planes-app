@@ -1,6 +1,10 @@
-# Vista previa de BA Data
+# Integración de BA Data
 
-La página principal conserva los 129 planes originales. Esta integración se consulta únicamente en `/ba-data-preview.html` y no escribe en Firebase. No se publicó en Vercel.
+La página principal muestra los 6.670 registros de la copia local de BA Data, sin mezclarlos con los 129 planes originales. Estos se conservan en el código y en Firebase como respaldo: si el JSON falla, está vacío o contiene identificadores duplicados, se muestran los originales con un aviso. No se publicó en Vercel.
+
+Punto de recuperación anterior a esta integración: commit `3d5c930`.
+
+Se reutilizan las tarjetas, estilos, filtros y paginación existentes (seis tarjetas iniciales, seis más por clic). La búsqueda y los filtros recorren todos los registros antes de paginar. Los lugares se guardan en `users/{uid}/savedPlans/badata-{fuente}-{id}`, conservando `catalogId` y procedencia. No se escriben documentos en el catálogo global ni se migran los originales. Los itinerarios conservan los datos de sus lugares y no reciben presupuesto gratuito cuando el recurso no informa precios.
 
 ## Resultado verificado
 
@@ -37,7 +41,7 @@ Base: `https://data.buenosaires.gob.ar/api/3/action/`.
 
 El actualizador intenta `package_show`, luego `resource_show` si falla y finalmente la URL oficial conocida. Realiza consultas secuenciales, sin reintentos indefinidos; timeout de 15 segundos para metadatos y 30 para archivos. Valida estructura y contenido antes de reemplazar atómicamente `public/data/ba-data.json`. Si falla cualquier fuente conserva íntegra la copia anterior.
 
-La vista previa solo descarga ese JSON del mismo servidor, una vez por sesión del módulo. No consulta BA Data, Geoapify, OpenStreetMap ni Overpass durante las visitas. El catálogo principal no descarga la copia. No se agregaron dependencias.
+La home y la vista previa descargan ese JSON del mismo servidor, una vez por sesión del módulo. No consultan BA Data, Geoapify, OpenStreetMap ni Overpass durante las visitas. No se asignan fotografías genéricas externas a los lugares de BA Data. No se agregaron dependencias ni se modificaron estilos.
 
 ## Probar localmente
 
@@ -45,7 +49,9 @@ La vista previa solo descarga ese JSON del mismo servidor, una vez por sesión d
 npm.cmd run dev
 ```
 
-Abrir `http://localhost:5173/ba-data-preview.html` (usar el puerto informado por Vite). Probar categorías, búsqueda por GUANTANAMERA, zonas, presupuesto y detalles. En los detalles se puede comparar el ID y las coordenadas con el recurso original. Volver a `/` muestra el catálogo original.
+Abrir `http://localhost:5173/` (usar el puerto informado por Vite) e iniciar sesión si Firebase está habilitado. El contador debe indicar 6670 lugares de BA Data. Probar categorías, búsqueda por GUANTANAMERA, zonas, presupuesto, Ver más y detalles. En los detalles se puede comparar el ID y las coordenadas con el recurso original. `/ba-data-preview.html` conserva una vista independiente de solo lectura.
+
+Para probar el respaldo, bloquear `/data/ba-data.json` desde las herramientas de red del navegador y recargar sin caché. Deben aparecer los 129 originales con un aviso. Quitar el bloqueo y recargar para volver a BA Data.
 
 Actualizar explícitamente la copia, fuera de la presentación:
 
@@ -60,6 +66,7 @@ npm.cmd run lint
 node --test tests/*.test.js
 npm.cmd run build
 node scripts/check-browser.js --ba-data
+node scripts/check-browser.js --ba-data-home
 ```
 
-La prueba de Chrome bloquea HTTPS externo y comprueba categorías, búsqueda, presupuesto, detalles de procedencia, ausencia de excepciones y ancho móvil. Las pruebas de Node verifican los 129 originales y que una actualización fallida no sobrescriba la copia. No se ejecutaron operaciones sobre documentos de Firestore ni pruebas autenticadas contra datos personales reales.
+La prueba de Chrome bloquea HTTPS externo y comprueba categorías, búsqueda, presupuesto, detalles de procedencia, ausencia de excepciones y ancho móvil. `--ba-data-home` prueba la home en modo local aislado, incluido guardar un lugar, favoritos, calendario y recuerdos. Sin argumentos se bloquea el JSON para comprobar los 129 detalles del respaldo y las funciones personales. `--production` comprueba la pantalla Firebase de la compilación y la disponibilidad del JSON estático. Las pruebas de Node verifican los 129 originales y que una actualización fallida no sobrescriba la copia. No se ejecutaron operaciones sobre documentos de Firestore ni pruebas autenticadas contra datos personales reales.
