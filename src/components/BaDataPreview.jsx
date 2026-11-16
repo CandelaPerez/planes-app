@@ -52,7 +52,7 @@ export default function BaDataPreview() {
           <div className="card-img-wrapper"><img className="card-img" src={place.image} alt="" loading="lazy" /></div>
           <div className="card-content"><div className="card-meta"><span className={`badge badge-${categoryClass(place.category)}`}>{place.category}</span><span className="budget-badge">{priceLabel(place.budget)}</span></div>
             <h3 className="card-title">{place.title}</h3>{place.subtype && <p className="card-desc">{place.subtype}</p>}
-            <span className="photo-credit">Sin fotografía publicada en el recurso. Imagen de reserva.</span>
+            <span className="photo-credit">{place.imageKind === 'photograph' ? <a href={place.imageSourceUrl} target="_blank" rel="noreferrer">Fotografía: fuente original</a> : 'Imagen ilustrativa de la categoría; no es una fotografía del lugar.'}</span>
             <div className="card-info-row"><span>⌖ {place.address || `${place.lat}, ${place.lon}`}</span></div>
             <p className="photo-credit">Archivo: {date(place.sourceUpdatedAt)} · Descarga: {date(place.fetchedAt)}</p>
             <div className="card-footer plan-card-actions"><button type="button" className="btn btn-secondary" onClick={() => setSelected(place)}>Ver detalles</button><a className="btn btn-primary" href={place.sourceUrl} target="_blank" rel="noreferrer">Fuente oficial</a></div>

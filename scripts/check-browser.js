@@ -87,6 +87,15 @@ try {
     const cache = JSON.parse(await readFile(new URL('../public/data/ba-data.json', import.meta.url), 'utf8'));
     await until(`document.querySelectorAll('.plan-card').length>0`);
     await until(baDataHome ? `document.querySelector('#discover-plans').textContent.includes('${cache.places.length} lugares de BA Data')` : `document.body.textContent.includes('${cache.places.length.toLocaleString('es-AR')} registros oficiales')`);
+    if (baDataHome) {
+      assert.equal(await evaluate(`new Set([...document.querySelectorAll('.plan-card .badge')].map(item=>item.textContent)).size`), 4);
+      assert.equal(await evaluate(`new Set([...document.querySelectorAll('.plan-card .card-img')].map(item=>item.getAttribute('src'))).size`), 4);
+      await until(`[...document.querySelectorAll('.plan-card .card-img')].every(image=>image.complete && image.naturalWidth>0)`);
+      assert.ok(await evaluate(`[...document.querySelectorAll('.plan-card')].every(card=>card.textContent.includes('Imagen ilustrativa'))`));
+      await evaluate(`document.querySelector('#discover-plans').scrollIntoView()`);
+      const initialScreenshot = await call('Page.captureScreenshot', { format: 'png' });
+      await writeFile(new URL('ba-data-home-variety.png', folder), Buffer.from(initialScreenshot.data, 'base64'));
+    }
     for (const item of cache.statistics) {
       await evaluate(`[...document.querySelectorAll('.category-filter button')].find(button=>button.textContent===${JSON.stringify(item.category)}).click()`);
       await until(`[...document.querySelectorAll('.plan-card .badge')].every(badge=>badge.textContent===${JSON.stringify(item.category)})`);

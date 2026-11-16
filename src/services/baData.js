@@ -1,3 +1,5 @@
+import { placeImage } from '../utils/baDataPresentation.js';
+
 let cachedRequest;
 
 export function toPlanCards(cache) {
@@ -9,7 +11,7 @@ export function toPlanCards(cache) {
     if (!source || !place.title || !Number.isFinite(place.lat) || !Number.isFinite(place.lon)) throw new Error('La copia contiene un registro sin procedencia o ubicación válida.');
     return {
       ...place, location: [place.barrio, 'CABA'].filter(Boolean).join(', '), ambaZone: 'CABA',
-      budget: 'Sin información', image: '/images/plan-placeholder.svg',
+      budget: 'Sin información', ...placeImage(place),
       description: place.subtype || '',
       sourceName: 'BA Data — GCBA', sourceUrl: source.datasetUrl, sourceLicense: source.license,
       resourceUrl: source.url, sourceUpdatedAt: source.resourceLastModified, fetchedAt: source.downloadedAt,

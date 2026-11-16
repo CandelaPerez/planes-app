@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { zoneOrder } from '../data/catalog';
+import { variedBaDataOrder } from '../utils/baDataPresentation.js';
 import { aggregateRating, budgetLevel, priceRank, zoneFor } from '../utils/planUtils';
 
 const categoryKey = (value = '') => value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleLowerCase('es');
@@ -33,7 +34,8 @@ export default function usePlanFilters({ catalog, category, zone, budget, search
         default: return (bRating.count > 0) - (aRating.count > 0) || bRating.average - aRating.average || a.title.localeCompare(b.title, 'es');
       }
     });
-    return sorted.map((idea) => ({ ...idea, ...(!idea.sourceName ? planPhotos[idea.id] || {} : {}), sourceImage: idea.image, image: !idea.sourceName && planPhotos[idea.id]?.image || idea.image }));
+    const ordered = sortBy === 'recommended' ? variedBaDataOrder(sorted) : sorted;
+    return ordered.map((idea) => ({ ...idea, ...(!idea.sourceName ? planPhotos[idea.id] || {} : {}), sourceImage: idea.image, image: !idea.sourceName && planPhotos[idea.id]?.image || idea.image }));
   }, [catalog, category, zone, budget, search, sortBy, ratings, planPhotos]);
   return { zones, visibleIdeas };
 }

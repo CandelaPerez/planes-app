@@ -9,6 +9,7 @@ import { renderToString } from 'react-dom/server';
 import { createServer } from 'vite';
 import { toPlanCards } from '../src/services/baData.js';
 import { parseCsv } from '../scripts/ba-data/normalize.js';
+import { categoryIllustrations, variedBaDataOrder, placeImage } from '../src/utils/baDataPresentation.js';
 
 const path = 'public/data/ba-data.json';
 const cache = JSON.parse(await readFile(path, 'utf8'));
@@ -21,7 +22,8 @@ test('real cached records have original IDs, verified geographic fields and date
   for (const plan of plans) {
     assert.ok(plan.title && plan.lat >= -34.71 && plan.lat <= -34.52 && plan.lon >= -58.54 && plan.lon <= -58.33);
     assert.equal(plan.budget, 'Sin información');
-    assert.equal(plan.image, '/images/plan-placeholder.svg');
+    assert.equal(plan.image, categoryIllustrations[plan.category]);
+    assert.equal(plan.imageKind, 'illustration');
     assert.equal(plan.description, plan.subtype || '', 'Description only repeats the published classification');
     assert.ok(plan.sourceReferences.every((source) => source.recordId && new URL(source.url).hostname === 'cdn.buenosaires.gob.ar' && source.license === 'CC-BY-2.5-AR' && source.downloadedAt && source.sha256));
   }
@@ -31,6 +33,23 @@ test('real cached records have original IDs, verified geographic fields and date
   assert.equal(restaurant.sourceUpdatedAt, cache.sources.find((source) => source.key === 'food').resourceLastModified);
   assert.ok(plans.filter((plan) => plan.category === 'Aire Libre').every((plan) => plan.coordinateMethod === 'published-boundary-vertex'));
   assert.ok(plans.filter((plan) => plan.category === 'Viajes').every((plan) => plan.subtype === 'Parada del bus turístico'));
+});
+
+test('recommended ordering varies categories, prioritizes complete addresses and preserves every real record', async () => {
+  const plans = toPlanCards(cache);
+  const ordered = variedBaDataOrder(plans);
+  assert.equal(ordered.length, 6670);
+  assert.equal(new Set(ordered.map((plan) => plan.id)).size, 6670);
+  assert.deepEqual(new Set(ordered.map((plan) => plan.id)), new Set(plans.map((plan) => plan.id)));
+  assert.deepEqual(ordered.slice(0, 4).map((plan) => plan.category), Object.keys(categoryIllustrations));
+  for (const category of Object.keys(categoryIllustrations)) {
+    const group = ordered.filter((plan) => plan.category === category);
+    const firstMissing = group.findIndex((plan) => !plan.address);
+    if (firstMissing >= 0) assert.ok(group.slice(firstMissing).every((plan) => !plan.address));
+  }
+  assert.equal(new Set(Object.values(categoryIllustrations)).size, 4);
+  for (const file of Object.values(categoryIllustrations)) assert.match(await readFile(`public${file}`, 'utf8'), /<svg/);
+  assert.equal(placeImage({ ...cache.places[0], photoUrl: 'javascript:alert(1)' }).imageKind, 'illustration');
 });
 
 test('HTML errors and malformed CSV cannot be accepted as successful data', () => {
