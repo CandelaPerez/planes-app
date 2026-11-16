@@ -1,3 +1,5 @@
+import AccountMenu from './components/AccountMenu';
+import NavigationIcon from './components/NavigationIcon';
 import { inspectSavedPlansSync } from './services/syncDiagnostics.js';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import usePlanFilters from './hooks/usePlanFilters';
@@ -9,7 +11,6 @@ import ItineraryEditor from './components/ItineraryEditor';
 import { itineraryUpdates } from './utils/itineraryEditing.js';
 import CreditsAndSources from './components/CreditsAndSources';
 import PlacePhotoCredit from './components/PlacePhotoCredit';
-import BaDataSource from './components/BaDataSource';
 import { loadBaDataPreview } from './services/baData';
 
 import { firebaseConfigured, firebaseRequested, watchAuth, registerAccount, loginAccount, logoutAccount, watchCatalog, watchSavedPlans, watchRatings, savePlan, updateSavedPlan, removeSavedPlan, saveRating, uploadPlanPhoto } from './services/firebase';
@@ -41,7 +42,6 @@ export default function AppFirebase() {
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('Todas');
   const [zone, setZone] = useState('Todas');
-  const [placeType, setPlaceType] = useState('Todos');
   const [sortBy, setSortBy] = useState('');
   const [visibleIdeasPage, setVisibleIdeasPage] = useState({ filterKey: '', count: 6 });
   const [personalFilter, setPersonalFilter] = useState('all');
@@ -134,9 +134,9 @@ export default function AppFirebase() {
     };
   }, [activeTab, focusPlanId, userPlans]);
 
-  const ideaFilterKey = `${category}|${zone}|${placeType}|${search}|${sortBy}`;
+  const ideaFilterKey = `${category}|${zone}|${search}|${sortBy}`;
   const visibleIdeasCount = visibleIdeasPage.filterKey === ideaFilterKey ? visibleIdeasPage.count : 6;
-  const { zones, placeTypes, visibleIdeas } = usePlanFilters({ catalog, category, zone, placeType, search, sortBy, ratings, planPhotos });
+  const { zones, visibleIdeas } = usePlanFilters({ catalog, category, zone, placeType: 'Todos', search, sortBy, ratings, planPhotos });
   const updateDiscoveryFilter = (setter, value) => { setter(value); setVisibleIdeasPage({ filterKey: '', count: 6 }); };
   const savedView = useMemo(() => savedPlansView(userPlans, catalog), [userPlans, catalog]);
   const personalPlans = savedView.plans;
@@ -447,6 +447,11 @@ export default function AppFirebase() {
     planPhotoFallback(event, plan, savedPlanKind(plan) === 'legacy-catalog' ? planPhotos : {});
   };
 
+  function navigateTo(tab) {
+    setActiveTab(tab);
+    if (window.matchMedia('(max-width: 760px)').matches) window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
   async function submitAuth(event) {
     event.preventDefault();
     if (authMode === 'register' && authForm.password !== authForm.confirmPassword) {
@@ -498,13 +503,13 @@ export default function AppFirebase() {
   return <div className="app-container">
     <header className="navbar">
       <button type="button" className="nav-brand" aria-label="Ir a Home" onClick={() => setActiveTab('home')}><span className="brand-badge">PH</span><h1>Por Hacer</h1></button>
-      <nav><ul className="nav-links">
-        <li><button className={`nav-btn ${activeTab === 'home' ? 'active' : ''}`} onClick={() => setActiveTab('home')}>Inicio</button></li>
-        <li><button className={`nav-btn ${activeTab === 'plans' ? 'active' : ''}`} onClick={() => setActiveTab('plans')}>Mis planes</button></li>
-        <li><button className={`nav-btn ${activeTab === 'calendar' ? 'active' : ''}`} onClick={() => setActiveTab('calendar')}>Calendario</button></li>
-        <li><button className={`nav-btn ${activeTab === 'bitacora' ? 'active' : ''}`} onClick={() => setActiveTab('bitacora')}>Recuerdos</button></li>
+      <nav aria-label="Navegación principal"><ul className="nav-links">
+        <li><button className={`nav-btn ${activeTab === 'home' ? 'active' : ''}`} aria-current={activeTab === 'home' ? 'page' : undefined} onClick={() => navigateTo('home')}><NavigationIcon name="home" /><span>Inicio</span></button></li>
+        <li><button className={`nav-btn ${activeTab === 'plans' ? 'active' : ''}`} aria-current={activeTab === 'plans' ? 'page' : undefined} onClick={() => navigateTo('plans')}><NavigationIcon name="plans" /><span>Mis planes</span></button></li>
+        <li><button className={`nav-btn ${activeTab === 'calendar' ? 'active' : ''}`} aria-current={activeTab === 'calendar' ? 'page' : undefined} onClick={() => navigateTo('calendar')}><NavigationIcon name="calendar" /><span>Calendario</span></button></li>
+        <li><button className={`nav-btn ${activeTab === 'bitacora' ? 'active' : ''}`} aria-current={activeTab === 'bitacora' ? 'page' : undefined} onClick={() => navigateTo('bitacora')}><NavigationIcon name="memories" /><span>Recuerdos</span></button></li>
       </ul></nav>
-      <div className="nav-account">{firebaseConfigured && <button className="btn btn-secondary" onClick={() => logoutAccount()}>Cerrar sesion</button>}<button className="btn btn-primary" onClick={openCreate}>+ Crear plan</button></div>
+      <div className="nav-account">{firebaseConfigured && <AccountMenu onSignOut={logoutAccount} />}<button className="btn btn-primary" onClick={openCreate}>+ Crear plan</button></div>
     </header>
 
     <main className="main-content">
@@ -521,12 +526,11 @@ export default function AppFirebase() {
         <div className="filter-bar discovery-filters">
           <input aria-label="Buscar por nombre o ubicación" type="search" placeholder="Buscar plan o lugar…" value={search} onChange={(event) => updateDiscoveryFilter(setSearch, event.target.value)} />
           <select aria-label="Filtrar por zona" value={zone} onChange={(event) => updateDiscoveryFilter(setZone, event.target.value)}><option value="Todas">Todas las zonas</option>{zones.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}</select>
-          <select aria-label="Filtrar por tipo de lugar" value={placeType} onChange={(event) => updateDiscoveryFilter(setPlaceType, event.target.value)}><option value="Todos">Todos los lugares</option>{placeTypes.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}</select>
           <select aria-label="Ordenar por" value={sortBy} onChange={(event) => updateDiscoveryFilter(setSortBy, event.target.value)}><option value="" disabled>Ordenar por</option><option value="recommended">Recomendados</option><option value="alpha">Nombre A-Z</option><option value="alpha-desc">Nombre Z-A</option></select>
         </div>
         
         {baCatalog && <p className="photo-credit" role="status">{visibleIdeas.length.toLocaleString('es-AR')} resultados</p>}
-        {!loading && visibleIdeas.length === 0 ? <div className="empty-state"><h3>No encontramos planes con esos filtros</h3><p>Prueba otra búsqueda o limpia alguno de los filtros.</p><button className="btn btn-secondary" onClick={() => { setSearch(''); setCategory('Todas'); setZone('Todas'); setPlaceType('Todos'); setSortBy(''); setVisibleIdeasPage({ filterKey: '', count: 6 }); }}>Limpiar filtros</button></div> : <div className="cards-grid">{visibleIdeas.slice(0, visibleIdeasCount).map((idea) => {
+        {!loading && visibleIdeas.length === 0 ? <div className="empty-state"><h3>No encontramos planes con esos filtros</h3><p>Prueba otra búsqueda o limpia alguno de los filtros.</p><button className="btn btn-secondary" onClick={() => { setSearch(''); setCategory('Todas'); setZone('Todas'); setSortBy(''); setVisibleIdeasPage({ filterKey: '', count: 6 }); }}>Limpiar filtros</button></div> : <div className="cards-grid">{visibleIdeas.slice(0, visibleIdeasCount).map((idea) => {
           const aggregate = aggregateRating(ratings, idea.id);
           const savedPlan = findSavedIdea(idea.id);
           const added = Boolean(savedPlan);
@@ -571,7 +575,7 @@ export default function AppFirebase() {
 
     {schedulePlan && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setSchedulePlan(null); }}><section className="modal-content schedule-modal" role="dialog" aria-modal="true" aria-labelledby="schedule-modal-title"><div className="modal-header"><h2 id="schedule-modal-title">Agregar al calendario</h2><button type="button" className="modal-close" onClick={() => setSchedulePlan(null)} aria-label="Cerrar">×</button></div><p className="schedule-plan-title">{schedulePlan.title}</p><form onSubmit={saveSchedule}><label className="form-group">Fecha<input type="date" required value={scheduleDate} onChange={(event) => setScheduleDate(event.target.value)} /></label><label className="form-group">Hora<input type="time" required value={scheduleTime} onChange={(event) => setScheduleTime(event.target.value)} /></label><div className="modal-actions"><button type="button" className="btn btn-secondary" onClick={() => setSchedulePlan(null)}>Cancelar</button><button type="submit" className="btn btn-primary" disabled={busy}>Guardar en calendario</button></div></form></section></div>}
 
-    {selectedIdea && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedIdea(null); }}><section className="modal-content plan-detail-modal" role="dialog" aria-modal="true" aria-labelledby="plan-detail-title"><div className="modal-header"><div><span className={`badge badge-${categoryClass(selectedIdea.category)}`}>{selectedIdea.category || 'Itinerario'}</span><h2 id="plan-detail-title">{selectedIdea.title}</h2></div><button className="modal-close" onClick={() => setSelectedIdea(null)} aria-label="Cerrar detalles">×</button></div><img className="plan-detail-image" src={selectedIdea.image || planImage(selectedIdea)} alt={selectedIdea.title} onError={(event) => selectedIdea.sourceName ? ideaImageFallback(event, selectedIdea) : imageFallback(event)} /><p className="plan-detail-description">{selectedIdea.description}</p><dl className="plan-detail-facts"><div><dt>{selectedIdea.type === 'itinerary' ? 'Ciudad o zona' : 'Dirección o zona'}</dt><dd>{selectedIdea.address || selectedIdea.location}</dd></div>{selectedIdea.type === 'itinerary' && <div><dt>Planes incluidos</dt><dd><ul className="detail-itinerary-items">{(selectedIdea.items || []).map((item) => <li key={item.id}><strong>{item.title}</strong><span>{item.location}</span></li>)}</ul></dd></div>}{selectedIdea.phone && <div><dt>Tel&#233;fono</dt><dd>{selectedIdea.phone}</dd></div>}<div><dt>{selectedIdea.sourceName ? "Horario publicado (verificar vigencia)" : "Horario"}</dt><dd>{selectedIdea.openingHours || 'Consultá el horario actualizado antes de ir.'}</dd></div><div><dt>Duración sugerida</dt><dd>{selectedIdea.duration || (selectedIdea.sourceName ? 'No informada en el recurso.' : 'Entre 1 y 2 horas')}</dd></div><div><dt>Presupuesto estimado</dt><dd>{priceLabel(selectedIdea.budget)}</dd></div>{selectedIdea.visitTips && <div><dt>Para tener en cuenta</dt><dd>{selectedIdea.visitTips}</dd></div>}</dl><BaDataSource plan={selectedIdea} /><div className="modal-actions"><a className="btn btn-secondary" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${selectedIdea.originalName || selectedIdea.title} ${selectedIdea.address || selectedIdea.location}`)}`} target="_blank" rel="noreferrer">Ver ubicación en Maps</a>{selectedIdea.officialUrl && <a className="btn btn-secondary" href={selectedIdea.officialUrl} target="_blank" rel="noreferrer">Sitio oficial</a>}{!selectedIdea.isSavedPlan && <button className="btn btn-primary" onClick={() => { const idea = selectedIdea; setSelectedIdea(null); addIdea(idea); }} disabled={Boolean(findSavedIdea(selectedIdea.id)) || busy}>{findSavedIdea(selectedIdea.id) ? 'En mis planes' : 'Agregar a mis planes'}</button>}</div></section></div>}
+    {selectedIdea && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedIdea(null); }}><section className="modal-content plan-detail-modal" role="dialog" aria-modal="true" aria-labelledby="plan-detail-title"><div className="modal-header"><div><span className={`badge badge-${categoryClass(selectedIdea.category)}`}>{selectedIdea.category || 'Itinerario'}</span><h2 id="plan-detail-title">{selectedIdea.title}</h2></div><button className="modal-close" onClick={() => setSelectedIdea(null)} aria-label="Cerrar detalles">×</button></div><img className="plan-detail-image" src={selectedIdea.image || planImage(selectedIdea)} alt={selectedIdea.title} onError={(event) => selectedIdea.sourceName ? ideaImageFallback(event, selectedIdea) : imageFallback(event)} /><p className="plan-detail-description">{selectedIdea.description}</p><dl className="plan-detail-facts"><div><dt>{selectedIdea.type === 'itinerary' ? 'Ciudad o zona' : 'Dirección o zona'}</dt><dd>{selectedIdea.address || selectedIdea.location}</dd></div>{selectedIdea.type === 'itinerary' && <div><dt>Planes incluidos</dt><dd><ul className="detail-itinerary-items">{(selectedIdea.items || []).map((item) => <li key={item.id}><strong>{item.title}</strong><span>{item.location}</span></li>)}</ul></dd></div>}{selectedIdea.phone && <div><dt>Tel&#233;fono</dt><dd>{selectedIdea.phone}</dd></div>}<div><dt>{selectedIdea.sourceName ? "Horario publicado (verificar vigencia)" : "Horario"}</dt><dd>{selectedIdea.openingHours || 'Consultá el horario actualizado antes de ir.'}</dd></div><div><dt>Duración sugerida</dt><dd>{selectedIdea.duration || (selectedIdea.sourceName ? 'No informada en el recurso.' : 'Entre 1 y 2 horas')}</dd></div><div><dt>Presupuesto estimado</dt><dd>{priceLabel(selectedIdea.budget)}</dd></div>{selectedIdea.visitTips && <div><dt>Para tener en cuenta</dt><dd>{selectedIdea.visitTips}</dd></div>}</dl><div className="modal-actions"><a className="btn btn-secondary" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${selectedIdea.originalName || selectedIdea.title} ${selectedIdea.address || selectedIdea.location}`)}`} target="_blank" rel="noreferrer">Ver ubicación en Maps</a>{selectedIdea.officialUrl && <a className="btn btn-secondary" href={selectedIdea.officialUrl} target="_blank" rel="noreferrer">Sitio oficial</a>}{!selectedIdea.isSavedPlan && <button className="btn btn-primary" onClick={() => { const idea = selectedIdea; setSelectedIdea(null); addIdea(idea); }} disabled={Boolean(findSavedIdea(selectedIdea.id)) || busy}>{findSavedIdea(selectedIdea.id) ? 'En mis planes' : 'Agregar a mis planes'}</button>}</div><CreditsAndSources compact image={selectedIdea.image || planImage(selectedIdea)} /></section></div>}
 
     {editingItinerary && <ItineraryEditor key={`${userId}:${editingItinerary.id}`} plan={editingItinerary} onSave={saveItineraryEdit} onClose={() => setEditingItinerary(null)} />}
 

@@ -4,6 +4,7 @@ import{mkdir,mkdtemp,writeFile}from'node:fs/promises';
 import{createServer}from'vite';
 import{tmpdir}from'node:os';import{join}from'node:path';
 const accounts={project:'demo-porhacer-tests'};
+const responsive=globalThis.process.argv.includes('--responsive');
 assert.equal(accounts.project,'demo-porhacer-tests');
 const folder=new URL('../.browser-check/',import.meta.url);await mkdir(folder,{recursive:true});
 const values={VITE_USE_FIREBASE:'true',VITE_FIREBASE_API_KEY:'demo-emulator-key',VITE_FIREBASE_AUTH_DOMAIN:accounts.project+'.firebaseapp.com',VITE_FIREBASE_PROJECT_ID:accounts.project,VITE_FIREBASE_STORAGE_BUCKET:accounts.project+'.appspot.com',VITE_FIREBASE_MESSAGING_SENDER_ID:'123456789',VITE_FIREBASE_APP_ID:'1:123456789:web:demo'};
@@ -78,16 +79,34 @@ try {
 
 
   await call('Network.setBlockedURLs',{urls:['https://*']});
-  await call('Emulation.setDeviceMetricsOverride',{width:1366,height:900,deviceScaleFactor:1,mobile:false});
+  await call('Emulation.setDeviceMetricsOverride',{width:responsive?390:1366,height:844,deviceScaleFactor:1,mobile:responsive});
   await call('Page.addScriptToEvaluateOnNewDocument',{source:'localStorage.setItem("porhacer_distinct_plan_photos_v2",JSON.stringify({"badata-food-1362":{image:"/images/plan-placeholder.svg"}}));'});
   await call('Page.navigate',{url:origin});
   const click=async text=>{await evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==="+JSON.stringify(text)+").click()");};
   const fill=async(selector,value)=>{await evaluate("(()=>{const input=document.querySelector("+JSON.stringify(selector)+");Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,"+JSON.stringify(value)+");input.dispatchEvent(new Event('input',{bubbles:true}));})()");};
   const login=async email=>{await until("!!document.querySelector('.auth-card input[type=email]')");await fill('.auth-card input[type=email]',email);await fill('.auth-card input[type=password]',accounts.password);await evaluate("document.querySelector('.auth-card form').requestSubmit()");await until("!!document.querySelector('.nav-account')");};
   const docs=()=>evaluate("import('/src/services/firebase.js').then(service=>service.testSavedDocs())");
+  const captureResponsive=async name=>{
+    await new Promise(resolve=>setTimeout(resolve,250));
+    const shot=await call('Page.captureScreenshot',{format:'png'});
+    await writeFile(new URL(name+'.png',folder),Uint8Array.from(atob(shot.data),c=>c.charCodeAt(0)));
+  };
   const email='eight-records-'+Date.now()+'@porhacer.example';
   accounts.password='Synthetic-eight-records-2026';
   await until("!!document.querySelector('.auth-card')");
+  if(responsive){
+    for(const width of [375,390,430,768,1366]){
+      await call('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:width<=430});
+      assert.ok(await evaluate("document.documentElement.scrollWidth<=innerWidth"));
+      assert.ok(await evaluate("(()=>{const r=document.querySelector('.auth-card').getBoundingClientRect();return r.left>=0&&r.right<=innerWidth;})()"));
+      await evaluate("document.querySelectorAll('.auth-mode-switch button')[1].click()");
+      assert.equal(await evaluate("document.querySelectorAll('.auth-card input[type=password]').length"),2);
+      assert.ok(await evaluate("document.documentElement.scrollWidth<=innerWidth"));
+      if(width===390)await captureResponsive('responsive-firebase-390-register');
+      await evaluate("document.querySelectorAll('.auth-mode-switch button')[0].click()");
+    }
+    await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+  }
   await evaluate("import('/src/services/firebase.js').then(s=>s.registerAccount("+JSON.stringify(email)+","+JSON.stringify(accounts.password)+")).then(()=>true)");
   await until("!!document.querySelector('.nav-account')");
   await until("!document.querySelector('.loading-message')");
@@ -120,7 +139,35 @@ try {
   await verify();const original=await docs();
   await call('Page.reload',{ignoreCache:true});await until("!!document.querySelector('.nav-account')");
   await until("window.porHacerDiagnostico&&!!document.querySelector('.discovery-section .plan-card')");await verify();
-  await click('Cerrar sesion');await login(email);await until("!!document.querySelector('.discovery-section .plan-card')");await verify();
+  if(responsive){
+    for(const width of [375,390,430]){
+      await call('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:true});
+      assert.equal(await evaluate("getComputedStyle(document.querySelector('.desktop-sign-out')).display"),'none');
+      await evaluate("window.scrollTo(0,600)");
+      assert.ok(await evaluate("Math.abs(document.querySelector('.navbar').getBoundingClientRect().top)<1"));
+      await evaluate("document.querySelector('.nav-account > .btn-primary').click()");
+      await until("!!document.querySelector('.modal-overlay')");
+      assert.ok(await evaluate("(()=>{const m=document.querySelector('.modal-content'),r=m.getBoundingClientRect();return document.elementFromPoint(r.left+20,r.top+20).closest('.modal-content')===m;})()"));
+      await click('Cancelar');await click('Inicio');await evaluate("window.scrollTo(0,600)");
+
+      assert.ok(await evaluate("(()=>{const brand=document.querySelector('.nav-brand').getBoundingClientRect(),account=document.querySelector('.nav-account').getBoundingClientRect();return brand.right+8<=account.left&&account.right<=innerWidth-16;})()"));
+      await evaluate("document.querySelector('.account-menu-trigger').click()");
+      await until("!!document.querySelector('.account-menu-dropdown')");
+      if(width===390)await captureResponsive('responsive-firebase-390-profile-menu');
+      assert.ok(await evaluate("(()=>{const r=document.querySelector('.account-menu-dropdown').getBoundingClientRect();return r.left>=0&&r.right<=innerWidth;})()"));
+      await evaluate("document.querySelector('.account-menu-trigger').click()");
+      assert.equal(await evaluate("document.querySelectorAll('.account-menu-dropdown').length"),0);
+      await evaluate("document.querySelector('.account-menu-trigger').click()");
+      await evaluate("document.body.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}))");
+      assert.equal(await evaluate("document.querySelectorAll('.account-menu-dropdown').length"),0);
+      await evaluate("document.querySelector('.account-menu-trigger').click()");
+      await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});
+      assert.equal(await evaluate("document.querySelectorAll('.account-menu-dropdown').length"),0);
+    }
+    await evaluate("document.querySelector('.account-menu-trigger').click()");
+    await evaluate("document.querySelector('.account-menu-dropdown button').click()");
+  }else await click('Cerrar sesion');
+  await login(email);await until("!!document.querySelector('.discovery-section .plan-card')");await verify();
   await click('Mis planes');await evaluate("document.querySelectorAll('.personal-section-switch button')[1].click()");
   await until("document.querySelectorAll('.itinerary-edit-button').length===5");
   const itinerary=original.find(p=>p.type==='itinerary');
@@ -137,7 +184,19 @@ try {
   await evaluate("import('/src/services/firebase.js').then(s=>s.savePlan(s.auth.currentUser.uid,"+JSON.stringify(restore)+"))");
   await until("!!document.querySelector('.discovery-section .plan-card')");await verify();
   await call('Page.reload',{ignoreCache:true});await until("!!document.querySelector('.nav-account')");await until("!!document.querySelector('.discovery-section .plan-card')");await verify();
+  if(responsive){
+    for(const width of [375,390,430,768,1366]){
+      await call('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:width<=430});
+      await verify();assert.ok(await evaluate("document.documentElement.scrollWidth<=innerWidth"));
+      await click('Mis planes');await evaluate("document.querySelectorAll('.personal-section-switch button')[1].click()");
+      await until("document.querySelectorAll('.itinerary-edit-button').length===5");
+      assert.ok(await evaluate("document.documentElement.scrollWidth<=innerWidth"));
+      if(width===390)await captureResponsive('responsive-firebase-390-itineraries');
+      await click('Inicio');
+      if(width===390)await captureResponsive('responsive-firebase-390-home');
+    }
+  }
   assert.deepEqual(exceptions,[]);
-  const result={emulator:true,project:accounts.project,threePlans:3,fiveItineraries:5,serverDocuments:8,uidMatches:true,reload:true,logoutLogin:true,editSameDocument:true,deleteSyntheticOnly:true,deletePersistsAfterReload:true,restoreSameIdWithoutDuplicates:true,productionTouched:false,javascriptExceptions:exceptions};
+  const result={emulator:true,project:accounts.project,responsive,profileMenu:responsive,threePlans:3,fiveItineraries:5,serverDocuments:8,uidMatches:true,reload:true,logoutLogin:true,editSameDocument:true,deleteSyntheticOnly:true,deletePersistsAfterReload:true,restoreSameIdWithoutDuplicates:true,productionTouched:false,javascriptExceptions:exceptions};
   await writeFile(new URL('eight-records-sync-result.json',folder),JSON.stringify(result,null,2));console.log(JSON.stringify(result));
 }finally{socket?.close();browser.kill();await server.close();}

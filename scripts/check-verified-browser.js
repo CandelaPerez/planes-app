@@ -1,4 +1,4 @@
-import { discoveryOptions, regionFor, placeTypeFor } from '../src/utils/discoveryFilters.js';
+import { discoveryOptions, regionFor, matchesDiscoveryFilters } from '../src/utils/discoveryFilters.js';
 import { toPlanCards } from '../src/services/baData.js';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
@@ -139,20 +139,14 @@ try {
   await until("!document.querySelector('#creditos-y-fuentes')");
   const recommendedFirstPage = await evaluate("[...document.querySelectorAll('.discovery-section .card-title')].slice(0,6).map(element=>element.textContent)");
   const options = discoveryOptions(reviewedPlans);
+  assert.equal(await evaluate("document.querySelectorAll('select[aria-label=\"Filtrar por tipo de lugar\"]').length"),0);
   assert.deepEqual(await evaluate("[...document.querySelector('select[aria-label=\"Filtrar por zona\"]').options].slice(1).map(option=>option.textContent)"),options.zones.map(option=>option.name));
-  assert.deepEqual(await evaluate("[...document.querySelector('select[aria-label=\"Filtrar por tipo de lugar\"]').options].slice(1).map(option=>option.textContent)"),options.placeTypes.map(option=>option.name));
   for(const zone of options.zones){
     await selectFilter('Filtrar por zona',zone.name);
     await checkResults(reviewedPlans.filter(plan=>regionFor(plan)===zone.name));
   }
   await selectFilter('Filtrar por zona','Todas');
-  for(const type of options.placeTypes){
-    await selectFilter('Filtrar por tipo de lugar',type.name);
-    await checkResults(reviewedPlans.filter(plan=>placeTypeFor(plan)===type.name));
-  }
-  await selectFilter('Filtrar por tipo de lugar','Todos');
   await selectFilter('Filtrar por zona','Zona Sur');
-  await selectFilter('Filtrar por tipo de lugar','Todos');
   await chooseCategory('Gastronom\u00eda');
   const southIds=['badata-food-913','badata-food-905','badata-culture-49'];
   const southPlans=reviewedPlans.filter(plan=>southIds.includes(plan.id));
@@ -183,14 +177,14 @@ try {
   await checkResults(reviewedPlans);
   assert.deepEqual(await evaluate("[...document.querySelectorAll('.discovery-section .card-title')].map(element=>element.textContent)"),recommendedFirstPage);
   await selectFilter('Filtrar por zona','Zona Centro');
-  await selectFilter('Filtrar por tipo de lugar','Museos');
+  await chooseCategory('Cultura');
   await selectFilter('Ordenar por','alpha-desc');
   await chooseCategory('Cultura');
   await searchFor('historico');
-  await checkResults(reviewedPlans.filter(plan=>['badata-culture-2674','badata-culture-2675'].includes(plan.id)));
+  await checkResults(reviewedPlans.filter(plan=>matchesDiscoveryFilters(plan,{category:'Cultura',zone:'Zona Centro',search:'historico'})));
   await searchFor('');
   await selectFilter('Filtrar por zona','Zona Norte');
-  await selectFilter('Filtrar por tipo de lugar','Gastronomía');
+  await searchFor('no-match-for-any-place');
   await checkResults([]);
   assert.ok(await evaluate("document.querySelector('.empty-state').textContent.includes('No encontramos planes con esos filtros')"));
   await evaluate("[...document.querySelectorAll('button')].find(button=>button.textContent==='Limpiar filtros').click()");
@@ -198,11 +192,11 @@ try {
   // Returning to a former filter combination must not restore its expanded page.
   await evaluate("document.querySelector('.discovery-show-more button').click()");
   await until("document.querySelectorAll('.discovery-section .plan-card').length===12");
-  await selectFilter('Filtrar por tipo de lugar','Espacios verdes');
-  await checkResults(reviewedPlans.filter(plan=>placeTypeFor(plan)==='Espacios verdes'));
-  await selectFilter('Filtrar por tipo de lugar','Todos');
+  await chooseCategory('Aire Libre');
+  await checkResults(reviewedPlans.filter(plan=>plan.category==='Aire Libre'));
+  await chooseCategory('Todas');
   await checkResults(reviewedPlans);
-  console.log(JSON.stringify({zoneOptions:options.zones.length,typeOptions:options.placeTypes.length,individualFilters:'passed',combinedFilters:'passed',globalSortBothDirections:'passed',paginationReset:'passed',emptyResults:'passed'}));
+  console.log(JSON.stringify({zoneOptions:options.zones.length,typeOptions:0,individualFilters:'passed',combinedFilters:'passed',globalSortBothDirections:'passed',paginationReset:'passed',emptyResults:'passed'}));
 
   for(const [category,total] of Object.entries(reviewedPlans.reduce((counts,p)=>(counts[p.category]=(counts[p.category]||0)+1,counts),{}))){
    await evaluate("[...document.querySelectorAll('.category-filter button')].find(b=>b.textContent==="+JSON.stringify(category === 'Viajes' ? 'Íconos de BA' : category)+").click()");
@@ -214,7 +208,7 @@ try {
   assert.ok(await evaluate("JSON.parse(localStorage.getItem('porhacer_preview_plans')).some(p=>p.catalogId.startsWith('tourism-wikidata-')&&p.photograph.evidence&&p.sourceLicense==='CC0')"));
   await evaluate("[...document.querySelectorAll('.plan-card button')].find(b=>b.textContent==='Ver detalles').click()");
   await until("!!document.querySelector('.modal-content')");
-  assert.ok(await evaluate("document.querySelector('.modal-content').textContent.includes('Wikidata') && document.querySelector('.modal-content').textContent.includes('CC0')"));
+  assert.ok(await evaluate("!document.querySelector('.modal-content').textContent.includes('Wikidata') && !document.querySelector('.modal-content').textContent.includes('CC0') && !!document.querySelector('.photo-credits-link')"));
   await evaluate("document.querySelector('.modal-close').click()");
   await evaluate("[...document.querySelectorAll('.category-filter button')].find(b=>b.textContent==='Todas').click()");
   await evaluate("(()=>{const input=document.querySelector('input[type=search]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'Tortoni');input.dispatchEvent(new Event('input',{bubbles:true}));})()");
