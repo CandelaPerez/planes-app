@@ -5,6 +5,17 @@ export const categoryIllustrations = {
   Viajes: '/images/ba-data/viajes.svg',
 };
 
+const displayName = (name) => name === name.toLocaleUpperCase('es')
+  ? name.toLocaleLowerCase('es').replace(/(^|[\s"(])\p{L}/gu, (letter) => letter.toLocaleUpperCase('es')).replace(/\b(malba|mamba|cck|amia)\b/gi, (word) => word.toUpperCase())
+  : name;
+
+export function describePlace(place) {
+  const name = displayName(place.title);
+  const prefix = { 'Gastronomía':'Descubrí', Cultura:'Explorá', 'Aire Libre':'Paseá por', Viajes:'Conocé la parada' }[place.category] || 'Conocé';
+  const kind = { 'Gastronomía':'Conocé este establecimiento gastronómico', Cultura:'Descubrí este espacio cultural', 'Aire Libre':'Disfrutá un paseo por este espacio verde', Viajes:'Ubicá esta parada del bus turístico' }[place.category] || 'Conocé este lugar';
+  return { originalName:place.title, title:`${prefix} ${place.category === 'Viajes' ? name.replace(/^\d+\.\s*/, '') : name}`, description:`${kind}${place.barrio ? ` en ${place.barrio}` : ' en Buenos Aires'}.${place.subtype && place.category !== 'Viajes' ? ` Tipo publicado: ${displayName(place.subtype)}.` : ''}` };
+}
+
 const validUrl = (value) => {
   try { return new URL(value).protocol === 'https:'; } catch { return false; }
 };

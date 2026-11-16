@@ -1,7 +1,9 @@
-import { placeImage } from '../utils/baDataPresentation.js';
+import { describePlace, placeImage } from '../utils/baDataPresentation.js';
 import pilot from '../data/baDataPilot.json' with { type: 'json' };
+import photos from '../data/baDataPhotos.json' with { type: 'json' };
 
 const pilotById = new Map(pilot.entries.map((entry) => [entry.id, entry]));
+const photosById = new Map(photos.entries.map((entry) => [entry.id, entry]));
 
 let cachedRequest;
 
@@ -12,10 +14,13 @@ export function toPlanCards(cache) {
   return cache.places.map((place) => {
     const source = sources.get(place.sources?.[0]?.key);
     if (!source || !place.title || !Number.isFinite(place.lat) || !Number.isFinite(place.lon)) throw new Error('La copia contiene un registro sin procedencia o ubicación válida.');
+    const approved = photosById.get(place.id);
+    const photo = approved?.originalName === place.title && approved.address === place.address && approved.category === place.category ? approved.photo : null;
     const card = {
       ...place, location: [place.barrio, 'CABA'].filter(Boolean).join(', '), ambaZone: 'CABA',
       budget: 'Sin información', ...placeImage(place),
-      description: place.subtype || '',
+      ...describePlace(place),
+      ...(photo ? { image:photo.localPath, imageKind:'photograph', imageSourceUrl:photo.sourceUrl, photograph:photo } : {}),
       sourceName: 'BA Data — GCBA', sourceUrl: source.datasetUrl, sourceLicense: source.license,
       resourceUrl: source.url, sourceUpdatedAt: source.resourceLastModified, fetchedAt: source.downloadedAt,
       sourceReferences: place.sources.map((reference) => ({ ...reference, ...sources.get(reference.key) })),
