@@ -1,7 +1,7 @@
 ﻿import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
-import { toPlanCards } from '../src/services/baData.js';
+import { toPlanCards, loadBaDataPreview } from '../src/services/baData.js';
 import { discoveryOptions, regionFor } from '../src/utils/discoveryFilters.js';
 const root=new URL('../',import.meta.url);
 const read=async(path)=>JSON.parse(await readFile(new URL(path,root),'utf8'));
@@ -26,6 +26,7 @@ for(const manifest of manifests){
  }
 }
 const plans=toPlanCards(cache);
+assert.deepEqual((await loadBaDataPreview()).plans,plans,'Bundled catalog differs from the complete reviewed selection');
 assert.ok(plans.every(plan => regionFor(plan)), 'A visible plan has no verified CABA zone');
 assert.equal(new Set(plans.map(p=>`${p.originalName.normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase()}|${p.address}`)).size,plans.length,'Duplicated place identity');
 assert.equal(new Set(plans.map(p=>p.photograph.sha256)).size,plans.length,'The same photograph cannot represent different places');

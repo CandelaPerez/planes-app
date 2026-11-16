@@ -2,6 +2,7 @@ import { describePlace } from '../utils/baDataPresentation.js';
 import pilot from '../data/baDataPilot.json' with { type: 'json' };
 import photos from '../data/baDataPhotos.json' with { type: 'json' };
 import tourism from '../data/tourismPlaces.json' with { type: 'json' };
+import verifiedCatalog from '../data/verifiedCatalog.json' with { type: 'json' };
 
 const pilotById = new Map(pilot.entries.map((entry) => [entry.id, entry]));
 const photosById = new Map(photos.entries.map((entry) => [entry.id, entry]));
@@ -41,17 +42,18 @@ export function toPlanCards(cache) {
   });
 }
 
+// Ship only the reviewed selection with the application. A separate HTTP request
+// for the raw BA Data archive must never make the complete catalog disappear.
 export function loadBaDataPreview() {
   if (!cachedRequest) {
-    cachedRequest = fetch('/data/ba-data.json', { signal: AbortSignal.timeout(8000), headers: { Accept: 'application/json' } })
-      .then(async (response) => {
-        if (!response.ok) throw new Error(`No se pudo cargar la copia local (HTTP ${response.status}).`);
-        const cache = await response.json();
-        const plans = toPlanCards(cache);
-        if (!plans.length) throw new Error('El catálogo fotográfico no contiene fotografías verificadas disponibles.');
-        return { ...cache, plans };
-      })
-      .catch((error) => { cachedRequest = null; throw error; });
+    cachedRequest = Promise.resolve().then(() => {
+      const plans = toPlanCards(verifiedCatalog);
+      const expected = new Set([...pilot.entries, ...photos.entries].filter(entry => entry.photo).map(entry => entry.id));
+      if (plans.length !== expected.size || plans.some(plan => !expected.has(plan.id))) {
+        throw new Error('La selecci\u00f3n verificada del cat\u00e1logo est\u00e1 incompleta.');
+      }
+      return { ...verifiedCatalog, plans };
+    }).catch(error => { cachedRequest = null; throw error; });
   }
   return cachedRequest;
 }

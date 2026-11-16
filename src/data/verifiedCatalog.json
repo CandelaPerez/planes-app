@@ -1,0 +1,1375 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-16T00:28:08.156Z",
+  "source": "BA Data — Gobierno de la Ciudad de Buenos Aires",
+  "sources": [
+    {
+      "key": "food",
+      "category": "Gastronomía",
+      "dataset": "Oferta y Establecimientos gastronómicos",
+      "slug": "oferta-establecimientos-gastronomicos",
+      "resourceId": "e66613ef-aaf4-44aa-b89c-638c431fef0e",
+      "format": "csv",
+      "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/oferta-establecimientos-gastronomicos/oferta_gastronomica.csv",
+      "publisher": "Ente de Turismo de la Ciudad de Buenos Aires",
+      "portalUpdatedOn": "2026-07-22",
+      "datasetUrl": "https://data.buenosaires.gob.ar/dataset/oferta-establecimientos-gastronomicos",
+      "license": "CC-BY-2.5-AR",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/",
+      "downloadedAt": "2026-11-16T00:28:06.291Z",
+      "resourceLastModified": "2024-08-22T18:30:58.000Z",
+      "metadataModified": "2026-07-22T13:13:22.725228",
+      "resourceMetadataModified": "2024-09-02T19:30:30.055499",
+      "ckanLastModified": "2019-08-05T10:59:26.543103",
+      "sha256": "69066398717b588d913fb19b185e53a07e2173881b11b9a352be59d0377cb82b",
+      "bytes": 441053
+    },
+    {
+      "key": "culture",
+      "category": "Cultura",
+      "dataset": "Espacios culturales",
+      "slug": "espacios-culturales",
+      "resourceId": "juqdkmgo-711-resource",
+      "format": "csv",
+      "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-cultura/espacios-culturales/espacios-culturales.csv",
+      "publisher": "Ministerio de Cultura de la Ciudad de Buenos Aires",
+      "portalUpdatedOn": "2026-06-18",
+      "datasetUrl": "https://data.buenosaires.gob.ar/dataset/espacios-culturales",
+      "license": "CC-BY-2.5-AR",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/",
+      "downloadedAt": "2026-11-16T00:28:06.550Z",
+      "resourceLastModified": "2023-10-04T22:12:17.000Z",
+      "metadataModified": null,
+      "resourceMetadataModified": "2025-07-03T18:58:31.876184",
+      "ckanLastModified": null,
+      "sha256": "ecf9b636a30516cd3904280e04bddda98f7deaad1620a6f4898fd7b324961dde",
+      "bytes": 724491
+    },
+    {
+      "key": "green",
+      "category": "Aire Libre",
+      "dataset": "Espacios Verdes Públicos",
+      "slug": "espacios-verdes",
+      "resourceId": "2a9af960-02a3-44bb-b57e-0a8295f6e0e2",
+      "format": "geojson",
+      "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/secretaria-de-desarrollo-urbano/espacios-verdes/espacio_verde_publico.geojson",
+      "publisher": "Gobierno de la Ciudad de Buenos Aires / Datos Geoespaciales",
+      "portalUpdatedOn": "2026-07-06",
+      "datasetUrl": "https://data.buenosaires.gob.ar/dataset/espacios-verdes",
+      "license": "CC-BY-2.5-AR",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/",
+      "downloadedAt": "2026-11-16T00:28:07.767Z",
+      "resourceLastModified": "2026-07-06T18:43:12.000Z",
+      "metadataModified": null,
+      "resourceMetadataModified": "2025-08-19T22:39:29.711833",
+      "ckanLastModified": "2022-07-12T00:00:00",
+      "sha256": "eb848cf853e6c6f65309fd78bd2688bae032ed88c074eb5a534aee91885eb728",
+      "bytes": 18399297
+    },
+    {
+      "key": "bus",
+      "category": "Viajes",
+      "dataset": "Bus Turístico — Paradas",
+      "slug": "bus-turistico",
+      "resourceId": "ae4f67cb-b53b-48ac-9067-c114b314eeba",
+      "format": "csv",
+      "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ente-de-turismo/bus-turistico/bus_turistico_paradas.csv",
+      "publisher": "Ente de Turismo de la Ciudad de Buenos Aires",
+      "portalUpdatedOn": "2026-11-13",
+      "datasetUrl": "https://data.buenosaires.gob.ar/dataset/bus-turistico",
+      "license": "CC-BY-2.5-AR",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/",
+      "downloadedAt": "2026-11-16T00:28:08.132Z",
+      "resourceLastModified": "2026-11-06T15:13:25.000Z",
+      "metadataModified": null,
+      "resourceMetadataModified": "2026-11-13T15:36:54.488298",
+      "ckanLastModified": "2019-05-13T12:11:40.574240",
+      "sha256": "842716898f33ed316e83abfbab4de33b3e539383a2ebdae370c885d1cc052ff9",
+      "bytes": 15282
+    }
+  ],
+  "statistics": [
+    {
+      "key": "food",
+      "category": "Gastronomía",
+      "raw": 2823,
+      "eligible": 2823,
+      "discarded": 0,
+      "unique": 2811,
+      "duplicates": 12
+    },
+    {
+      "key": "culture",
+      "category": "Cultura",
+      "raw": 3053,
+      "eligible": 3031,
+      "discarded": 22,
+      "unique": 2962,
+      "duplicates": 69
+    },
+    {
+      "key": "green",
+      "category": "Aire Libre",
+      "raw": 2176,
+      "eligible": 843,
+      "discarded": 1333,
+      "unique": 843,
+      "duplicates": 0
+    },
+    {
+      "key": "bus",
+      "category": "Viajes",
+      "raw": 54,
+      "eligible": 54,
+      "discarded": 0,
+      "unique": 54,
+      "duplicates": 0
+    }
+  ],
+  "diagnostics": [
+    {
+      "source": "food",
+      "endpoint": "package_show",
+      "status": "metadata-readable",
+      "metadataModified": "2026-07-22T13:13:22.725228"
+    },
+    {
+      "source": "culture",
+      "endpoint": "package_show",
+      "status": "unavailable",
+      "message": "HTTP 200: non-CKAN response"
+    },
+    {
+      "source": "culture",
+      "endpoint": "resource_show",
+      "status": "metadata-readable"
+    },
+    {
+      "source": "green",
+      "endpoint": "package_show",
+      "status": "unavailable",
+      "message": "HTTP 200: non-CKAN response"
+    },
+    {
+      "source": "green",
+      "endpoint": "resource_show",
+      "status": "metadata-readable"
+    },
+    {
+      "source": "bus",
+      "endpoint": "package_show",
+      "status": "unavailable",
+      "message": "HTTP 200: non-CKAN response"
+    },
+    {
+      "source": "bus",
+      "endpoint": "resource_show",
+      "status": "metadata-readable"
+    }
+  ],
+  "places": [
+    {
+      "id": "badata-food-2554",
+      "title": "BAR BRITANICO",
+      "category": "Gastronomía",
+      "address": "BRASIL AV. 399",
+      "lat": -34.62530893,
+      "lon": -58.37083484,
+      "barrio": "San Telmo",
+      "subtype": "RESTAURANTE",
+      "openingHours": "lunes a domingo de 1 a 00",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "2554"
+        },
+        {
+          "key": "culture",
+          "recordId": "43"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-1362",
+      "title": "CAFE TORTONI",
+      "category": "Gastronomía",
+      "address": "DE MAYO AV. 825",
+      "lat": -34.60882556,
+      "lon": -58.37812207,
+      "barrio": "Monserrat",
+      "subtype": "RESTAURANTE",
+      "openingHours": "lunes a sábado de 8 a 3.30 - domingo de 8 a 1",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "1362"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-139",
+      "title": "DON JULIO",
+      "category": "Gastronomía",
+      "address": "GUATEMALA 4699",
+      "lat": -34.58632489,
+      "lon": -58.42429206,
+      "barrio": "Palermo",
+      "subtype": "RESTAURANTE",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "139"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-1985",
+      "title": "EL CUARTITO",
+      "category": "Gastronomía",
+      "address": "TALCAHUANO 937",
+      "lat": -34.59784578,
+      "lon": -58.38551982,
+      "barrio": "Retiro",
+      "subtype": "RESTAURANTE",
+      "openingHours": "lunes a lunes de 12 al cierre",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "1985"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-2567",
+      "title": "EL FEDERAL",
+      "category": "Gastronomía",
+      "address": "CALVO, CARLOS 599",
+      "lat": -34.61962213,
+      "lon": -58.37414081,
+      "barrio": "San Telmo",
+      "subtype": "BAR",
+      "openingHours": "lunes a domingo de 7 a 2",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "2567"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-2231",
+      "title": "EL GATO NEGRO",
+      "category": "Gastronomía",
+      "address": "CORRIENTES AV. 1669",
+      "lat": -34.60421048,
+      "lon": -58.39030366,
+      "barrio": "San Nicolas",
+      "subtype": "BAR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "2231"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-565",
+      "title": "EL IMPERIO DE LA PIZZA",
+      "category": "Gastronomía",
+      "address": "CORRIENTES AV. 6891",
+      "lat": -34.58704199,
+      "lon": -58.45477406,
+      "barrio": "Chacarita",
+      "subtype": "RESTAURANTE",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "565"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-170",
+      "title": "EL PREFERIDO DE PALERMO",
+      "category": "Gastronomía",
+      "address": "BORGES, JORGE LUIS 2108",
+      "lat": -34.58545725,
+      "lon": -58.42529708,
+      "barrio": "Palermo",
+      "subtype": "RESTAURANTE",
+      "openingHours": "lunes a sábado de 12 a 16 y de 20 al cierre",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "170"
+        },
+        {
+          "key": "culture",
+          "recordId": "147"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-905",
+      "title": "EL PROGRESO",
+      "category": "Gastronomía",
+      "address": "MONTES DE OCA, MANUEL 1702",
+      "lat": -34.64674421,
+      "lon": -58.37294038,
+      "barrio": "Barracas",
+      "subtype": "BAR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "905"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-947",
+      "title": "ESQUINA HOMERO MANZI",
+      "category": "Gastronomía",
+      "address": "SAN JUAN AV. 3601",
+      "lat": -34.62538787,
+      "lon": -58.41633475,
+      "barrio": "Boedo",
+      "subtype": "",
+      "openingHours": "domingo a viernes de 6 al cierre",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "947"
+        },
+        {
+          "key": "culture",
+          "recordId": "157"
+        },
+        {
+          "key": "culture",
+          "recordId": "2360"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-2296",
+      "title": "GUERRIN",
+      "category": "Gastronomía",
+      "address": "CORRIENTES AV. 1368",
+      "lat": -34.60404428,
+      "lon": -58.38600015,
+      "barrio": "San Nicolas",
+      "subtype": "CAFE",
+      "openingHours": "lunes a lunes de 7 al cierre",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "2296"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-1780",
+      "title": "LA BIELA",
+      "category": "Gastronomía",
+      "address": "QUINTANA, MANUEL, PRES. AV. 600",
+      "lat": -34.58783506,
+      "lon": -58.39075439,
+      "barrio": "Recoleta",
+      "subtype": "RESTAURANTE",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "1780"
+        },
+        {
+          "key": "culture",
+          "recordId": "174"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-913",
+      "title": "LA FLOR DE BARRACAS",
+      "category": "Gastronomía",
+      "address": "SUAREZ AV. 2095",
+      "lat": -34.64182558,
+      "lon": -58.37949,
+      "barrio": "Barracas",
+      "subtype": "RESTAURANTE",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "913"
+        },
+        {
+          "key": "culture",
+          "recordId": "187"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-638",
+      "title": "LAS VIOLETAS",
+      "category": "Gastronomía",
+      "address": "RIVADAVIA AV. 3899",
+      "lat": -34.61131564,
+      "lon": -58.42077385,
+      "barrio": "Almagro",
+      "subtype": "RESTAURANTE",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "638"
+        },
+        {
+          "key": "culture",
+          "recordId": "206"
+        }
+      ]
+    },
+    {
+      "id": "badata-food-2379",
+      "title": "LOS GALGOS",
+      "category": "Gastronomía",
+      "address": "LAVALLE 1791",
+      "lat": -34.603102,
+      "lon": -58.39221247,
+      "barrio": "San Nicolas",
+      "subtype": "RESTAURANTE",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "food",
+          "recordId": "2379"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-30",
+      "title": "36 BILLARES",
+      "category": "Cultura",
+      "address": "DE MAYO AV. 1265, CABA",
+      "lat": -34.60917,
+      "lon": -58.384301,
+      "barrio": "MONSERRAT",
+      "subtype": "BAR",
+      "website": "WWW.LOS36BILLARES.COM.AR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "30"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-49",
+      "title": "BAR EL ESTAÑO 1880",
+      "category": "Cultura",
+      "address": "VALLE, ARISTOBULO DEL 1100, CABA",
+      "lat": -34.635408,
+      "lon": -58.36821,
+      "barrio": "BOCA",
+      "subtype": "BAR",
+      "website": "WWW.ELESTAÑO1880.COM.AR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "49"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-71",
+      "title": "CAFE DE GARCIA",
+      "category": "Cultura",
+      "address": "SANABRIA 3302, CABA",
+      "lat": -34.606356,
+      "lon": -58.51059,
+      "barrio": "VILLA DEVOTO",
+      "subtype": "BAR",
+      "website": "WWW.CAFEDEGARCIA.COM.AR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "71"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-76",
+      "title": "CAFE DE LOS ANGELITOS",
+      "category": "Cultura",
+      "address": "RIVADAVIA AV. 2100, CABA",
+      "lat": -34.609527,
+      "lon": -58.396007,
+      "barrio": "BALVANERA",
+      "subtype": "BAR",
+      "website": "WWW.CAFEDELOSANGELITOS.COM",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "76"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-78",
+      "title": "CAFE EL BANDERIN",
+      "category": "Cultura",
+      "address": "GUARDIA VIEJA 3601, CABA",
+      "lat": -34.601649,
+      "lon": -58.415489,
+      "barrio": "ALMAGRO",
+      "subtype": "BAR",
+      "website": "WWW.ELBANDERIN.COM.AR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "78"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-82",
+      "title": "CAFE MARGOT",
+      "category": "Cultura",
+      "address": "BOEDO AV. 857, CABA",
+      "lat": -34.623266,
+      "lon": -58.416375,
+      "barrio": "BOEDO",
+      "subtype": "BAR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "82"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-189",
+      "title": "LA GIRALDA",
+      "category": "Cultura",
+      "address": "CORRIENTES AV. 1453, CABA",
+      "lat": -34.604052,
+      "lon": -58.387286,
+      "barrio": "SAN NICOLAS",
+      "subtype": "BAR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "189"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-201",
+      "title": "LA POESIA",
+      "category": "Cultura",
+      "address": "CHILE 502, CABA",
+      "lat": -34.616062,
+      "lon": -58.373267,
+      "barrio": "SAN TELMO",
+      "subtype": "BAR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "201"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-1103",
+      "title": "CENTRO CULTURAL RECOLETA",
+      "category": "Cultura",
+      "address": "JUNIN 1930, CABA",
+      "lat": -34.586496,
+      "lon": -58.391578,
+      "barrio": "RECOLETA",
+      "subtype": "CENTRO CULTURAL",
+      "website": "WWW.CENTROCULTURALRECOLETA.ORG",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "1103"
+        },
+        {
+          "key": "culture",
+          "recordId": "2314"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-1379",
+      "title": "USINA DEL ARTE",
+      "category": "Cultura",
+      "address": "CAFFARENA, AGUSTIN R. 2, CABA",
+      "lat": -34.629144,
+      "lon": -58.356388,
+      "barrio": "BOCA",
+      "subtype": "CENTRO CULTURAL",
+      "website": "HTTP://WWW.BUENOSAIRES.GOB.AR/USINADELARTE",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "1379"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-1758",
+      "title": "FUNDACION PROA",
+      "category": "Cultura",
+      "address": "DON PEDRO DE MENDOZA AV. 1929, CABA",
+      "lat": -34.639639,
+      "lon": -58.361732,
+      "barrio": "BOCA",
+      "subtype": "GALERIA DE ARTE",
+      "website": "WWW.PROA.ORG",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "1758"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-1985",
+      "title": "EL ATENEO",
+      "category": "Cultura",
+      "address": "SANTA FE AV. 1860, CABA",
+      "lat": -34.595904,
+      "lon": -58.39422,
+      "barrio": "RECOLETA",
+      "subtype": "LIBRERIA",
+      "website": "https://www.yenny-elateneo.com/local/grand-splendid/",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "1985"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2467",
+      "title": "PALACIO BAROLO",
+      "category": "Cultura",
+      "address": "DE MAYO AV. 1368, CABA",
+      "lat": -34.6094,
+      "lon": -58.38576,
+      "barrio": "MONSERRAT",
+      "subtype": "MONUMENTOS Y LUGARES HISTORICOS",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2467"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2545",
+      "title": "ACADEMIA NACIONAL DE LA HISTORIA DE LA REPUBLICA ARGENTINA",
+      "category": "Cultura",
+      "address": "BALCARCE 139, CABA",
+      "lat": -34.609847,
+      "lon": -58.370747,
+      "barrio": "MONSERRAT",
+      "subtype": "MUSEO",
+      "website": "WWW.AN-HISTORIA.ORG.AR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2545"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2568",
+      "title": "MALBA",
+      "category": "Cultura",
+      "address": "FIGUEROA ALCORTA, PRES. AV. 3415, CABA",
+      "lat": -34.577246,
+      "lon": -58.40377,
+      "barrio": "PALERMO",
+      "subtype": "MUSEO",
+      "website": "WWW.MALBA.ORG.AR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2568"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2578",
+      "title": "MUSEO ARGENTINO DE CIENCIAS NATURALES \"BERNARDINO RIVADAVIA\"",
+      "category": "Cultura",
+      "address": "GALLARDO, ANGEL AV. 490, CABA",
+      "lat": -34.605083,
+      "lon": -58.438053,
+      "barrio": "CABALLITO",
+      "subtype": "MUSEO",
+      "website": "WWW.MACN.SECYT.GOV.AR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2578"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2583",
+      "title": "MUSEO CASA CARLOS GARDEL",
+      "category": "Cultura",
+      "address": "JAURES, JEAN 735, CABA",
+      "lat": -34.601642,
+      "lon": -58.407923,
+      "barrio": "BALVANERA",
+      "subtype": "MUSEO",
+      "website": "HTTP://WWW.BUENOSAIRES.GOB.AR/MUSEOCASACARLOSGARDEL",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2583"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2599",
+      "title": "MUSEO DE ARTE ESPAÑOL ENRIQUE LARRETA",
+      "category": "Cultura",
+      "address": "JURAMENTO AV. 2291, CABA",
+      "lat": -34.561129,
+      "lon": -58.455265,
+      "barrio": "BELGRANO",
+      "subtype": "MUSEO",
+      "website": "HTTP://WWW.BUENOSAIRES.GOB.AR/MUSEOLARRETA",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2599"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2600",
+      "title": "MUSEO DE ARTE HISPANOAMERICANO ISAAC FERNANDEZ BLANCO",
+      "category": "Cultura",
+      "address": "SUIPACHA 1422, CABA",
+      "lat": -34.590901,
+      "lon": -58.379932,
+      "barrio": "RETIRO",
+      "subtype": "MUSEO",
+      "website": "HTTP://WWW.MUSEOFERNANDEZBLANCO.BUENOSAIRES.GOV.AR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2600"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2601",
+      "title": "MUSEO DE ARTE MODERNO DE BUENOS AIRES - MAMBA",
+      "category": "Cultura",
+      "address": "SAN JUAN AV. 350, CABA",
+      "lat": -34.621892,
+      "lon": -58.370727,
+      "barrio": "SAN TELMO",
+      "subtype": "MUSEO",
+      "website": "HTTP://WWW.BUENOSAIRES.GOB.AR/MUSEOARTEMODERNO",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2601"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2603",
+      "title": "MUSEO DE BELLAS DE LA BOCA DE ARTISTAS ARGENTINOS \"BENITO QUINQUELA MARTIN\"",
+      "category": "Cultura",
+      "address": "DON PEDRO DE MENDOZA AV. 1835, CABA",
+      "lat": -34.63908,
+      "lon": -58.360936,
+      "barrio": "BOCA",
+      "subtype": "MUSEO",
+      "website": "HTTP://WWW.BUENOSAIRES.GOB.AR/MUSEOQUINQUELAMARTIN",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2603"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2674",
+      "title": "MUSEO HISTORICO NACIONAL",
+      "category": "Cultura",
+      "address": "DEFENSA 1600, CABA",
+      "lat": -34.626626,
+      "lon": -58.370973,
+      "barrio": "SAN TELMO",
+      "subtype": "MUSEO",
+      "website": "HTTPS://MUSEOHISTORICONACIONAL.CULTURA.GOB.AR/",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2674"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2675",
+      "title": "MUSEO HISTORICO NACIONAL DEL CABILDO Y DE LA REVOLUCION DE MAYO",
+      "category": "Cultura",
+      "address": "BOLIVAR 65, CABA",
+      "lat": -34.608851,
+      "lon": -58.373567,
+      "barrio": "MONSERRAT",
+      "subtype": "MUSEO",
+      "website": "HTTPS://CABILDONACIONAL.CULTURA.GOB.AR/",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2675"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2677",
+      "title": "MUSEO HISTORICO SARMIENTO",
+      "category": "Cultura",
+      "address": "JURAMENTO AV. 2180, CABA",
+      "lat": -34.560831,
+      "lon": -58.454416,
+      "barrio": "BELGRANO",
+      "subtype": "MUSEO",
+      "website": "HTTPS://MUSEOSARMIENTO.CULTURA.GOB.AR/",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2677"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2688",
+      "title": "MUSEO MALVINAS E ISLAS DEL ATLANTICO SUR",
+      "category": "Cultura",
+      "address": "CALZADILLA, SANTIAGO 1302, CABA",
+      "lat": -34.535739,
+      "lon": -58.462536,
+      "barrio": "NUÑEZ",
+      "subtype": "MUSEO",
+      "website": "https://museomalvinas.cultura.gob.ar/",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2688"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2694",
+      "title": "MUSEO NACIONAL BELLAS ARTES",
+      "category": "Cultura",
+      "address": "DEL LIBERTADOR AV. 1473, CABA",
+      "lat": -34.583673,
+      "lon": -58.394746,
+      "barrio": "RECOLETA",
+      "subtype": "MUSEO",
+      "website": "HTTP://WWW.BELLASARTES.GOB.AR/",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2694"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2711",
+      "title": "MUSEO SIVORI",
+      "category": "Cultura",
+      "address": "ISABEL, INFANTA AV. 555, CABA",
+      "lat": -34.570719,
+      "lon": -58.421165,
+      "barrio": "PALERMO",
+      "subtype": "MUSEO",
+      "website": "HTTP://WWW.BUENOSAIRES.GOB.AR/MUSEOSIVORI",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2711"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2717",
+      "title": "PLANETARIO GALILEO GALILEI",
+      "category": "Cultura",
+      "address": "SARMIENTO AV., CABA, CABA",
+      "lat": -34.5711024,
+      "lon": -58.4115468,
+      "barrio": "PALERMO",
+      "subtype": "MUSEO",
+      "website": "HTTP://WWW.PLANETARIO.GOB.AR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2717"
+        }
+      ]
+    },
+    {
+      "id": "badata-culture-2989",
+      "title": "TEATRO COLON",
+      "category": "Cultura",
+      "address": "CERRITO 618, CABA",
+      "lat": -34.601054,
+      "lon": -58.382442,
+      "barrio": "SAN NICOLAS",
+      "subtype": "SALA DE TEATRO",
+      "website": "WWW.TEATROCOLON.ORG.AR",
+      "coordinateMethod": "published-point",
+      "sources": [
+        {
+          "key": "culture",
+          "recordId": "2989"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-9",
+      "title": "Plaza Rafael Hernández",
+      "category": "Aire Libre",
+      "address": "ECHEVERRIA - VUELTA DE OBLIGADO - MOM, POLICARPO",
+      "lat": -34.562232328733664,
+      "lon": -58.45528767703161,
+      "barrio": "Belgrano",
+      "subtype": "PLAZA",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "9"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-171",
+      "title": "Parque Brig. Gral. Cornelio Saavedra",
+      "category": "Aire Libre",
+      "address": "GARCIA DEL RIO, AV. - MELIAN, AV. - VILELA - PEREZ, ROQUE - BESARES - CONDE - PINTO - FREIRE, RAMON, CAP. GRAL.",
+      "lat": -34.55189629240314,
+      "lon": -58.48128782079968,
+      "barrio": "Saavedra",
+      "subtype": "PARQUE",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "171"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-610",
+      "title": "Plaza Barrancas de Belgrano",
+      "category": "Aire Libre",
+      "address": "VERTIZ, VIRREY, AV. - JURAMENTO - ZAVALIA -ECHEVERRIA / 11 DE SEPTIEMBRE - LA PAMPA -VERTIZ, VIRREY, AV - SUCRE, ANTONIO JOSE DE, MCAL.",
+      "lat": -34.56136223648324,
+      "lon": -58.44843226746714,
+      "barrio": "Belgrano",
+      "subtype": "PLAZA",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "610"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-813",
+      "title": "Plaza Cnel. Dorrego",
+      "category": "Aire Libre",
+      "address": "DEFENSA - HUMBERTO I° - AIETA, ANSELMO, DON - BETHLEM",
+      "lat": -34.620615568012596,
+      "lon": -58.37150468890387,
+      "barrio": "San Telmo",
+      "subtype": "PLAZA",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "813"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-871",
+      "title": "Parque Centenario",
+      "category": "Aire Libre",
+      "address": "DIAZ VELEZ, AV. - MARECHAL, LEOPOLDO - PATRICIAS ARGENTINAS, AV.",
+      "lat": -34.60857189058353,
+      "lon": -58.43602732629859,
+      "barrio": "Caballito",
+      "subtype": "PARQUE",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "871"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-872",
+      "title": "Parque Chacabuco",
+      "category": "Aire Libre",
+      "address": "PERON, EVA, AV.- CURAPALIGUE - ASAMBLEA, AV. - MITRE, EMILIO",
+      "lat": -34.63123448782961,
+      "lon": -58.44217798254187,
+      "barrio": "Parque Chacabuco",
+      "subtype": "PARQUE",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "872"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-873",
+      "title": "Parque Patricios",
+      "category": "Aire Libre",
+      "address": "CASEROS, AV. - MONTEAGUDO - USPALLATA - ALMAFUERTE, AV.",
+      "lat": -34.63761733793966,
+      "lon": -58.40598938613459,
+      "barrio": "Parque Patricios",
+      "subtype": "PARQUE",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "873"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-874",
+      "title": "Parque Avellaneda",
+      "category": "Aire Libre",
+      "address": "DIRECTORIO, AV. - LACARRA, AV. - MONTE -  AUTOPISTA PERITO MORENO (AU 6) - AMEGHINO, FLORENTINO, DR.",
+      "lat": -34.64244906911849,
+      "lon": -58.48062983780544,
+      "barrio": "Parque Avellaneda",
+      "subtype": "PARQUE",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "874"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-880",
+      "title": "Parque Lezama",
+      "category": "Aire Libre",
+      "address": "PASEO COLON, AV. - GARCIA, MARTIN, AV. - DEFENSA - BRASIL, AV.",
+      "lat": -34.62539974632728,
+      "lon": -58.368686237872936,
+      "barrio": "San Telmo",
+      "subtype": "PARQUE",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "880"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-882",
+      "title": "Plaza San Martín",
+      "category": "Aire Libre",
+      "address": "DEL LIBERTADOR, Av. - SANTA FE, AV. - ESMERALDA - ARENALES - CRUCERO GENERAL BELGRANO - FLORIDA - SAN MARTÍN",
+      "lat": -34.59615702057374,
+      "lon": -58.37613818067067,
+      "barrio": "Retiro",
+      "subtype": "PLAZA",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "882"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-883",
+      "title": "Plaza 25 de Mayo",
+      "category": "Aire Libre",
+      "address": "RIVADAVIA, AV. - BALCARCE - YRIGOYEN, HIPOLITO - BOLIVAR",
+      "lat": -34.60793924059321,
+      "lon": -58.37135454936256,
+      "barrio": "Monserrat",
+      "subtype": "PLAZA",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "883"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-885",
+      "title": "Plaza Italia",
+      "category": "Aire Libre",
+      "address": "SANTA FE, AV. - LAS HERAS, AV. - SERRANO - THAMES",
+      "lat": -34.58160057961012,
+      "lon": -58.42080473919455,
+      "barrio": "Palermo",
+      "subtype": "PLAZA",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "885"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-887",
+      "title": "Plaza Francia",
+      "category": "Aire Libre",
+      "address": "DEL LIBERTADOR, AV. - PUEYRREDON, AV. - LEVENE, RICARDO, DR., AV. - AGOTE, LUIS, DR.",
+      "lat": -34.585288406986066,
+      "lon": -58.393427272268646,
+      "barrio": "Recoleta",
+      "subtype": "PLAZA",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "887"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-906",
+      "title": "Plaza del Congreso",
+      "category": "Aire Libre",
+      "address": "ENTRE RIOS, AV. - RIVADAVIA, AV. - DE MAYO, AV. - SAEZ PEÑA, LUIS, PRES., AV. - YRIGOYEN, HIPOLITO.",
+      "lat": -34.609467442138865,
+      "lon": -58.38955622007369,
+      "barrio": "Monserrat",
+      "subtype": "PLAZA",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "906"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-943",
+      "title": "Parque Indoamericano",
+      "category": "Aire Libre",
+      "address": "LACARRA, AV. - ESCALADA, AV. - CASTAÑARES, AV. - FERNANDEZ DE LA CRUZ, FRANCISCO, GRAL., AV.",
+      "lat": -34.65836877326399,
+      "lon": -58.458597977848044,
+      "barrio": "Villa Soldati",
+      "subtype": "PARQUE",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "943"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-1104",
+      "title": "Parque Thays",
+      "category": "Aire Libre",
+      "address": "DEL LIBERTADOR, AV. - CALLAO, AV.- VAZ FERREIRA, CARLOS, DR. - QUIROGA, JUAN FACUNDO, BRIG. GRAL. VIA R PIDA",
+      "lat": -34.58647687607007,
+      "lon": -58.385331345318285,
+      "barrio": "Recoleta",
+      "subtype": "PARQUE",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "1104"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-1106",
+      "title": "Parque Rivadavia",
+      "category": "Aire Libre",
+      "address": "RIVADAVIA, AV. - DOBLAS - ROSARIO - BEAUCHEF",
+      "lat": -34.618907301209454,
+      "lon": -58.43408581913823,
+      "barrio": "Caballito",
+      "subtype": "PARQUE",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "1106"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-1274",
+      "title": "Reserva Ecológica",
+      "category": "Aire Libre",
+      "address": "NOEL, CARLOS M., INT., AV. - RIO DE LA PLATA - MALECON (N) - EX-CIUDAD DEPORTIVA BOCA",
+      "lat": -34.59491484450386,
+      "lon": -58.35883510249647,
+      "barrio": "Puerto Madero",
+      "subtype": "PARQUE SEMIPÚBLICO",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "1274"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-1312",
+      "title": "Parque de la Memoria",
+      "category": "Aire Libre",
+      "address": "RAFAEL COSTANERA OBLIGADO AV 7001",
+      "lat": -34.54006755256561,
+      "lon": -58.43746205701567,
+      "barrio": "Belgrano",
+      "subtype": "PARQUE",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "1312"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-1330",
+      "title": "Carlos Thays (Jardín Botánico)",
+      "category": "Aire Libre",
+      "address": "SANTA FE, Av. - LAS HERAS, GRAL. Av. - MALABIA",
+      "lat": -34.58405532684954,
+      "lon": -58.41724926260923,
+      "barrio": "Palermo",
+      "subtype": "JARDÍN BOTÁNICO",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "1330"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-1444",
+      "title": "Jardín Japonés",
+      "category": "Aire Libre",
+      "address": "DEL LIBERTADOR, AV. - SARMIENTO, AV. - BERRO, ADOLFO, AV. - CASARES, AV.",
+      "lat": -34.576470556881766,
+      "lon": -58.409710371143966,
+      "barrio": "Palermo",
+      "subtype": "PLAZA",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "1444"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-1490",
+      "title": "El Rosedal (Plaza Holanda)",
+      "category": "Aire Libre",
+      "address": "ISABEL, INFANTA, AV. - IRAOLA, AV. - MONTT, PEDRO, PRES., AV.",
+      "lat": -34.572654397620376,
+      "lon": -58.416032428260834,
+      "barrio": "Palermo",
+      "subtype": "PLAZA",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "1490"
+        }
+      ]
+    },
+    {
+      "id": "badata-green-1529",
+      "title": "Antoine Saint-Exupery",
+      "category": "Aire Libre",
+      "address": "ZUVIRIA - SENILLOSA - AU 25 DE MAYO - DOBLAS",
+      "lat": -34.6289686774752,
+      "lon": -58.42857549662165,
+      "barrio": "Parque Chacabuco",
+      "subtype": "PATIO RECREATIVO",
+      "coordinateMethod": "published-boundary-vertex",
+      "sources": [
+        {
+          "key": "green",
+          "recordId": "1529"
+        }
+      ]
+    }
+  ]
+}

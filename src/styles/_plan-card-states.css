@@ -2,6 +2,10 @@
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr));
 }
 
+.personal-plans-section .plan-card.is-completed {
+  background-color: color-mix(in srgb, var(--status-done-soft) 35%, var(--card-bg));
+}
+
 .rating-summary,
 .personal-rating {
   display: flex;

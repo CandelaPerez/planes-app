@@ -6,6 +6,10 @@
   background: var(--palette-blush);
 }
 
+.section-header.personal-page-heading {
+  border: 0;
+}
+
 .discovery-section {
   width: 100vw;
   margin: 2.5rem calc(50% - 50vw) 0;

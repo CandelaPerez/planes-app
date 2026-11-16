@@ -1,0 +1,39 @@
+{
+  "reference": "cc509cb",
+  "before": 81,
+  "current": 84,
+  "missing": [],
+  "changed": [],
+  "added": [
+    {
+      "id": "badata-food-905",
+      "name": "EL PROGRESO"
+    },
+    {
+      "id": "badata-food-913",
+      "name": "LA FLOR DE BARRACAS"
+    },
+    {
+      "id": "badata-culture-49",
+      "name": "BAR EL ESTAÑO 1880"
+    }
+  ],
+  "categories": {
+    "Gastronomía": 23,
+    "Cultura": 21,
+    "Aire Libre": 23,
+    "Viajes": 17
+  },
+  "recoveryCheckpoint": "8897b75",
+  "verification": {
+    "tests": 29,
+    "lint": "passed",
+    "build": "passed",
+    "browser": "isolated compiled preview",
+    "all84PhotosDecoded": true,
+    "rawArchiveBlocked": true,
+    "allFourCategories": true,
+    "southGastronomy": 3,
+    "javascriptExceptions": 0
+  }
+}

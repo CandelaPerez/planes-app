@@ -3,7 +3,7 @@ import { toPlanCards } from '../src/services/baData.js';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { mkdir, mkdtemp, writeFile, readFile } from 'node:fs/promises';
-import { createServer, preview } from 'vite';
+import { build, createServer, preview } from 'vite';
 import { Buffer } from 'node:buffer';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -15,10 +15,14 @@ const reviewedPlans = toPlanCards(JSON.parse(await readFile(new URL('../public/d
 const baData = globalThis.process.argv.includes('--ba-data');
 const baDataHome = globalThis.process.argv.includes('--ba-data-home');
 const production = globalThis.process.argv.includes('--production') || baData;
-const server = production
-  ? await preview({ preview: { host: '127.0.0.1', port: 0 } })
+// Compile an isolated preview without account credentials or production writes.
+const isolatedBuild = globalThis.process.argv.includes('--isolated-build');
+const testOutDir = '.browser-check/verified-build';
+if (isolatedBuild) await build({ define: { 'import.meta.env.VITE_USE_FIREBASE': '"false"' }, build: { outDir: testOutDir } });
+const server = production || isolatedBuild
+  ? await preview({ ...(isolatedBuild ? { build: { outDir: testOutDir } } : {}), preview: { host: '127.0.0.1', port: 0 } })
   : await createServer({ define: { 'import.meta.env.VITE_USE_FIREBASE': '"false"' }, server: { host: '127.0.0.1', port: 0, hmr: false, ws: false, watch: { ignored: ['**/.browser-check/**'] } } });
-if (!production) await server.listen();
+if (!production && !isolatedBuild) await server.listen();
 const origin = `http://127.0.0.1:${server.httpServer.address().port}`;
 if (production || baDataHome) {
   const response = await fetch(`${origin}/data/ba-data.json`);
@@ -253,9 +257,17 @@ try {
   const mobile=await call('Page.captureScreenshot',{format:'png'});await writeFile(new URL('verified-mobile.png',folder),Buffer.from(mobile.data,'base64'));
   await call('Network.setBlockedURLs',{urls:['https://*','*/data/ba-data.json']});
   await call('Page.reload',{ignoreCache:true});
-  await until("document.body.textContent.includes('No se pudo cargar el cat\u00e1logo fotogr\u00e1fico')");
-  assert.equal(await evaluate("document.querySelectorAll('.discovery-section .plan-card').length"),0);
+  await until("document.querySelector('.discovery-section .photo-credit[role=status]')?.textContent==='"+reviewedPlans.length+" resultados'");
+  assert.ok(!await evaluate("!!document.querySelector('.discovery-section .app-alert.error')"));
+  assert.equal((await allTitles()).length,reviewedPlans.length);
+  await evaluate("document.querySelectorAll('.discovery-section .plan-card img').forEach(image=>{image.loading='eager';})");
+  await until("[...document.querySelectorAll('.discovery-section .plan-card img')].every(i=>i.complete&&i.naturalWidth>0)");
+  for(const label of ['Gastronom\u00eda','Cultura','Aire Libre','\u00cdconos de BA']){
+    await chooseCategory(label);
+    await checkResults(reviewedPlans.filter(p=>p.category===(label==='\u00cdconos de BA'?'Viajes':label)));
+  }
+  await chooseCategory('Todas');await checkResults(reviewedPlans);
   assert.ok(await evaluate("JSON.parse(localStorage.getItem('porhacer_preview_plans')).some(p=>p.catalogId==='badata-food-1362')"));
   assert.deepEqual(exceptions,[]);
-  console.log(JSON.stringify({plans:reviewedPlans.length,cleanDiscoveryCards:true,footerCredits:reviewedPlans.length,images:'all decoded',favorites:'passed',calendar:'passed',memories:'passed',customPlans:'passed',itineraries:'passed',filters:'passed',pagination:'passed',save:'passed',savedSurvivesCatalogFailure:true,errorWithoutFallback:true,desktopColumns:3,mobileOverflow:false,javascriptExceptions:exceptions}));
+  console.log(JSON.stringify({plans:reviewedPlans.length,cleanDiscoveryCards:true,footerCredits:reviewedPlans.length,images:'all decoded',favorites:'passed',calendar:'passed',memories:'passed',customPlans:'passed',itineraries:'passed',filters:'passed',pagination:'passed',save:'passed',savedSurvivesCatalogFailure:true,completeCatalogWithoutRawArchive:true,allCategoriesWithoutRawArchive:true,desktopColumns:3,mobileOverflow:false,javascriptExceptions:exceptions}));
 } finally { socket?.close();browser.kill();if(typeof server.close==='function')await server.close();else await new Promise(resolve=>server.httpServer.close(resolve)); }
