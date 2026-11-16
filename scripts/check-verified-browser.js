@@ -1,3 +1,4 @@
+import { discoveryOptions, neighborhoodFor, placeTypeFor } from '../src/utils/discoveryFilters.js';
 import { toPlanCards } from '../src/services/baData.js';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
@@ -95,6 +96,75 @@ try {
   assert.ok(await evaluate("[...document.querySelectorAll('.plan-card img')].every(i=>i.getAttribute('src').startsWith('/images/ba-data-'))"));
   await evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent==='Ver m\u00e1s').click()");
   await until("document.querySelectorAll('.plan-card').length===12");
+  // Exercise every neighborhood and every published type against the real catalog.
+  const selectFilter = async (label, value) => {
+    await evaluate(`(()=>{const select=document.querySelector('select[aria-label=${JSON.stringify(label)}]');if(!select)throw Error('Missing select');select.value=${JSON.stringify(value)};select.dispatchEvent(new Event('change',{bubbles:true}));})()`);
+  };
+  const chooseCategory = async label => {
+    await evaluate(`[...document.querySelectorAll('.category-filter button')].find(button=>button.textContent===${JSON.stringify(label)}).click()`);
+  };
+  const searchFor = async value => {
+    await evaluate(`(()=>{const input=document.querySelector('input[type=search]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,${JSON.stringify(value)});input.dispatchEvent(new Event('input',{bubbles:true}));})()`);
+  };
+  const checkResults = async expected => {
+    await until(`document.querySelector('#discover-plans').textContent.includes('${expected.length} planes') && document.querySelectorAll('.discovery-section .plan-card').length===${Math.min(expected.length,6)}`);
+    const titles = await evaluate("[...document.querySelectorAll('.discovery-section .card-title')].map(element=>element.textContent)");
+    assert.ok(titles.every(title=>expected.some(plan=>plan.title===title)));
+    assert.equal(await evaluate("document.querySelector('.discovery-section .photo-credit[role=status]').textContent"), expected.length+' resultados');
+  };
+  const allTitles = async () => {
+    while(await evaluate("!!document.querySelector('.discovery-show-more button')")){
+      await evaluate("document.querySelector('.discovery-show-more button').click()");
+      await new Promise(resolve=>setTimeout(resolve,30));
+    }
+    return evaluate("[...document.querySelectorAll('.discovery-section .card-title')].map(element=>element.textContent)");
+  };
+  const recommendedFirstPage = await evaluate("[...document.querySelectorAll('.discovery-section .card-title')].slice(0,6).map(element=>element.textContent)");
+  const options = discoveryOptions(reviewedPlans);
+  assert.deepEqual(await evaluate("[...document.querySelector('select[aria-label=\"Filtrar por zona\"]').options].slice(1).map(option=>option.textContent)"),options.zones.map(option=>option.name));
+  assert.deepEqual(await evaluate("[...document.querySelector('select[aria-label=\"Filtrar por tipo de lugar\"]').options].slice(1).map(option=>option.textContent)"),options.placeTypes.map(option=>option.name));
+  for(const zone of options.zones){
+    await selectFilter('Filtrar por zona',zone.name);
+    await checkResults(reviewedPlans.filter(plan=>neighborhoodFor(plan)===zone.name));
+  }
+  await selectFilter('Filtrar por zona','Todas');
+  for(const type of options.placeTypes){
+    await selectFilter('Filtrar por tipo de lugar',type.name);
+    await checkResults(reviewedPlans.filter(plan=>placeTypeFor(plan)===type.name));
+  }
+  await selectFilter('Filtrar por tipo de lugar','Todos');
+  await selectFilter('Ordenar por','alpha');
+  await checkResults(reviewedPlans);
+  const ascending = [...reviewedPlans].sort((a,b)=>a.title.localeCompare(b.title,'es')).map(plan=>plan.title);
+  assert.deepEqual(await allTitles(),ascending,'Sort all 53 plans before pagination');
+  await selectFilter('Ordenar por','alpha-desc');
+  await checkResults(reviewedPlans);
+  assert.deepEqual(await allTitles(),ascending.toReversed());
+  await selectFilter('Ordenar por','recommended');
+  await checkResults(reviewedPlans);
+  assert.deepEqual(await evaluate("[...document.querySelectorAll('.discovery-section .card-title')].map(element=>element.textContent)"),recommendedFirstPage);
+  await selectFilter('Filtrar por zona','San Telmo');
+  await selectFilter('Filtrar por tipo de lugar','Museos');
+  await selectFilter('Ordenar por','alpha-desc');
+  await chooseCategory('Cultura');
+  await searchFor('historico');
+  await checkResults(reviewedPlans.filter(plan=>plan.id==='badata-culture-2674'));
+  await searchFor('');
+  await selectFilter('Filtrar por zona','Palermo');
+  await selectFilter('Filtrar por tipo de lugar','Cementerios');
+  await checkResults([]);
+  assert.ok(await evaluate("document.querySelector('.empty-state').textContent.includes('No encontramos planes con esos filtros')"));
+  await evaluate("[...document.querySelectorAll('button')].find(button=>button.textContent==='Limpiar filtros').click()");
+  await checkResults(reviewedPlans);
+  // Returning to a former filter combination must not restore its expanded page.
+  await evaluate("document.querySelector('.discovery-show-more button').click()");
+  await until("document.querySelectorAll('.discovery-section .plan-card').length===12");
+  await selectFilter('Filtrar por tipo de lugar','Parques y plazas');
+  await checkResults(reviewedPlans.filter(plan=>placeTypeFor(plan)==='Parques y plazas'));
+  await selectFilter('Filtrar por tipo de lugar','Todos');
+  await checkResults(reviewedPlans);
+  console.log(JSON.stringify({neighborhoodOptions:options.zones.length,typeOptions:options.placeTypes.length,individualFilters:'passed',combinedFilters:'passed',globalSortBothDirections:'passed',paginationReset:'passed',emptyResults:'passed'}));
+
   for(const [category,total] of Object.entries(reviewedPlans.reduce((counts,p)=>(counts[p.category]=(counts[p.category]||0)+1,counts),{}))){
    await evaluate("[...document.querySelectorAll('.category-filter button')].find(b=>b.textContent==="+JSON.stringify(category === 'Viajes' ? 'Íconos de BA' : category)+").click()");
    await until("document.body.textContent.includes('"+total+" resultados')");

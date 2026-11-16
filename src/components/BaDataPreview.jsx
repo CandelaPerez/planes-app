@@ -20,8 +20,8 @@ export default function BaDataPreview() {
   const [category, setCategory] = useState('Todas');
   const [search, setSearch] = useState('');
   const [zone, setZone] = useState('Todas');
-  const [budget, setBudget] = useState('Todos');
-  const [sortBy, setSortBy] = useState('alpha');
+  const [placeType, setPlaceType] = useState('Todos');
+  const [sortBy, setSortBy] = useState('');
   const [pagination, setPagination] = useState({ key: '', count: 24 });
   const [selected, setSelected] = useState(null);
   useEffect(() => {
@@ -30,26 +30,27 @@ export default function BaDataPreview() {
     return () => { active = false; };
   }, []);
   const catalog = useMemo(() => data?.plans || [], [data]);
-  const { visibleIdeas, zones } = usePlanFilters({ catalog, search, category, zone, budget, sortBy, ratings: NO_RATINGS, planPhotos: NO_PHOTOS });
-  const key = [category, search, zone, budget, sortBy].join('|');
+  const { visibleIdeas, zones, placeTypes } = usePlanFilters({ catalog, search, category, zone, placeType, sortBy, ratings: NO_RATINGS, planPhotos: NO_PHOTOS });
+  const key = [category, search, zone, placeType, sortBy].join('|');
   const count = pagination.key === key ? pagination.count : 24;
+  const updateDiscoveryFilter = (setter, value) => { setter(value); setPagination({ key: '', count: 24 }); };
   return <div className="app-container">
     <header className="navbar"><button type="button" className="nav-brand" onClick={() => window.location.assign('/')}><span className="brand-badge">PH</span><h1>Por Hacer</h1></button><nav><a className="btn btn-secondary" href="/">Volver a Por Hacer</a></nav></header>
     <main className="main-content">
       <div className="preview-banner" role="status"><strong>Vista previa BA Data</strong><span>Solo lectura. Tus 129 planes originales y tus datos de Firebase siguen intactos.</span></div>
-      <div className="section-header"><h2>Descubrir planes · BA Data</h2><p>{data ? `${catalog.length.toLocaleString('es-AR')} planes con fotografía real verificada.` : 'Cargando la copia local de los recursos oficiales…'}</p></div>
+      <div className="section-header"><h2>Descubrir planes · BA Data</h2><p>{data ? `${visibleIdeas.length.toLocaleString('es-AR')} planes con fotografía real verificada.` : 'Cargando la copia local de los recursos oficiales…'}</p></div>
       {error && <div className="app-alert error" role="alert">{error} Podés volver a Por Hacer.</div>}
       {data && <>
         <div className="preview-banner"><strong>Fechas de los archivos, no de cada establecimiento</strong><span>{data.sources.map((source) => `${source.category}: ${date(source.resourceLastModified)}`).join(' · ')}. La fecha de descarga no acredita que el lugar siga abierto. Viajes muestra atractivos turísticos identificados con Wikidata (CC0); procedencia en cada ficha.</span></div>
-        <div className="category-filter" role="group" aria-label="Filtrar por categoría">{CATEGORIES.map((item) => <button key={item} type="button" className={`category-filter-btn ${category === item ? 'active' : ''}`} aria-pressed={category === item} onClick={() => setCategory(item)}>{item === 'Viajes' ? 'Íconos de BA' : item}</button>)}</div>
+        <div className="category-filter" role="group" aria-label="Filtrar por categoría">{CATEGORIES.map((item) => <button key={item} type="button" className={`category-filter-btn ${category === item ? 'active' : ''}`} aria-pressed={category === item} onClick={() => updateDiscoveryFilter(setCategory, item)}>{item === 'Viajes' ? 'Íconos de BA' : item}</button>)}</div>
         <div className="filter-bar discovery-filters">
-          <input aria-label="Buscar por nombre o ubicación" type="search" placeholder="Buscar lugar o barrio…" value={search} onChange={(event) => setSearch(event.target.value)} />
-          <select aria-label="Filtrar por zona" value={zone} onChange={(event) => setZone(event.target.value)}><option value="Todas">Todas las zonas</option>{zones.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}</select>
-          <select aria-label="Filtrar por presupuesto" value={budget} onChange={(event) => setBudget(event.target.value)}><option value="Todos">Todos los presupuestos</option><option value="Sin información">Sin información</option><option value="Bajo">Bajo</option><option value="Medio">Medio</option><option value="Alto">Alto</option></select>
-          <select aria-label="Ordenar planes" value={sortBy} onChange={(event) => setSortBy(event.target.value)}><option value="alpha">Alfabéticamente</option><option value="recommended">Recomendados</option></select>
+          <input aria-label="Buscar por nombre o ubicación" type="search" placeholder="Buscar lugar o barrio…" value={search} onChange={(event) => updateDiscoveryFilter(setSearch, event.target.value)} />
+          <select aria-label="Filtrar por zona" value={zone} onChange={(event) => updateDiscoveryFilter(setZone, event.target.value)}><option value="Todas">Todas las zonas</option>{zones.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}</select>
+          <select aria-label="Filtrar por tipo de lugar" value={placeType} onChange={(event) => updateDiscoveryFilter(setPlaceType, event.target.value)}><option value="Todos">Todos los lugares</option>{placeTypes.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}</select>
+          <select aria-label="Ordenar por" value={sortBy} onChange={(event) => updateDiscoveryFilter(setSortBy, event.target.value)}><option value="" disabled>Ordenar por</option><option value="recommended">Recomendados</option><option value="alpha">Nombre A-Z</option><option value="alpha-desc">Nombre Z-A</option></select>
         </div>
         <p className="photo-credit" role="status">{visibleIdeas.length.toLocaleString('es-AR')} resultados. Fuente: BA Data, Gobierno de la Ciudad de Buenos Aires · <a href="https://creativecommons.org/licenses/by/2.5/ar/" target="_blank" rel="noreferrer">CC BY 2.5 AR</a>.</p>
-        {!visibleIdeas.length ? <div className="empty-state"><h3>No hay resultados para estos filtros</h3><p>Los recursos no publican presupuestos. No se asignaron precios estimados.</p></div> : <div className="cards-grid">{visibleIdeas.slice(0, count).map((place) => <article className="plan-card" key={place.id}>
+        {!visibleIdeas.length ? <div className="empty-state"><h3>No hay resultados para estos filtros</h3><p>Probá otro barrio, tipo de lugar o búsqueda.</p></div> : <div className="cards-grid">{visibleIdeas.slice(0, count).map((place) => <article className="plan-card" key={place.id}>
           <div className="card-img-wrapper"><img className="card-img" src={place.image} alt={place.originalName || place.title} loading="lazy" onError={() => { setData((previous) => ({ ...previous, plans: previous.plans.filter((plan) => plan.id !== place.id) })); setError("No se pudo cargar una fotografía; se excluyó el plan afectado."); }} /></div>
           <div className="card-content"><div className="card-meta"><span className={`badge badge-${categoryClass(place.category)}`}>{place.category}</span><span className="budget-badge">{priceLabel(place.budget)}</span></div>
             <h3 className="card-title">{place.title}</h3>{place.subtype && <p className="card-desc">{place.subtype}</p>}
