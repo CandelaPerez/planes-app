@@ -1,19 +1,21 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-import placesHandler from './api/places.js'
-
-const localApi = {
-  name: 'por-hacer-local-api',
-  configureServer(server) {
-    server.middlewares.use('/api/places', (request, response) => placesHandler(request, response))
-  },
-  configurePreviewServer(server) {
-    server.middlewares.use('/api/places', (request, response) => placesHandler(request, response))
-  },
-}
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), localApi],
+  plugins: [react()],
   server: { watch: { ignored: ['**/.browser-check/**'] } },
+  build: {
+    rolldownOptions: {
+      input: { main: 'index.html', 'ba-data-preview': 'ba-data-preview.html' },
+      output: {
+        codeSplitting: {
+          groups: [
+            { name: 'react', test: /node_modules[\\/](?:react|react-dom|scheduler)[\\/]/, includeDependenciesRecursively: true },
+            { name: 'firebase', test: /node_modules[\\/](?:@firebase|firebase)[\\/]/, includeDependenciesRecursively: true },
+          ],
+        },
+      },
+    },
+  },
 })

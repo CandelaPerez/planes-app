@@ -1,16 +1,70 @@
-# React + Vite
+﻿# Por Hacer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación de planes con React, Vite y Firebase. Conserva el catálogo original de 129 planes.
 
-Currently, two official plugins are available:
+## Ejecutar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Desde la raíz del proyecto:
 
-## React Compiler
+```powershell
+npm ci
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+En PowerShell, si la ejecución de scripts bloquea npm, usar `npm.cmd`.
+La configuración existente se mantiene en `.env.local`; no incluir ese archivo al compartir el proyecto.
+Consultar [Configuración de Firebase](docs/FIREBASE_SETUP.md).
 
-## Expanding the ESLint configuration
+## Comprobar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```powershell
+npm run lint
+npm run build
+node --test tests/local-catalog.test.js
+npm run preview
+```
+
+La comprobación de navegador requiere Chrome y usa un perfil temporal aislado:
+
+```powershell
+node scripts/check-browser.js
+node scripts/check-browser.js --production
+```
+
+El primer comando comprueba los 129 detalles y las funciones personales en vista previa local.
+El segundo comprueba la pantalla de acceso de la compilación de producción; no inicia sesión ni escribe en Firebase.
+
+## Carpetas
+
+```text
+src/
+  AppFirebase.jsx     Aplicación y vistas existentes
+  main.jsx            Inicio de React
+  App.css             Entrada de los estilos existentes
+  components/         Componentes compartidos
+  data/               Catálogo original y datos adicionales del mismo catálogo
+  hooks/              Filtros
+  services/           Firebase y fotografías
+  styles/             Estilos por sección
+  utils/              Utilidades
+public/               Recursos públicos
+scripts/              Comprobación del navegador
+tests/                Pruebas del catálogo
+docs/                 Configuración e informes
+```
+
+`src/services/firebase.js` conserva la implementación de Authentication, Firestore y Storage.
+El catálogo principal conserva los 129 planes originales. Hay una [vista previa separada de BA Data](docs/BA_DATA.md) en `/ba-data-preview.html`, alimentada por una copia local de recursos oficiales; no consulta APIs externas durante las visitas.
+
+## Entrega
+
+Compartir el código y `package-lock.json`. Se regeneran con los comandos anteriores:
+
+- `node_modules/`: dependencias instaladas.
+- `dist/`: compilación lista para hosting.
+- `.browser-check/`: capturas de las pruebas.
+
+No incluir `.env.local`, perfiles temporales de Chrome ni credenciales en una entrega pública.
+La carpeta `.git/` contiene el historial y no es necesaria para ejecutar la aplicación.
+
+Ver [Versión del catálogo original](docs/VERSION_ENTREGA.md) y [Organización y peso](docs/OPTIMIZACION.md).

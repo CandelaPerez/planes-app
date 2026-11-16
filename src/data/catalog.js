@@ -1,4 +1,4 @@
-import CATALOG_IDEAS_EXTRA from '../catalog-extra';
+import CATALOG_IDEAS_EXTRA from './catalog-extra';
 
 const CATALOG_DETAILS = {
   cat_1: { title: 'Merienda en el Café Tortoni', location: 'Av. de Mayo 825, Monserrat, Ciudad de Buenos Aires', address: 'Av. de Mayo 825, C1084 CABA', openingHours: 'Todos los días, 08:00–21:00', officialUrl: 'https://www.cafetortoni.com.ar/', duration: '1 a 2 horas', visitTips: 'Es un café histórico; puede haber fila en horarios de merienda.' },

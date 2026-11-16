@@ -40,11 +40,6 @@ const aggregateRating = (ratings, planId) => {
 };
 function ideaImageFallback(event, idea) {
   const image = event.currentTarget;
-  if (idea.sourceName === 'OpenStreetMap' && idea.imageFallback) {
-    image.onerror = null;
-    image.src = idea.imageFallback;
-    return;
-  }
   const retryCount = Number(image.dataset.imageRetry || 0);
   const fallback = idea.backups?.[retryCount];
   if (fallback) {

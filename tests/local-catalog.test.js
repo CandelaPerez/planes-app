@@ -1,92 +1,50 @@
-import assert from 'node:assert/strict';
+﻿import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { createServer } from 'vite';
-import { renderToString } from 'react-dom/server';
+import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { createElement } from 'react';
-import { mergeDiscoveryCatalog } from '../src/utils/discoveryCatalog.js';
-import { createServer as createHttpServer } from 'node:http';
-import originalSnapshot from '../data/osm-caba.json' with { type: 'json' };
+import { renderToString } from 'react-dom/server';
+import { createServer } from 'vite';
 
-test('initial page renders local catalog without waiting for Firebase or Overpass', async () => {
-  const server = await createServer({ define: { 'import.meta.env.VITE_USE_FIREBASE': '"false"' }, server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' });
-  const httpServer = createHttpServer(server.middlewares);
-  try {
-    const { default: App } = await server.ssrLoadModule('/src/AppFirebase.jsx');
-    const { CATALOG } = await server.ssrLoadModule('/src/data/catalog.js');
-    const html = renderToString(createElement(App));
-    assert.equal(CATALOG.length, 129);
-    assert.ok(CATALOG.some((plan) => html.includes(plan.title)));
-    assert.ok(html.includes('class="plan-card"'));
-    const service = await server.ssrLoadModule('/src/services/openStreetMap.js');
-    const places = service.loadStoredOpenStreetMapPlaces();
-    assert.equal(places.length, 10);
-    assert.ok(html.includes('No hay eventos con fecha confirmada para hoy.'));
-    const merged = mergeDiscoveryCatalog(CATALOG, places);
-    assert.deepEqual(merged.slice(0, 129), CATALOG);
-    assert.equal(merged.length, 139);
-    const manualPlan = { id: 'firebase-manual', title: 'Plan personal conservado' };
-    const withManualPlan = mergeDiscoveryCatalog([...CATALOG, manualPlan], places);
-    assert.equal(withManualPlan[129], manualPlan, 'Remote manual plans are retained untouched');
-    const museum = merged.find((place) => place.id === 'osm-way-149957847');
-    assert.equal(museum.title, 'Museo de la Cárcova');
-    assert.equal(museum.address, 'Avenida España 1701');
-    assert.equal(museum.sourceUrl, 'https://www.openstreetmap.org/way/149957847');
-    assert.match(museum.description, /2026-11-15/);
-    assert.match(museum.visitTips, /2019-07-01/);
-    assert.equal(museum.openingHours, '');
-    assert.ok(places.every((place) => place.verifiedOn === '2026-11-15' && place.verification.sources.length && place.provenance.coordinateDataTimestamp.startsWith('2019-07-01')));
-    assert.ok(places.every((place) => place.imageFallback.startsWith('data:image/svg+xml') && !place.openingHours));
-    assert.equal(new Set(places.map((place) => place.image)).size, 10);
-    assert.equal(places.find((place) => place.id === 'osm-way-147938686').address, 'Mariscal Castilla 2752');
-    assert.ok(places.every((place) => place.category === 'Cultura' && place.image && place.sourceLicense === 'ODbL' && place.location === 'CABA'));
-    const originalFetch = globalThis.fetch;
-    let calls = 0;
-    globalThis.fetch = async () => { calls += 1; throw new Error('Offline'); };
-    try {
-      const [first, second] = await Promise.all([service.fetchOpenStreetMapPlaces(), service.fetchOpenStreetMapPlaces()]);
-      assert.deepEqual(first, places);
-      assert.deepEqual(second, places);
-      assert.equal(calls, 1);
-      assert.deepEqual(await service.fetchOpenStreetMapPlaces({ force: true }), places);
-      assert.equal(calls, 1);
-    } finally {
-      globalThis.fetch = originalFetch;
-    }
-    await new Promise((resolve) => httpServer.listen(0, '127.0.0.1', resolve));
-    const response = await fetch(`http://127.0.0.1:${httpServer.address().port}/api/places`);
-    assert.equal(response.status, 200, 'Vite serves the real local API endpoint');
-    const payload = await response.json();
-    assert.equal(payload.elements.length, 10);
-    assert.deepEqual(service.normalizePayload(payload), places);
-    // Advance past the failure cooldown and verify successful response caching.
-    const originalNow = Date.now;
-    const storageDescriptor = Object.getOwnPropertyDescriptor(globalThis, 'localStorage');
-    const storage = new Map();
-    Date.now = () => originalNow() + 31_000;
-    Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: { getItem: (key) => storage.get(key) || null, setItem: (key, value) => storage.set(key, value) } });
-    calls = 0;
-    globalThis.fetch = async () => { calls += 1; return { ok: true, json: async () => payload }; };
-    try {
-      assert.deepEqual(await service.fetchOpenStreetMapPlaces(), places);
-      assert.deepEqual(await service.fetchOpenStreetMapPlaces(), places);
-      assert.equal(calls, 1, 'Fresh cache avoids a second request');
-      const stored = JSON.parse(storage.get('porhacer_openstreetmap_places_v4'));
-      assert.equal(stored.places.length, 10);
-      assert.equal(stored.osmTimestamp, payload.osmTimestamp);
-      // An old HTTP/browser cache must not undo the new institutional checks.
-      globalThis.fetch = async () => ({ ok: true, json: async () => originalSnapshot });
-      const afterOldResponse = await service.fetchOpenStreetMapPlaces({ force: true });
-      assert.ok(afterOldResponse.every((place) => place.verifiedOn === '2026-11-15'));
-      assert.equal(afterOldResponse.find((place) => place.id === 'osm-way-147938686').address, 'Mariscal Castilla 2752');
-    } finally {
-      globalThis.fetch = originalFetch;
-      Date.now = originalNow;
-      if (storageDescriptor) Object.defineProperty(globalThis, 'localStorage', storageDescriptor);
-      else delete globalThis.localStorage;
-    }
-    console.log(`Verified ${CATALOG.length} original plans + ${merged.length - CATALOG.length} OSM additions = ${merged.length} cards available.`);
-  } finally {
-    if (httpServer.listening) await new Promise((resolve) => httpServer.close(resolve));
-    await server.close();
+test('original catalog, images, Firebase implementation and rules remain unchanged', async () => {
+  // Portable fingerprints: the delivery tests do not require Git history.
+  const paths = {
+    'src/data/catalog.js': 'b3e22a83334d8e45fa35602f9e416277ff8a6b30ec949dd1a7f86676c9510ccf',
+    'src/data/catalog-extra.js': '0e13e8759de9d1dd495c7fb78103244cc721d2dddd7696e5fd6a37041ff9c84e',
+    'src/services/firebase.js': '023feab23c679450834c08da171bb1db2420fed989a970f5101dbcd527078ac3',
+    'src/services/planPhotos.js': '7e68853e2cde57857b833e8d6b59abccaa38fcff434eff096258925608874e25',
+    'firestore.rules': 'a9c6c08afe004f49e34b7ab1ee929e2694a3ecfb50dfd8244fa85020b87bfab4',
+  };
+  for (const [path, expected] of Object.entries(paths)) {
+    const fingerprint = createHash('sha256').update((await readFile(path, 'utf8')).replaceAll('\r\n', '\n')).digest('hex');
+    assert.equal(fingerprint, expected, path);
   }
+});
+
+test('129 original ideas render, filter and retain valid detail fields without external places', async () => {
+  const server = await createServer({ define: { 'import.meta.env.VITE_USE_FIREBASE': '"false"' }, server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' });
+  try {
+    const { CATALOG } = await server.ssrLoadModule('/src/data/catalog.js');
+    const { default: App } = await server.ssrLoadModule('/src/AppFirebase.jsx');
+    const { default: usePlanFilters } = await server.ssrLoadModule('/src/hooks/usePlanFilters.js');
+    assert.equal(CATALOG.length, 129);
+    assert.equal(new Set(CATALOG.map(({ id }) => id)).size, 129);
+    assert.ok(CATALOG.every((plan) => plan.title && plan.description && plan.category && plan.location && plan.budget && plan.image));
+    const html = renderToString(createElement(App));
+    assert.match(html.replaceAll('<!-- -->', ''), /129 ideas/);
+    assert.ok(!/OpenStreetMap|Overpass|Planes para hacer hoy|api-preview/.test(html));
+    function Results({ search = '', category = 'Todas', zone = 'Todas', budget = 'Todos' }) {
+      const { visibleIdeas } = usePlanFilters({ catalog: CATALOG, search, category, zone, budget, sortBy: 'alpha', ratings: [], planPhotos: {} });
+      return createElement('div', {}, visibleIdeas.map((plan) => createElement('span', { key: plan.id, 'data-id': plan.id }, plan.title)));
+    }
+    const render = (props) => renderToString(createElement(Results, props));
+    assert.equal((render({}).match(/data-id=/g) || []).length, 129);
+    assert.match(render({ search: 'Tortoni' }), /Tortoni/);
+    assert.equal(render({ search: 'No existe este plan 12345' }), '<div></div>');
+    for (const [filter, value] of [['category', 'Cultura'], ['zone', 'Zona Norte'], ['budget', 'Bajo']]) {
+      const result = render({ [filter]: value });
+      assert.ok(result.includes('data-id='), `${filter} finds original plans`);
+      assert.ok((result.match(/data-id=/g) || []).length < 129, `${filter} narrows the original catalog`);
+    }
+  } finally { await server.close(); }
 });

@@ -31,8 +31,8 @@ a.btn:hover {
 .btn-saved,
 .btn-saved:hover,
 .btn-saved:disabled {
-  background-color: var(--status-success-bg);
-  color: var(--status-success);
+  background-color: var(--status-done-soft);
+  color: #FFFFFF;
   cursor: default;
 }
 
