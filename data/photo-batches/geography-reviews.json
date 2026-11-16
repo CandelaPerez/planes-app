@@ -1,0 +1,16 @@
+[
+  {
+    "id": "tourism-wikidata-q2336867",
+    "originalName": "Puente de la Mujer",
+    "barrio": "Puerto Madero",
+    "sourceUrl": "https://turismo.buenosaires.gob.ar/es/node/49882",
+    "evidence": "La ficha oficial de Turismo de la Ciudad identifica expresamente el puente en Puerto Madero. Su punto está en un dique, fuera de los polígonos terrestres; se utiliza la identidad del lugar, no un barrio vecino por cercanía."
+  },
+  {
+    "id": "tourism-wikidata-q1138028",
+    "originalName": "Puente Transbordador Nicolás Avellaneda",
+    "barrio": "Boca",
+    "sourceUrl": "https://turismo.buenosaires.gob.ar/es/otros-establecimientos/puente-transbordador",
+    "evidence": "La ficha oficial identifica el enlace entre La Boca (Capital) y Avellaneda. Para la tarjeta CABA se asigna el extremo La Boca; el punto central del puente cae sobre el Riachuelo, no dentro del polígono terrestre."
+  }
+]

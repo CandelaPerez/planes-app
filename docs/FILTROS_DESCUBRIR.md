@@ -1,5 +1,8 @@
 # Filtros de Descubrir planes
 
+**Actualización:** el catálogo actual tiene 81 planes y filtros de tres zonas y cuatro tipos. Ver [estado vigente, fuentes y pruebas](VARIEDAD_Y_ZONAS.md). El contenido que sigue documenta la etapa anterior.
+
+
 Punto de recuperación anterior al cambio: `f5a3504`.
 
 Los 53 planes, sus nombres, fotos y fuentes no se modificaron. Tampoco se modificaron Firebase, sus reglas, archivos CSS ni los catálogos de respaldo.

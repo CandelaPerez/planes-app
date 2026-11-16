@@ -1,0 +1,24 @@
+.credits-footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.credits-footer a { color: inherit; }
+
+.credits-dialog {
+  margin: auto;
+  width: min(42rem, calc(100% - 2rem));
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  overflow-wrap: anywhere;
+}
+
+.credits-dialog:not([open]) { display: none; }
+.credits-dialog::backdrop { background: rgb(43 45 66 / 32%); backdrop-filter: blur(0.4rem); }
+.credits-dialog p { line-height: 1.6; }
+.credits-list { list-style: none; margin: 0; padding: 0; }
+.credits-list li { padding: 1rem 0; border-top: 1px solid var(--border-subtle); }
+.credits-list h3 { font-size: 1rem; margin: 0 0 0.5rem; }
+.credits-list p { margin: 0.4rem 0; }

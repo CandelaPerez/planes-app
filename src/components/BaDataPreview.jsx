@@ -1,4 +1,4 @@
-import PlacePhotoCredit from './PlacePhotoCredit';
+import CreditsAndSources from './CreditsAndSources';
 import { useEffect, useMemo, useState } from 'react';
 import { loadBaDataPreview } from '../services/baData';
 import usePlanFilters from '../hooks/usePlanFilters';
@@ -38,10 +38,9 @@ export default function BaDataPreview() {
     <header className="navbar"><button type="button" className="nav-brand" onClick={() => window.location.assign('/')}><span className="brand-badge">PH</span><h1>Por Hacer</h1></button><nav><a className="btn btn-secondary" href="/">Volver a Por Hacer</a></nav></header>
     <main className="main-content">
       <div className="preview-banner" role="status"><strong>Vista previa BA Data</strong><span>Solo lectura. Tus 129 planes originales y tus datos de Firebase siguen intactos.</span></div>
-      <div className="section-header"><h2>Descubrir planes · BA Data</h2><p>{data ? `${visibleIdeas.length.toLocaleString('es-AR')} planes con fotografía real verificada.` : 'Cargando la copia local de los recursos oficiales…'}</p></div>
+      <div className="section-header"><h2>Descubrir planes · BA Data</h2><p>Descubrí lugares y experiencias para disfrutar en Buenos Aires</p></div>
       {error && <div className="app-alert error" role="alert">{error} Podés volver a Por Hacer.</div>}
       {data && <>
-        <div className="preview-banner"><strong>Fechas de los archivos, no de cada establecimiento</strong><span>{data.sources.map((source) => `${source.category}: ${date(source.resourceLastModified)}`).join(' · ')}. La fecha de descarga no acredita que el lugar siga abierto. Viajes muestra atractivos turísticos identificados con Wikidata (CC0); procedencia en cada ficha.</span></div>
         <div className="category-filter" role="group" aria-label="Filtrar por categoría">{CATEGORIES.map((item) => <button key={item} type="button" className={`category-filter-btn ${category === item ? 'active' : ''}`} aria-pressed={category === item} onClick={() => updateDiscoveryFilter(setCategory, item)}>{item === 'Viajes' ? 'Íconos de BA' : item}</button>)}</div>
         <div className="filter-bar discovery-filters">
           <input aria-label="Buscar por nombre o ubicación" type="search" placeholder="Buscar lugar o barrio…" value={search} onChange={(event) => updateDiscoveryFilter(setSearch, event.target.value)} />
@@ -49,20 +48,21 @@ export default function BaDataPreview() {
           <select aria-label="Filtrar por tipo de lugar" value={placeType} onChange={(event) => updateDiscoveryFilter(setPlaceType, event.target.value)}><option value="Todos">Todos los lugares</option>{placeTypes.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}</select>
           <select aria-label="Ordenar por" value={sortBy} onChange={(event) => updateDiscoveryFilter(setSortBy, event.target.value)}><option value="" disabled>Ordenar por</option><option value="recommended">Recomendados</option><option value="alpha">Nombre A-Z</option><option value="alpha-desc">Nombre Z-A</option></select>
         </div>
-        <p className="photo-credit" role="status">{visibleIdeas.length.toLocaleString('es-AR')} resultados. Fuente: BA Data, Gobierno de la Ciudad de Buenos Aires · <a href="https://creativecommons.org/licenses/by/2.5/ar/" target="_blank" rel="noreferrer">CC BY 2.5 AR</a>.</p>
+        <p className="photo-credit" role="status">{visibleIdeas.length.toLocaleString('es-AR')} resultados</p>
         {!visibleIdeas.length ? <div className="empty-state"><h3>No hay resultados para estos filtros</h3><p>Probá otro barrio, tipo de lugar o búsqueda.</p></div> : <div className="cards-grid">{visibleIdeas.slice(0, count).map((place) => <article className="plan-card" key={place.id}>
           <div className="card-img-wrapper"><img className="card-img" src={place.image} alt={place.originalName || place.title} loading="lazy" onError={() => { setData((previous) => ({ ...previous, plans: previous.plans.filter((plan) => plan.id !== place.id) })); setError("No se pudo cargar una fotografía; se excluyó el plan afectado."); }} /></div>
           <div className="card-content"><div className="card-meta"><span className={`badge badge-${categoryClass(place.category)}`}>{place.category}</span><span className="budget-badge">{priceLabel(place.budget)}</span></div>
             <h3 className="card-title">{place.title}</h3>{place.subtype && <p className="card-desc">{place.subtype}</p>}
-            <span className="photo-credit"><PlacePhotoCredit plan={place} /></span>
+
             <div className="card-info-row"><span>⌖ {place.address || `${place.lat}, ${place.lon}`}</span></div>
-            <p className="photo-credit">Archivo: {date(place.sourceUpdatedAt)} · Descarga: {date(place.fetchedAt)}</p>
-            <div className="card-footer plan-card-actions"><button type="button" className="btn btn-secondary" onClick={() => setSelected(place)}>Ver detalles</button><a className="btn btn-primary" href={place.sourceUrl} target="_blank" rel="noreferrer">Fuente oficial</a></div>
+
+            <div className="card-footer plan-card-actions"><button type="button" className="btn btn-secondary" onClick={() => setSelected(place)}>Ver detalles</button><a className="btn btn-primary" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${place.originalName || place.title} ${place.address || place.location}`)}`} target="_blank" rel="noreferrer">Ver ubicación</a></div>
           </div>
         </article>)}</div>}
         {visibleIdeas.length > count && <div className="discovery-show-more"><button type="button" className="btn btn-secondary" onClick={() => setPagination({ key, count: count + 24 })}>Ver más</button></div>}
       </>}
     </main>
+    <CreditsAndSources />
     {selected && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelected(null); }}><section className="modal-content plan-detail-modal" role="dialog" aria-modal="true" aria-labelledby="preview-detail-title">
       <div className="modal-header"><div><span className={`badge badge-${categoryClass(selected.category)}`}>{selected.category}</span><h2 id="preview-detail-title">{selected.title}</h2></div><button type="button" className="modal-close" aria-label="Cerrar detalles" onClick={() => setSelected(null)}>×</button></div>
       <dl className="plan-detail-facts">

@@ -25,7 +25,8 @@ export function toPlanCards(cache) {
     const card = {
       ...place, location: [place.barrio, 'CABA'].filter(Boolean).join(', '), ambaZone: 'CABA',
       budget: 'Sin información',
-      ...describePlace(place),
+      ...describePlace({ ...place, category: approved.displayCategory || place.category }),
+      ...(approved.displayCategory && approved.classificationEvidence ? { category: approved.displayCategory, sourceCategory: place.category, classificationEvidence: approved.classificationEvidence } : {}),
       ...(photo ? { image:photo.localPath, imageKind:'photograph', imageSourceUrl:photo.sourceUrl, photograph:photo } : {}),
       sourceName: place.wikidataId ? 'Wikidata — datos abiertos' : 'BA Data — GCBA', sourceUrl: source.datasetUrl, sourceLicense: source.license,
       resourceUrl: source.url, sourceUpdatedAt: source.resourceLastModified, fetchedAt: source.downloadedAt,

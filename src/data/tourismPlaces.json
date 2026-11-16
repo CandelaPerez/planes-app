@@ -154,6 +154,39 @@
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "downloadedAt": "2026-11-16T10:46:16.485Z",
       "sha256": "77fa6d11bcbcd12d3a651f900bdffc7a7e31c4f61a3cfb44103cebe21ecd613f"
+    },
+    {
+      "key": "wikidata-q263127",
+      "dataset": "Wikidata: Manzana de las Luces",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q263127",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q263127.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T11:20:00.537Z",
+      "sha256": "580e3ff79196fe927f8552e112eb20e327bf18e177dc56f83983a70b65f424f1"
+    },
+    {
+      "key": "wikidata-q8243908",
+      "dataset": "Wikidata: Basílica del Santísimo Sacramento",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q8243908",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q8243908.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T11:20:00.537Z",
+      "sha256": "78609eb1d802f4ab01d72363b3afc932dbc54a777050eaf48fc594d2166c4e6a"
+    },
+    {
+      "key": "wikidata-q5410626",
+      "dataset": "Wikidata: Estación Retiro Mitre",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q5410626",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5410626.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T11:20:00.537Z",
+      "sha256": "2cd093c963bbb3a96b3613dfe36f6da8d6f30c1887f5e58f68385e5311ecdb8e"
     }
   ],
   "places": [
@@ -448,6 +481,69 @@
         {
           "key": "wikidata-q1668230",
           "recordId": "Q1668230"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q263127",
+      "title": "Manzana de las Luces",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.61055556,
+      "lon": -58.37444444,
+      "barrio": "",
+      "subtype": "museo en Buenos Aires, Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q263127",
+      "coordinatePrecision": 0.00027777777777778,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q263127",
+          "recordId": "Q263127"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q8243908",
+      "title": "Basílica del Santísimo Sacramento",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.595701,
+      "lon": -58.374098,
+      "barrio": "",
+      "subtype": "iglesia ubicada en la calle San Martín 1039 en el barrio de Retiro de Buenos Aires",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q8243908",
+      "coordinatePrecision": 0.000001,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q8243908",
+          "recordId": "Q8243908"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q5410626",
+      "title": "Estación Retiro Mitre",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.59106,
+      "lon": -58.37492,
+      "barrio": "",
+      "subtype": "estación de ferrocarril en Buenos Aires, Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q5410626",
+      "coordinatePrecision": 0.010912074734788,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q5410626",
+          "recordId": "Q5410626"
         }
       ]
     }

@@ -1,0 +1,179 @@
+{
+  "ba": [
+    [
+      "badata-food-139",
+      "Don Julio (restaurante)",
+      "Don Julio Buenos Aires"
+    ],
+    [
+      "badata-food-1237",
+      "El Obrero",
+      "El Obrero Buenos Aires"
+    ],
+    [
+      "badata-food-1327",
+      "El Fortín (pizzería)",
+      "El Fortín pizzería Buenos Aires"
+    ],
+    [
+      "badata-food-1407",
+      "Gijón (bar)",
+      "Gijón bar Buenos Aires"
+    ],
+    [
+      "badata-food-2318",
+      "La Americana",
+      "La Americana Buenos Aires Callao"
+    ],
+    [
+      "badata-food-2363",
+      "Las Cuartetas",
+      "Las Cuartetas Buenos Aires"
+    ],
+    [
+      "badata-food-2380",
+      "Los Inmortales",
+      "Los Inmortales Buenos Aires pizzería"
+    ],
+    [
+      "badata-food-2686",
+      "Sarkis",
+      "Sarkis Buenos Aires restaurante"
+    ],
+    [
+      "badata-culture-1379",
+      "Usina del Arte",
+      "Usina del Arte Buenos Aires"
+    ],
+    [
+      "badata-culture-1758",
+      "Fundación Proa",
+      "Fundación Proa Buenos Aires"
+    ],
+    [
+      "badata-culture-2583",
+      "Museo Casa Carlos Gardel",
+      "Museo Casa Carlos Gardel"
+    ],
+    [
+      "badata-culture-2600",
+      "Museo de Arte Hispanoamericano Isaac Fernández Blanco",
+      "Museo Fernández Blanco Suipacha"
+    ],
+    [
+      "badata-culture-2603",
+      "Museo de Bellas Artes de La Boca Benito Quinquela Martín",
+      "Museo Quinquela Martín Buenos Aires"
+    ],
+    [
+      "badata-culture-2677",
+      "Museo Histórico Sarmiento",
+      "Museo Histórico Sarmiento Buenos Aires"
+    ],
+    [
+      "badata-culture-2688",
+      "Museo Malvinas e Islas del Atlántico Sur",
+      "Museo Malvinas Buenos Aires"
+    ],
+    [
+      "badata-culture-2711",
+      "Museo de Artes Plásticas Eduardo Sívori",
+      "Museo Sívori Buenos Aires"
+    ],
+    [
+      "badata-green-813",
+      "Plaza Dorrego",
+      "Plaza Dorrego Buenos Aires"
+    ],
+    [
+      "badata-green-873",
+      "Parque de los Patricios",
+      "Parque Patricios parque Buenos Aires"
+    ],
+    [
+      "badata-green-883",
+      "Plaza de Mayo",
+      "Plaza de Mayo Buenos Aires"
+    ],
+    [
+      "badata-green-885",
+      "Plaza Italia (Buenos Aires)",
+      "Plaza Italia Buenos Aires"
+    ],
+    [
+      "badata-green-887",
+      "Plaza Francia (Buenos Aires)",
+      "Plaza Francia Buenos Aires"
+    ],
+    [
+      "badata-green-943",
+      "Parque Indoamericano",
+      "\"Parque Indoamericano\""
+    ],
+    [
+      "badata-green-1104",
+      "Parque Thays",
+      "Parque Thays Buenos Aires"
+    ],
+    [
+      "badata-green-1274",
+      "Reserva ecológica de Buenos Aires",
+      "Reserva Ecológica Costanera Sur Buenos Aires"
+    ],
+    [
+      "badata-green-1312",
+      "Parque de la Memoria",
+      "Parque de la Memoria Buenos Aires"
+    ],
+    [
+      "badata-culture-30",
+      "Los 36 Billares",
+      "\"36 Billares\" \"Buenos Aires\""
+    ],
+    [
+      "badata-culture-189",
+      "La Giralda (Buenos Aires)",
+      "\"La Giralda\" \"Buenos Aires\""
+    ],
+    [
+      "badata-culture-76",
+      "Café de los Angelitos",
+      "\"Café de los Angelitos\" \"Buenos Aires\""
+    ],
+    [
+      "badata-culture-78",
+      "El Banderín",
+      "\"El Banderín\" \"Buenos Aires\""
+    ],
+    [
+      "badata-culture-82",
+      "Café Margot",
+      "\"Café Margot\" \"Buenos Aires\""
+    ],
+    [
+      "badata-culture-201",
+      "La Poesía",
+      "\"La Poesía\" \"Buenos Aires\""
+    ],
+    [
+      "badata-culture-71",
+      "Café de García",
+      "\"Café de García\" \"Buenos Aires\""
+    ],
+    [
+      "tourism-wikidata-q263127",
+      "Manzana de las Luces",
+      "\"Manzana de las Luces\""
+    ]
+  ],
+  "tourism": [
+    "Floralis Genérica",
+    "El Zanjón de Granados",
+    "Galerías Pacífico",
+    "Manzana de las Luces",
+    "Basílica del Santísimo Sacramento (Buenos Aires)",
+    "Estación Constitución",
+    "Estación Retiro Mitre",
+    "Palacio del Correo Central"
+  ]
+}

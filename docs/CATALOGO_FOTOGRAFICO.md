@@ -1,6 +1,9 @@
 # Catálogo fotográfico verificado
 
-**Estado actual: 53 planes, con mínimo de 12 en las cuatro categorías.** Ver [ampliación y verificación](AMPLIACION_CATALOGO.md). El resultado de 21 planes que sigue es el informe histórico previo a la ampliación.
+**Actualización:** el catálogo actual tiene 81 planes y filtros de tres zonas y cuatro tipos. Ver [estado vigente, fuentes y pruebas](VARIEDAD_Y_ZONAS.md). El contenido que sigue documenta la etapa anterior.
+
+
+**Estado anterior: 53 planes, con mínimo de 12 en las cuatro categorías.** Ver [ampliación y verificación](AMPLIACION_CATALOGO.md). El resultado de 21 planes que sigue es el informe histórico previo a la ampliación.
 
 Punto de recuperación anterior a estos cambios: `38b9b37`.
 

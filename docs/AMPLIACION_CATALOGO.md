@@ -1,5 +1,8 @@
 # Ampliación del catálogo fotográfico
 
+**Actualización:** el catálogo actual tiene 81 planes y filtros de tres zonas y cuatro tipos. Ver [estado vigente, fuentes y pruebas](VARIEDAD_Y_ZONAS.md). El contenido que sigue documenta la etapa anterior.
+
+
 Punto de recuperación anterior a esta ampliación: `a26278e`. No se publicó en Vercel.
 
 Se incorporaron 32 planes nuevos a los 21 anteriores: 18 registros BA Data adicionales y 14 atractivos de Wikidata. Total: **53 planes**. Se conservan los 6.670 registros BA Data, los 129 originales y los datos guardados de usuarios.

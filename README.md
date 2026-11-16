@@ -54,7 +54,7 @@ docs/                 Configuración e informes
 ```
 
 `src/services/firebase.js` conserva la implementación de Authentication, Firestore y Storage.
-El catálogo principal muestra únicamente planes con fotografías reales verificadas y alojadas localmente. Conserva los 6.670 registros de BA Data y los 129 originales; ante un fallo muestra un error sin sustituir las tarjetas. Actualmente hay 53 planes: Gastronomía 12, Cultura 13, Aire Libre 14 y Viajes 14. Ver [ampliación y comprobaciones](docs/AMPLIACION_CATALOGO.md) y [procesamiento por lotes](docs/CATALOGO_FOTOGRAFICO.md).
+El catálogo principal muestra únicamente planes con fotografías reales verificadas y alojadas localmente. Conserva los 6.670 registros de BA Data y los 129 originales; ante un fallo muestra un error sin sustituir las tarjetas. Actualmente hay 81 planes: Gastronomía 20, Cultura 21, Aire Libre 23 e Íconos de BA 17. Los filtros tienen tres zonas de CABA y cuatro grupos de lugares. Ver [catálogo ampliado y criterio de zonas](docs/VARIEDAD_Y_ZONAS.md). Ver [ampliación y comprobaciones](docs/AMPLIACION_CATALOGO.md) y [procesamiento por lotes](docs/CATALOGO_FOTOGRAFICO.md).
 
 ## Entrega
 

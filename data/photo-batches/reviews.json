@@ -300,5 +300,254 @@
     "evidence": "Fachada de palacio y cartel CIRCULO MILITAR. Ficha identifica The Paz Palace, Buenos Aires. GPS -34.595217,-58.377747 junto a P625 de Palacio Paz. Correspondencia de identidad confirmada con entidad Wikidata Q1668230, etiqueta y coordenadas publicadas.",
     "approvedSha256": "d551baa9652d5bee37942bdb51b31618fdfe75e18467f5c53b231f3124e23ea0",
     "reviewedAt": "2026-11-16T10:51:00.427Z"
+  },
+  {
+    "id": "badata-food-139",
+    "file": "File:Don Julio Grill dining room Buenos Aires Argentina.jpg",
+    "evidence": "Inspección visual del salón y barra de Don Julio. Descripción Commons identifica Don Julio Grill en Palermo, Buenos Aires, no un plato genérico. Entidad Wikidata Q131419956 identifica el restaurante, con P625 -34.5863,-58.4243 junto a BA Data -34.58632489,-58.42429206, Guatemala 4699. Misma identidad y ubicación; la foto no tiene GPS.",
+    "approvedSha256": "f7bb05139e7c05c2d7c22201193ff294f90fc1f6a41f0b2176f4ece8a1e6994b",
+    "reviewedAt": "2026-11-16T11:30:28.460Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-culture-30",
+    "file": "File:Avenida de Mayo café 36 Billares.jpg",
+    "displayCategory": "Gastronomía",
+    "evidence": "Fachada inspeccionada con cartel CAFÉ 36 BILLARES. Descripción Commons identifica Café 36 Billares de avenida de Mayo, Buenos Aires; coincide con nombre y avenida de BA Data, dirección 1265 confirmada por ficha oficial de Turismo. El GPS de toma difiere unos 150 metros del punto BA Data; no se presenta como coincidencia exacta ni se reutiliza para otro bar.",
+    "approvedSha256": "19fd2ca9facb2147d12b21da45a30a6a350e645f5dee6c73713e3e49251a6fc0",
+    "reviewedAt": "2026-11-16T11:30:28.461Z",
+    "identitySources": [
+      "https://turismo.buenosaires.gob.ar/es/gastronomico/36-billares"
+    ],
+    "classificationEvidence": "El registro BA Data de Espacios culturales publica tipo BAR. Se presenta en Gastronomía por su tipo real de bar/café, conservando ID, categoría fuente Cultura, nombre y dirección originales."
+  },
+  {
+    "id": "badata-culture-189",
+    "file": "File:La Giralda, Avenida Corrientes.jpg",
+    "displayCategory": "Gastronomía",
+    "evidence": "Fachada inspeccionada con cartel LA GIRALDA. Descripción Commons da Corrientes 1453, dirección exacta de este registro BA Data CULTURA. GPS -34.604117,-58.387223 junto al punto BA Data. Se descarta el registro gastronómico de Corrientes 1473: no se fuerza esa coincidencia ni se duplica el lugar.",
+    "approvedSha256": "8b224696486d91d29b1bcc1cb4932bf833e10ca6bf08bf4bfc1549ca7a1f898d",
+    "reviewedAt": "2026-11-16T11:30:28.462Z",
+    "identitySources": [],
+    "classificationEvidence": "El registro BA Data de Espacios culturales publica tipo BAR. Se presenta en Gastronomía por su tipo real de bar/café, conservando ID, categoría fuente Cultura, nombre y dirección originales."
+  },
+  {
+    "id": "badata-culture-76",
+    "file": "File:Café de Los Angelitos, entrada.jpg",
+    "displayCategory": "Gastronomía",
+    "evidence": "Entrada e interior inspeccionados con emblema del Café de Los Angelitos. Nombre exacto en ficha Commons y GPS -34.609520,-58.396203 junto a BA Data -34.609527,-58.396007, Rivadavia 2100. Misma esquina e identidad.",
+    "approvedSha256": "c7a9bf9a2ad9697dfdd394088d0181ab2f493a47ebd32e13784773aa9a283ff4",
+    "reviewedAt": "2026-11-16T11:30:28.462Z",
+    "identitySources": [],
+    "classificationEvidence": "El registro BA Data de Espacios culturales publica tipo BAR. Se presenta en Gastronomía por su tipo real de bar/café, conservando ID, categoría fuente Cultura, nombre y dirección originales."
+  },
+  {
+    "id": "badata-culture-78",
+    "file": "File:Bar El banderín.jpg",
+    "displayCategory": "Gastronomía",
+    "evidence": "Interior inspeccionado con banderines deportivos del bar El Banderín. Nombre y barrio Almagro explícitos en descripción Commons; ficha oficial de Turismo confirma Guardia Vieja 3601, dirección del registro BA Data. No se atribuye GPS ausente a la fotografía.",
+    "approvedSha256": "2a618e7b49d5049f3f7e9390e188e1f90d98cb1e21939ff9be714204398244ac",
+    "reviewedAt": "2026-11-16T11:30:28.463Z",
+    "identitySources": [
+      "https://turismo.buenosaires.gob.ar/es/gastronomico/caf%C3%A9-el-bander%C3%ADn"
+    ],
+    "classificationEvidence": "El registro BA Data de Espacios culturales publica tipo BAR. Se presenta en Gastronomía por su tipo real de bar/café, conservando ID, categoría fuente Cultura, nombre y dirección originales."
+  },
+  {
+    "id": "badata-culture-82",
+    "file": "File:Café Margot, el emblemático cafe de Boedo.jpg",
+    "displayCategory": "Gastronomía",
+    "evidence": "Entrada inspeccionada con cartel Café Margot y número 857 visible. Descripción Commons da Boedo 857 y pasaje San Ignacio, dirección exacta BA Data; GPS -34.623325,-58.416261 junto al punto publicado.",
+    "approvedSha256": "f5ff1ae085c97471d37cb062d0fa91bef9f6fc73accc858e7328ceb73eea8f89",
+    "reviewedAt": "2026-11-16T11:30:28.464Z",
+    "identitySources": [],
+    "classificationEvidence": "El registro BA Data de Espacios culturales publica tipo BAR. Se presenta en Gastronomía por su tipo real de bar/café, conservando ID, categoría fuente Cultura, nombre y dirección originales."
+  },
+  {
+    "id": "badata-culture-201",
+    "file": "File:Café La Poesía.jpg",
+    "displayCategory": "Gastronomía",
+    "evidence": "Esquina inspeccionada con nombre La Poesía en cartel y marquesinas. Descripción Commons identifica Café La Poesía, San Telmo, Buenos Aires. Ficha oficial de Turismo confirma Chile 502, dirección exacta BA Data. Sin GPS en foto.",
+    "approvedSha256": "ceadcc73a1737964695d2f4812e383bfeb76d9be32aec529d585a7bf85368e8f",
+    "reviewedAt": "2026-11-16T11:30:28.464Z",
+    "identitySources": [
+      "https://turismo.buenosaires.gob.ar/es/otros-establecimientos/la-poes%C3%ADa"
+    ],
+    "classificationEvidence": "El registro BA Data de Espacios culturales publica tipo BAR. Se presenta en Gastronomía por su tipo real de bar/café, conservando ID, categoría fuente Cultura, nombre y dirección originales."
+  },
+  {
+    "id": "badata-culture-71",
+    "file": "File:Café de García 11.jpg",
+    "displayCategory": "Gastronomía",
+    "evidence": "Acceso del Café de García inspeccionado, con barra y mesas visibles a través de las puertas. La descripción Commons identifica Sanabria 3302, esquina José P. Varela, Villa Devoto, dirección exacta BA Data. No se usa el homónimo de avenida San Martín 1828.",
+    "approvedSha256": "0140f69257df0d98ea2cbdcca3658f41d1ff261a0f815d9c3e4450c052361b49",
+    "reviewedAt": "2026-11-16T11:30:28.465Z",
+    "identitySources": [],
+    "classificationEvidence": "El registro BA Data de Espacios culturales publica tipo BAR. Se presenta en Gastronomía por su tipo real de bar/café, conservando ID, categoría fuente Cultura, nombre y dirección originales."
+  },
+  {
+    "id": "badata-culture-1379",
+    "file": "File:Usina del arte buenosaires.jpg",
+    "evidence": "Fachada de ladrillo y torre de Usina del Arte inspeccionadas. La descripción Commons es genérica (the building) y no bastaba en la revisión anterior. Ahora se verificó que el archivo exacto es P18 de Wikidata Q6158147 (Usina del Arte), con P625 junto a BA Data Caffarena 2, La Boca. La identidad se sostiene por vínculo explícito de entidad, ubicación y edificio reconocible, no por la URL funcional.",
+    "approvedSha256": "6d3f7042ed5ee59578ebfdfdc1f6fe8faec3f32ead6dd2d37ec2c2f5b28d3feb",
+    "reviewedAt": "2026-11-16T11:30:28.465Z",
+    "identitySources": [
+      "https://www.wikidata.org/wiki/Q6158147"
+    ]
+  },
+  {
+    "id": "badata-culture-1758",
+    "file": "File:Fachada del edificio de Fundación Proa, La Boca.jpg",
+    "evidence": "Fachada inspeccionada con cartel PROA. Ficha Commons especifica Fundación Proa, La Boca; mismo archivo P18 de Wikidata Q16570011. Coincide con BA Data Don Pedro de Mendoza 1929, junto a Caminito. Sin GPS de foto.",
+    "approvedSha256": "d7e0ac235b0961e550d82aed2449440644a460d610f43dde67fa824461360944",
+    "reviewedAt": "2026-11-16T11:30:28.466Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-culture-2583",
+    "file": "File:Museo Carlos Gardel, Buenos Aires.jpg",
+    "evidence": "Fachada inspeccionada con retrato de Gardel y nombre GARDEL. Ficha identifica museo residencia de Carlos Gardel en Balvanera, Buenos Aires. GPS -34.601673,-58.407812 coincide con el entorno del registro Jean Jaurès 735; P18 de Wikidata Q21480852.",
+    "approvedSha256": "2ff1bc41ef2594b8d4a413ebcba2b8affab049fa09feb165f2330b3e334aee41",
+    "reviewedAt": "2026-11-16T11:30:28.466Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-culture-2600",
+    "file": "File:Palacio Noel (fachada).JPG",
+    "evidence": "Fachada del Palacio Noel inspeccionada. Descripción Commons identifica sede del Museo Isaac Fernández Blanco y Suipacha 1422, dirección exacta BA Data. GPS -34.590797,-58.380116 junto al registro. No se confunde con la Casa Museo Fernández Blanco de Hipólito Yrigoyen.",
+    "approvedSha256": "38da64a24616a0c8c588a2fe7d3f4233b25fab6fe34bcd5c700113bb6d27eb78",
+    "reviewedAt": "2026-11-16T11:30:28.467Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-culture-2603",
+    "file": "File:WLM2013 EscuelaPdeMendoza19 (1).JPG",
+    "evidence": "Edificio de Escuela Pedro de Mendoza y museo Quinquela Martín inspeccionado, frente a la ribera de La Boca. Título y categorías del archivo WLM lo vinculan con Escuela Pedro de Mendoza 19; GPS -34.638983,-58.361368 junto al edificio BA Data Don Pedro de Mendoza 1835. El museo ocupa el mismo edificio escolar; no es una foto genérica de Caminito.",
+    "approvedSha256": "342c3704bb3121cefd3a93b5b80327d29428f051ed430e403f54c8ee7e0ab6cf",
+    "reviewedAt": "2026-11-16T11:30:28.467Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-culture-2677",
+    "file": "File:FACHADA SARMIENTO.jpg",
+    "evidence": "Fachada inspeccionada con inscripción MUSEO HISTÓRICO SARMIENTO. Nombre exacto en descripción Commons y archivo P18 de Wikidata Q576857, con coordenadas junto a BA Data Juramento 2180. Se usa solo este ID; se omite el otro registro del mismo museo con dirección Cuba 2079 para evitar duplicación.",
+    "approvedSha256": "eb6fe75bba553a56eff8c3f6c5d3f1b49a4b216cb6ffedbeee8ac99068ab3fe3",
+    "reviewedAt": "2026-11-16T11:30:28.468Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-culture-2688",
+    "file": "File:Museo Malvinas e Islas del Atlántico Sur 2.jpg",
+    "evidence": "Edificio vidriado del Museo Malvinas inspeccionado. Ficha Commons identifica Museo Malvinas e Islas del Atlántico Sur, Núñez, Buenos Aires; GPS -34.536597,-58.462316 próximo al registro BA Data Calzadilla 1302. Fotografía del Ministerio de Cultura, mismo archivo P18 de Q17197967. No se trata de una imagen de las islas.",
+    "approvedSha256": "32751af550dfe389669d4d06021658679b3a5e3a0205c5a3250ff280cb5a0016",
+    "reviewedAt": "2026-11-16T11:30:28.468Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-culture-2711",
+    "file": "File:Museo sivori gcba.jpg",
+    "evidence": "Acceso inspeccionado con carteles SÍVORI y MUSEO MUNICIPAL EDUARDO SÍVORI legibles. Imagen GCBA con nombre Museo Sívori, archivo P18 de Q5340780. La ficha oficial del museo confirma Infanta Isabel 555, Palermo, dirección exacta BA Data. La foto no tiene GPS; no se afirma precisión del punto BA Data ni se la confunde con otra sede.",
+    "approvedSha256": "743652482d0f75da632311cfe1e1e5d46064537649303dfa3daafec593059b0a",
+    "reviewedAt": "2026-11-16T11:30:28.469Z",
+    "identitySources": [
+      "https://buenosaires.gob.ar/cultura/museos/museo-sivori",
+      "https://www.wikidata.org/wiki/Q5340780"
+    ]
+  },
+  {
+    "id": "badata-green-813",
+    "file": "File:Buenos Aires - Plaza Dorrego - 20061204b.jpg",
+    "evidence": "Plaza y terrazas perimetrales inspeccionadas. Ficha Commons identifica Plaza Dorrego, Buenos Aires, barrio San Telmo; GPS -34.620444,-58.371833 dentro de su entorno. Coincide con plaza BA Data entre Defensa, Humberto I, Aieta y Bethlem. No se atribuye al bar homónimo.",
+    "approvedSha256": "f3e35b74b07513b872503cabb3eb7294ba70929330029cf57f1d9263c01d69e6",
+    "reviewedAt": "2026-11-16T11:30:28.470Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-green-873",
+    "file": "File:ParqueDeLosPatricios-1.jpg",
+    "evidence": "Arbolado, senderos y bancos del parque inspeccionados. Ficha identifica Parque de los Patricios, Buenos Aires y es P18 de Wikidata Q6062809. Corresponde al parque BA Data entre Caseros, Monteagudo, Uspallata y Almafuerte. No se usa una foto genérica del barrio ni de la estación de subte.",
+    "approvedSha256": "ce309042bf70ddd6832a6159e1fffb17395d2613710acc71661aed8eb52d5971",
+    "reviewedAt": "2026-11-16T11:30:28.471Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-green-883",
+    "file": "File:Vista aérea de Plaza de Mayo 06.jpg",
+    "evidence": "Vista aérea inspeccionada de Plaza de Mayo, con la plaza en primer plano y Casa Rosada al fondo. Nombre y ciudad explícitos en ficha; P18 de Q1126357. Coincide con el espacio BA Data delimitado por Rivadavia, Balcarce, Hipólito Yrigoyen y Bolívar. El GPS es el punto de toma elevado, no una entrada a la plaza.",
+    "approvedSha256": "a62c52748ea7d602994e07227042b47b3f60258ccd9b07ed3fe86567fcaea090",
+    "reviewedAt": "2026-11-16T11:30:28.471Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-green-885",
+    "file": "File:GaribaldiBuenosAires.jpg",
+    "evidence": "Monumento ecuestre a Garibaldi y entorno de Plaza Italia inspeccionados. La descripción ubica el monumento dentro de Plaza Italia, Buenos Aires; GPS -34.581361,-58.420833 junto al polígono BA Data. P18 de Q2532668. Es detalle del lugar exacto, no otra plaza Italia.",
+    "approvedSha256": "253ee88d6136ad0790cdcc1d40e3eaba3a6e269292967aad3ccdbb0f9d7b3974",
+    "reviewedAt": "2026-11-16T11:30:28.472Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-green-887",
+    "file": "File:Plaza Francia, Recoleta.jpg",
+    "evidence": "Plaza y monumento central a Francia inspeccionados. Nombre y ciudad en descripción Commons, archivo P18 de Q9060878. Coincide con Plaza Francia BA Data entre Libertador, Pueyrredón, Levene y Agote. No se confunde con Plaza Intendente Alvear y su feria de artesanos.",
+    "approvedSha256": "db8f881b36c05dc8f29d6bb6cc3ae95ad2cd18c218d726070a0ea41d8703fc17",
+    "reviewedAt": "2026-11-16T11:30:28.473Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-green-943",
+    "file": "File:ParqueIndoamericanoPlayaSur.jpg",
+    "evidence": "Espacio abierto, cancha y sector recreativo inspeccionados. Descripción Commons ubica explícitamente la Playa del Sur dentro de Parque Indoamericano y reconoce el conjunto Barrio Parque Avellaneda al fondo. Corresponde al parque BA Data de Villa Soldati entre Lacarra, Escalada, Castañares y Fernández de la Cruz. La foto de archivo no acredita que esas instalaciones temporarias continúen. Se descartó la toma centrada en personas y una calesita.",
+    "approvedSha256": "4077d05f65c0c0cc39a1799e45fc9f3d6459ecff530bec3f9c861a59e7bdf704",
+    "reviewedAt": "2026-11-16T11:30:28.475Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-green-1104",
+    "file": "File:Parque Thays.jpg",
+    "evidence": "Senderos, bancos y arbolado inspeccionados. Ficha Commons identifica Parque Thays, Buenos Aires; GPS -34.584944,-58.388250 en el parque y archivo P18 de Q2362930. Coincide con el parque BA Data de Recoleta junto a avenida del Libertador. No es el Jardín Botánico Carlos Thays.",
+    "approvedSha256": "bcd577efd74beca4630866beeb1dc2ae89540b11231c1851fbfffc0aa8efb90f",
+    "reviewedAt": "2026-11-16T11:30:28.476Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-green-1274",
+    "file": "File:Reserva ecológica de Buenos Aires.jpg",
+    "evidence": "Pajonales de la reserva y silueta de Puerto Madero inspeccionados. Ficha identifica Reserva ecológica Buenos Aires, Argentina y archivo P18 de Q1034280. Coincide con Reserva Ecológica Costanera Sur BA Data, no con la reserva Costanera Norte. Sin GPS de la foto; las coordenadas BA Data son referencia de límite, no punto de toma.",
+    "approvedSha256": "f3337fae23583e490e2a7026c9f6c1a08a9e1318a1fc917b6ca65542458b66b9",
+    "reviewedAt": "2026-11-16T11:30:28.476Z",
+    "identitySources": []
+  },
+  {
+    "id": "badata-green-1312",
+    "file": "File:Parque de la Memoria, Buenos Aires - 3.JPG",
+    "evidence": "Paseo y muros del memorial frente al Río de la Plata inspeccionados. Descripción Commons identifica Parque de la Memoria, extremo norte de Belgrano, Buenos Aires. GPS -34.541453,-58.436923 junto al parque BA Data de avenida Costanera Rafael Obligado 7001. No es otro memorial homónimo.",
+    "approvedSha256": "f8651903fe2aacb14bb2f31c8483aac614c8fa3e4b101a80bbd2514472f9f8eb",
+    "reviewedAt": "2026-11-16T11:30:28.476Z",
+    "identitySources": []
+  },
+  {
+    "id": "tourism-wikidata-q263127",
+    "file": "File:Frente recuperado de Complejo Histórico Cultural Manzana de las Luces.jpg",
+    "evidence": "Fachada colonial inspeccionada con cartel MANZANA DE LAS LUCES legible. Descripción Commons del Ministerio de Cultura identifica la fachada recuperada del Complejo Histórico Cultural en 2023. Entidad Wikidata Q263127 publica nombre y ubicación de Manzana de las Luces, Monserrat, Buenos Aires. Se eligió este encuadre identificable en lugar de la foto inicial sin cartel.",
+    "approvedSha256": "556ebf4855f2b1570eb1b742ab89b2c0c810a46c33281ce3e1860fc416abc6fa",
+    "reviewedAt": "2026-11-16T11:30:28.489Z",
+    "identitySources": []
+  },
+  {
+    "id": "tourism-wikidata-q8243908",
+    "file": "File:ChurchRetiro-BuenosAires1.jpg",
+    "evidence": "Fachada de basílica con torre central y dos laterales inspeccionada. Descripción Commons identifica Basílica del Santísimo Sacramento, Buenos Aires; P18 de Q8243908. P625 -34.595701,-58.374098 sitúa el templo en Retiro. Sin GPS de foto.",
+    "approvedSha256": "c255b042486a59b0f1b05b054f3fd3381c26878d661b1897c8fce0ba168177fc",
+    "reviewedAt": "2026-11-16T11:30:28.489Z",
+    "identitySources": []
+  },
+  {
+    "id": "tourism-wikidata-q5410626",
+    "file": "File:J31 597 Bf Retiro Mitre.jpg",
+    "evidence": "Fachada inspeccionada con inscripción ESTACION RETIRO y cúpula del edificio ferroviario. Archivo P18 de Q5410626, Estación Retiro Mitre, con ubicación de Buenos Aires. La descripción alemana identifica la parte central del edificio de recepción; el nombre visible y el enlace de entidad verifican esta terminal, no Retiro Belgrano o San Martín.",
+    "approvedSha256": "57da05f60e3de0aec2c93d10eecfbfb72687ef3662cf8592755eea4bc3c26a83",
+    "reviewedAt": "2026-11-16T11:30:28.490Z",
+    "identitySources": []
   }
 ]

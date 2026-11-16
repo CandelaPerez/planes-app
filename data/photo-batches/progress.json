@@ -1,7 +1,7 @@
 {
   "version": 1,
   "batch": 2,
-  "cap": 222,
+  "cap": 247,
   "createdAt": "2026-11-16T00:59:53.163Z",
   "queue": [
     {
@@ -2067,6 +2067,306 @@
       "searchKey": "9efb6853150ab4540f2dc96b2865443da27c0f2124449139021f762483d2a454",
       "status": "awaiting-review",
       "checkedAt": "2026-11-16T10:47:00.725Z"
+    },
+    {
+      "id": "badata-food-139",
+      "originalName": "DON JULIO",
+      "address": "GUATEMALA 4699",
+      "category": "Gastronomía",
+      "lat": -34.58632489,
+      "lon": -58.42429206,
+      "fingerprint": "c981f5722b5f6b5fcbe1fc69b0fe341ab22a781e51c9e6be2529bb87987e7921",
+      "searchKey": "85d3a5704e4690f9840fc80c913e88111d5b0ec97d471b73d608e9965f3bd65f",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:21:21.407Z"
+    },
+    {
+      "id": "badata-culture-189",
+      "originalName": "LA GIRALDA",
+      "address": "CORRIENTES AV. 1453, CABA",
+      "category": "Cultura",
+      "lat": -34.604052,
+      "lon": -58.387286,
+      "fingerprint": "5b1d2d01ad16bb248447a71c9394d3ff3aee45545f87a3a7d837fedae653bd22",
+      "searchKey": "85ff576e4f06ed336bdb07972a736769b85e2e1144d910ef74c6545decdb2a27",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T01:00:00.112Z"
+    },
+    {
+      "id": "badata-culture-76",
+      "originalName": "CAFE DE LOS ANGELITOS",
+      "address": "RIVADAVIA AV. 2100, CABA",
+      "category": "Cultura",
+      "lat": -34.609527,
+      "lon": -58.396007,
+      "fingerprint": "fd402c46c1a027093dd91952b482b0534c35d5f0762c008cdf20a15afd903ae8",
+      "searchKey": "d6ddc6a7fc192fad2bd46c258046631f73fd595677f5cd5d75a42e1fa3b3fb80",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:23:22.861Z"
+    },
+    {
+      "id": "badata-culture-78",
+      "originalName": "CAFE EL BANDERIN",
+      "address": "GUARDIA VIEJA 3601, CABA",
+      "category": "Cultura",
+      "lat": -34.601649,
+      "lon": -58.415489,
+      "fingerprint": "f6e7fe007c6993f45f300d898b4963318321103c44f9dd856a5c69351b886fcd",
+      "searchKey": "721c7020658f28a71ba06b20c72ccb354c0e53457e4cc8af41a7ae6baeb3a555",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:23:28.645Z"
+    },
+    {
+      "id": "badata-culture-82",
+      "originalName": "CAFE MARGOT",
+      "address": "BOEDO AV. 857, CABA",
+      "category": "Cultura",
+      "lat": -34.623266,
+      "lon": -58.416375,
+      "fingerprint": "01956b279cfc920e986f861ff2094bd21f68ed6db7e5c5984d579dd3f719553d",
+      "searchKey": "a69697880ff4f3dfed54c5fa07c74c0125a8172484436b315c0c4b7b5d964c63",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:23:34.610Z"
+    },
+    {
+      "id": "badata-culture-201",
+      "originalName": "LA POESIA",
+      "address": "CHILE 502, CABA",
+      "category": "Cultura",
+      "lat": -34.616062,
+      "lon": -58.373267,
+      "fingerprint": "1b7b5c6e737cb7e7284c7195e4ea97d2ecc382f436366a44570235b7c8ae23df",
+      "searchKey": "310f81d498cccf0e12f3603923984d838ba4d4428ee611d1578162e407b8564a",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:23:40.692Z"
+    },
+    {
+      "id": "badata-culture-71",
+      "originalName": "CAFE DE GARCIA",
+      "address": "SANABRIA 3302, CABA",
+      "category": "Cultura",
+      "lat": -34.606356,
+      "lon": -58.51059,
+      "fingerprint": "bc9610de6b7e03527fec5026cab81dcd7e10aa760c0821a6a42d1267158a0973",
+      "searchKey": "4be35d4e033801b5bbcf1000704356767e58643d29482ab02dab3a0cb961a2f4",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:23:46.627Z"
+    },
+    {
+      "id": "badata-culture-1758",
+      "originalName": "FUNDACION PROA",
+      "address": "DON PEDRO DE MENDOZA AV. 1929, CABA",
+      "category": "Cultura",
+      "lat": -34.639639,
+      "lon": -58.361732,
+      "fingerprint": "fab8efdaecbfb678d821f234520bb0e76754afa5f472e33cdb83140f881801ee",
+      "searchKey": "13213c7c1a1834391e390ea191f38ab85aeb22f8c917eecb5e5156df63c5cc26",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-culture-2583",
+      "originalName": "MUSEO CASA CARLOS GARDEL",
+      "address": "JAURES, JEAN 735, CABA",
+      "category": "Cultura",
+      "lat": -34.601642,
+      "lon": -58.407923,
+      "fingerprint": "fb8ecd21e65afc841fa43fdab7814b12c359e03c929f22970712f5ebc8bee60b",
+      "searchKey": "d04829aff472dade2167ea10c79454dfc680cc3ad59e445954d5f51ca7b5066e",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-culture-2600",
+      "originalName": "MUSEO DE ARTE HISPANOAMERICANO ISAAC FERNANDEZ BLANCO",
+      "address": "SUIPACHA 1422, CABA",
+      "category": "Cultura",
+      "lat": -34.590901,
+      "lon": -58.379932,
+      "fingerprint": "1a4921381b621d9feb3c4b8ff2e1c8b73a025aca53df214b34e1b74cf5237788",
+      "searchKey": "822d2bc8435ee973a0c1ccc4a289e6ab1b49bbbc5fc362fd69484e0a2580719c",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-culture-2603",
+      "originalName": "MUSEO DE BELLAS DE LA BOCA DE ARTISTAS ARGENTINOS \"BENITO QUINQUELA MARTIN\"",
+      "address": "DON PEDRO DE MENDOZA AV. 1835, CABA",
+      "category": "Cultura",
+      "lat": -34.63908,
+      "lon": -58.360936,
+      "fingerprint": "c7e6e7b2442378c28ac1ed3e1500def868a4b378f35139e85a1b196b9348efcd",
+      "searchKey": "040c5185ed34cb50b18f237ea023f7c41e8a98e8f8f8150917bdffde94437301",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:22:09.656Z"
+    },
+    {
+      "id": "badata-culture-2677",
+      "originalName": "MUSEO HISTORICO SARMIENTO",
+      "address": "JURAMENTO AV. 2180, CABA",
+      "category": "Cultura",
+      "lat": -34.560831,
+      "lon": -58.454416,
+      "fingerprint": "142e508a919059af843373456426b095c8a248e29e97d7708d3548393474b982",
+      "searchKey": "2c7db627635f1f628209c81e4c04aa6a1fee3438b0e9dbabc9a7abaf8e3a0b67",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-culture-2688",
+      "originalName": "MUSEO MALVINAS E ISLAS DEL ATLANTICO SUR",
+      "address": "CALZADILLA, SANTIAGO 1302, CABA",
+      "category": "Cultura",
+      "lat": -34.535739,
+      "lon": -58.462536,
+      "fingerprint": "1241ab44da53a2409bfeaafdcb2800d96eebb3dcda15dd47f8ec2c832f61374e",
+      "searchKey": "268263ad4e7402245c5af6aa5a6bae520d3f067dd8f24e08d8a46b7ca499983c",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-culture-2711",
+      "originalName": "MUSEO SIVORI",
+      "address": "ISABEL, INFANTA AV. 555, CABA",
+      "category": "Cultura",
+      "lat": -34.570719,
+      "lon": -58.421165,
+      "fingerprint": "037738e3facf1ad4cd3925a7368dfa718395d94cdba232c2c9e39696a29eb5cd",
+      "searchKey": "dd892a7a43492526753e45524e3101d0fb1b4bc7d7aeab69baf749d39d4d609b",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-green-813",
+      "originalName": "Plaza Cnel. Dorrego",
+      "address": "DEFENSA - HUMBERTO I° - AIETA, ANSELMO, DON - BETHLEM",
+      "category": "Aire Libre",
+      "lat": -34.620615568012596,
+      "lon": -58.37150468890387,
+      "fingerprint": "e3a6c53ce783e84c503150cd679072e59026d316e63221b813f374e17ebc96fe",
+      "searchKey": "66198fe40f68ee29c0b6fc05a2a4a7f7738a6f6410231e95d3424c8adb1eb572",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-green-883",
+      "originalName": "Plaza 25 de Mayo",
+      "address": "RIVADAVIA, AV. - BALCARCE - YRIGOYEN, HIPOLITO - BOLIVAR",
+      "category": "Aire Libre",
+      "lat": -34.60793924059321,
+      "lon": -58.37135454936256,
+      "fingerprint": "51e082162148b7ea154e345562ee04909c289ce412f1af71edb72ea9170c9ca4",
+      "searchKey": "f68ede53786b012fc0a65f895484f76d0157c5bf6cefeb1b499d6319007118f7",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-green-885",
+      "originalName": "Plaza Italia",
+      "address": "SANTA FE, AV. - LAS HERAS, AV. - SERRANO - THAMES",
+      "category": "Aire Libre",
+      "lat": -34.58160057961012,
+      "lon": -58.42080473919455,
+      "fingerprint": "34ef1c17d524c339b4f12890973fc9d4cae59720d00d5a56fcc485ef8da0ec00",
+      "searchKey": "1b2293c6d351537c70745e4b7ec55f5ff7399512c3f61cf1d2afc711d62106be",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-green-887",
+      "originalName": "Plaza Francia",
+      "address": "DEL LIBERTADOR, AV. - PUEYRREDON, AV. - LEVENE, RICARDO, DR., AV. - AGOTE, LUIS, DR.",
+      "category": "Aire Libre",
+      "lat": -34.585288406986066,
+      "lon": -58.393427272268646,
+      "fingerprint": "2c1b731759880f023d2059ad5c79cfae8f236187e8af063fd2fac95c5f10dc63",
+      "searchKey": "245b66fe805cb55d15dc0923f90d927bd6426398014f0f4bf2999e0fa304b021",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-green-943",
+      "originalName": "Parque Indoamericano",
+      "address": "LACARRA, AV. - ESCALADA, AV. - CASTAÑARES, AV. - FERNANDEZ DE LA CRUZ, FRANCISCO, GRAL., AV.",
+      "category": "Aire Libre",
+      "lat": -34.65836877326399,
+      "lon": -58.458597977848044,
+      "fingerprint": "35cbacabdb84807c2673247b0f4ab1e9e2cea293ea65797caa8561b12ea9c851",
+      "searchKey": "97198c20bd3c1bb37998a08f636970145cb6c49b223e292bdbda7cbe125baf9c",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-green-1104",
+      "originalName": "Parque Thays",
+      "address": "DEL LIBERTADOR, AV. - CALLAO, AV.- VAZ FERREIRA, CARLOS, DR. - QUIROGA, JUAN FACUNDO, BRIG. GRAL. VIA R PIDA",
+      "category": "Aire Libre",
+      "lat": -34.58647687607007,
+      "lon": -58.385331345318285,
+      "fingerprint": "cae3622298662ed1e3ba08e2c7d8af44d34c61d17cf857245802dfc289957b9c",
+      "searchKey": "9d49237fc97d9f0341d3aee8b6c5a42edb7ddfe18da6a2cad1552670a355d891",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-green-1274",
+      "originalName": "Reserva Ecológica",
+      "address": "NOEL, CARLOS M., INT., AV. - RIO DE LA PLATA - MALECON (N) - EX-CIUDAD DEPORTIVA BOCA",
+      "category": "Aire Libre",
+      "lat": -34.59491484450386,
+      "lon": -58.35883510249647,
+      "fingerprint": "049052ceac58e8d60a1d39fe29701a80d4420a49b10b499b6a0d301f8277e150",
+      "searchKey": "20683d57e1195e3860c06b08f1eccf6f04ac2fbb07d69a5424a88ed3e329a978",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "badata-green-1312",
+      "originalName": "Parque de la Memoria",
+      "address": "RAFAEL COSTANERA OBLIGADO AV 7001",
+      "category": "Aire Libre",
+      "lat": -34.54006755256561,
+      "lon": -58.43746205701567,
+      "fingerprint": "3f723b822d8f3bb875f2dee8d582f49e9e872eab8c334dfa97aa0fadf7f436f1",
+      "searchKey": "172e5981b041e4ad015c6652f3b7d4924b7988238f9608beb0292c836d94d390",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:22:15.463Z"
+    },
+    {
+      "id": "tourism-wikidata-q263127",
+      "originalName": "Manzana de las Luces",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.61055556,
+      "lon": -58.37444444,
+      "fingerprint": "51b980ba690fd7d8ad39d5d54cb73bc670cd285183bd214fdc92c4c38fb4258d",
+      "searchKey": "23559847bd949bace043edc1a04a15745e53b9dbeec95e760f5384714aadb56e",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "tourism-wikidata-q8243908",
+      "originalName": "Basílica del Santísimo Sacramento",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.595701,
+      "lon": -58.374098,
+      "fingerprint": "3515ec5eb7feaeb508ef17882c83f877b25eea0bace98d4510d7bdcd83fb3024",
+      "searchKey": "3276d923b4cffbffcd30c4f4c0cd9527eea0c936a2438ad33c6a0a58677b0141",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
+    },
+    {
+      "id": "tourism-wikidata-q5410626",
+      "originalName": "Estación Retiro Mitre",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.59106,
+      "lon": -58.37492,
+      "fingerprint": "e83024014efbc8f0343dfeb55a31bc56eb11b621b751b74f9ce7c00bd9e991f2",
+      "searchKey": "42c3112865444373902bc6975eb816d9496e2a12b267af88bb6b71edc8e231ae",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T11:20:05.903Z"
     }
   ],
   "records": {
@@ -2081,7 +2381,7 @@
       "searchKey": "35750cb633b3543e7e28913ebde82dbf3411de6a9ee00359274426e120a5ea09",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T00:59:54.076Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-food-2567": {
       "id": "badata-food-2567",
@@ -2094,7 +2394,7 @@
       "searchKey": "60eec26c1bdebb48b151c78b4c0c0f2d67cea9282c428c506ce51ecf4e3911e2",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T00:59:55.405Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-food-2231": {
       "id": "badata-food-2231",
@@ -2107,7 +2407,7 @@
       "searchKey": "804d8a17eb611f9c79bec108c429e7bc6a1ed4748fa6fa7109a426470b0fbfbe",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T00:59:56.987Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-food-1780": {
       "id": "badata-food-1780",
@@ -2120,7 +2420,7 @@
       "searchKey": "9ace5bd01110bb1a7dd090764dfa9a0f0d05230fe5038c735fa6ff614b960d35",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T00:59:58.379Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-food-2340": {
       "id": "badata-food-2340",
@@ -2145,7 +2445,7 @@
       "searchKey": "44916ff5e1ba951f7f91caf6bbfb5dfc3e4e19b08a2bc5f497acb9b6a8a23ff2",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:01.446Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-food-947": {
       "id": "badata-food-947",
@@ -2158,7 +2458,7 @@
       "searchKey": "17ec0ce46151d3b9464d6599ba0b2c3897e7b34b6e774c32b428973a64a78ade",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:03.034Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-culture-2989": {
       "id": "badata-culture-2989",
@@ -2171,7 +2471,7 @@
       "searchKey": "077fb7210e03fee1e4aefe51ca10d496134c46393f3d89704229e7ced5552efc",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:04.710Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-culture-2675": {
       "id": "badata-culture-2675",
@@ -2184,7 +2484,7 @@
       "searchKey": "66ba97929827fb67fa18eb95bb14b9d0e950cc1639f82c2fec2d275e49babdb4",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:06.058Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-culture-2717": {
       "id": "badata-culture-2717",
@@ -2197,7 +2497,7 @@
       "searchKey": "d59a0b9a74ec5ec7fd5d925322d5251512fb2989c5205ed19fd5f61ad663d3d6",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:07.489Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-culture-2578": {
       "id": "badata-culture-2578",
@@ -2210,7 +2510,7 @@
       "searchKey": "8af2fc39716b4bcd7c2e379c1cda3bf58de450cd5e646d5f8e48929caacc8068",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:26.541Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-culture-1379": {
       "id": "badata-culture-1379",
@@ -2220,10 +2520,10 @@
       "lat": -34.629144,
       "lon": -58.356388,
       "fingerprint": "9df6d488bb21e23706dcc7eac633c8b32a913dbb1551044a653ae1b217103af9",
-      "searchKey": "af58383f6b5c4ed725f8469a2d2f27e87eaf0edcdd63cb301d5798da7dcb23d4",
-      "status": "deferred-review",
-      "checkedAt": "2026-11-16T01:00:27.556Z",
-      "reviewReason": "Imagen inspeccionada, pero descripción insuficiente (the building). Requiere evidencia adicional de correspondencia; no publicar."
+      "searchKey": "c2d1de8cb069de0a0dc81cc945914ca7385c3848dec99fc549ddc579be29ff92",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-culture-1985": {
       "id": "badata-culture-1985",
@@ -2236,7 +2536,7 @@
       "searchKey": "f17cee7793a3e0f81517a6b80ed9f9b54beffcd140a4132a87b8709fe7af51e6",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:29.097Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-culture-2467": {
       "id": "badata-culture-2467",
@@ -2249,7 +2549,7 @@
       "searchKey": "60a593cb49724f9fb5991195dc0acf84d737a86f0e5ff01c3918de5c41c47b1f",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:30.457Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-green-880": {
       "id": "badata-green-880",
@@ -2262,7 +2562,7 @@
       "searchKey": "0a67c04fa9b4ca75b225d1cba19cd2f02af52ac5638059bf86a4cbfbe0d51e66",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:32.063Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-green-1106": {
       "id": "badata-green-1106",
@@ -2275,7 +2575,7 @@
       "searchKey": "eb461137e90d1fe438611dba0aba8579825e25eee0bf513097a87d751ff9156c",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:01:20.365Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-green-610": {
       "id": "badata-green-610",
@@ -2288,7 +2588,7 @@
       "searchKey": "efdd4e3ace17ef58a37d3d2748c720397ff847d2b11ce5a3d02ef2187f3537ef",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:01:26.347Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-green-872": {
       "id": "badata-green-872",
@@ -2301,7 +2601,7 @@
       "searchKey": "29803c8c07f4ea72c9397d1861417684abf81c84af11cfcb5491167b8255f9cf",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:01:32.583Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-green-873": {
       "id": "badata-green-873",
@@ -2311,9 +2611,10 @@
       "lat": -34.63761733793966,
       "lon": -58.40598938613459,
       "fingerprint": "6541f1e15f8bd1cde67877df53897f38dec9ffdafc418f32d9f955e3d4bed590",
-      "searchKey": "3d6a6205b3520cb504fe803fa95027f85ff908ca8b90d89b651c9383cc9f8147",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:01:38.599Z"
+      "searchKey": "25fa30639bc3992526aded728be7b42a8457ce232f569089d7ae7d33161cf2ff",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-green-874": {
       "id": "badata-green-874",
@@ -2326,7 +2627,7 @@
       "searchKey": "a7c903953f89aff57a540479173e9bdb10a2b03e22aae7f457adf8576499137c",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:01:44.369Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-green-882": {
       "id": "badata-green-882",
@@ -2339,7 +2640,7 @@
       "searchKey": "b3f774d69c01fc36361da6c2001f46c97ca0756a1d1bd5b6a125c74d736710eb",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:01:50.564Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-green-906": {
       "id": "badata-green-906",
@@ -2352,7 +2653,7 @@
       "searchKey": "9d84f37972b375f753f80e62687f2f6b99485cdc86a3b737118ee8be1b956496",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:01:56.345Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-food-676": {
       "id": "badata-food-676",
@@ -2410,9 +2711,10 @@
       "lat": -34.60917,
       "lon": -58.384301,
       "fingerprint": "623c077273b13570f4c033cf4e5a59d7bb4ebd465f35855524f9ed05defc0faf",
-      "searchKey": "22827b11a91bd664d847726910b636e30181a4db63217418e314a71ddc32cf21",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:02:26.411Z"
+      "searchKey": "c951d336a0a479a30b69a1972d7f51537eef3d2550663a3a3a081926e74ae465",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:02:26.411Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-green-1282": {
       "id": "badata-green-1282",
@@ -3157,7 +3459,7 @@
       "searchKey": "4b2a0801bc8f7f8fc863d9080dbfcdfe0b7ac3cc3217426284d16ac46006dc64",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:08:20.971Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-green-681": {
       "id": "badata-green-681",
@@ -3218,7 +3520,7 @@
       "searchKey": "ccf5f0c302e5e52121e8d95e6cd1d833f8fc493e252252e898da1bdf3866913f",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:08:44.866Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-bus-19": {
       "id": "badata-bus-19",
@@ -3375,7 +3677,7 @@
       "searchKey": "0162c7f2ed88a4bc1d9548a3543d776483fe21c8ca464497bc0fcddfd867d872",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:34:58.976Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-culture-4": {
       "id": "badata-culture-4",
@@ -3424,7 +3726,7 @@
       "searchKey": "81c01c87cdbac5b618d1f889800eac9cd94832dadebd2190ba7d8a054f0bea75",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.711Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-food-2296": {
       "id": "badata-food-2296",
@@ -3437,7 +3739,7 @@
       "searchKey": "2655fed1be1725f0c0a9e4a192a80ae506b3c29938b568e69390bcd1fddc7c8e",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.714Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-food-170": {
       "id": "badata-food-170",
@@ -3450,7 +3752,7 @@
       "searchKey": "9d54219bd7ed3db9f714325cfc62c20206447d7de483ffb42b192b6cd33639ec",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.714Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-food-565": {
       "id": "badata-food-565",
@@ -3463,7 +3765,7 @@
       "searchKey": "d5b8166e81fc3ae86ac856ae4faf1a7d9b8cd2733d92abba52748cb3828533bd",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.715Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-culture-1103": {
       "id": "badata-culture-1103",
@@ -3476,7 +3778,7 @@
       "searchKey": "5ee593423a535b7919034236975263733741d1fcf352e1d59309c612714f4ec5",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.716Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-culture-2599": {
       "id": "badata-culture-2599",
@@ -3489,7 +3791,7 @@
       "searchKey": "0096a84c3f0cfe51615601986f0b7b4cc1468243a6794122e757076bea2b02f7",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.716Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-culture-2674": {
       "id": "badata-culture-2674",
@@ -3502,7 +3804,7 @@
       "searchKey": "ddb2f176afd26035b22310090594db5afb7380430b8eab032a9871be0eafafec",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.717Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-green-1444": {
       "id": "badata-green-1444",
@@ -3515,7 +3817,7 @@
       "searchKey": "07dee6805415544cc0060fa082ffea9423231c5e9b99842aca66cca24a35d7f6",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.717Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "badata-green-171": {
       "id": "badata-green-171",
@@ -3528,7 +3830,7 @@
       "searchKey": "98e3618189b5f99b6aded4aeb70665677ac5f67f4a5d2190442fd91e5d89e419",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.718Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q478926": {
       "id": "tourism-wikidata-q478926",
@@ -3541,7 +3843,7 @@
       "searchKey": "235b782632ffa1c7fbd2a6c7600b47c966fd7b3aa9db2f10f55781213d8549c6",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.719Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q2336867": {
       "id": "tourism-wikidata-q2336867",
@@ -3554,7 +3856,7 @@
       "searchKey": "e9cf59e46af4d70262473b333b1406d6c912c7c8cae470865c6e5102afa40de6",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.719Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q499855": {
       "id": "tourism-wikidata-q499855",
@@ -3567,7 +3869,7 @@
       "searchKey": "ba737ba198642d67fd7f6b450acc24bc26e57306a89a5c308a6b43c77d12b02f",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.720Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q646142": {
       "id": "tourism-wikidata-q646142",
@@ -3580,7 +3882,7 @@
       "searchKey": "f1bd91b80f8d1545ce6e04e31e92d535b61f0bf7efdcbef021ba4fcdb5c9b00d",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.720Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q967929": {
       "id": "tourism-wikidata-q967929",
@@ -3593,7 +3895,7 @@
       "searchKey": "430dd007de0b04d55ecb8c3614010d2793e3ae0de46b90e710252baf823c6b92",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.720Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q570385": {
       "id": "tourism-wikidata-q570385",
@@ -3606,7 +3908,7 @@
       "searchKey": "56e85efaf2a6ed9aed8008cd51afc531d525e5feb0e3ce5bbd36f79f1b0fc19f",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.721Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q831389": {
       "id": "tourism-wikidata-q831389",
@@ -3619,7 +3921,7 @@
       "searchKey": "6eb14ea9a1142026a6f1640bebc8f111322fb5e370d943dfe80f6804d221ad95",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.721Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q1029566": {
       "id": "tourism-wikidata-q1029566",
@@ -3632,7 +3934,7 @@
       "searchKey": "7472cabc397101217ff86d543baa3d9e38195803dda6897ba8c7ee85c09cf65a",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.721Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q831322": {
       "id": "tourism-wikidata-q831322",
@@ -3645,7 +3947,7 @@
       "searchKey": "48531c5f97406fb523b1944a89e61c35396eb9c7b3747b3c8e1490ac6bfa0b13",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.721Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q1138028": {
       "id": "tourism-wikidata-q1138028",
@@ -3658,7 +3960,7 @@
       "searchKey": "77e79b1f8129f5de97b834802577849f99b3ea1f95935653fe0ff6545ca5463c",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.722Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q4579815": {
       "id": "tourism-wikidata-q4579815",
@@ -3671,7 +3973,7 @@
       "searchKey": "d1819975b758fbd4a6aece18dd81057ecb8cfb7948f5eea1b322039cdc0fecbe",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.724Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q3361112": {
       "id": "tourism-wikidata-q3361112",
@@ -3684,7 +3986,7 @@
       "searchKey": "ea244da50af4bda316930711d3bf516311059e8827ae822eaa2738f7165ea9ed",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.724Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q2886930": {
       "id": "tourism-wikidata-q2886930",
@@ -3697,7 +3999,7 @@
       "searchKey": "70eb6713bf0e3e44a83d9624c210f06472cdd72795f95cbf5861eab1f5bd86f7",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.724Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     },
     "tourism-wikidata-q1668230": {
       "id": "tourism-wikidata-q1668230",
@@ -3710,7 +4012,332 @@
       "searchKey": "9efb6853150ab4540f2dc96b2865443da27c0f2124449139021f762483d2a454",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T10:47:00.725Z",
-      "reviewedAt": "2026-11-16T10:51:00.625Z"
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-food-139": {
+      "id": "badata-food-139",
+      "originalName": "DON JULIO",
+      "address": "GUATEMALA 4699",
+      "category": "Gastronomía",
+      "lat": -34.58632489,
+      "lon": -58.42429206,
+      "fingerprint": "c981f5722b5f6b5fcbe1fc69b0fe341ab22a781e51c9e6be2529bb87987e7921",
+      "searchKey": "85d3a5704e4690f9840fc80c913e88111d5b0ec97d471b73d608e9965f3bd65f",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:21:21.407Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-189": {
+      "id": "badata-culture-189",
+      "originalName": "LA GIRALDA",
+      "address": "CORRIENTES AV. 1453, CABA",
+      "category": "Cultura",
+      "lat": -34.604052,
+      "lon": -58.387286,
+      "fingerprint": "5b1d2d01ad16bb248447a71c9394d3ff3aee45545f87a3a7d837fedae653bd22",
+      "searchKey": "85ff576e4f06ed336bdb07972a736769b85e2e1144d910ef74c6545decdb2a27",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:00:00.112Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-76": {
+      "id": "badata-culture-76",
+      "originalName": "CAFE DE LOS ANGELITOS",
+      "address": "RIVADAVIA AV. 2100, CABA",
+      "category": "Cultura",
+      "lat": -34.609527,
+      "lon": -58.396007,
+      "fingerprint": "fd402c46c1a027093dd91952b482b0534c35d5f0762c008cdf20a15afd903ae8",
+      "searchKey": "d6ddc6a7fc192fad2bd46c258046631f73fd595677f5cd5d75a42e1fa3b3fb80",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:23:22.861Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-78": {
+      "id": "badata-culture-78",
+      "originalName": "CAFE EL BANDERIN",
+      "address": "GUARDIA VIEJA 3601, CABA",
+      "category": "Cultura",
+      "lat": -34.601649,
+      "lon": -58.415489,
+      "fingerprint": "f6e7fe007c6993f45f300d898b4963318321103c44f9dd856a5c69351b886fcd",
+      "searchKey": "721c7020658f28a71ba06b20c72ccb354c0e53457e4cc8af41a7ae6baeb3a555",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:23:28.645Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-82": {
+      "id": "badata-culture-82",
+      "originalName": "CAFE MARGOT",
+      "address": "BOEDO AV. 857, CABA",
+      "category": "Cultura",
+      "lat": -34.623266,
+      "lon": -58.416375,
+      "fingerprint": "01956b279cfc920e986f861ff2094bd21f68ed6db7e5c5984d579dd3f719553d",
+      "searchKey": "a69697880ff4f3dfed54c5fa07c74c0125a8172484436b315c0c4b7b5d964c63",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:23:34.610Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-201": {
+      "id": "badata-culture-201",
+      "originalName": "LA POESIA",
+      "address": "CHILE 502, CABA",
+      "category": "Cultura",
+      "lat": -34.616062,
+      "lon": -58.373267,
+      "fingerprint": "1b7b5c6e737cb7e7284c7195e4ea97d2ecc382f436366a44570235b7c8ae23df",
+      "searchKey": "310f81d498cccf0e12f3603923984d838ba4d4428ee611d1578162e407b8564a",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:23:40.692Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-71": {
+      "id": "badata-culture-71",
+      "originalName": "CAFE DE GARCIA",
+      "address": "SANABRIA 3302, CABA",
+      "category": "Cultura",
+      "lat": -34.606356,
+      "lon": -58.51059,
+      "fingerprint": "bc9610de6b7e03527fec5026cab81dcd7e10aa760c0821a6a42d1267158a0973",
+      "searchKey": "4be35d4e033801b5bbcf1000704356767e58643d29482ab02dab3a0cb961a2f4",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:23:46.627Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-1758": {
+      "id": "badata-culture-1758",
+      "originalName": "FUNDACION PROA",
+      "address": "DON PEDRO DE MENDOZA AV. 1929, CABA",
+      "category": "Cultura",
+      "lat": -34.639639,
+      "lon": -58.361732,
+      "fingerprint": "fab8efdaecbfb678d821f234520bb0e76754afa5f472e33cdb83140f881801ee",
+      "searchKey": "13213c7c1a1834391e390ea191f38ab85aeb22f8c917eecb5e5156df63c5cc26",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-2583": {
+      "id": "badata-culture-2583",
+      "originalName": "MUSEO CASA CARLOS GARDEL",
+      "address": "JAURES, JEAN 735, CABA",
+      "category": "Cultura",
+      "lat": -34.601642,
+      "lon": -58.407923,
+      "fingerprint": "fb8ecd21e65afc841fa43fdab7814b12c359e03c929f22970712f5ebc8bee60b",
+      "searchKey": "d04829aff472dade2167ea10c79454dfc680cc3ad59e445954d5f51ca7b5066e",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-2600": {
+      "id": "badata-culture-2600",
+      "originalName": "MUSEO DE ARTE HISPANOAMERICANO ISAAC FERNANDEZ BLANCO",
+      "address": "SUIPACHA 1422, CABA",
+      "category": "Cultura",
+      "lat": -34.590901,
+      "lon": -58.379932,
+      "fingerprint": "1a4921381b621d9feb3c4b8ff2e1c8b73a025aca53df214b34e1b74cf5237788",
+      "searchKey": "822d2bc8435ee973a0c1ccc4a289e6ab1b49bbbc5fc362fd69484e0a2580719c",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-2603": {
+      "id": "badata-culture-2603",
+      "originalName": "MUSEO DE BELLAS DE LA BOCA DE ARTISTAS ARGENTINOS \"BENITO QUINQUELA MARTIN\"",
+      "address": "DON PEDRO DE MENDOZA AV. 1835, CABA",
+      "category": "Cultura",
+      "lat": -34.63908,
+      "lon": -58.360936,
+      "fingerprint": "c7e6e7b2442378c28ac1ed3e1500def868a4b378f35139e85a1b196b9348efcd",
+      "searchKey": "040c5185ed34cb50b18f237ea023f7c41e8a98e8f8f8150917bdffde94437301",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:22:09.656Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-2677": {
+      "id": "badata-culture-2677",
+      "originalName": "MUSEO HISTORICO SARMIENTO",
+      "address": "JURAMENTO AV. 2180, CABA",
+      "category": "Cultura",
+      "lat": -34.560831,
+      "lon": -58.454416,
+      "fingerprint": "142e508a919059af843373456426b095c8a248e29e97d7708d3548393474b982",
+      "searchKey": "2c7db627635f1f628209c81e4c04aa6a1fee3438b0e9dbabc9a7abaf8e3a0b67",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-2688": {
+      "id": "badata-culture-2688",
+      "originalName": "MUSEO MALVINAS E ISLAS DEL ATLANTICO SUR",
+      "address": "CALZADILLA, SANTIAGO 1302, CABA",
+      "category": "Cultura",
+      "lat": -34.535739,
+      "lon": -58.462536,
+      "fingerprint": "1241ab44da53a2409bfeaafdcb2800d96eebb3dcda15dd47f8ec2c832f61374e",
+      "searchKey": "268263ad4e7402245c5af6aa5a6bae520d3f067dd8f24e08d8a46b7ca499983c",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-culture-2711": {
+      "id": "badata-culture-2711",
+      "originalName": "MUSEO SIVORI",
+      "address": "ISABEL, INFANTA AV. 555, CABA",
+      "category": "Cultura",
+      "lat": -34.570719,
+      "lon": -58.421165,
+      "fingerprint": "037738e3facf1ad4cd3925a7368dfa718395d94cdba232c2c9e39696a29eb5cd",
+      "searchKey": "dd892a7a43492526753e45524e3101d0fb1b4bc7d7aeab69baf749d39d4d609b",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-green-813": {
+      "id": "badata-green-813",
+      "originalName": "Plaza Cnel. Dorrego",
+      "address": "DEFENSA - HUMBERTO I° - AIETA, ANSELMO, DON - BETHLEM",
+      "category": "Aire Libre",
+      "lat": -34.620615568012596,
+      "lon": -58.37150468890387,
+      "fingerprint": "e3a6c53ce783e84c503150cd679072e59026d316e63221b813f374e17ebc96fe",
+      "searchKey": "66198fe40f68ee29c0b6fc05a2a4a7f7738a6f6410231e95d3424c8adb1eb572",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-green-883": {
+      "id": "badata-green-883",
+      "originalName": "Plaza 25 de Mayo",
+      "address": "RIVADAVIA, AV. - BALCARCE - YRIGOYEN, HIPOLITO - BOLIVAR",
+      "category": "Aire Libre",
+      "lat": -34.60793924059321,
+      "lon": -58.37135454936256,
+      "fingerprint": "51e082162148b7ea154e345562ee04909c289ce412f1af71edb72ea9170c9ca4",
+      "searchKey": "f68ede53786b012fc0a65f895484f76d0157c5bf6cefeb1b499d6319007118f7",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-green-885": {
+      "id": "badata-green-885",
+      "originalName": "Plaza Italia",
+      "address": "SANTA FE, AV. - LAS HERAS, AV. - SERRANO - THAMES",
+      "category": "Aire Libre",
+      "lat": -34.58160057961012,
+      "lon": -58.42080473919455,
+      "fingerprint": "34ef1c17d524c339b4f12890973fc9d4cae59720d00d5a56fcc485ef8da0ec00",
+      "searchKey": "1b2293c6d351537c70745e4b7ec55f5ff7399512c3f61cf1d2afc711d62106be",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-green-887": {
+      "id": "badata-green-887",
+      "originalName": "Plaza Francia",
+      "address": "DEL LIBERTADOR, AV. - PUEYRREDON, AV. - LEVENE, RICARDO, DR., AV. - AGOTE, LUIS, DR.",
+      "category": "Aire Libre",
+      "lat": -34.585288406986066,
+      "lon": -58.393427272268646,
+      "fingerprint": "2c1b731759880f023d2059ad5c79cfae8f236187e8af063fd2fac95c5f10dc63",
+      "searchKey": "245b66fe805cb55d15dc0923f90d927bd6426398014f0f4bf2999e0fa304b021",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-green-943": {
+      "id": "badata-green-943",
+      "originalName": "Parque Indoamericano",
+      "address": "LACARRA, AV. - ESCALADA, AV. - CASTAÑARES, AV. - FERNANDEZ DE LA CRUZ, FRANCISCO, GRAL., AV.",
+      "category": "Aire Libre",
+      "lat": -34.65836877326399,
+      "lon": -58.458597977848044,
+      "fingerprint": "35cbacabdb84807c2673247b0f4ab1e9e2cea293ea65797caa8561b12ea9c851",
+      "searchKey": "26c5de7431f10e590c040371b5f32bcd7f389ea7213332be2334da01da5ba337",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:28:08.506Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-green-1104": {
+      "id": "badata-green-1104",
+      "originalName": "Parque Thays",
+      "address": "DEL LIBERTADOR, AV. - CALLAO, AV.- VAZ FERREIRA, CARLOS, DR. - QUIROGA, JUAN FACUNDO, BRIG. GRAL. VIA R PIDA",
+      "category": "Aire Libre",
+      "lat": -34.58647687607007,
+      "lon": -58.385331345318285,
+      "fingerprint": "cae3622298662ed1e3ba08e2c7d8af44d34c61d17cf857245802dfc289957b9c",
+      "searchKey": "9d49237fc97d9f0341d3aee8b6c5a42edb7ddfe18da6a2cad1552670a355d891",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-green-1274": {
+      "id": "badata-green-1274",
+      "originalName": "Reserva Ecológica",
+      "address": "NOEL, CARLOS M., INT., AV. - RIO DE LA PLATA - MALECON (N) - EX-CIUDAD DEPORTIVA BOCA",
+      "category": "Aire Libre",
+      "lat": -34.59491484450386,
+      "lon": -58.35883510249647,
+      "fingerprint": "049052ceac58e8d60a1d39fe29701a80d4420a49b10b499b6a0d301f8277e150",
+      "searchKey": "20683d57e1195e3860c06b08f1eccf6f04ac2fbb07d69a5424a88ed3e329a978",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "badata-green-1312": {
+      "id": "badata-green-1312",
+      "originalName": "Parque de la Memoria",
+      "address": "RAFAEL COSTANERA OBLIGADO AV 7001",
+      "category": "Aire Libre",
+      "lat": -34.54006755256561,
+      "lon": -58.43746205701567,
+      "fingerprint": "3f723b822d8f3bb875f2dee8d582f49e9e872eab8c334dfa97aa0fadf7f436f1",
+      "searchKey": "172e5981b041e4ad015c6652f3b7d4924b7988238f9608beb0292c836d94d390",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:22:15.463Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "tourism-wikidata-q263127": {
+      "id": "tourism-wikidata-q263127",
+      "originalName": "Manzana de las Luces",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.61055556,
+      "lon": -58.37444444,
+      "fingerprint": "51b980ba690fd7d8ad39d5d54cb73bc670cd285183bd214fdc92c4c38fb4258d",
+      "searchKey": "92e42426381b03f0cfaff9da4468eb3a297b9969149d124611df395ec7216187",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:28:14.286Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "tourism-wikidata-q8243908": {
+      "id": "tourism-wikidata-q8243908",
+      "originalName": "Basílica del Santísimo Sacramento",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.595701,
+      "lon": -58.374098,
+      "fingerprint": "3515ec5eb7feaeb508ef17882c83f877b25eea0bace98d4510d7bdcd83fb3024",
+      "searchKey": "3276d923b4cffbffcd30c4f4c0cd9527eea0c936a2438ad33c6a0a58677b0141",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
+    },
+    "tourism-wikidata-q5410626": {
+      "id": "tourism-wikidata-q5410626",
+      "originalName": "Estación Retiro Mitre",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.59106,
+      "lon": -58.37492,
+      "fingerprint": "e83024014efbc8f0343dfeb55a31bc56eb11b621b751b74f9ce7c00bd9e991f2",
+      "searchKey": "42c3112865444373902bc6975eb816d9496e2a12b267af88bb6b71edc8e231ae",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "reviewedAt": "2026-11-16T11:30:43.058Z"
     }
   },
   "searches": {
@@ -8263,6 +8890,828 @@
           },
           "mime": "image/jpeg",
           "originalBytes": 4029229
+        }
+      ]
+    },
+    "85d3a5704e4690f9840fc80c913e88111d5b0ec97d471b73d608e9965f3bd65f": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Don+Julio+Buenos+Aires+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Don Julio Grill dining room Buenos Aires Argentina.jpg",
+      "checkedAt": "2026-11-16T11:21:21.407Z",
+      "candidates": [
+        {
+          "file": "File:Don Julio Grill dining room Buenos Aires Argentina.jpg",
+          "pageId": 87698743,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Don_Julio_Grill_dining_room_Buenos_Aires_Argentina.jpg/960px-Don_Julio_Grill_dining_room_Buenos_Aires_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Don_Julio_Grill_dining_room_Buenos_Aires_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Don_Julio_Grill_dining_room_Buenos_Aires_Argentina.jpg",
+          "author": "amanderson2",
+          "authorMetadata": "amanderson2",
+          "uploader": "Beko",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "restrictions": "",
+          "photoDate": "2020-01-27 12:20:13",
+          "description": "Don Julio Grill in the neighborhood of Palermo, Buenos Aires.",
+          "categories": "Flickr images reviewed by FlickreviewR 2|Files from amanderson2 Flickr stream|Don Julio (Buenos Aires)",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 2330784
+        }
+      ]
+    },
+    "c951d336a0a479a30b69a1972d7f51537eef3d2550663a3a3a081926e74ae465": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%2236+BILLARES%22+%22Buenos+Aires%22&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Avenida de Mayo café 36 Billares.jpg",
+      "checkedAt": "2026-11-16T01:02:26.411Z",
+      "candidates": [
+        {
+          "file": "File:Avenida de Mayo café 36 Billares.jpg",
+          "pageId": 1578655,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Avenida_de_Mayo_caf%C3%A9_36_Billares.jpg/960px-Avenida_de_Mayo_caf%C3%A9_36_Billares.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Avenida_de_Mayo_caf%C3%A9_36_Billares.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Avenida_de_Mayo_caf%C3%A9_36_Billares.jpg",
+          "author": "I the author of this work, User:Roberto Fiadone",
+          "authorMetadata": "I the author of this work, <a href=\"//commons.wikimedia.org/wiki/User:Roberto_Fiadone\" title=\"User:Roberto Fiadone\">User:Roberto Fiadone</a>",
+          "uploader": "Roberto Fiadone",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "restrictions": "",
+          "photoDate": "2007-01-03",
+          "description": "Café 36 Billares, en Avenida de Mayo, Buenos Aires",
+          "categories": "Los 36 Billares|Self-published work|PD-self|December 2006 in Buenos Aires|FoP-Argentina|Cultural heritage monuments in Argentina with known IDs|Files with coordinates missing SDC location of creation",
+          "gps": {
+            "lat": -34.609472,
+            "lon": -58.385861
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 1599476
+        }
+      ]
+    },
+    "85ff576e4f06ed336bdb07972a736769b85e2e1144d910ef74c6545decdb2a27": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22LA+GIRALDA%22+%22Buenos+Aires%22&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:La Giralda, Avenida Corrientes.jpg",
+      "checkedAt": "2026-11-16T01:00:00.112Z",
+      "candidates": [
+        {
+          "file": "File:La Giralda, Avenida Corrientes.jpg",
+          "pageId": 109920943,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/La_Giralda%2C_Avenida_Corrientes.jpg/960px-La_Giralda%2C_Avenida_Corrientes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/La_Giralda%2C_Avenida_Corrientes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_Giralda,_Avenida_Corrientes.jpg",
+          "author": "Roberto Fiadone",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Roberto_Fiadone\" title=\"User:Roberto Fiadone\">Roberto Fiadone</a>",
+          "uploader": "Roberto Fiadone",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2021-08-28 18:00:43",
+          "description": "La Giralda, Avenida Corrientes 1453, Buenos Aires, Argentina, en agosto 2021, recientemente reinaugurada.",
+          "categories": "La Giralda|Self-published work|Files with coordinates missing SDC location of creation|August 2021 in Buenos Aires|Argentina photographs taken on 2021-08-28|Taken with Motorola Moto G9 Plus",
+          "gps": {
+            "lat": -34.604117,
+            "lon": -58.387223
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 2273151
+        }
+      ]
+    },
+    "d6ddc6a7fc192fad2bd46c258046631f73fd595677f5cd5d75a42e1fa3b3fb80": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Caf%C3%A9+de+los+Angelitos%22+%22Buenos+Aires%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Café de Los Angelitos, entrada.jpg",
+      "checkedAt": "2026-11-16T11:23:22.861Z",
+      "candidates": [
+        {
+          "file": "File:Café de Los Angelitos, entrada.jpg",
+          "pageId": 126539246,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Caf%C3%A9_de_Los_Angelitos%2C_entrada.jpg/960px-Caf%C3%A9_de_Los_Angelitos%2C_entrada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Caf%C3%A9_de_Los_Angelitos%2C_entrada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_de_Los_Angelitos,_entrada.jpg",
+          "author": "Roberto Fiadone",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Roberto_Fiadone\" title=\"User:Roberto Fiadone\">Roberto Fiadone</a>",
+          "uploader": "Roberto Fiadone",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2022-10-01 22:34:23",
+          "description": "Café de Los Angelitos, Buenos Aires, Argentina.",
+          "categories": "Café de los Angelitos|Self-published work|Files with coordinates missing SDC location of creation",
+          "gps": {
+            "lat": -34.60952,
+            "lon": -58.396203
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 3600537
+        }
+      ]
+    },
+    "721c7020658f28a71ba06b20c72ccb354c0e53457e4cc8af41a7ae6baeb3a555": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22El+Bander%C3%ADn%22+%22Buenos+Aires%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Bar El banderín.jpg",
+      "checkedAt": "2026-11-16T11:23:28.645Z",
+      "candidates": [
+        {
+          "file": "File:Bar El banderín.jpg",
+          "pageId": 124644324,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Bar_El_bander%C3%ADn.jpg/960px-Bar_El_bander%C3%ADn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Bar_El_bander%C3%ADn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bar_El_bander%C3%ADn.jpg",
+          "author": "Unknown authorUnknown author",
+          "authorMetadata": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+          "uploader": "Madamebiblio",
+          "license": "CC BY-SA 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+          "restrictions": "",
+          "photoDate": "2020-01-02",
+          "description": "Bar El banderín, ubicado en el barrio de Almagro, en Buenos Aires",
+          "categories": "El Banderín|Template Unknown (author)",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 511791
+        }
+      ]
+    },
+    "a69697880ff4f3dfed54c5fa07c74c0125a8172484436b315c0c4b7b5d964c63": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Caf%C3%A9+Margot%22+%22Buenos+Aires%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Café Margot, el emblemático cafe de Boedo.jpg",
+      "checkedAt": "2026-11-16T11:23:34.610Z",
+      "candidates": [
+        {
+          "file": "File:Café Margot, el emblemático cafe de Boedo.jpg",
+          "pageId": 72431348,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Caf%C3%A9_Margot%2C_el_emblem%C3%A1tico_cafe_de_Boedo.jpg/960px-Caf%C3%A9_Margot%2C_el_emblem%C3%A1tico_cafe_de_Boedo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Caf%C3%A9_Margot%2C_el_emblem%C3%A1tico_cafe_de_Boedo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_Margot,_el_emblem%C3%A1tico_cafe_de_Boedo.jpg",
+          "author": "Lucia Pallero",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Lucia_Pallero&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Lucia Pallero (page does not exist)\">Lucia Pallero</a>",
+          "uploader": "Lucia Pallero",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2018-08-27 17:41:56",
+          "description": "Esta es la entrada del café Margot que se encuentra en Avenida Boedo al 857(y Pasaje San Ignacio). Es un lugar de encuentro imperdible que, además de café, ofrece exquisitas picadas para compartir con amigos en un agradable ambiente rodeado de una atmósfera cultural única.",
+          "categories": "Café Margot|Self-published work|Files with coordinates missing SDC location of creation|Bar signs in Buenos Aires",
+          "gps": {
+            "lat": -34.623325,
+            "lon": -58.416261
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 3998189
+        }
+      ]
+    },
+    "310f81d498cccf0e12f3603923984d838ba4d4428ee611d1578162e407b8564a": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22La+Poes%C3%ADa%22+%22Buenos+Aires%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Café La Poesía.jpg",
+      "checkedAt": "2026-11-16T11:23:40.692Z",
+      "candidates": [
+        {
+          "file": "File:Café La Poesía.jpg",
+          "pageId": 124690196,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Caf%C3%A9_La_Poes%C3%ADa.jpg/960px-Caf%C3%A9_La_Poes%C3%ADa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Caf%C3%A9_La_Poes%C3%ADa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_La_Poes%C3%ADa.jpg",
+          "author": "Unknown authorUnknown author",
+          "authorMetadata": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+          "uploader": "Madamebiblio",
+          "license": "CC BY-SA 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+          "restrictions": "",
+          "photoDate": "2022-10-01",
+          "description": "Café La Poesía, en el barrio de San Telmo, Buenos Aires.",
+          "categories": "Calle Chile, Buenos Aires|Café La Poesía|Template Unknown (author)|FoP-Argentina|October 2022 in Buenos Aires|Bar signs in Buenos Aires",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 165053
+        }
+      ]
+    },
+    "4be35d4e033801b5bbcf1000704356767e58643d29482ab02dab3a0cb961a2f4": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Caf%C3%A9+de+Garc%C3%ADa%22+%22Buenos+Aires%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Café de García 11.jpg",
+      "checkedAt": "2026-11-16T11:23:46.627Z",
+      "candidates": [
+        {
+          "file": "File:Café de García 11.jpg",
+          "pageId": 74955924,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Caf%C3%A9_de_Garc%C3%ADa_11.jpg/960px-Caf%C3%A9_de_Garc%C3%ADa_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/Caf%C3%A9_de_Garc%C3%ADa_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_de_Garc%C3%ADa_11.jpg",
+          "author": "Roberto Fiadone",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Roberto_Fiadone\" title=\"User:Roberto Fiadone\">Roberto Fiadone</a>",
+          "uploader": "Roberto Fiadone",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2018-12-08 19:44:40",
+          "description": "Salón principal, en el Café de García, Calle Sanabria 3302 (esquina con José P. Varela), Villa Devoto, Buenos Aires, Argentina.",
+          "categories": "Café de García|Self-published work",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 4405633
+        }
+      ]
+    },
+    "c2d1de8cb069de0a0dc81cc945914ca7385c3848dec99fc549ddc579be29ff92": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Usina del arte buenosaires.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Usina del arte buenosaires.jpg",
+          "pageId": 133211722,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Usina_del_arte_buenosaires.jpg/960px-Usina_del_arte_buenosaires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Usina_del_arte_buenosaires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Usina_del_arte_buenosaires.jpg",
+          "author": "Unknown authorUnknown author",
+          "authorMetadata": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+          "uploader": "Fma12",
+          "license": "CC BY 2.5 ar",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/deed.en",
+          "restrictions": "",
+          "photoDate": "7 April 2019 (according to EXIF data)",
+          "description": "the building",
+          "categories": "Usina del Arte|Template Unknown (author)|Images from the Government of Buenos Aires City|April 2019 in Buenos Aires",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 776378
+        }
+      ]
+    },
+    "13213c7c1a1834391e390ea191f38ab85aeb22f8c917eecb5e5156df63c5cc26": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Fachada del edificio de Fundación Proa, La Boca.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Fachada del edificio de Fundación Proa, La Boca.jpg",
+          "pageId": 12178999,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Fachada_del_edificio_de_Fundaci%C3%B3n_Proa%2C_La_Boca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Fachada_del_edificio_de_Fundaci%C3%B3n_Proa%2C_La_Boca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fachada_del_edificio_de_Fundaci%C3%B3n_Proa,_La_Boca.jpg",
+          "author": "Fundación PROA",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Fundaci%C3%B3n_PROA&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Fundación PROA (page does not exist)\">Fundación PROA</a>",
+          "uploader": "Fundación PROA",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "restrictions": "",
+          "photoDate": "2008-12-04",
+          "description": "Fachada del edificio de es:Fundación Proa, La Boca",
+          "categories": "Fundación Proa|Taken with Sony DSC-R1|Self-published work|PD-self|December 2008 in Buenos Aires|FoP-Venezuela|Photographs taken on 2008-12-04",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 61286
+        }
+      ]
+    },
+    "d04829aff472dade2167ea10c79454dfc680cc3ad59e445954d5f51ca7b5066e": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Museo Carlos Gardel, Buenos Aires.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Museo Carlos Gardel, Buenos Aires.jpg",
+          "pageId": 67200155,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Museo_Carlos_Gardel%2C_Buenos_Aires.jpg/960px-Museo_Carlos_Gardel%2C_Buenos_Aires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Museo_Carlos_Gardel%2C_Buenos_Aires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museo_Carlos_Gardel,_Buenos_Aires.jpg",
+          "author": "Roberto Fiadone",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Roberto_Fiadone\" title=\"User:Roberto Fiadone\">Roberto Fiadone</a>",
+          "uploader": "Roberto Fiadone",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2018-02-15 13:43:29",
+          "description": "Museo residencia de Carlos Gardel y de su madre, en el barrio de Balvanera, Buenos Aires, Argentina",
+          "categories": "Museo Carlos Gardel, Buenos Aires|Self-published work|Facades in Buenos Aires|On OSM|FoP-Argentina|Cultural heritage monuments in Argentina with known IDs|Museums photographed in 2018|Files with coordinates missing SDC location of creation|Photographs taken on 2018-02-15|February 2018 in Buenos Aires|Museum signs in Buenos Aires",
+          "gps": {
+            "lat": -34.601673,
+            "lon": -58.407812
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 2876655
+        }
+      ]
+    },
+    "822d2bc8435ee973a0c1ccc4a289e6ab1b49bbbc5fc362fd69484e0a2580719c": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Palacio Noel (fachada).JPG",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Palacio Noel (fachada).JPG",
+          "pageId": 11146273,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Palacio_Noel_%28fachada%29.JPG/960px-Palacio_Noel_%28fachada%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Palacio_Noel_%28fachada%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palacio_Noel_(fachada).JPG",
+          "author": "Elsapucai",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Elsapucai&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Elsapucai (page does not exist)\">Elsapucai</a>",
+          "uploader": "Elsapucai",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "restrictions": "",
+          "photoDate": "2010-08-10",
+          "description": "Fachada del Palacio Noel, sede del Museo Hispanoamericano “Isaac Fernández Blanco”. Suipacha 1422, Buenos Aires (Argentina).",
+          "categories": "Taken with Sony DSC-W220|PD-user|Museo Isaac Fernández Blanco|August 2010 in Buenos Aires|On OSM|FoP-Argentina|Files with coordinates missing SDC location of creation|Argentina photographs taken on 2010-08-10",
+          "gps": {
+            "lat": -34.590797,
+            "lon": -58.380116
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 477005
+        }
+      ]
+    },
+    "040c5185ed34cb50b18f237ea023f7c41e8a98e8f8f8150917bdffde94437301": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Museo+Quinquela+Mart%C3%ADn+Buenos+Aires+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:WLM2013 EscuelaPdeMendoza19 (1).JPG",
+      "checkedAt": "2026-11-16T11:22:09.656Z",
+      "candidates": [
+        {
+          "file": "File:WLM2013 EscuelaPdeMendoza19 (1).JPG",
+          "pageId": 28483685,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/WLM2013_EscuelaPdeMendoza19_%281%29.JPG/960px-WLM2013_EscuelaPdeMendoza19_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/WLM2013_EscuelaPdeMendoza19_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:WLM2013_EscuelaPdeMendoza19_(1).JPG",
+          "author": "Mauricio V. Genta",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Mauricio_V._Genta\" title=\"User:Mauricio V. Genta\">Mauricio V. Genta</a>",
+          "uploader": "Mauricio V. Genta",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "restrictions": "",
+          "photoDate": "2013-09-22 14:29:25",
+          "description": "This is a photo of an Argentine monument identified by the ID",
+          "categories": "Schools in Buenos Aires|Cultural heritage monuments in Buenos Aires|Taken with Sony DSC-HX9V|Rationalist architecture in Argentina|Self-published work|Images from Wiki Loves Monuments 2013|On OSM|Images from Wiki Loves Monuments 2013 in Argentina|Cultural heritage monuments in Argentina with known IDs|Uploaded via Campaign:wlm-ar|Files with coordinates missing SDC location of creation|Images from Wiki Loves Monuments missing SDC depicts|Images from Wiki Loves Monuments missing SDC location of creation|Buildings in La Boca, Buenos Aires",
+          "gps": {
+            "lat": -34.638983,
+            "lon": -58.361368
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 3110269
+        }
+      ]
+    },
+    "2c7db627635f1f628209c81e4c04aa6a1fee3438b0e9dbabc9a7abaf8e3a0b67": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:FACHADA SARMIENTO.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:FACHADA SARMIENTO.jpg",
+          "pageId": 79998200,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/FACHADA_SARMIENTO.jpg/960px-FACHADA_SARMIENTO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/FACHADA_SARMIENTO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:FACHADA_SARMIENTO.jpg",
+          "author": "Jmcfadu",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jmcfadu&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jmcfadu (page does not exist)\">Jmcfadu</a>",
+          "uploader": "Jmcfadu",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2019-06-27",
+          "description": "Fachada museo historico Sarmiento",
+          "categories": "Museo Histórico Sarmiento|Self-published work",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 703716
+        }
+      ]
+    },
+    "268263ad4e7402245c5af6aa5a6bae520d3f067dd8f24e08d8a46b7ca499983c": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Museo Malvinas e Islas del Atlántico Sur 2.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Museo Malvinas e Islas del Atlántico Sur 2.jpg",
+          "pageId": 33377804,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Museo_Malvinas_e_Islas_del_Atl%C3%A1ntico_Sur_2.jpg/960px-Museo_Malvinas_e_Islas_del_Atl%C3%A1ntico_Sur_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Museo_Malvinas_e_Islas_del_Atl%C3%A1ntico_Sur_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museo_Malvinas_e_Islas_del_Atl%C3%A1ntico_Sur_2.jpg",
+          "author": "Ministerio de Cultura de la Nación",
+          "authorMetadata": "<a href=\"//www.flickr.com/people/52498302@N08\" class=\"extiw\" title=\"flickruser:52498302@N08\">Ministerio de Cultura de la Nación</a>",
+          "uploader": "Flickr upload bot",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "restrictions": "",
+          "photoDate": "2014-06-09 14:55:47",
+          "description": "The Falklands and South Atlantic Islands Museum (Museo Malvinas e Islas del Atlántico Sur). Núñez, Buenos Aires.\n\nPhoto: Romina Santarelli / Ministerio de Cultura de la Nación.",
+          "categories": "Postmodern architecture in Argentina|Museo Malvinas e Islas del Atlántico Sur|Taken with Nikon D7000|Flickr images uploaded by Flickr upload bot|On OSM|June 2014 in Argentina|Files with coordinates missing SDC location of creation",
+          "gps": {
+            "lat": -34.536597,
+            "lon": -58.462316
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 7126041
+        }
+      ]
+    },
+    "dd892a7a43492526753e45524e3101d0fb1b4bc7d7aeab69baf749d39d4d609b": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Museo sivori gcba.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Museo sivori gcba.jpg",
+          "pageId": 136522482,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Museo_sivori_gcba.jpg/960px-Museo_sivori_gcba.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Museo_sivori_gcba.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museo_sivori_gcba.jpg",
+          "author": "Unknown authorUnknown author",
+          "authorMetadata": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+          "uploader": "Fma12",
+          "license": "CC BY 2.5 ar",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/deed.en",
+          "restrictions": "",
+          "photoDate": "2018-12-19 12:07:41",
+          "description": "Museo Sívori",
+          "categories": "Museo de Artes Plásticas Eduardo Sívori|Template Unknown (author)|Images from the Government of Buenos Aires City|FoP-Argentina|December 2018 in Buenos Aires|Museum signs in Buenos Aires",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 4313853
+        }
+      ]
+    },
+    "66198fe40f68ee29c0b6fc05a2a4a7f7738a6f6410231e95d3424c8adb1eb572": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Buenos Aires - Plaza Dorrego - 20061204b.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Buenos Aires - Plaza Dorrego - 20061204b.jpg",
+          "pageId": 1434589,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Buenos_Aires_-_Plaza_Dorrego_-_20061204b.jpg/960px-Buenos_Aires_-_Plaza_Dorrego_-_20061204b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Buenos_Aires_-_Plaza_Dorrego_-_20061204b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Plaza_Dorrego_-_20061204b.jpg",
+          "author": "Taken by the uploader, w:es:Usuario:Barcex",
+          "authorMetadata": "Taken by the uploader, <a href=\"https://en.wikipedia.org/wiki/es:Usuario:Barcex\" class=\"extiw\" title=\"w:es:Usuario:Barcex\">w:es:Usuario:Barcex</a>",
+          "uploader": "Barcex",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "restrictions": "",
+          "photoDate": "2006-12-04",
+          "description": "Plaza Dorrego, Buenos Aires, Argentina. Barrio de San Telmo.",
+          "categories": "Plaza Dorrego, Buenos Aires|GFDL|Taken with Canon EOS 300D|License migration redundant|Self-published work|December 2006 in Buenos Aires|FoP-Argentina|Cultural heritage monuments in Argentina with known IDs|Files with coordinates missing SDC location of creation|Argentina photographs taken on 2006-12-04|Photos of Argentina by User:Barcex",
+          "gps": {
+            "lat": -34.620444,
+            "lon": -58.371833
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 1589784
+        }
+      ]
+    },
+    "25fa30639bc3992526aded728be7b42a8457ce232f569089d7ae7d33161cf2ff": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:ParqueDeLosPatricios-1.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:ParqueDeLosPatricios-1.jpg",
+          "pageId": 38696907,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/ParqueDeLosPatricios-1.jpg/960px-ParqueDeLosPatricios-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/ParqueDeLosPatricios-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:ParqueDeLosPatricios-1.jpg",
+          "author": "Nicolasrnphoto",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Nicolasrnphoto\" title=\"User:Nicolasrnphoto\">Nicolasrnphoto</a>",
+          "uploader": "Nicolasrnphoto",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "restrictions": "",
+          "photoDate": "2015-03-02 11:19:01",
+          "description": "Parque de los Patricios - Buenos Aires, Argentina.",
+          "categories": "Parque de los Patricios|Self-published work|March 2015 in Buenos Aires",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 5275290
+        }
+      ]
+    },
+    "f68ede53786b012fc0a65f895484f76d0157c5bf6cefeb1b499d6319007118f7": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Vista aérea de Plaza de Mayo 06.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Vista aérea de Plaza de Mayo 06.jpg",
+          "pageId": 176273004,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Vista_a%C3%A9rea_de_Plaza_de_Mayo_06.jpg/960px-Vista_a%C3%A9rea_de_Plaza_de_Mayo_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/Vista_a%C3%A9rea_de_Plaza_de_Mayo_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_de_Plaza_de_Mayo_06.jpg",
+          "author": "ProtoplasmaKid",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:ProtoplasmaKid\" title=\"User:ProtoplasmaKid\">ProtoplasmaKid</a>",
+          "uploader": "ProtoplasmaKid",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2025-10-02 13:53:49",
+          "description": "Aerial view of Plaza de Mayo and its surroundings, Buenos Aires, Argentina.",
+          "categories": "Self-published work|Aerial photographs of Buenos Aires|Files with coordinates missing SDC location of creation|October 2025 in Buenos Aires|Photos taken with WMMX drone|Taken with DJI FC8482|Photos and videos from unmanned aerial vehicles of Argentina|Images of Argentina by User:ProtoplasmaKid|2025 photographs by User:ProtoplasmaKid|Photos taken with WMMX drone in Argentina|Buenos Aires photographs taken on 2025-10-02|Aerial views of Plaza de Mayo, Buenos Aires|Aerial drone photos by User:ProtoplasmaKid",
+          "gps": {
+            "lat": -34.609202,
+            "lon": -58.373696
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 30518294
+        }
+      ]
+    },
+    "1b2293c6d351537c70745e4b7ec55f5ff7399512c3f61cf1d2afc711d62106be": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:GaribaldiBuenosAires.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:GaribaldiBuenosAires.jpg",
+          "pageId": 2542699,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/GaribaldiBuenosAires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/GaribaldiBuenosAires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:GaribaldiBuenosAires.jpg",
+          "author": "Paranaense81",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Paranaense81&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Paranaense81 (page does not exist)\">Paranaense81</a>",
+          "uploader": "Paranaense81",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "restrictions": "",
+          "photoDate": "2006",
+          "description": "Monument to the Italian national hero Giuseppe Garibaldi, located in Plaza Italia, Buenos Aires.",
+          "categories": "Monument to Giuseppe Garibaldi (Buenos Aires)|Self-published work|PD-self|2006 in Buenos Aires|Files with coordinates missing SDC location of creation",
+          "gps": {
+            "lat": -34.581361,
+            "lon": -58.420833
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 32639
+        }
+      ]
+    },
+    "245b66fe805cb55d15dc0923f90d927bd6426398014f0f4bf2999e0fa304b021": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Plaza Francia, Recoleta.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Plaza Francia, Recoleta.jpg",
+          "pageId": 64427424,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Plaza_Francia%2C_Recoleta.jpg/960px-Plaza_Francia%2C_Recoleta.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/Plaza_Francia%2C_Recoleta.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plaza_Francia,_Recoleta.jpg",
+          "author": "Gobierno de la Ciudad de Buenos Aires",
+          "authorMetadata": "Gobierno de la Ciudad de Buenos Aires",
+          "uploader": "Bleff",
+          "license": "CC BY 2.5 ar",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/deed.en",
+          "restrictions": "",
+          "photoDate": "2013-10-22",
+          "description": "Plaza Francia, Ciudad Autónoma de Buenos Aires.",
+          "categories": "Plaza Francia, Buenos Aires|Images from the Government of Buenos Aires City",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 11097437
+        }
+      ]
+    },
+    "97198c20bd3c1bb37998a08f636970145cb6c49b223e292bdbda7cbe125baf9c": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Mauricio Macri presentó los nuevos juegos de agua en el Parque Indoamericano (8471735638).jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Mauricio Macri presentó los nuevos juegos de agua en el Parque Indoamericano (8471735638).jpg",
+          "pageId": 29374643,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Mauricio_Macri_present%C3%B3_los_nuevos_juegos_de_agua_en_el_Parque_Indoamericano_%288471735638%29.jpg/960px-Mauricio_Macri_present%C3%B3_los_nuevos_juegos_de_agua_en_el_Parque_Indoamericano_%288471735638%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Mauricio_Macri_present%C3%B3_los_nuevos_juegos_de_agua_en_el_Parque_Indoamericano_%288471735638%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mauricio_Macri_present%C3%B3_los_nuevos_juegos_de_agua_en_el_Parque_Indoamericano_(8471735638).jpg",
+          "author": "Gobierno de la Ciudad de Buenos Aires from Ciudad Autónoma de Buenos Aires, Argentina",
+          "authorMetadata": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/45122874@N02\">Gobierno de la Ciudad de Buenos Aires</a> from Ciudad Autónoma de Buenos Aires, Argentina",
+          "uploader": "File Upload Bot (Magnus Manske)",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "restrictions": "",
+          "photoDate": "2013-02-13 10:57",
+          "description": "Buenos Aires, 13 de Febrero de 2013. El jefe de Gobierno de la Ciudad de Buenos Aires, Mauricio Macri, presentó hoy  los nuevos juegos de agua del Parque Indoamericano, en un acto que compartió con la dirigente social Margarita Barrientos.\n\nFotos: Sandra Hernandez/GCBA",
+          "categories": "Taken with Canon EOS 7D|Parque Indoamericano|Flickr images reviewed by File Upload Bot (Magnus Manske)|Carousels in Argentina|February 2013 in Buenos Aires|Mauricio Macri in 2013|Photographs by the Government of the City of Buenos Aires",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 659055
+        }
+      ]
+    },
+    "9d49237fc97d9f0341d3aee8b6c5a42edb7ddfe18da6a2cad1552670a355d891": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Parque Thays.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Parque Thays.jpg",
+          "pageId": 117057,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Parque_Thays.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Parque_Thays.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_Thays.jpg",
+          "author": "Schummy",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Schummy~commonswiki&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Schummy~commonswiki (page does not exist)\">Schummy</a>",
+          "uploader": "Schummy~commonswiki",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "restrictions": "",
+          "photoDate": "2005-04-16",
+          "description": "Parque Thays, Buenos Aires.",
+          "categories": "Parque Thays|Self-published work|PD-self|Photographs taken on 2005-04-16|April 2005 in Buenos Aires|Files with coordinates missing SDC location of creation|Lamp posts in Buenos Aires",
+          "gps": {
+            "lat": -34.584944,
+            "lon": -58.38825
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 49478
+        }
+      ]
+    },
+    "20683d57e1195e3860c06b08f1eccf6f04ac2fbb07d69a5424a88ed3e329a978": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Reserva ecológica de Buenos Aires.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Reserva ecológica de Buenos Aires.jpg",
+          "pageId": 4937308,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Reserva_ecol%C3%B3gica_de_Buenos_Aires.jpg/960px-Reserva_ecol%C3%B3gica_de_Buenos_Aires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Reserva_ecol%C3%B3gica_de_Buenos_Aires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Reserva_ecol%C3%B3gica_de_Buenos_Aires.jpg",
+          "author": "Rcidte",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Rcidte&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Rcidte (page does not exist)\">Rcidte</a>",
+          "uploader": "Rcidte",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "restrictions": "",
+          "photoDate": "2008-08-04",
+          "description": "Reserva ecológica Buenos Aires - Argentina",
+          "categories": "Costanera Sur Ecological Reserve|Taken with Canon Digital IXUS 40|Self-published work|PD-self|August 2008 in Buenos Aires|FoP-Argentina|Argentina photographs taken on 2008-08-04",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 247597
+        }
+      ]
+    },
+    "172e5981b041e4ad015c6652f3b7d4924b7988238f9608beb0292c836d94d390": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Parque+de+la+Memoria+Buenos+Aires+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Parque de la Memoria, Buenos Aires - 3.JPG",
+      "checkedAt": "2026-11-16T11:22:15.463Z",
+      "candidates": [
+        {
+          "file": "File:Parque de la Memoria, Buenos Aires - 3.JPG",
+          "pageId": 46963258,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Parque_de_la_Memoria%2C_Buenos_Aires_-_3.JPG/960px-Parque_de_la_Memoria%2C_Buenos_Aires_-_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Parque_de_la_Memoria%2C_Buenos_Aires_-_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_de_la_Memoria,_Buenos_Aires_-_3.JPG",
+          "author": "ProtoplasmaKid",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:ProtoplasmaKid\" title=\"User:ProtoplasmaKid\">ProtoplasmaKid</a>",
+          "uploader": "ProtoplasmaKid",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2016-01-22 16:52:33",
+          "description": "The Remembrance park (Spanish: Parque de la memoria) is a public space situated in front of the Río de la Plata estuary in the northern end of the Belgrano section of Buenos Aires.",
+          "categories": "Parque de la Memoria, Buenos Aires|Taken with Nikon D5200|Self-published work|Photos taken with WMMX camera|January 2016 Argentina photographs|January 2016 in Buenos Aires|Files with coordinates missing SDC location of creation|Images of Argentina by User:ProtoplasmaKid",
+          "gps": {
+            "lat": -34.541453,
+            "lon": -58.436923
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 6338059
+        }
+      ]
+    },
+    "23559847bd949bace043edc1a04a15745e53b9dbeec95e760f5384714aadb56e": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Manzana de las luces fachada.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:Manzana de las luces fachada.jpg",
+          "pageId": 170803512,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Manzana_de_las_luces_fachada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Manzana_de_las_luces_fachada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manzana_de_las_luces_fachada.jpg",
+          "author": "Unknown authorUnknown author",
+          "authorMetadata": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+          "uploader": "Fma12",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "restrictions": "",
+          "photoDate": "2025",
+          "description": "facade of the building",
+          "categories": "Manzana de las Luces|Template Unknown (author)|Traffic signals in Buenos Aires",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 65158
+        }
+      ]
+    },
+    "3276d923b4cffbffcd30c4f4c0cd9527eea0c936a2438ad33c6a0a58677b0141": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:ChurchRetiro-BuenosAires1.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:ChurchRetiro-BuenosAires1.jpg",
+          "pageId": 108087371,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/ChurchRetiro-BuenosAires1.jpg/960px-ChurchRetiro-BuenosAires1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/ChurchRetiro-BuenosAires1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:ChurchRetiro-BuenosAires1.jpg",
+          "author": "Fulviusbsas",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Fulviusbsas\" title=\"User:Fulviusbsas\">Fulviusbsas</a>",
+          "uploader": "Fulviusbsas",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2021-06-18 14:22:29",
+          "description": "Basílica del Santísimo Sacramento, Buenos Aires",
+          "categories": "Exterior of the Basílica del Santísimo Sacramento, Buenos Aires|Self-published work",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 446600
+        }
+      ]
+    },
+    "42c3112865444373902bc6975eb816d9496e2a12b267af88bb6b71edc8e231ae": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3AVista+a%C3%A9rea+de+Plaza+de+Mayo+06.jpg%7CFile%3AManzana+de+las+luces+fachada.jpg%7CFile%3AParque+Thays.jpg%7CFile%3AReserva+ecol%C3%B3gica+de+Buenos+Aires.jpg%7CFile%3ABust+of+an+Immortal+royal+guard+%28Achaemenid+soldiers%29+from+the+palace+of+Susa%2C+Iran.-+SB+33177+-+%28Fragment%29+Louvre+-Lens.jpg%7CFile%3ABuenos+Aires+-+Plaza+Dorrego+-+20061204b.jpg%7CFile%3AFACHADA+SARMIENTO.jpg%7CFile%3AMuseo+sivori+gcba.jpg%7CFile%3APalacio+Noel+%28fachada%29.JPG%7CFile%3APlaza+Francia%2C+Recoleta.jpg%7CFile%3AJ31+597+Bf+Retiro+Mitre.jpg%7CFile%3AGaribaldiBuenosAires.jpg%7CFile%3AChurchRetiro-BuenosAires1.jpg%7CFile%3AMauricio+Macri+present%C3%B3+los+nuevos+juegos+de+agua+en+el+Parque+Indoamericano+%288471735638%29.jpg%7CFile%3AParqueDeLosPatricios-1.jpg%7CFile%3AUsina+del+arte+buenosaires.jpg%7CFile%3AFachada+del+edificio+de+Fundaci%C3%B3n+Proa%2C+La+Boca.jpg%7CFile%3AMuseo+Malvinas+e+Islas+del+Atl%C3%A1ntico+Sur+2.jpg%7CFile%3AMuseo+Carlos+Gardel%2C+Buenos+Aires.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:J31 597 Bf Retiro Mitre.jpg",
+      "checkedAt": "2026-11-16T11:20:05.903Z",
+      "candidates": [
+        {
+          "file": "File:J31 597 Bf Retiro Mitre.jpg",
+          "pageId": 68370740,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/J31_597_Bf_Retiro_Mitre.jpg/960px-J31_597_Bf_Retiro_Mitre.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/J31_597_Bf_Retiro_Mitre.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:J31_597_Bf_Retiro_Mitre.jpg",
+          "author": "Falk2",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Falk2\" title=\"User:Falk2\">Falk2</a>",
+          "uploader": "Falk2",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2018-03-03 17:16",
+          "description": "Mittelbau des Empfangsgebäudes, am Nachmittag leider im Schatten. Ein Bild der Gesamtfassade ist schon wegen des starken Kraftverkehrs kaum erzielbar.",
+          "categories": "Exterior of Retiro train station (Mitre)|Taken with Canon EOS 5D Mark III and Canon EF 24-105mm F4L IS USM|Línea 91, Buenos Aires|Self-published work|Falk2/2018 Argentinien|Railway photographs taken on 2018-03-02|Buenos Aires photographs taken on 2018-03-02|Línea 56, Buenos Aires|Falk2/Ferrocarriles Argentinos|2018 in rail transport in Retiro, Buenos Aires",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 4939426
+        }
+      ]
+    },
+    "26c5de7431f10e590c040371b5f32bcd7f389ea7213332be2334da01da5ba337": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Parque+Indoamericano%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:ParqueIndoamericanoPlayaSur.jpg",
+      "checkedAt": "2026-11-16T11:28:08.506Z",
+      "candidates": [
+        {
+          "file": "File:ParqueIndoamericanoPlayaSur.jpg",
+          "pageId": 44906626,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/ParqueIndoamericanoPlayaSur.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/ParqueIndoamericanoPlayaSur.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:ParqueIndoamericanoPlayaSur.jpg",
+          "author": "Estrella Herrera/GCBA.",
+          "authorMetadata": "Estrella Herrera/GCBA.",
+          "uploader": "BugWarp",
+          "license": "CC BY 2.5 ar",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/deed.en",
+          "restrictions": "",
+          "photoDate": "2014-01-17 11:18:10",
+          "description": "La Playa del Sur de la Ciudad, ubicada en el Parque Indoamericano. Detrás se vé el Complejo Habitacional Barrio Parque Avellaneda, terminado en 2009.",
+          "categories": "Parque Indoamericano|Public housing in Argentina|Images from the Government of Buenos Aires City|Built in Argentina in 2009|January 2014 in Buenos Aires|Files with coordinates missing SDC location of creation",
+          "gps": {
+            "lat": -34.663,
+            "lon": -58.4658
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 171993
+        }
+      ]
+    },
+    "92e42426381b03f0cfaff9da4468eb3a297b9969149d124611df395ec7216187": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Manzana+de+las+Luces%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "exact-file:File:Frente recuperado de Complejo Histórico Cultural Manzana de las Luces.jpg",
+      "checkedAt": "2026-11-16T11:28:14.286Z",
+      "candidates": [
+        {
+          "file": "File:Frente recuperado de Complejo Histórico Cultural Manzana de las Luces.jpg",
+          "pageId": 134191543,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Frente_recuperado_de_Complejo_Hist%C3%B3rico_Cultural_Manzana_de_las_Luces.jpg/960px-Frente_recuperado_de_Complejo_Hist%C3%B3rico_Cultural_Manzana_de_las_Luces.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/Frente_recuperado_de_Complejo_Hist%C3%B3rico_Cultural_Manzana_de_las_Luces.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frente_recuperado_de_Complejo_Hist%C3%B3rico_Cultural_Manzana_de_las_Luces.jpg",
+          "author": "Ministerio de Cultura de la Nación",
+          "authorMetadata": "Ministerio de Cultura de la Nación",
+          "uploader": "Madamebiblio",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "restrictions": "",
+          "photoDate": "2023-06-29 13:49:22",
+          "description": "Fachada del Complejo Histórico Cultural Manzana de las Luces una vez finalizadas las obras de refacción en 2023.\nFotos: Silvina Frydlewsky - Ministerio de Cultura de la Nación",
+          "categories": "Manzana de las Luces|Flickr images reviewed by FlickreviewR 2|Files from Ministerio de Cultura de la Nación Argentina Flickr stream",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 2723369
         }
       ]
     }

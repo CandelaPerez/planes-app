@@ -5,32 +5,49 @@ import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
 import { createServer } from 'vite';
 import { toPlanCards } from '../src/services/baData.js';
-import { discoveryOptions, neighborhoodFor, placeTypeFor, filterKey } from '../src/utils/discoveryFilters.js';
+import { discoveryOptions, neighborhoodFor, placeTypeFor, regionFor, filterKey } from '../src/utils/discoveryFilters.js';
 
 const plans = toPlanCards(JSON.parse(await readFile('public/data/ba-data.json', 'utf8')));
 
-test('neighborhood options use published barrios, normalize spelling/case and exclude missing locations', () => {
-  const { zones } = discoveryOptions(plans);
-  assert.equal(zones.length, 14);
-  assert.equal(zones.reduce((sum, option) => sum + option.count, 0), 39);
-  assert.equal(new Set(zones.map(option => filterKey(option.name))).size, zones.length);
-  assert.deepEqual(zones.find(option => option.name === 'San Nicolás'), { name: 'San Nicolás', count: 4 });
-  assert.equal(neighborhoodFor({ barrio: '  SAN   NICOLAS ' }), 'San Nicolás');
-  assert.equal(neighborhoodFor({ barrio: 'san nicolás' }), 'San Nicolás');
-  assert.equal(neighborhoodFor({ location: 'CABA', address: 'Junín 1930', lat: -34.58, lon: -58.39 }), '');
-  for (const option of zones) assert.ok(option.count > 0 && option.name !== 'CABA');
+test('three coherent CABA zones cover every visible place, with verified neighborhood provenance', () => {
+ const {zones}=discoveryOptions(plans);
+ assert.deepEqual(zones.map(z=>z.name),['Zona Norte','Zona Sur','Zona Centro']);
+ assert.ok(zones.every(z=>z.count>=5));
+ assert.equal(zones.reduce((n,z)=>n+z.count,0),plans.length);
+ assert.equal(new Set(zones.map(z=>filterKey(z.name))).size,3);
+ assert.equal(neighborhoodFor({barrio:' SAN   NICOLAS '}),'San Nicolás');
+ assert.equal(neighborhoodFor({location:'CABA',lat:-34.58,lon:-58.39}),'');
+ assert.equal(regionFor({barrio:'Palermo'}),'Zona Norte');
+ assert.equal(regionFor({barrio:'La Boca'}),'Zona Sur');
+ assert.equal(regionFor({barrio:'San Telmo'}),'Zona Centro');
+ assert.equal(regionFor(plans.find(p=>p.wikidataId==='Q2336867')),'Zona Centro');
+ assert.equal(regionFor(plans.find(p=>p.wikidataId==='Q1138028')),'Zona Sur');
 });
 
-test('place types come from published subtype fields; no price options or guessed classifications', () => {
-  const { placeTypes } = discoveryOptions(plans);
-  assert.equal(placeTypes.find(option => option.name === 'Museos').count, 9);
-  assert.equal(placeTypes.find(option => option.name === 'Parques y plazas').count, 12);
-  assert.equal(placeTypes.find(option => option.name === 'Restaurantes').count, 8);
-  assert.ok(placeTypes.every(option => option.count > 0));
-  assert.equal(placeTypeFor({ title: 'Café inventado', subtype: '' }), '');
-  assert.equal(placeTypeFor(plans.find(plan => plan.id === 'badata-food-1362')), 'Restaurantes', 'Keep the published RESTAURANTE classification even when the name contains Café');
-  assert.equal(placeTypeFor(plans.find(plan => plan.wikidataId === 'Q2336867')), 'Puentes');
-  assert.equal(placeTypeFor(plans.find(plan => plan.id === 'badata-food-947')), '');
+test('four broad place groups cover all records without tiny or empty options', () => {
+ const {placeTypes}=discoveryOptions(plans);
+ assert.deepEqual(placeTypes.map(t=>t.name),['Museos','Gastronomía','Espacios verdes','Sitios turísticos']);
+ assert.ok(placeTypes.every(t=>t.count>=5));
+ assert.equal(placeTypes.reduce((n,t)=>n+t.count,0),plans.length);
+ assert.equal(placeTypeFor({title:'Café inventado',subtype:''}),'');
+ assert.equal(placeTypeFor(plans.find(p=>p.id==='badata-food-1362')),'Gastronomía');
+ assert.equal(placeTypeFor(plans.find(p=>p.wikidataId==='Q2336867')),'Sitios turísticos');
+ assert.equal(placeTypeFor(plans.find(p=>p.id==='badata-green-1330')),'Espacios verdes');
+ assert.equal(placeTypeFor(plans.find(p=>p.id==='badata-culture-2694')),'Museos');
+});
+
+test('all 53 previous plans and their full photograph metadata are preserved', async () => {
+ const before=JSON.parse(await readFile('data/photo-batches/preserved-53.json','utf8'));
+ assert.equal(before.entries.length,53);
+ assert.ok(plans.length>=80 && plans.length<=100);
+ for(const entry of before.entries){
+  const plan=plans.find(p=>p.id===entry.id);
+  assert.ok(plan,entry.id);
+  assert.equal(plan.originalName,entry.originalName);
+  assert.equal(plan.address,entry.address);
+  assert.equal(plan.category,entry.category);
+  assert.deepEqual(plan.photograph,entry.photo);
+ }
 });
 
 test('filters combine with categories/search; both sorts cover full results and recommended order is preserved', async () => {
@@ -48,16 +65,16 @@ test('filters combine with categories/search; both sorts cover full results and 
       return result;
     };
     const ids = props => results(props).visibleIdeas.map(plan => plan.id);
-    assert.equal(ids({}).length, 53);
-    assert.deepEqual(ids({ zone: 'Recoleta', category: 'Cultura', placeType: 'Museos' }), ['badata-culture-2694']);
-    assert.deepEqual(ids({ zone: 'san telmo', category: 'Cultura', placeType: 'Museos', search: 'historico' }), ['badata-culture-2674']);
-    assert.deepEqual(ids({ zone: 'Palermo', placeType: 'Parques y plazas', search: 'japones', sortBy: 'alpha-desc' }), ['badata-green-1444']);
-    assert.deepEqual(ids({ zone: 'Palermo', placeType: 'Cementerios' }), []);
-    assert.equal(ids({ category: 'Viajes', search: 'iconos' }).length, 14);
-    assert.deepEqual(ids({ category: 'Viajes', placeType: 'Puentes' }).sort(), ['tourism-wikidata-q1138028', 'tourism-wikidata-q2336867']);
-    assert.equal(ids({ zone: 'Recoleta' }).length, 4);
-    assert.equal(ids({ placeType: 'Museos' }).length, 9);
-    for (const filters of [{}, { placeType: 'Museos' }, { zone: 'San Telmo' }]) {
+    assert.equal(ids({}).length, plans.length);
+    assert.ok(ids({ zone: 'Zona Norte', category: 'Cultura', placeType: 'Museos' }).includes('badata-culture-2694'));
+    assert.deepEqual(ids({ zone: 'Zona Centro', category: 'Cultura', placeType: 'Museos', search: 'historico' }), ['badata-culture-2674', 'badata-culture-2675']);
+    assert.deepEqual(ids({ zone: 'Zona Norte', placeType: 'Espacios verdes', search: 'japones', sortBy: 'alpha-desc' }), ['badata-green-1444']);
+    assert.deepEqual(ids({ zone: 'Zona Norte', category: 'Cultura', placeType: 'Gastronomía' }), []);
+    assert.equal(ids({ category: 'Viajes', search: 'iconos' }).length, plans.filter(p=>p.category==='Viajes').length);
+    assert.equal(ids({ category: 'Viajes', placeType: 'Sitios turísticos' }).length, plans.filter(p=>p.category==='Viajes').length);
+    assert.equal(ids({ zone: 'Zona Sur' }).length,9);
+    assert.equal(ids({ placeType: 'Museos' }).length,15);
+    for (const filters of [{}, { placeType: 'Museos' }, { zone: 'Zona Centro' }]) {
       const expected = results(filters).visibleIdeas.sort((a, b) => a.title.localeCompare(b.title, 'es')).map(plan => plan.id);
       assert.deepEqual(ids({ ...filters, sortBy: 'alpha' }), expected);
       assert.deepEqual(ids({ ...filters, sortBy: 'alpha-desc' }), expected.toReversed());

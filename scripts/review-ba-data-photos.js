@@ -20,6 +20,8 @@ try {
     const place = catalog.places.find((item) => item.id === record.id);
     const fingerprint = place && createHash('sha256').update(JSON.stringify([place.id, place.title, place.address, place.lat, place.lon])).digest('hex');
     if (fingerprint !== record.fingerprint || place.category !== record.category) throw new Error(`${review.id}: BA Data changed; review again`);
+    const published = manifest.entries.find((entry) => entry.id === review.id);
+    if (published && published.photo.sha256 === review.approvedSha256 && published.fingerprint === record.fingerprint && published.photo.commonsTitle === review.file && published.displayCategory === review.displayCategory) continue;
     const candidate = state.searches[record.searchKey].candidates.find((candidate) => candidate.file === review.file);
     if (!candidate || !licenseAllowed(candidate)) throw new Error(`Candidate or reusable JPEG license not approved: ${review.id}`);
     const url = new URL(candidate.url); url.search = '';
@@ -44,8 +46,9 @@ try {
       const localPath = `/images/ba-data-batches/${review.id}.jpg`;
       await mkdir(new URL('public/images/ba-data-batches/',root),{recursive:true});
       await writeFile(new URL(`public${localPath}`,root),bytes);
-      const photo = {localPath,url:url.href,originalUrl:candidate.originalUrl,sourceUrl:candidate.sourceUrl,commonsTitle:candidate.file,author:candidate.author,authorMetadata:candidate.authorMetadata,uploader:candidate.uploader,license:candidate.license,licenseUrl,photoDate:candidate.photoDate,description:candidate.description,verifiedAt:new Date().toISOString(),evidence:review.evidence,sha256,bytes:bytes.length,presentation:'Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.',gps:candidate.gps};
-      const entry = {id:record.id,originalName:record.originalName,address:record.address,category:record.category,lat:record.lat,lon:record.lon,fingerprint:record.fingerprint,photo};
+      const photo = {localPath,url:url.href,originalUrl:candidate.originalUrl,sourceUrl:candidate.sourceUrl,commonsTitle:candidate.file,author:candidate.author,authorMetadata:candidate.authorMetadata,uploader:candidate.uploader,license:candidate.license,licenseUrl,photoDate:candidate.photoDate,description:candidate.description,verifiedAt:new Date().toISOString(),evidence:review.evidence,identitySources:review.identitySources||[],sha256,bytes:bytes.length,presentation:'Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.',gps:candidate.gps};
+      if (review.displayCategory && (!['Gastronomía', 'Cultura', 'Aire Libre', 'Viajes'].includes(review.displayCategory) || !review.classificationEvidence)) throw new Error(`${review.id}: category review requires evidence`);
+      const entry = {id:record.id,originalName:record.originalName,address:record.address,category:record.category,lat:record.lat,lon:record.lon,fingerprint:record.fingerprint,photo,...(review.displayCategory ? {displayCategory:review.displayCategory,classificationEvidence:review.classificationEvidence} : {})};
       manifest.entries = manifest.entries.filter((item) => item.id !== record.id).concat(entry);
     }
     if (publishing || !review.approvedSha256) console.log(JSON.stringify({id:review.id,mode:publishing?'published':'prepared-for-visual-review',file:review.file,bytes:bytes.length,sha256}));

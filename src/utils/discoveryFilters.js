@@ -1,37 +1,34 @@
+import geography from '../data/discoveryGeography.json' with { type: 'json' };
+
 // Filter metadata is derived from published fields; it never changes the plans.
 export const filterKey = (value = '') => String(value).normalize('NFD')
   .replace(/\p{Diacritic}/gu, '').toLocaleLowerCase('es').trim().replace(/\s+/g, ' ');
 
 export function neighborhoodFor(plan) {
-  const raw = typeof plan.barrio === 'string' ? plan.barrio.trim().replace(/\s+/g, ' ') : '';
+  const mapped = geography.entries[plan.id];
+  const matches = mapped && mapped.lat === plan.lat && mapped.lon === plan.lon && mapped.originalName === (plan.originalName || plan.title);
+  const barrio = plan.barrio || (matches ? mapped.barrio : '');
+  const raw = typeof barrio === 'string' ? barrio.trim().replace(/\s+/g, ' ') : '';
+  if (filterKey(raw) === 'boca') return 'La Boca';
   if (!raw) return '';
   if (filterKey(raw) === 'san nicolas') return 'San Nicolás';
   return raw.toLocaleLowerCase('es').replace(/(^|\s)\p{L}/gu, (letter) => letter.toLocaleUpperCase('es'));
 }
 
-const publishedTypes = new Map([
-  ['museo', 'Museos'], ['cafe', 'Cafeterías'], ['cafeteria', 'Cafeterías'],
-  ['restaurante', 'Restaurantes'], ['bar', 'Bares'],
-  ['parque', 'Parques y plazas'], ['plaza', 'Parques y plazas'],
-  ['jardin botanico', 'Jardines botánicos'], ['patio recreativo', 'Patios recreativos'],
-  ['centro cultural', 'Centros culturales'], ['libreria', 'Librerías'],
-  ['sala de teatro', 'Teatros'], ['monumentos y lugares historicos', 'Monumentos y lugares históricos'],
-]);
-
+// Navigation groups are based on explicit source types and the reviewed catalog category.
 export function placeTypeFor(plan) {
   const subtype = filterKey(plan.subtype);
-  if (publishedTypes.has(subtype)) return publishedTypes.get(subtype);
-  // Supplemental records publish a short description rather than a type code.
-  // Only explicit type words are used; names and photographs are not guesses.
-  if (!plan.wikidataId) return '';
-  const explicitTypes = [
-    [/^monumento historico\b/, 'Monumentos y lugares históricos'],
-    [/^palacio\b/, 'Palacios'], [/^puente\b/, 'Puentes'],
-    [/^estadio\b/, 'Estadios'], [/^edificio legislativo\b/, 'Edificios legislativos'],
-    [/^(templo|basilica|iglesia)\b/, 'Templos'], [/^torre\b/, 'Torres'],
-    [/^calle\b/, 'Calles'], [/^cementerio\b/, 'Cementerios'], [/^edificio\b/, 'Edificios'],
-  ];
-  return explicitTypes.find(([pattern]) => pattern.test(subtype))?.[1] || '';
+  if (plan.category === 'Gastronomía' || ['bar', 'cafe', 'cafeteria', 'restaurante'].includes(subtype)) return 'Gastronomía';
+  if (plan.category === 'Aire Libre') return 'Espacios verdes';
+  if (subtype === 'museo') return 'Museos';
+  if (plan.category === 'Viajes' || plan.category === 'Cultura') return 'Sitios turísticos';
+  return '';
+}
+
+export function regionFor(plan) {
+  const barrio = filterKey(neighborhoodFor(plan));
+  const key = { 'la boca': 'boca', montserrat: 'monserrat' }[barrio] || barrio;
+  return geography.neighborhoods[key]?.zone || '';
 }
 
 function optionsFor(catalog, getValue) {
@@ -48,17 +45,19 @@ function optionsFor(catalog, getValue) {
 }
 
 export function discoveryOptions(catalog) {
-  return { zones: optionsFor(catalog, neighborhoodFor), placeTypes: optionsFor(catalog, placeTypeFor) };
+  const zoneOrder = ['Zona Norte', 'Zona Sur', 'Zona Centro'];
+  const typeOrder = ['Museos', 'Gastronomía', 'Espacios verdes', 'Sitios turísticos'];
+  return { zones: optionsFor(catalog, regionFor).sort((a, b) => zoneOrder.indexOf(a.name) - zoneOrder.indexOf(b.name)), placeTypes: optionsFor(catalog, placeTypeFor).sort((a, b) => typeOrder.indexOf(a.name) - typeOrder.indexOf(b.name)) };
 }
 
 export function matchesDiscoveryFilters(plan, { category = 'Todas', zone = 'Todas', placeType = 'Todos', search = '' }) {
   const text = filterKey([
     plan.title, plan.originalName, plan.location, plan.address, plan.category,
     plan.category === 'Viajes' ? 'Íconos de BA' : '', plan.subtype,
-    neighborhoodFor(plan), placeTypeFor(plan),
+    neighborhoodFor(plan), regionFor(plan), placeTypeFor(plan),
   ].filter(Boolean).join(' '));
   return (category === 'Todas' || filterKey(plan.category) === filterKey(category))
-    && (zone === 'Todas' || filterKey(neighborhoodFor(plan)) === filterKey(zone))
+    && (zone === 'Todas' || filterKey(regionFor(plan)) === filterKey(zone))
     && (placeType === 'Todos' || filterKey(placeTypeFor(plan)) === filterKey(placeType))
     && (!filterKey(search) || text.includes(filterKey(search)));
 }

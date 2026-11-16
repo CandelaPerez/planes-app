@@ -1,0 +1,1046 @@
+{
+  "version": 1,
+  "source": {
+    "datasetUrl": "https://data.buenosaires.gob.ar/dataset/barrios",
+    "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/innovacion-transformacion-digital/barrios/barrios.geojson",
+    "license": "CC-BY-2.5-AR",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/",
+    "downloadedAt": "2026-11-16T11:21:32.929Z",
+    "resourceLastModified": "2019-07-25T13:00:13.860746",
+    "sha256": "2875c918602c852e6050470f1203530fea61951a96fc169e1c8d9d7297a8b424"
+  },
+  "neighborhoods": {
+    "agronomia": {
+      "comuna": 15,
+      "zone": "Zona Centro"
+    },
+    "almagro": {
+      "comuna": 5,
+      "zone": "Zona Centro"
+    },
+    "balvanera": {
+      "comuna": 3,
+      "zone": "Zona Centro"
+    },
+    "barracas": {
+      "comuna": 4,
+      "zone": "Zona Sur"
+    },
+    "belgrano": {
+      "comuna": 13,
+      "zone": "Zona Norte"
+    },
+    "boca": {
+      "comuna": 4,
+      "zone": "Zona Sur"
+    },
+    "boedo": {
+      "comuna": 5,
+      "zone": "Zona Centro"
+    },
+    "caballito": {
+      "comuna": 6,
+      "zone": "Zona Centro"
+    },
+    "chacarita": {
+      "comuna": 15,
+      "zone": "Zona Centro"
+    },
+    "coghlan": {
+      "comuna": 12,
+      "zone": "Zona Norte"
+    },
+    "colegiales": {
+      "comuna": 13,
+      "zone": "Zona Norte"
+    },
+    "constitucion": {
+      "comuna": 1,
+      "zone": "Zona Centro"
+    },
+    "flores": {
+      "comuna": 7,
+      "zone": "Zona Centro"
+    },
+    "floresta": {
+      "comuna": 10,
+      "zone": "Zona Centro"
+    },
+    "liniers": {
+      "comuna": 9,
+      "zone": "Zona Sur"
+    },
+    "mataderos": {
+      "comuna": 9,
+      "zone": "Zona Sur"
+    },
+    "monserrat": {
+      "comuna": 1,
+      "zone": "Zona Centro"
+    },
+    "monte castro": {
+      "comuna": 10,
+      "zone": "Zona Centro"
+    },
+    "nueva pompeya": {
+      "comuna": 4,
+      "zone": "Zona Sur"
+    },
+    "nunez": {
+      "comuna": 13,
+      "zone": "Zona Norte"
+    },
+    "palermo": {
+      "comuna": 14,
+      "zone": "Zona Norte"
+    },
+    "parque avellaneda": {
+      "comuna": 9,
+      "zone": "Zona Sur"
+    },
+    "parque chacabuco": {
+      "comuna": 7,
+      "zone": "Zona Centro"
+    },
+    "parque chas": {
+      "comuna": 15,
+      "zone": "Zona Centro"
+    },
+    "parque patricios": {
+      "comuna": 4,
+      "zone": "Zona Sur"
+    },
+    "paternal": {
+      "comuna": 15,
+      "zone": "Zona Centro"
+    },
+    "puerto madero": {
+      "comuna": 1,
+      "zone": "Zona Centro"
+    },
+    "recoleta": {
+      "comuna": 2,
+      "zone": "Zona Norte"
+    },
+    "retiro": {
+      "comuna": 1,
+      "zone": "Zona Centro"
+    },
+    "saavedra": {
+      "comuna": 12,
+      "zone": "Zona Norte"
+    },
+    "san cristobal": {
+      "comuna": 3,
+      "zone": "Zona Centro"
+    },
+    "san nicolas": {
+      "comuna": 1,
+      "zone": "Zona Centro"
+    },
+    "san telmo": {
+      "comuna": 1,
+      "zone": "Zona Centro"
+    },
+    "velez sarsfield": {
+      "comuna": 10,
+      "zone": "Zona Centro"
+    },
+    "versalles": {
+      "comuna": 10,
+      "zone": "Zona Centro"
+    },
+    "villa crespo": {
+      "comuna": 15,
+      "zone": "Zona Centro"
+    },
+    "villa del parque": {
+      "comuna": 11,
+      "zone": "Zona Centro"
+    },
+    "villa devoto": {
+      "comuna": 11,
+      "zone": "Zona Centro"
+    },
+    "villa gral. mitre": {
+      "comuna": 11,
+      "zone": "Zona Centro"
+    },
+    "villa lugano": {
+      "comuna": 8,
+      "zone": "Zona Sur"
+    },
+    "villa luro": {
+      "comuna": 10,
+      "zone": "Zona Centro"
+    },
+    "villa ortuzar": {
+      "comuna": 15,
+      "zone": "Zona Centro"
+    },
+    "villa pueyrredon": {
+      "comuna": 12,
+      "zone": "Zona Norte"
+    },
+    "villa real": {
+      "comuna": 10,
+      "zone": "Zona Centro"
+    },
+    "villa riachuelo": {
+      "comuna": 8,
+      "zone": "Zona Sur"
+    },
+    "villa santa rita": {
+      "comuna": 11,
+      "zone": "Zona Centro"
+    },
+    "villa soldati": {
+      "comuna": 8,
+      "zone": "Zona Sur"
+    },
+    "villa urquiza": {
+      "comuna": 12,
+      "zone": "Zona Norte"
+    }
+  },
+  "zonePolicy": {
+    "description": "Agrupación de navegación de Por Hacer por comunas, no división administrativa oficial Norte/Sur/Centro.",
+    "north": [
+      2,
+      12,
+      13,
+      14
+    ],
+    "south": [
+      4,
+      8,
+      9
+    ],
+    "center": [
+      1,
+      3,
+      5,
+      6,
+      7,
+      10,
+      11,
+      15
+    ]
+  },
+  "entries": {
+    "badata-food-2554": {
+      "originalName": "BAR BRITANICO",
+      "address": "BRASIL AV. 399",
+      "lat": -34.62530893,
+      "lon": -58.37083484,
+      "barrio": "San Telmo",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-food-1362": {
+      "originalName": "CAFE TORTONI",
+      "address": "DE MAYO AV. 825",
+      "lat": -34.60882556,
+      "lon": -58.37812207,
+      "barrio": "Monserrat",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-food-139": {
+      "originalName": "DON JULIO",
+      "address": "GUATEMALA 4699",
+      "lat": -34.58632489,
+      "lon": -58.42429206,
+      "barrio": "Palermo",
+      "comuna": 14,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-food-1985": {
+      "originalName": "EL CUARTITO",
+      "address": "TALCAHUANO 937",
+      "lat": -34.59784578,
+      "lon": -58.38551982,
+      "barrio": "Retiro",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-food-2567": {
+      "originalName": "EL FEDERAL",
+      "address": "CALVO, CARLOS 599",
+      "lat": -34.61962213,
+      "lon": -58.37414081,
+      "barrio": "San Telmo",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-food-2231": {
+      "originalName": "EL GATO NEGRO",
+      "address": "CORRIENTES AV. 1669",
+      "lat": -34.60421048,
+      "lon": -58.39030366,
+      "barrio": "San Nicolas",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-food-565": {
+      "originalName": "EL IMPERIO DE LA PIZZA",
+      "address": "CORRIENTES AV. 6891",
+      "lat": -34.58704199,
+      "lon": -58.45477406,
+      "barrio": "Chacarita",
+      "comuna": 15,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-food-170": {
+      "originalName": "EL PREFERIDO DE PALERMO",
+      "address": "BORGES, JORGE LUIS 2108",
+      "lat": -34.58545725,
+      "lon": -58.42529708,
+      "barrio": "Palermo",
+      "comuna": 14,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-food-947": {
+      "originalName": "ESQUINA HOMERO MANZI",
+      "address": "SAN JUAN AV. 3601",
+      "lat": -34.62538787,
+      "lon": -58.41633475,
+      "barrio": "Boedo",
+      "comuna": 5,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-food-2296": {
+      "originalName": "GUERRIN",
+      "address": "CORRIENTES AV. 1368",
+      "lat": -34.60404428,
+      "lon": -58.38600015,
+      "barrio": "San Nicolas",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-food-1780": {
+      "originalName": "LA BIELA",
+      "address": "QUINTANA, MANUEL, PRES. AV. 600",
+      "lat": -34.58783506,
+      "lon": -58.39075439,
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-food-638": {
+      "originalName": "LAS VIOLETAS",
+      "address": "RIVADAVIA AV. 3899",
+      "lat": -34.61131564,
+      "lon": -58.42077385,
+      "barrio": "Almagro",
+      "comuna": 5,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-food-2379": {
+      "originalName": "LOS GALGOS",
+      "address": "LAVALLE 1791",
+      "lat": -34.603102,
+      "lon": -58.39221247,
+      "barrio": "San Nicolas",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-30": {
+      "originalName": "36 BILLARES",
+      "address": "DE MAYO AV. 1265, CABA",
+      "lat": -34.60917,
+      "lon": -58.384301,
+      "barrio": "Monserrat",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-71": {
+      "originalName": "CAFE DE GARCIA",
+      "address": "SANABRIA 3302, CABA",
+      "lat": -34.606356,
+      "lon": -58.51059,
+      "barrio": "Villa Devoto",
+      "comuna": 11,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-76": {
+      "originalName": "CAFE DE LOS ANGELITOS",
+      "address": "RIVADAVIA AV. 2100, CABA",
+      "lat": -34.609527,
+      "lon": -58.396007,
+      "barrio": "Balvanera",
+      "comuna": 3,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-78": {
+      "originalName": "CAFE EL BANDERIN",
+      "address": "GUARDIA VIEJA 3601, CABA",
+      "lat": -34.601649,
+      "lon": -58.415489,
+      "barrio": "Almagro",
+      "comuna": 5,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-82": {
+      "originalName": "CAFE MARGOT",
+      "address": "BOEDO AV. 857, CABA",
+      "lat": -34.623266,
+      "lon": -58.416375,
+      "barrio": "Boedo",
+      "comuna": 5,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-189": {
+      "originalName": "LA GIRALDA",
+      "address": "CORRIENTES AV. 1453, CABA",
+      "lat": -34.604052,
+      "lon": -58.387286,
+      "barrio": "San Nicolas",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-201": {
+      "originalName": "LA POESIA",
+      "address": "CHILE 502, CABA",
+      "lat": -34.616062,
+      "lon": -58.373267,
+      "barrio": "San Telmo",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-1103": {
+      "originalName": "CENTRO CULTURAL RECOLETA",
+      "address": "JUNIN 1930, CABA",
+      "lat": -34.586496,
+      "lon": -58.391578,
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-1379": {
+      "originalName": "USINA DEL ARTE",
+      "address": "CAFFARENA, AGUSTIN R. 2, CABA",
+      "lat": -34.629144,
+      "lon": -58.356388,
+      "barrio": "La Boca",
+      "comuna": 4,
+      "zone": "Zona Sur",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-1758": {
+      "originalName": "FUNDACION PROA",
+      "address": "DON PEDRO DE MENDOZA AV. 1929, CABA",
+      "lat": -34.639639,
+      "lon": -58.361732,
+      "barrio": "La Boca",
+      "comuna": 4,
+      "zone": "Zona Sur",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-1985": {
+      "originalName": "EL ATENEO",
+      "address": "SANTA FE AV. 1860, CABA",
+      "lat": -34.595904,
+      "lon": -58.39422,
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2467": {
+      "originalName": "PALACIO BAROLO",
+      "address": "DE MAYO AV. 1368, CABA",
+      "lat": -34.6094,
+      "lon": -58.38576,
+      "barrio": "Monserrat",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2545": {
+      "originalName": "ACADEMIA NACIONAL DE LA HISTORIA DE LA REPUBLICA ARGENTINA",
+      "address": "BALCARCE 139, CABA",
+      "lat": -34.609847,
+      "lon": -58.370747,
+      "barrio": "Monserrat",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2568": {
+      "originalName": "MALBA",
+      "address": "FIGUEROA ALCORTA, PRES. AV. 3415, CABA",
+      "lat": -34.577246,
+      "lon": -58.40377,
+      "barrio": "Palermo",
+      "comuna": 14,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2578": {
+      "originalName": "MUSEO ARGENTINO DE CIENCIAS NATURALES \"BERNARDINO RIVADAVIA\"",
+      "address": "GALLARDO, ANGEL AV. 490, CABA",
+      "lat": -34.605083,
+      "lon": -58.438053,
+      "barrio": "Caballito",
+      "comuna": 6,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2583": {
+      "originalName": "MUSEO CASA CARLOS GARDEL",
+      "address": "JAURES, JEAN 735, CABA",
+      "lat": -34.601642,
+      "lon": -58.407923,
+      "barrio": "Balvanera",
+      "comuna": 3,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2599": {
+      "originalName": "MUSEO DE ARTE ESPAÑOL ENRIQUE LARRETA",
+      "address": "JURAMENTO AV. 2291, CABA",
+      "lat": -34.561129,
+      "lon": -58.455265,
+      "barrio": "Belgrano",
+      "comuna": 13,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2600": {
+      "originalName": "MUSEO DE ARTE HISPANOAMERICANO ISAAC FERNANDEZ BLANCO",
+      "address": "SUIPACHA 1422, CABA",
+      "lat": -34.590901,
+      "lon": -58.379932,
+      "barrio": "Retiro",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2601": {
+      "originalName": "MUSEO DE ARTE MODERNO DE BUENOS AIRES - MAMBA",
+      "address": "SAN JUAN AV. 350, CABA",
+      "lat": -34.621892,
+      "lon": -58.370727,
+      "barrio": "San Telmo",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2603": {
+      "originalName": "MUSEO DE BELLAS DE LA BOCA DE ARTISTAS ARGENTINOS \"BENITO QUINQUELA MARTIN\"",
+      "address": "DON PEDRO DE MENDOZA AV. 1835, CABA",
+      "lat": -34.63908,
+      "lon": -58.360936,
+      "barrio": "La Boca",
+      "comuna": 4,
+      "zone": "Zona Sur",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2674": {
+      "originalName": "MUSEO HISTORICO NACIONAL",
+      "address": "DEFENSA 1600, CABA",
+      "lat": -34.626626,
+      "lon": -58.370973,
+      "barrio": "San Telmo",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2675": {
+      "originalName": "MUSEO HISTORICO NACIONAL DEL CABILDO Y DE LA REVOLUCION DE MAYO",
+      "address": "BOLIVAR 65, CABA",
+      "lat": -34.608851,
+      "lon": -58.373567,
+      "barrio": "Monserrat",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2677": {
+      "originalName": "MUSEO HISTORICO SARMIENTO",
+      "address": "JURAMENTO AV. 2180, CABA",
+      "lat": -34.560831,
+      "lon": -58.454416,
+      "barrio": "Belgrano",
+      "comuna": 13,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2688": {
+      "originalName": "MUSEO MALVINAS E ISLAS DEL ATLANTICO SUR",
+      "address": "CALZADILLA, SANTIAGO 1302, CABA",
+      "lat": -34.535739,
+      "lon": -58.462536,
+      "barrio": "Nuñez",
+      "comuna": 13,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2694": {
+      "originalName": "MUSEO NACIONAL BELLAS ARTES",
+      "address": "DEL LIBERTADOR AV. 1473, CABA",
+      "lat": -34.583673,
+      "lon": -58.394746,
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2711": {
+      "originalName": "MUSEO SIVORI",
+      "address": "ISABEL, INFANTA AV. 555, CABA",
+      "lat": -34.570719,
+      "lon": -58.421165,
+      "barrio": "Palermo",
+      "comuna": 14,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2717": {
+      "originalName": "PLANETARIO GALILEO GALILEI",
+      "address": "SARMIENTO AV., CABA, CABA",
+      "lat": -34.5711024,
+      "lon": -58.4115468,
+      "barrio": "Palermo",
+      "comuna": 14,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-culture-2989": {
+      "originalName": "TEATRO COLON",
+      "address": "CERRITO 618, CABA",
+      "lat": -34.601054,
+      "lon": -58.382442,
+      "barrio": "San Nicolas",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-9": {
+      "originalName": "Plaza Rafael Hernández",
+      "address": "ECHEVERRIA - VUELTA DE OBLIGADO - MOM, POLICARPO",
+      "lat": -34.562232328733664,
+      "lon": -58.45528767703161,
+      "barrio": "Belgrano",
+      "comuna": 13,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-171": {
+      "originalName": "Parque Brig. Gral. Cornelio Saavedra",
+      "address": "GARCIA DEL RIO, AV. - MELIAN, AV. - VILELA - PEREZ, ROQUE - BESARES - CONDE - PINTO - FREIRE, RAMON, CAP. GRAL.",
+      "lat": -34.55189629240314,
+      "lon": -58.48128782079968,
+      "barrio": "Saavedra",
+      "comuna": 12,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-610": {
+      "originalName": "Plaza Barrancas de Belgrano",
+      "address": "VERTIZ, VIRREY, AV. - JURAMENTO - ZAVALIA -ECHEVERRIA / 11 DE SEPTIEMBRE - LA PAMPA -VERTIZ, VIRREY, AV - SUCRE, ANTONIO JOSE DE, MCAL.",
+      "lat": -34.56136223648324,
+      "lon": -58.44843226746714,
+      "barrio": "Belgrano",
+      "comuna": 13,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-813": {
+      "originalName": "Plaza Cnel. Dorrego",
+      "address": "DEFENSA - HUMBERTO I° - AIETA, ANSELMO, DON - BETHLEM",
+      "lat": -34.620615568012596,
+      "lon": -58.37150468890387,
+      "barrio": "San Telmo",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-871": {
+      "originalName": "Parque Centenario",
+      "address": "DIAZ VELEZ, AV. - MARECHAL, LEOPOLDO - PATRICIAS ARGENTINAS, AV.",
+      "lat": -34.60857189058353,
+      "lon": -58.43602732629859,
+      "barrio": "Caballito",
+      "comuna": 6,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-872": {
+      "originalName": "Parque Chacabuco",
+      "address": "PERON, EVA, AV.- CURAPALIGUE - ASAMBLEA, AV. - MITRE, EMILIO",
+      "lat": -34.63123448782961,
+      "lon": -58.44217798254187,
+      "barrio": "Parque Chacabuco",
+      "comuna": 7,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-873": {
+      "originalName": "Parque Patricios",
+      "address": "CASEROS, AV. - MONTEAGUDO - USPALLATA - ALMAFUERTE, AV.",
+      "lat": -34.63761733793966,
+      "lon": -58.40598938613459,
+      "barrio": "Parque Patricios",
+      "comuna": 4,
+      "zone": "Zona Sur",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-874": {
+      "originalName": "Parque Avellaneda",
+      "address": "DIRECTORIO, AV. - LACARRA, AV. - MONTE -  AUTOPISTA PERITO MORENO (AU 6) - AMEGHINO, FLORENTINO, DR.",
+      "lat": -34.64244906911849,
+      "lon": -58.48062983780544,
+      "barrio": "Parque Avellaneda",
+      "comuna": 9,
+      "zone": "Zona Sur",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-880": {
+      "originalName": "Parque Lezama",
+      "address": "PASEO COLON, AV. - GARCIA, MARTIN, AV. - DEFENSA - BRASIL, AV.",
+      "lat": -34.62539974632728,
+      "lon": -58.368686237872936,
+      "barrio": "San Telmo",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-882": {
+      "originalName": "Plaza San Martín",
+      "address": "DEL LIBERTADOR, Av. - SANTA FE, AV. - ESMERALDA - ARENALES - CRUCERO GENERAL BELGRANO - FLORIDA - SAN MARTÍN",
+      "lat": -34.59615702057374,
+      "lon": -58.37613818067067,
+      "barrio": "Retiro",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-883": {
+      "originalName": "Plaza 25 de Mayo",
+      "address": "RIVADAVIA, AV. - BALCARCE - YRIGOYEN, HIPOLITO - BOLIVAR",
+      "lat": -34.60793924059321,
+      "lon": -58.37135454936256,
+      "barrio": "Monserrat",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-885": {
+      "originalName": "Plaza Italia",
+      "address": "SANTA FE, AV. - LAS HERAS, AV. - SERRANO - THAMES",
+      "lat": -34.58160057961012,
+      "lon": -58.42080473919455,
+      "barrio": "Palermo",
+      "comuna": 14,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-887": {
+      "originalName": "Plaza Francia",
+      "address": "DEL LIBERTADOR, AV. - PUEYRREDON, AV. - LEVENE, RICARDO, DR., AV. - AGOTE, LUIS, DR.",
+      "lat": -34.585288406986066,
+      "lon": -58.393427272268646,
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-906": {
+      "originalName": "Plaza del Congreso",
+      "address": "ENTRE RIOS, AV. - RIVADAVIA, AV. - DE MAYO, AV. - SAEZ PEÑA, LUIS, PRES., AV. - YRIGOYEN, HIPOLITO.",
+      "lat": -34.609467442138865,
+      "lon": -58.38955622007369,
+      "barrio": "Monserrat",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-943": {
+      "originalName": "Parque Indoamericano",
+      "address": "LACARRA, AV. - ESCALADA, AV. - CASTAÑARES, AV. - FERNANDEZ DE LA CRUZ, FRANCISCO, GRAL., AV.",
+      "lat": -34.65836877326399,
+      "lon": -58.458597977848044,
+      "barrio": "Villa Soldati",
+      "comuna": 8,
+      "zone": "Zona Sur",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-1104": {
+      "originalName": "Parque Thays",
+      "address": "DEL LIBERTADOR, AV. - CALLAO, AV.- VAZ FERREIRA, CARLOS, DR. - QUIROGA, JUAN FACUNDO, BRIG. GRAL. VIA R PIDA",
+      "lat": -34.58647687607007,
+      "lon": -58.385331345318285,
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-1106": {
+      "originalName": "Parque Rivadavia",
+      "address": "RIVADAVIA, AV. - DOBLAS - ROSARIO - BEAUCHEF",
+      "lat": -34.618907301209454,
+      "lon": -58.43408581913823,
+      "barrio": "Caballito",
+      "comuna": 6,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-1274": {
+      "originalName": "Reserva Ecológica",
+      "address": "NOEL, CARLOS M., INT., AV. - RIO DE LA PLATA - MALECON (N) - EX-CIUDAD DEPORTIVA BOCA",
+      "lat": -34.59491484450386,
+      "lon": -58.35883510249647,
+      "barrio": "Puerto Madero",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-1312": {
+      "originalName": "Parque de la Memoria",
+      "address": "RAFAEL COSTANERA OBLIGADO AV 7001",
+      "lat": -34.54006755256561,
+      "lon": -58.43746205701567,
+      "barrio": "Belgrano",
+      "comuna": 13,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-1330": {
+      "originalName": "Carlos Thays (Jardín Botánico)",
+      "address": "SANTA FE, Av. - LAS HERAS, GRAL. Av. - MALABIA",
+      "lat": -34.58405532684954,
+      "lon": -58.41724926260923,
+      "barrio": "Palermo",
+      "comuna": 14,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-1444": {
+      "originalName": "Jardín Japonés",
+      "address": "DEL LIBERTADOR, AV. - SARMIENTO, AV. - BERRO, ADOLFO, AV. - CASARES, AV.",
+      "lat": -34.576470556881766,
+      "lon": -58.409710371143966,
+      "barrio": "Palermo",
+      "comuna": 14,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-1490": {
+      "originalName": "El Rosedal (Plaza Holanda)",
+      "address": "ISABEL, INFANTA, AV. - IRAOLA, AV. - MONTT, PEDRO, PRES., AV.",
+      "lat": -34.572654397620376,
+      "lon": -58.416032428260834,
+      "barrio": "Palermo",
+      "comuna": 14,
+      "zone": "Zona Norte",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "badata-green-1529": {
+      "originalName": "Antoine Saint-Exupery",
+      "address": "ZUVIRIA - SENILLOSA - AU 25 DE MAYO - DOBLAS",
+      "lat": -34.6289686774752,
+      "lon": -58.42857549662165,
+      "barrio": "Parque Chacabuco",
+      "comuna": 7,
+      "zone": "Zona Centro",
+      "method": "published-barrio-matched-to-official-boundary"
+    },
+    "tourism-wikidata-q478926": {
+      "originalName": "Casa Rosada",
+      "address": "",
+      "lat": -34.608055555556,
+      "lon": -58.370277777778,
+      "barrio": "Monserrat",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q2336867": {
+      "originalName": "Puente de la Mujer",
+      "address": "",
+      "lat": -34.607939,
+      "lon": -58.364911,
+      "barrio": "Puerto Madero",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "official-tourism-place-reference",
+      "sourceUrl": "https://turismo.buenosaires.gob.ar/es/node/49882",
+      "evidence": "La ficha oficial de Turismo de la Ciudad identifica expresamente el puente en Puerto Madero. Su punto está en un dique, fuera de los polígonos terrestres; se utiliza la identidad del lugar, no un barrio vecino por cercanía."
+    },
+    "tourism-wikidata-q499855": {
+      "originalName": "La Bombonera",
+      "address": "",
+      "lat": -34.63565,
+      "lon": -58.36465,
+      "barrio": "La Boca",
+      "comuna": 4,
+      "zone": "Zona Sur",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q646142": {
+      "originalName": "Palacio del Congreso de la Nación Argentina",
+      "address": "",
+      "lat": -34.609863888889,
+      "lon": -58.392691666667,
+      "barrio": "Balvanera",
+      "comuna": 3,
+      "zone": "Zona Centro",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q967929": {
+      "originalName": "Catedral de Buenos Aires",
+      "address": "",
+      "lat": -34.607408333333,
+      "lon": -58.373277777778,
+      "barrio": "San Nicolas",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q570385": {
+      "originalName": "Torre Monumental",
+      "address": "",
+      "lat": -34.592963,
+      "lon": -58.373192,
+      "barrio": "Retiro",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q831389": {
+      "originalName": "Obelisco de Buenos Aires",
+      "address": "",
+      "lat": -34.60376,
+      "lon": -58.38162,
+      "barrio": "San Nicolas",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q1029566": {
+      "originalName": "Caminito",
+      "address": "",
+      "lat": -34.6393,
+      "lon": -58.3628,
+      "barrio": "La Boca",
+      "comuna": 4,
+      "zone": "Zona Sur",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q831322": {
+      "originalName": "Cementerio de la Recoleta",
+      "address": "",
+      "lat": -34.588055555556,
+      "lon": -58.393055555556,
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "zone": "Zona Norte",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q1138028": {
+      "originalName": "Puente Transbordador Nicolás Avellaneda",
+      "address": "",
+      "lat": -34.63847222,
+      "lon": -58.35625,
+      "barrio": "La Boca",
+      "comuna": 4,
+      "zone": "Zona Sur",
+      "method": "official-tourism-place-reference",
+      "sourceUrl": "https://turismo.buenosaires.gob.ar/es/otros-establecimientos/puente-transbordador",
+      "evidence": "La ficha oficial identifica el enlace entre La Boca (Capital) y Avellaneda. Para la tarjeta CABA se asigna el extremo La Boca; el punto central del puente cae sobre el Riachuelo, no dentro del polígono terrestre."
+    },
+    "tourism-wikidata-q4579815": {
+      "originalName": "basílica de San Francisco",
+      "address": "",
+      "lat": -34.61069,
+      "lon": -58.371403,
+      "barrio": "Monserrat",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q3361112": {
+      "originalName": "Palacio de Aguas Corrientes",
+      "address": "",
+      "lat": -34.600555555556,
+      "lon": -58.395,
+      "barrio": "Balvanera",
+      "comuna": 3,
+      "zone": "Zona Centro",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q2886930": {
+      "originalName": "basílica Nuestra Señora del Pilar (Buenos Aires)",
+      "address": "",
+      "lat": -34.5868,
+      "lon": -58.392,
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "zone": "Zona Norte",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q1668230": {
+      "originalName": "Palacio Paz",
+      "address": "",
+      "lat": -34.595134941735054,
+      "lon": -58.37794453411931,
+      "barrio": "Retiro",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q263127": {
+      "originalName": "Manzana de las Luces",
+      "address": "",
+      "lat": -34.61055556,
+      "lon": -58.37444444,
+      "barrio": "Monserrat",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q8243908": {
+      "originalName": "Basílica del Santísimo Sacramento",
+      "address": "",
+      "lat": -34.595701,
+      "lon": -58.374098,
+      "barrio": "Retiro",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "point-in-official-barrio-polygon"
+    },
+    "tourism-wikidata-q5410626": {
+      "originalName": "Estación Retiro Mitre",
+      "address": "",
+      "lat": -34.59106,
+      "lon": -58.37492,
+      "barrio": "Retiro",
+      "comuna": 1,
+      "zone": "Zona Centro",
+      "method": "point-in-official-barrio-polygon"
+    }
+  }
+}
