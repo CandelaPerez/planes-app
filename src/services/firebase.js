@@ -89,7 +89,14 @@ export async function savePlan(uid, plan) {
     }
     return value;
   };
-  await setDoc(ref, { ...withoutUndefined(plan), id: ref.id, updatedAt: serverTimestamp() });
+  const data = { ...withoutUndefined(plan), id: ref.id, updatedAt: serverTimestamp() };
+  if (plan.savedOrigin === 'verified-catalog') {
+    // Two tabs may add the same place concurrently. Never overwrite an existing
+    // saved document's favorites, schedule, rating or personal photo on re-add.
+    await runTransaction(db, async (transaction) => {
+      if (!(await transaction.get(ref)).exists()) transaction.set(ref, data);
+    });
+  } else await setDoc(ref, data);
   return ref.id;
 }
 

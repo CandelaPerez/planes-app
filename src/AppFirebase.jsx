@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import usePlanFilters from './hooks/usePlanFilters';
+import { savedPlansView, savedCatalogId, savedPlanKind, catalogPlanToSave, persistPreviewPlans, verifiedSavedPhoto } from './utils/savedPlans.js';
 import { CATALOG, catalogImages, catalogRecords, categoryImages, planImage, categories } from './data/catalog';
 import { cityFor, priceRank, priceLabel, categoryClass, aggregateRating, ideaImageFallback, planPhotoFallback, localDateValue, readLocalJson, loadPreviewPlans, imageFallback } from './utils/planUtils';
 import Stars from './components/Stars';
@@ -17,6 +18,7 @@ export default function AppFirebase() {
   const [scheduleDate, setScheduleDate] = useState(() => localDateValue(new Date()));
   const [scheduleTime, setScheduleTime] = useState('12:00');
   const [userId, setUserId] = useState(firebaseConfigured ? '' : 'local-preview');
+  const activeAccount = useRef(firebaseConfigured ? '' : 'local-preview');
   const [authReady, setAuthReady] = useState(!firebaseConfigured);
   const [authMode, setAuthMode] = useState('login');
   const [authForm, setAuthForm] = useState({ email: '', password: '', confirmPassword: '' });
@@ -64,6 +66,16 @@ export default function AppFirebase() {
       return undefined;
     }
     return watchAuth((user) => {
+      activeAccount.current = user?.uid || '';
+      setUserPlans([]);
+      setRatings([]);
+      setSelectedIdea(null);
+      setEditing(null);
+      setSchedulePlan(null);
+      setFocusPlanId('');
+      setPersonalFilter('all');
+      setPersonalSection('plans');
+      setForm({ title: '', description: '', location: '', category: 'Gastronomía', budget: '$', image: '' });
       setUserId(user?.uid || '');
       setAuthReady(true);
       setLoading(Boolean(user));
@@ -72,21 +84,26 @@ export default function AppFirebase() {
 
   useEffect(() => {
     if (!firebaseConfigured || !userId) return undefined;
+    let active = true;
     const subscriptions = [];
     subscriptions.push(
       watchCatalog((ideas) => {
         const remoteById = new Map(ideas.map((idea) => [idea.id, idea]));
         setFallbackCatalog(CATALOG.map((idea) => ({ ...remoteById.get(idea.id), ...idea, id: idea.id })));
       }, (reason) => setError(reason.message)),
-      watchSavedPlans(userId, (plans) => { setUserPlans(plans); setLoading(false); }, (reason) => { setError(reason.message); setLoading(false); }),
-      watchRatings(setRatings, (reason) => setError(reason.message)),
+      watchSavedPlans(userId, (plans) => { if (active && activeAccount.current === userId) { setUserPlans(plans); setLoading(false); } }, (reason) => { if (active && activeAccount.current === userId) { setError(reason.message); setLoading(false); } }),
+      watchRatings((values) => { if (active && activeAccount.current === userId) setRatings(values); }, (reason) => { if (active && activeAccount.current === userId) setError(reason.message); }),
     );
-    return () => subscriptions.forEach((unsubscribe) => unsubscribe());
+    return () => { active = false; subscriptions.forEach((unsubscribe) => unsubscribe()); };
   }, [userId]);
 
   useEffect(() => {
     if (firebaseConfigured) return;
-    localStorage.setItem('porhacer_preview_plans', JSON.stringify(userPlans));
+    let active = true;
+    persistPreviewPlans(localStorage, userPlans).catch(() => {
+      if (active) setError('No se pudieron guardar los cambios locales. Los datos anteriores se conservan.');
+    });
+    return () => { active = false; };
   }, [userPlans]);
 
   useEffect(() => {
@@ -116,7 +133,12 @@ export default function AppFirebase() {
   const visibleIdeasCount = visibleIdeasPage.filterKey === ideaFilterKey ? visibleIdeasPage.count : 6;
   const { zones, placeTypes, visibleIdeas } = usePlanFilters({ catalog, category, zone, placeType, search, sortBy, ratings, planPhotos });
   const updateDiscoveryFilter = (setter, value) => { setter(value); setVisibleIdeasPage({ filterKey: '', count: 6 }); };
-  const plansInPersonalSection = userPlans.filter((plan) => (plan.type === 'itinerary') === (personalSection === 'itineraries'));
+  const savedView = useMemo(() => savedPlansView(userPlans, catalog), [userPlans, catalog]);
+  const personalPlans = savedView.plans;
+  const findSavedIdea = (id) => personalPlans.find((plan) => savedCatalogId(plan) === id);
+  const catalogDetailsFor = (plan) => savedView.catalogById.get(savedCatalogId(plan))
+    || (savedPlanKind(plan) === 'legacy-catalog' ? catalogRecords.get(savedCatalogId(plan)) : undefined);
+  const plansInPersonalSection = personalPlans.filter((plan) => (plan.type === 'itinerary') === (personalSection === 'itineraries'));
   const editingExistingPlan = Boolean(editing && editing !== 'new');
   const visibleUserPlans = plansInPersonalSection.filter((plan) => {
     if (personalFilter === 'pending') return plan.status !== 'realizado';
@@ -134,7 +156,7 @@ export default function AppFirebase() {
   }, [calendarMonth]);
   const calendarMonthPlans = calendarPlans.filter((plan) => { const date = new Date(plan.scheduledAt); return date.getFullYear() === calendarMonth.getFullYear() && date.getMonth() === calendarMonth.getMonth(); });
   const upcomingCalendarPlans = calendarPlans.filter((plan) => new Date(plan.scheduledAt) >= new Date()).slice(0, 2);
-  const randomIdeaSaved = randomIdea && userPlans.some((plan) => plan.catalogId === randomIdea.id || plan.externalId === randomIdea.id);
+  const randomIdeaSaved = randomIdea && Boolean(findSavedIdea(randomIdea.id));
   const itineraryKey = itinerary.map((idea) => idea.id).sort().join('|');
   const itinerarySaved = Boolean(itineraryKey) && userPlans.some((plan) => plan.type === 'itinerary' && plan.items?.map((item) => item.id).sort().join('|') === itineraryKey);
 
@@ -196,21 +218,19 @@ export default function AppFirebase() {
   }
 
   function addIdea(idea) {
-    const savedPlan = userPlans.find((plan) => plan.catalogId === idea.id);
+    if (firebaseConfigured && loading) { setNotice('Esperá a que terminen de cargar tus planes.'); return; }
+    const savedPlan = findSavedIdea(idea.id);
     if (savedPlan) {
       setNotice('Esta idea ya estaba en Mis planes.');
       return;
     }
-    const ideaToSave = Object.fromEntries(Object.entries(idea).filter(([key, value]) => value !== undefined && !['backups', 'source', 'credit'].includes(key)));
-    const savedFields = { catalogId: idea.id };
+    const saved = catalogPlanToSave(idea);
     if (!firebaseConfigured) {
-      setUserPlans((plans) => [{ ...ideaToSave, ...savedFields, id: idea.id, status: 'pendiente', favorite: false, comment: '' }, ...plans]);
+      setUserPlans((plans) => plans.some((plan) => savedCatalogId(plan) === idea.id) ? plans : [saved, ...plans]);
       setNotice('Idea guardada en Mis planes.');
       return;
     }
-    perform(async () => {
-      await savePlan(userId, { ...ideaToSave, ...savedFields, id: idea.sourceName ? idea.id : undefined, status: 'pendiente', favorite: false, comment: '' });
-    }, 'Idea guardada en Mis planes.');
+    perform(() => savePlan(userId, saved), 'Idea guardada en Mis planes.');
   }
 
   function toggleFavorite(plan) {
@@ -233,13 +253,13 @@ export default function AppFirebase() {
   function ratePlan(plan, value) {
     if (!firebaseConfigured) {
       if (plan.status !== 'realizado') return;
-      const planId = plan.catalogId || plan.id;
+      const planId = savedCatalogId(plan) || plan.id;
       setRatings((current) => [...current.filter((rating) => !(rating.planId === planId && rating.userId === 'local-preview')), { planId, userId: 'local-preview', value }]);
       setUserPlans((plans) => plans.map((item) => item.id === plan.id ? { ...item, rating: value } : item));
       setNotice('Valoración guardada en esta vista previa.');
       return;
     }
-    perform(() => saveRating(userId, plan.catalogId || plan.id, value, plan.id), 'Tu valoración quedó guardada.');
+    perform(() => saveRating(userId, savedCatalogId(plan) || plan.id, value, plan.id), 'Tu valoración quedó guardada.');
   }
 
   function openCreate() {
@@ -261,7 +281,8 @@ export default function AppFirebase() {
       setError('Escribí un nombre para el plan o itinerario.');
       return;
     }
-    const normalized = editingExistingPlan ? { title } : { ...form, title, description: form.description.trim(), location: form.location.trim() };
+    const editingCatalogPlan = editingExistingPlan && savedPlanKind(userPlans.find((plan) => plan.id === editing) || {}) === 'current-catalog';
+    const normalized = editingExistingPlan ? { title, ...(editingCatalogPlan ? { userTitle: title } : {}) } : { ...form, title, description: form.description.trim(), location: form.location.trim(), savedOrigin: 'custom' };
     if (!firebaseConfigured) {
       if (editing && editing !== 'new') setUserPlans((plans) => plans.map((plan) => plan.id === editing ? { ...plan, ...normalized } : plan));
       else {
@@ -286,7 +307,7 @@ export default function AppFirebase() {
     if (window.confirm(`¿Eliminar “${plan.title}” de Mis planes?`)) {
       if (!firebaseConfigured) {
         setUserPlans((plans) => plans.filter((item) => item.id !== plan.id));
-        setRatings((current) => current.filter((rating) => rating.planId !== (plan.catalogId || plan.id)));
+        setRatings((current) => current.filter((rating) => rating.planId !== (savedCatalogId(plan) || plan.id)));
         setNotice('Plan eliminado de esta vista previa.');
       } else perform(() => removeSavedPlan(userId, plan.id), 'Plan eliminado.');
     }
@@ -312,7 +333,7 @@ export default function AppFirebase() {
   }
 
   function suggestIdea() {
-    const unsavedIdeas = visibleIdeas.filter((idea) => !userPlans.some((plan) => plan.catalogId === idea.id || plan.externalId === idea.id));
+    const unsavedIdeas = visibleIdeas.filter((idea) => !findSavedIdea(idea.id));
     if (!unsavedIdeas.length) {
       setRandomIdea(null);
       setNotice('Ya guardaste todas las ideas disponibles con estos filtros.');
@@ -373,9 +394,21 @@ export default function AppFirebase() {
     perform(() => savePlan(userId, itineraryPlan), 'Itinerario guardado como un plan en Mis planes.');
   }
 
-  const displayPlanImage = (plan) => plan.catalogId && planPhotos[plan.catalogId]?.image
-    ? planPhotos[plan.catalogId].image
-    : planImage(plan);
+  const displayPlanImage = (plan, memory = false) => {
+    if (memory && plan.image) return plan.image;
+    if (savedPlanKind(plan) === 'current-catalog') {
+      const current = savedView.catalogById.get(savedCatalogId(plan));
+      if (current) return current.image;
+      return verifiedSavedPhoto(plan);
+    }
+    if (savedPlanKind(plan) !== 'legacy-catalog' && plan.image) return plan.image;
+    return plan.catalogId && planPhotos[plan.catalogId]?.image || planImage(plan);
+  };
+
+  const savedImageError = (event, plan) => {
+    if (savedPlanKind(plan) === 'current-catalog') { ideaImageFallback(event, { ...plan, sourceName: plan.sourceName || 'Catálogo actualizado' }); return; }
+    planPhotoFallback(event, plan, savedPlanKind(plan) === 'legacy-catalog' ? planPhotos : {});
+  };
 
   async function submitAuth(event) {
     event.preventDefault();
@@ -458,27 +491,28 @@ export default function AppFirebase() {
         {baCatalog && <p className="photo-credit" role="status">{visibleIdeas.length.toLocaleString('es-AR')} resultados</p>}
         {!loading && visibleIdeas.length === 0 ? <div className="empty-state"><h3>No encontramos planes con esos filtros</h3><p>Prueba otra búsqueda o limpia alguno de los filtros.</p><button className="btn btn-secondary" onClick={() => { setSearch(''); setCategory('Todas'); setZone('Todas'); setPlaceType('Todos'); setSortBy(''); setVisibleIdeasPage({ filterKey: '', count: 6 }); }}>Limpiar filtros</button></div> : <div className="cards-grid">{visibleIdeas.slice(0, visibleIdeasCount).map((idea) => {
           const aggregate = aggregateRating(ratings, idea.id);
-          const added = userPlans.some((plan) => plan.catalogId === idea.id || plan.externalId === idea.id);
-          const savedPlan = userPlans.find((plan) => plan.catalogId === idea.id || plan.externalId === idea.id);
+          const savedPlan = findSavedIdea(idea.id);
+          const added = Boolean(savedPlan);
           return <article className="plan-card" key={idea.id}><div className="card-img-wrapper plan-card-image-trigger" role="button" tabIndex={0} aria-label={`Ver detalles de ${idea.title}`} onClick={() => setSelectedIdea(idea)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedIdea(idea); } }}><img src={idea.image} alt={idea.title} className="card-img" loading="lazy" onError={() => { setBaCatalog((plans) => plans?.filter((plan) => plan.id !== idea.id)); setCatalogNotice("No se pudo cargar una fotografía. Se excluyó el plan afectado del catálogo visible."); }} /></div><div className="card-content"><div className="card-meta"><span className={`badge badge-${categoryClass(idea.category)}`}>{idea.category}</span><span className="budget-badge">{priceLabel(idea.budget)}</span></div><h3 className="card-title plan-card-title-trigger" onClick={() => setSelectedIdea(idea)}>{idea.title}</h3><p className="card-desc">{idea.description}</p>{idea.sourceName && <p className="photo-credit">{idea.location}</p>}<div className="rating-summary"><Stars value={aggregate.average} /><span>{aggregate.count ? `${aggregate.average.toFixed(1)} · ${aggregate.count} ${aggregate.count === 1 ? 'valoración' : 'valoraciones'}` : 'Sin valoraciones'}</span></div><div className="card-info-row"><span>⌖ {idea.address || idea.location}</span></div><div className="card-footer plan-card-actions"><button className="btn btn-secondary" onClick={() => setSelectedIdea(idea)}>Ver detalles</button><button className={`btn ${added ? 'btn-secondary' : 'btn-primary'}`} onClick={() => added ? openSavedPlan(savedPlan.id) : addIdea(idea)} disabled={busy}>{added ? 'En mis planes' : '+ Agregar a mis planes'}</button></div></div></article>;
         })}</div>}{visibleIdeas.length > visibleIdeasCount && <div className="discovery-show-more"><button type="button" className="btn btn-secondary" onClick={() => setVisibleIdeasPage({ filterKey: ideaFilterKey, count: visibleIdeasCount + 6 })}>Ver más</button></div>}
         </div>
-        <button type="button" className="calendar-teaser" onClick={() => setActiveTab('calendar')}><div className="calendar-teaser-header"><div><span className="calendar-teaser-kicker">Organiza tus salidas</span><h2>Tu calendario</h2><p>Una vista rápida de tus próximos planes.</p></div><span className="calendar-teaser-link">Abrir calendario <span aria-hidden="true">→</span></span></div>{upcomingCalendarPlans.length ? <div className="calendar-teaser-events">{upcomingCalendarPlans.map((plan) => <div className="calendar-teaser-event" key={plan.id}><img src={displayPlanImage(plan)} alt="" onError={(event) => planPhotoFallback(event, plan, planPhotos)} /><span className="calendar-teaser-date">{new Date(plan.scheduledAt).toLocaleDateString('es-AR', { day: 'numeric', month: 'short' })} · {new Date(plan.scheduledAt).toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' })}</span><strong>{plan.title}</strong></div>)}</div> : <div className="calendar-teaser-empty"><span className="calendar-teaser-icon" aria-hidden="true">▦</span><span>Tus planes agendados aparecerán aquí. Presiona para ver el calendario o agenda una salida desde Mis planes.</span></div>}</button>
+        <button type="button" className="calendar-teaser" onClick={() => setActiveTab('calendar')}><div className="calendar-teaser-header"><div><span className="calendar-teaser-kicker">Organiza tus salidas</span><h2>Tu calendario</h2><p>Una vista rápida de tus próximos planes.</p></div><span className="calendar-teaser-link">Abrir calendario <span aria-hidden="true">→</span></span></div>{upcomingCalendarPlans.length ? <div className="calendar-teaser-events">{upcomingCalendarPlans.map((plan) => <div className="calendar-teaser-event" key={plan.id}><img src={displayPlanImage(plan)} alt="" onError={(event) => savedImageError(event, plan)} /><span className="calendar-teaser-date">{new Date(plan.scheduledAt).toLocaleDateString('es-AR', { day: 'numeric', month: 'short' })} · {new Date(plan.scheduledAt).toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' })}</span><strong>{plan.title}</strong></div>)}</div> : <div className="calendar-teaser-empty"><span className="calendar-teaser-icon" aria-hidden="true">▦</span><span>Tus planes agendados aparecerán aquí. Presiona para ver el calendario o agenda una salida desde Mis planes.</span></div>}</button>
       </section>}
 
       {activeTab === 'plans' && <section><div className="section-header"><h2>Mis planes</h2><p>Administra tus ideas y valora cada experiencia cuando la hayas realizado.</p></div>
+        {savedView.hiddenLegacy.length > 0 && <p className="photo-credit" role="status">{savedView.hiddenLegacy.length} planes del catálogo anterior están ocultos. Sus datos, recuerdos y fechas se conservan.</p>}
         <div className="personal-section-switch" role="group" aria-label="Elegir planes o itinerarios">
-            <button type="button" className={`personal-section-btn ${personalSection === 'plans' ? 'active' : ''}`} aria-pressed={personalSection === 'plans'} onClick={() => { setPersonalSection('plans'); setPersonalFilter('all'); }}>Planes <span>{userPlans.filter((plan) => plan.type !== 'itinerary').length}</span></button>
-            <button type="button" className={`personal-section-btn ${personalSection === 'itineraries' ? 'active' : ''}`} aria-pressed={personalSection === 'itineraries'} onClick={() => { setPersonalSection('itineraries'); setPersonalFilter('all'); }}>Itinerarios <span>{userPlans.filter((plan) => plan.type === 'itinerary').length}</span></button>
+            <button type="button" className={`personal-section-btn ${personalSection === 'plans' ? 'active' : ''}`} aria-pressed={personalSection === 'plans'} onClick={() => { setPersonalSection('plans'); setPersonalFilter('all'); }}>Planes <span>{personalPlans.filter((plan) => plan.type !== 'itinerary').length}</span></button>
+            <button type="button" className={`personal-section-btn ${personalSection === 'itineraries' ? 'active' : ''}`} aria-pressed={personalSection === 'itineraries'} onClick={() => { setPersonalSection('itineraries'); setPersonalFilter('all'); }}>Itinerarios <span>{personalPlans.filter((plan) => plan.type === 'itinerary').length}</span></button>
         </div>
         <div className="personal-filter-panel"><strong>Filtrar por estado</strong>
           <div className="personal-filter" role="group" aria-label="Filtrar por estado">{[{ value: 'all', label: 'Todos' }, { value: 'pending', label: 'Pendientes' }, { value: 'done', label: 'Realizados' }, { value: 'favorites', label: 'Favoritos' }].map((item) => <button key={item.value} type="button" className={`category-filter-btn ${personalFilter === item.value ? 'active' : ''}`} aria-pressed={personalFilter === item.value} onClick={() => setPersonalFilter(item.value)}>{item.label}</button>)}</div>
         </div>
         {visibleUserPlans.length === 0 ? <div className="empty-state"><h3>{plansInPersonalSection.length ? 'No hay elementos en este filtro' : personalSection === 'itineraries' ? 'Todavía no guardaste ningún itinerario' : 'Todavía no guardaste ningún plan'}</h3><p>Descubre propuestas o crea tu propio plan para empezar.</p><button className="btn btn-primary" onClick={() => setActiveTab('home')}>Explorar planes</button></div> : <div className="cards-grid">{visibleUserPlans.map((plan) => {
-          const aggregate = aggregateRating(ratings, plan.catalogId || plan.id);
-          return <article id={`saved-plan-${plan.id}`} className={`plan-card ${plan.id === focusPlanId ? 'plan-card-focused' : ''}`} key={plan.id}><div className="card-img-wrapper"><img className="card-img" src={displayPlanImage(plan)} alt={plan.title} loading="lazy" onError={(event) => planPhotoFallback(event, plan, planPhotos)} /><button type="button" className="plan-edit-action" onClick={() => openEdit(plan)} aria-label="Editar plan" title="Editar plan" /><button className={`fav-btn ${plan.favorite ? 'is-favorite' : ''}`} aria-label={plan.favorite ? 'Quitar de favoritos' : 'Agregar a favoritos'} onClick={() => toggleFavorite(plan)}>{plan.favorite ? '♥' : '♡'}</button><button type="button" className="btn btn-danger saved-plan-delete" onClick={() => deletePlan(plan)} disabled={busy}>Eliminar</button></div><div className="card-content"><div className="card-meta"><span className={`badge badge-${categoryClass(plan.category)}`}>{plan.category}</span><span className={`status-label ${plan.status === 'realizado' ? 'done' : ''}`}>{plan.status === 'realizado' ? 'Realizado' : 'Pendiente'}</span></div><h3 className="card-title">{plan.title}</h3><p className="card-desc">{plan.description}</p>{plan.photograph && plan.image === plan.photograph.localPath && <p className="photo-credit"><PlacePhotoCredit plan={plan} /></p>}{plan.type === 'itinerary' && <ul className="itinerary-plan-items">{(plan.items || []).map((item) => <li key={item.id}><img src={item.image && !item.image.includes('picsum.photos') ? item.image : catalogImages.get(item.id) || categoryImages[item.category] || '/images/plan-placeholder.svg'} alt={item.title} loading="lazy" onError={imageFallback} /><div><strong>{item.title}</strong><span>{item.location}</span></div></li>)}</ul>}<div className="card-info-row"><span>⌖ {plan.type === 'itinerary' ? plan.location : catalogRecords.get(plan.catalogId)?.address || plan.location}</span><span>{priceLabel(plan.budget)}</span></div>
+          const aggregate = aggregateRating(ratings, savedCatalogId(plan) || plan.id);
+          return <article id={`saved-plan-${plan.id}`} className={`plan-card ${plan.id === focusPlanId ? 'plan-card-focused' : ''}`} key={plan.id}><div className="card-img-wrapper"><img className="card-img" src={displayPlanImage(plan) || undefined} hidden={!displayPlanImage(plan)} alt={plan.title} loading="lazy" onError={(event) => savedImageError(event, plan)} />{!displayPlanImage(plan) && <p className="photo-credit">Fotografía no disponible</p>}<button type="button" className="plan-edit-action" onClick={() => openEdit(plan)} aria-label="Editar plan" title="Editar plan" /><button className={`fav-btn ${plan.favorite ? 'is-favorite' : ''}`} aria-label={plan.favorite ? 'Quitar de favoritos' : 'Agregar a favoritos'} onClick={() => toggleFavorite(plan)}>{plan.favorite ? '♥' : '♡'}</button><button type="button" className="btn btn-danger saved-plan-delete" onClick={() => deletePlan(plan)} disabled={busy}>Eliminar</button></div><div className="card-content"><div className="card-meta"><span className={`badge badge-${categoryClass(plan.category)}`}>{plan.category}</span><span className={`status-label ${plan.status === 'realizado' ? 'done' : ''}`}>{plan.status === 'realizado' ? 'Realizado' : 'Pendiente'}</span></div><h3 className="card-title">{plan.title}</h3><p className="card-desc">{plan.description}</p>{plan.photograph && plan.image === plan.photograph.localPath && <p className="photo-credit"><PlacePhotoCredit plan={plan} /></p>}{plan.type === 'itinerary' && <ul className="itinerary-plan-items">{(plan.items || []).map((item) => <li key={item.id}><img src={item.image && !item.image.includes('picsum.photos') ? item.image : catalogImages.get(item.id) || categoryImages[item.category] || '/images/plan-placeholder.svg'} alt={item.title} loading="lazy" onError={imageFallback} /><div><strong>{item.title}</strong><span>{item.location}</span></div></li>)}</ul>}<div className="card-info-row"><span>⌖ {plan.type === 'itinerary' ? plan.location : plan.address || catalogDetailsFor(plan)?.address || plan.location}</span><span>{priceLabel(plan.budget)}</span></div>
             <div className="rating-summary"><span>Puntuación general</span><Stars value={aggregate.average} /><span>{aggregate.count ? `${aggregate.average.toFixed(1)} (${aggregate.count})` : 'Sin valoraciones'}</span></div>
-            {activeTab === 'plans' && <div className="card-footer plan-actions"><div className="plan-primary-actions"><button className="btn btn-secondary" onClick={() => { const catalogRecord = catalogRecords.get(plan.catalogId); setSelectedIdea({ ...catalogRecord, ...plan, address: catalogRecord?.address || plan.address || plan.location, openingHours: catalogRecord?.openingHours || plan.openingHours, duration: catalogRecord?.duration || plan.duration, visitTips: catalogRecord?.visitTips || plan.visitTips, officialUrl: catalogRecord?.officialUrl || plan.officialUrl, image: displayPlanImage(plan), isSavedPlan: true }); }}>Ver detalles</button><button type="button" className={`btn plan-calendar-action ${plan.scheduledAt ? 'is-scheduled' : ''}`} onClick={() => openSchedule(plan)} aria-label={plan.scheduledAt ? 'Cambiar fecha del calendario' : 'Agregar a calendario'} title={plan.scheduledAt ? 'Cambiar fecha del calendario' : 'Agregar a calendario'}>{plan.scheduledAt ? 'Cambiar fecha' : 'Agregar a calendario'}</button></div><button className={`btn plan-status-action ${plan.status === 'realizado' ? 'btn-status-done' : 'btn-secondary'}`} onClick={() => toggleStatus(plan)} disabled={busy}>{plan.status === 'realizado' ? 'Marcar pendiente' : 'Realizado'}</button></div>}
+            {activeTab === 'plans' && <div className="card-footer plan-actions"><div className="plan-primary-actions"><button className="btn btn-secondary" onClick={() => { const catalogRecord = catalogDetailsFor(plan); setSelectedIdea({ ...catalogRecord, ...plan, address: catalogRecord?.address || plan.address || plan.location, openingHours: catalogRecord?.openingHours || plan.openingHours, duration: catalogRecord?.duration || plan.duration, visitTips: catalogRecord?.visitTips || plan.visitTips, officialUrl: catalogRecord?.officialUrl || plan.officialUrl, image: displayPlanImage(plan), isSavedPlan: true }); }}>Ver detalles</button><button type="button" className={`btn plan-calendar-action ${plan.scheduledAt ? 'is-scheduled' : ''}`} onClick={() => openSchedule(plan)} aria-label={plan.scheduledAt ? 'Cambiar fecha del calendario' : 'Agregar a calendario'} title={plan.scheduledAt ? 'Cambiar fecha del calendario' : 'Agregar a calendario'}>{plan.scheduledAt ? 'Cambiar fecha' : 'Agregar a calendario'}</button></div><button className={`btn plan-status-action ${plan.status === 'realizado' ? 'btn-status-done' : 'btn-secondary'}`} onClick={() => toggleStatus(plan)} disabled={busy}>{plan.status === 'realizado' ? 'Marcar pendiente' : 'Realizado'}</button></div>}
           </div></article>;
         })}</div>}
       </section>}
@@ -492,16 +526,16 @@ export default function AppFirebase() {
           const inMonth = day.getMonth() === calendarMonth.getMonth();
           return <button type="button" role="gridcell" key={dayKey} className={`calendar-day ${inMonth ? '' : 'outside-month'} ${selectedCalendarDate === dayKey ? 'selected' : ''} ${dayPlans.length ? 'has-events' : ''}`} aria-label={`${day.toLocaleDateString('es-AR')} · ${dayPlans.length} planes`} aria-pressed={selectedCalendarDate === dayKey} onClick={() => setSelectedCalendarDate(dayKey)}><span className="calendar-day-number">{day.getDate()}</span>{dayPlans.slice(0, 2).map((plan) => <span className="calendar-day-event" key={plan.id}>{plan.title}</span>)}{dayPlans.length > 2 && <span className="calendar-more-events">+{dayPlans.length - 2} más</span>}</button>;
         })}</div></div>
-        <div className="calendar-agenda"><div className="calendar-agenda-heading"><h3>{calendarMonth.toLocaleDateString('es-AR', { month: 'long', year: 'numeric' })}</h3><span>{calendarMonthPlans.length} {calendarMonthPlans.length === 1 ? 'plan' : 'planes'}</span></div>{calendarMonthPlans.length === 0 ? <div className="empty-state calendar-empty"><h3>No tienes planes agendados este mes</h3><p>Agrega una fecha desde una tarjeta en Mis planes.</p><button className="btn btn-primary" onClick={() => setActiveTab('plans')}>Ir a Mis planes</button></div> : <div className="calendar-agenda-list">{calendarMonthPlans.map((plan) => <article className="calendar-event-card" key={plan.id}><img src={displayPlanImage(plan)} alt={plan.title} onError={(event) => planPhotoFallback(event, plan, planPhotos)} /><div className="calendar-event-info"><span className="calendar-event-date">{new Date(plan.scheduledAt).toLocaleDateString('es-AR', { weekday: 'short', day: 'numeric', month: 'short' })}</span><span className="calendar-event-time">{new Date(plan.scheduledAt).toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' })}</span><h4>{plan.title}</h4><p>{plan.location}</p></div><button className="btn btn-secondary" onClick={() => { const catalogRecord = catalogRecords.get(plan.catalogId); setSelectedIdea({ ...catalogRecord, ...plan, address: catalogRecord?.address || plan.location, openingHours: catalogRecord?.openingHours, duration: catalogRecord?.duration, visitTips: catalogRecord?.visitTips, officialUrl: catalogRecord?.officialUrl, image: displayPlanImage(plan), isSavedPlan: true }); }}>Ver detalles</button></article>)}</div>}</div></div>
+        <div className="calendar-agenda"><div className="calendar-agenda-heading"><h3>{calendarMonth.toLocaleDateString('es-AR', { month: 'long', year: 'numeric' })}</h3><span>{calendarMonthPlans.length} {calendarMonthPlans.length === 1 ? 'plan' : 'planes'}</span></div>{calendarMonthPlans.length === 0 ? <div className="empty-state calendar-empty"><h3>No tienes planes agendados este mes</h3><p>Agrega una fecha desde una tarjeta en Mis planes.</p><button className="btn btn-primary" onClick={() => setActiveTab('plans')}>Ir a Mis planes</button></div> : <div className="calendar-agenda-list">{calendarMonthPlans.map((plan) => <article className="calendar-event-card" key={plan.id}><img src={displayPlanImage(plan)} alt={plan.title} onError={(event) => savedImageError(event, plan)} /><div className="calendar-event-info"><span className="calendar-event-date">{new Date(plan.scheduledAt).toLocaleDateString('es-AR', { weekday: 'short', day: 'numeric', month: 'short' })}</span><span className="calendar-event-time">{new Date(plan.scheduledAt).toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' })}</span><h4>{plan.title}</h4><p>{plan.location}</p></div><button className="btn btn-secondary" onClick={() => { const catalogRecord = catalogRecords.get(plan.catalogId); setSelectedIdea({ ...catalogRecord, ...plan, address: catalogRecord?.address || plan.location, openingHours: catalogRecord?.openingHours, duration: catalogRecord?.duration, visitTips: catalogRecord?.visitTips, officialUrl: catalogRecord?.officialUrl, image: displayPlanImage(plan), isSavedPlan: true }); }}>Ver detalles</button></article>)}</div>}</div></div>
       </section>}
 
-      {activeTab === 'bitacora' && <section><div className="section-header"><h2>Bitácora y recuerdos</h2><p>{completedCount} experiencias realizadas</p></div>{completedCount === 0 ? <div className="empty-state"><h3>Aún no hay experiencias realizadas</h3><p>Cuando completes un plan, aparecerá aquí.</p></div> : <div className="cards-grid">{userPlans.filter((plan) => plan.status === 'realizado').map((plan) => <article className="photo-card" key={plan.id}><div className="photo-wrapper"><img src={displayPlanImage(plan)} alt={plan.title} onError={(event) => planPhotoFallback(event, plan, planPhotos)} /><span className="photo-badge">{plan.category}</span></div><div className="photo-details"><h3>{plan.title}</h3>{plan.photograph && plan.image === plan.photograph.localPath && <p className="photo-credit"><PlacePhotoCredit plan={plan} /></p>}<p>{plan.location} · {plan.photoDate || 'Reciente'}</p><label className="comment-label">Tu recuerdo<textarea rows="3" placeholder="Escribe un recuerdo de este día…" defaultValue={plan.comment || ''} onBlur={(event) => { if (event.target.value !== (plan.comment || '')) updateComment(plan, event.target.value); }} /></label><label className="btn btn-secondary photo-upload">Cambiar fotografía<input type="file" accept="image/*" onChange={(event) => changePlanPhoto(plan, event.target.files?.[0])} /></label><div className="personal-rating"><strong>Mi puntuación</strong><Stars value={plan.rating || 0} interactive disabled={busy} onChange={(value) => ratePlan(plan, value)} /></div></div></article>)}</div>}</section>}
+      {activeTab === 'bitacora' && <section><div className="section-header"><h2>Bitácora y recuerdos</h2><p>{completedCount} experiencias realizadas</p></div>{completedCount === 0 ? <div className="empty-state"><h3>Aún no hay experiencias realizadas</h3><p>Cuando completes un plan, aparecerá aquí.</p></div> : <div className="cards-grid">{userPlans.filter((plan) => plan.status === 'realizado').map((plan) => <article className="photo-card" key={plan.id}><div className="photo-wrapper"><img src={displayPlanImage(plan, true)} alt={plan.title} onError={(event) => savedImageError(event, plan)} /><span className="photo-badge">{plan.category}</span></div><div className="photo-details"><h3>{plan.title}</h3>{plan.photograph && plan.image === plan.photograph.localPath && <p className="photo-credit"><PlacePhotoCredit plan={plan} /></p>}<p>{plan.location} · {plan.photoDate || 'Reciente'}</p><label className="comment-label">Tu recuerdo<textarea rows="3" placeholder="Escribe un recuerdo de este día…" defaultValue={plan.comment || ''} onBlur={(event) => { if (event.target.value !== (plan.comment || '')) updateComment(plan, event.target.value); }} /></label><label className="btn btn-secondary photo-upload">Cambiar fotografía<input type="file" accept="image/*" onChange={(event) => changePlanPhoto(plan, event.target.files?.[0])} /></label><div className="personal-rating"><strong>Mi puntuación</strong><Stars value={plan.rating || 0} interactive disabled={busy} onChange={(value) => ratePlan(plan, value)} /></div></div></article>)}</div>}</section>}
     </main>
     {activeTab === 'home' && <CreditsAndSources />}
 
     {schedulePlan && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setSchedulePlan(null); }}><section className="modal-content schedule-modal" role="dialog" aria-modal="true" aria-labelledby="schedule-modal-title"><div className="modal-header"><h2 id="schedule-modal-title">Agregar al calendario</h2><button type="button" className="modal-close" onClick={() => setSchedulePlan(null)} aria-label="Cerrar">×</button></div><p className="schedule-plan-title">{schedulePlan.title}</p><form onSubmit={saveSchedule}><label className="form-group">Fecha<input type="date" required value={scheduleDate} onChange={(event) => setScheduleDate(event.target.value)} /></label><label className="form-group">Hora<input type="time" required value={scheduleTime} onChange={(event) => setScheduleTime(event.target.value)} /></label><div className="modal-actions"><button type="button" className="btn btn-secondary" onClick={() => setSchedulePlan(null)}>Cancelar</button><button type="submit" className="btn btn-primary" disabled={busy}>Guardar en calendario</button></div></form></section></div>}
 
-    {selectedIdea && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedIdea(null); }}><section className="modal-content plan-detail-modal" role="dialog" aria-modal="true" aria-labelledby="plan-detail-title"><div className="modal-header"><div><span className={`badge badge-${categoryClass(selectedIdea.category)}`}>{selectedIdea.category || 'Itinerario'}</span><h2 id="plan-detail-title">{selectedIdea.title}</h2></div><button className="modal-close" onClick={() => setSelectedIdea(null)} aria-label="Cerrar detalles">×</button></div><img className="plan-detail-image" src={selectedIdea.image || planImage(selectedIdea)} alt={selectedIdea.title} onError={(event) => selectedIdea.sourceName ? ideaImageFallback(event, selectedIdea) : imageFallback(event)} /><p className="plan-detail-description">{selectedIdea.description}</p><dl className="plan-detail-facts"><div><dt>{selectedIdea.type === 'itinerary' ? 'Ciudad o zona' : 'Dirección o zona'}</dt><dd>{selectedIdea.address || selectedIdea.location}</dd></div>{selectedIdea.type === 'itinerary' && <div><dt>Planes incluidos</dt><dd><ul className="detail-itinerary-items">{(selectedIdea.items || []).map((item) => <li key={item.id}><strong>{item.title}</strong><span>{item.location}</span></li>)}</ul></dd></div>}{selectedIdea.phone && <div><dt>Tel&#233;fono</dt><dd>{selectedIdea.phone}</dd></div>}<div><dt>{selectedIdea.sourceName ? "Horario publicado (verificar vigencia)" : "Horario"}</dt><dd>{selectedIdea.openingHours || 'Consultá el horario actualizado antes de ir.'}</dd></div><div><dt>Duración sugerida</dt><dd>{selectedIdea.duration || (selectedIdea.sourceName ? 'No informada en el recurso.' : 'Entre 1 y 2 horas')}</dd></div><div><dt>Presupuesto estimado</dt><dd>{priceLabel(selectedIdea.budget)}</dd></div>{selectedIdea.visitTips && <div><dt>Para tener en cuenta</dt><dd>{selectedIdea.visitTips}</dd></div>}</dl><BaDataSource plan={selectedIdea} /><div className="modal-actions"><a className="btn btn-secondary" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${selectedIdea.originalName || selectedIdea.title} ${selectedIdea.address || selectedIdea.location}`)}`} target="_blank" rel="noreferrer">Ver ubicación en Maps</a>{selectedIdea.officialUrl && <a className="btn btn-secondary" href={selectedIdea.officialUrl} target="_blank" rel="noreferrer">Sitio oficial</a>}{!selectedIdea.isSavedPlan && <button className="btn btn-primary" onClick={() => { const idea = selectedIdea; setSelectedIdea(null); addIdea(idea); }} disabled={userPlans.some((plan) => plan.catalogId === selectedIdea.id) || busy}>{userPlans.some((plan) => plan.catalogId === selectedIdea.id) ? 'En mis planes' : 'Agregar a mis planes'}</button>}</div></section></div>}
+    {selectedIdea && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedIdea(null); }}><section className="modal-content plan-detail-modal" role="dialog" aria-modal="true" aria-labelledby="plan-detail-title"><div className="modal-header"><div><span className={`badge badge-${categoryClass(selectedIdea.category)}`}>{selectedIdea.category || 'Itinerario'}</span><h2 id="plan-detail-title">{selectedIdea.title}</h2></div><button className="modal-close" onClick={() => setSelectedIdea(null)} aria-label="Cerrar detalles">×</button></div><img className="plan-detail-image" src={selectedIdea.image || planImage(selectedIdea)} alt={selectedIdea.title} onError={(event) => selectedIdea.sourceName ? ideaImageFallback(event, selectedIdea) : imageFallback(event)} /><p className="plan-detail-description">{selectedIdea.description}</p><dl className="plan-detail-facts"><div><dt>{selectedIdea.type === 'itinerary' ? 'Ciudad o zona' : 'Dirección o zona'}</dt><dd>{selectedIdea.address || selectedIdea.location}</dd></div>{selectedIdea.type === 'itinerary' && <div><dt>Planes incluidos</dt><dd><ul className="detail-itinerary-items">{(selectedIdea.items || []).map((item) => <li key={item.id}><strong>{item.title}</strong><span>{item.location}</span></li>)}</ul></dd></div>}{selectedIdea.phone && <div><dt>Tel&#233;fono</dt><dd>{selectedIdea.phone}</dd></div>}<div><dt>{selectedIdea.sourceName ? "Horario publicado (verificar vigencia)" : "Horario"}</dt><dd>{selectedIdea.openingHours || 'Consultá el horario actualizado antes de ir.'}</dd></div><div><dt>Duración sugerida</dt><dd>{selectedIdea.duration || (selectedIdea.sourceName ? 'No informada en el recurso.' : 'Entre 1 y 2 horas')}</dd></div><div><dt>Presupuesto estimado</dt><dd>{priceLabel(selectedIdea.budget)}</dd></div>{selectedIdea.visitTips && <div><dt>Para tener en cuenta</dt><dd>{selectedIdea.visitTips}</dd></div>}</dl><BaDataSource plan={selectedIdea} /><div className="modal-actions"><a className="btn btn-secondary" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${selectedIdea.originalName || selectedIdea.title} ${selectedIdea.address || selectedIdea.location}`)}`} target="_blank" rel="noreferrer">Ver ubicación en Maps</a>{selectedIdea.officialUrl && <a className="btn btn-secondary" href={selectedIdea.officialUrl} target="_blank" rel="noreferrer">Sitio oficial</a>}{!selectedIdea.isSavedPlan && <button className="btn btn-primary" onClick={() => { const idea = selectedIdea; setSelectedIdea(null); addIdea(idea); }} disabled={Boolean(findSavedIdea(selectedIdea.id)) || busy}>{findSavedIdea(selectedIdea.id) ? 'En mis planes' : 'Agregar a mis planes'}</button>}</div></section></div>}
 
     {editing && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setEditing(null); }}><div className="modal-content"><div className="modal-header"><h2>{editing === 'new' ? 'Crear plan' : 'Editar nombre'}</h2><button className="modal-close" onClick={() => setEditing(null)} aria-label="Cerrar">×</button></div><form onSubmit={submitPlan}><label className="form-group">Nombre<input required maxLength="100" value={form.title} onChange={(event) => setForm({ ...form, title: event.target.value })} /></label>{editingExistingPlan && <p className="form-hint">Solo pod?s cambiar el nombre del plan o itinerario. Los dem?s datos se conservan.</p>}{!editingExistingPlan && <><label className="form-group">Descripción<textarea rows="3" value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} /></label><label className="form-group">Ubicación<input required maxLength="100" value={form.location} onChange={(event) => setForm({ ...form, location: event.target.value })} /></label><label className="form-group">Categoría<select value={form.category} onChange={(event) => setForm({ ...form, category: event.target.value })}>{categories.slice(1).map((item) => <option key={item}>{item}</option>)}</select></label><label className="form-group">Presupuesto<select value={form.budget} onChange={(event) => setForm({ ...form, budget: event.target.value })}><option value="$">Bajo</option><option value="$$">Medio</option><option value="$$$">Alto</option></select></label>{editing === 'new' && <label className="form-group">URL de imagen<input type="url" placeholder="https://…" value={form.image} onChange={(event) => setForm({ ...form, image: event.target.value })} /></label>}</>}<div className="modal-actions"><button type="button" className="btn btn-secondary" onClick={() => setEditing(null)}>Cancelar</button><button type="submit" className="btn btn-primary" disabled={busy}>Guardar</button></div></form></div></div>}
   </div>;

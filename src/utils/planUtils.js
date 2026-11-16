@@ -1,4 +1,4 @@
-import { CATALOG, catalogImages } from '../data/catalog';
+import { catalogImages } from '../data/catalog';
 
 function cityFor(location) {
   const place = String(location || '').toLocaleLowerCase('es');
@@ -82,10 +82,7 @@ function readLocalJson(key, fallback) {
 
 function loadPreviewPlans() {
   const saved = readLocalJson('porhacer_preview_plans', null) ?? readLocalJson('porhacer_user_plans', []);
-  return saved.map((plan) => {
-    const idea = CATALOG.find((item) => item.title.toLocaleLowerCase('es') === String(plan.title || '').toLocaleLowerCase('es'));
-    return { ...plan, catalogId: plan.catalogId || idea?.id || null };
-  });
+  return Array.isArray(saved) ? saved : [];
 }
 
 function imageFallback(event) {
