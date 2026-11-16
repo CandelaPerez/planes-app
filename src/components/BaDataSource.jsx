@@ -1,9 +1,13 @@
+import PlacePhotoCredit from './PlacePhotoCredit';
+
 const date = (value) => value ? new Date(value).toLocaleDateString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }) : 'No informada';
 
 export default function BaDataSource({ plan }) {
   if (!plan.sourceName) return null;
   return <div className="photo-credit">
-    <p>{plan.imageKind === 'photograph' ? <a href={plan.imageSourceUrl} target="_blank" rel="noreferrer">Fotografía: fuente original</a> : 'Imagen ilustrativa; no es una fotografía del lugar.'} No se informa presupuesto.</p>
+    <p><PlacePhotoCredit plan={plan} /> No se informa presupuesto.</p>
+    {plan.originalName && <p>Nombre original en BA Data: {plan.originalName}</p>}
+    {plan.photograph && <p>{plan.photograph.presentation} Verificación: {date(plan.photograph.verifiedAt)}. La fotografía de archivo no garantiza el aspecto actual del lugar.</p>}
     <p>Fuente: BA Data · Gobierno de la Ciudad de Buenos Aires · <a href="https://creativecommons.org/licenses/by/2.5/ar/" target="_blank" rel="noreferrer">CC BY 2.5 AR</a>.</p>
     {plan.sourceReferences?.map((source) => <p key={`${source.key}-${source.recordId}`}><a href={source.url} target="_blank" rel="noreferrer">{source.dataset} · Registro {source.recordId}</a><br />Archivo: {date(source.resourceLastModified)} · Descarga: {date(source.downloadedAt)}. La fecha del archivo no confirma la vigencia de cada lugar.</p>)}
     <p>Coordenadas: {plan.lon}, {plan.lat}.{plan.coordinateMethod === 'published-boundary-vertex' && ' Referencia del límite del espacio verde, no de una entrada.'}</p>

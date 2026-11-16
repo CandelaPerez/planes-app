@@ -20,7 +20,7 @@ export default function usePlanFilters({ catalog, category, zone, budget, search
       (category === 'Todas' || categoryKey(plan.category) === categoryKey(category))
       && (zone === 'Todas' || zoneFor(plan.location, plan.ambaZone) === zone)
       && (budget === 'Todos' || budgetLevel(plan.budget) === budget)
-      && (!normalizedSearch || `${plan.title} ${plan.location} ${plan.address || ''} ${plan.category} ${plan.subtype || ''} ${plan.ambaZone || ''}`.toLocaleLowerCase('es').includes(normalizedSearch)),
+      && (!normalizedSearch || `${plan.title} ${plan.originalName || ''} ${plan.location} ${plan.address || ''} ${plan.category} ${plan.subtype || ''} ${plan.ambaZone || ''}`.toLocaleLowerCase('es').includes(normalizedSearch)),
     );
     const sorted = filtered.sort((a, b) => {
       const aRating = aggregateRating(ratings, a.id);

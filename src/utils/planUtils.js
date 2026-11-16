@@ -44,7 +44,7 @@ function ideaImageFallback(event, idea) {
   if (idea.sourceName) {
     image.onerror = null;
     image.src = categoryIllustrations[idea.category] || '/images/plan-placeholder.svg';
-    const credit = image.closest('.plan-card')?.querySelector('.photo-credit');
+    const credit = image.closest('.plan-card, .modal-content')?.querySelector('[data-photo-credit]') || image.closest('.plan-card')?.querySelector('.photo-credit');
     if (credit) credit.textContent = `Imagen ilustrativa · ${idea.location || ''}`;
     return;
   }
@@ -65,6 +65,7 @@ function ideaImageFallback(event, idea) {
 }
 
 function planPhotoFallback(event, plan, assignedPhotos) {
+  if (plan.sourceName) { ideaImageFallback(event, plan); return; }
   const assignedPhoto = plan.catalogId && assignedPhotos[plan.catalogId];
   if (assignedPhoto) ideaImageFallback(event, { ...plan, ...assignedPhoto, sourceImage: plan.image || catalogImages.get(plan.catalogId) });
   else imageFallback(event);

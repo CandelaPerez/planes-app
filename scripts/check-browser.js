@@ -89,9 +89,9 @@ try {
     await until(baDataHome ? `document.querySelector('#discover-plans').textContent.includes('${cache.places.length} lugares de BA Data')` : `document.body.textContent.includes('${cache.places.length.toLocaleString('es-AR')} registros oficiales')`);
     if (baDataHome) {
       assert.equal(await evaluate(`new Set([...document.querySelectorAll('.plan-card .badge')].map(item=>item.textContent)).size`), 4);
-      assert.equal(await evaluate(`new Set([...document.querySelectorAll('.plan-card .card-img')].map(item=>item.getAttribute('src'))).size`), 4);
+      assert.ok(await evaluate(`new Set([...document.querySelectorAll('.plan-card .card-img')].map(item=>item.getAttribute('src'))).size>=4`));
       await until(`[...document.querySelectorAll('.plan-card .card-img')].every(image=>image.complete && image.naturalWidth>0)`);
-      assert.ok(await evaluate(`[...document.querySelectorAll('.plan-card')].every(card=>card.textContent.includes('Imagen ilustrativa'))`));
+      assert.ok(await evaluate(`[...document.querySelectorAll('.plan-card')].every(card=>/Imagen ilustrativa|Foto:/.test(card.textContent))`));
       await evaluate(`document.querySelector('#discover-plans').scrollIntoView()`);
       const initialScreenshot = await call('Page.captureScreenshot', { format: 'png' });
       await writeFile(new URL('ba-data-home-variety.png', folder), Buffer.from(initialScreenshot.data, 'base64'));
@@ -110,6 +110,13 @@ try {
       await until(`document.querySelectorAll('.plan-card').length===6`);
       await evaluate(`[...document.querySelectorAll('button')].find(button=>button.textContent==='Ver más').click()`);
       await until(`document.querySelectorAll('.plan-card').length===12`);
+      assert.equal(await evaluate(`document.querySelectorAll('.plan-card .card-img[src*="ba-data-pilot/"]').length`), 8);
+      await until(`[...document.querySelectorAll('.plan-card .card-img')].every(image=>image.complete && image.naturalWidth>0)`);
+      const clip = await evaluate(`(()=>{const r=document.querySelector('.discovery-section').getBoundingClientRect();return {x:r.x+scrollX,y:r.y+scrollY,width:r.width,height:r.height,scale:1}})()`);
+      const pilotScreenshot = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, clip });
+      await writeFile(new URL('ba-data-pilot-twelve.png', folder), Buffer.from(pilotScreenshot.data, 'base64'));
+      await evaluate(`document.querySelector('.plan-card .card-img[src*="ba-data-pilot/"]').dispatchEvent(new Event('error'))`);
+      await until(`document.querySelector('.plan-card .card-img').getAttribute('src')==='/images/ba-data/gastronomia.svg' && document.querySelector('.plan-card [data-photo-credit]').textContent.includes('Imagen ilustrativa')`);
       await evaluate(`(()=>{const select=document.querySelector('select[aria-label="Filtrar por zona"]');select.value='CABA';select.dispatchEvent(new Event('change',{bubbles:true}));})()`);
       await until(`document.querySelector('p[role=status]').textContent.includes('6.670 resultados')`);
     }

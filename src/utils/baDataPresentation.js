@@ -26,7 +26,7 @@ export function variedBaDataOrder(plans) {
     groups.get(plan.category).push(plan);
   }
   const completeness = (plan) => Number(Boolean(plan.title?.trim())) + Number(Boolean(plan.address?.trim()));
-  const queues = [...groups.values()].map((group) => group.sort((a, b) => completeness(b) - completeness(a)));
+  const queues = [...groups.values()].map((group) => group.sort((a, b) => completeness(b) - completeness(a) || (a.pilotOrder ?? Infinity) - (b.pilotOrder ?? Infinity)));
   const result = [];
   for (let index = 0; result.length < plans.length; index += 1) {
     for (const queue of queues) if (queue[index]) result.push(queue[index]);

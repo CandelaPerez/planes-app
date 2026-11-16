@@ -4,6 +4,8 @@ La página principal muestra los 6.670 registros de la copia local de BA Data, s
 
 Punto de recuperación anterior a esta integración: commit `3d5c930`.
 
+Hay un [piloto de doce tarjetas con títulos editoriales y ocho fotografías verificadas de Commons](PILOTO_FOTOS.md). Solo esos doce registros reciben esta presentación; los demás mantienen su nombre y descripción anteriores. Las fotografías y sus créditos se sirven localmente sin búsquedas durante las visitas. El nombre original se conserva para identificación y búsqueda.
+
 Se reutilizan las tarjetas, estilos, filtros y paginación existentes (seis tarjetas iniciales, seis más por clic). La búsqueda y los filtros recorren todos los registros antes de paginar. Los lugares se guardan en `users/{uid}/savedPlans/badata-{fuente}-{id}`, conservando `catalogId` y procedencia. No se escriben documentos en el catálogo global ni se migran los originales. Los itinerarios conservan los datos de sus lugares y no reciben presupuesto gratuito cuando el recurso no informa precios.
 
 ## Resultado verificado

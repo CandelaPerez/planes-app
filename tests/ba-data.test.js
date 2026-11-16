@@ -10,9 +10,11 @@ import { createServer } from 'vite';
 import { toPlanCards } from '../src/services/baData.js';
 import { parseCsv } from '../scripts/ba-data/normalize.js';
 import { categoryIllustrations, variedBaDataOrder, placeImage } from '../src/utils/baDataPresentation.js';
+import { createHash } from 'node:crypto';
 
 const path = 'public/data/ba-data.json';
 const cache = JSON.parse(await readFile(path, 'utf8'));
+const pilot = JSON.parse(await readFile('src/data/baDataPilot.json', 'utf8'));
 
 test('real cached records have original IDs, verified geographic fields and dated official sources', () => {
   assert.equal(cache.places.length, cache.statistics.reduce((sum, item) => sum + item.unique, 0));
@@ -22,9 +24,10 @@ test('real cached records have original IDs, verified geographic fields and date
   for (const plan of plans) {
     assert.ok(plan.title && plan.lat >= -34.71 && plan.lat <= -34.52 && plan.lon >= -58.54 && plan.lon <= -58.33);
     assert.equal(plan.budget, 'Sin información');
-    assert.equal(plan.image, categoryIllustrations[plan.category]);
-    assert.equal(plan.imageKind, 'illustration');
-    assert.equal(plan.description, plan.subtype || '', 'Description only repeats the published classification');
+    const sample = pilot.entries.find((entry) => entry.id === plan.id);
+    assert.equal(plan.image, sample?.photo?.localPath || categoryIllustrations[plan.category]);
+    assert.equal(plan.imageKind, sample?.photo ? 'photograph' : 'illustration');
+    assert.equal(plan.description, sample?.description || plan.subtype || '', 'Descriptions only use approved source facts');
     assert.ok(plan.sourceReferences.every((source) => source.recordId && new URL(source.url).hostname === 'cdn.buenosaires.gob.ar' && source.license === 'CC-BY-2.5-AR' && source.downloadedAt && source.sha256));
   }
   const restaurant = plans.find((plan) => plan.id === 'badata-food-1602');
@@ -33,6 +36,35 @@ test('real cached records have original IDs, verified geographic fields and date
   assert.equal(restaurant.sourceUpdatedAt, cache.sources.find((source) => source.key === 'food').resourceLastModified);
   assert.ok(plans.filter((plan) => plan.category === 'Aire Libre').every((plan) => plan.coordinateMethod === 'published-boundary-vertex'));
   assert.ok(plans.filter((plan) => plan.category === 'Viajes').every((plan) => plan.subtype === 'Parada del bus turístico'));
+});
+
+test('photo pilot changes exactly twelve real records and preserves original names and licensed assets', async () => {
+  const plans = toPlanCards(cache);
+  assert.equal(pilot.entries.length, 12);
+  assert.equal(pilot.entries.filter((entry) => entry.photo).length, 8);
+  assert.equal(plans.filter((plan) => plan.pilotOrder !== undefined).length, 12);
+  const originals = new Map(cache.places.map((place) => [place.id, place]));
+  for (const plan of plans) {
+    const original = originals.get(plan.id);
+    if (plan.pilotOrder === undefined) {
+      assert.equal(plan.title, original.title);
+      assert.equal(plan.description, original.subtype || '');
+    } else {
+      assert.equal(plan.originalName, original.title);
+      assert.equal(plan.address, original.address);
+      assert.equal(plan.lat, original.lat);
+      assert.equal(plan.lon, original.lon);
+    }
+    if (plan.photograph) {
+      const photo = plan.photograph;
+      assert.ok(photo.author && photo.license && photo.licenseUrl && photo.sourceUrl && photo.evidence && photo.verifiedAt);
+      assert.equal(new URL(photo.sourceUrl).hostname, 'commons.wikimedia.org');
+      assert.equal(createHash('sha256').update(await readFile(`public${photo.localPath}`)).digest('hex'), photo.sha256);
+    }
+  }
+  assert.equal(plans.find((plan) => plan.id === 'badata-food-1573').imageKind, 'illustration', 'Do not assign the photo of the homonym at a different address');
+  assert.equal(plans.find((plan) => plan.id === 'badata-food-638').imageKind, 'photograph');
+  assert.equal(variedBaDataOrder(plans).slice(0, 12).filter((plan) => plan.pilotOrder !== undefined).length, 12);
 });
 
 test('recommended ordering varies categories, prioritizes complete addresses and preserves every real record', async () => {

@@ -1,4 +1,7 @@
 import { placeImage } from '../utils/baDataPresentation.js';
+import pilot from '../data/baDataPilot.json' with { type: 'json' };
+
+const pilotById = new Map(pilot.entries.map((entry) => [entry.id, entry]));
 
 let cachedRequest;
 
@@ -9,13 +12,20 @@ export function toPlanCards(cache) {
   return cache.places.map((place) => {
     const source = sources.get(place.sources?.[0]?.key);
     if (!source || !place.title || !Number.isFinite(place.lat) || !Number.isFinite(place.lon)) throw new Error('La copia contiene un registro sin procedencia o ubicación válida.');
-    return {
+    const card = {
       ...place, location: [place.barrio, 'CABA'].filter(Boolean).join(', '), ambaZone: 'CABA',
       budget: 'Sin información', ...placeImage(place),
       description: place.subtype || '',
       sourceName: 'BA Data — GCBA', sourceUrl: source.datasetUrl, sourceLicense: source.license,
       resourceUrl: source.url, sourceUpdatedAt: source.resourceLastModified, fetchedAt: source.downloadedAt,
       sourceReferences: place.sources.map((reference) => ({ ...reference, ...sources.get(reference.key) })),
+    };
+    const sample = pilotById.get(place.id);
+    // Do not reuse a reviewed photograph if the underlying place has changed.
+    if (!sample || sample.originalName !== place.title || sample.address !== place.address || sample.category !== place.category) return card;
+    return {
+      ...card, originalName: place.title, title: sample.title, description: sample.description, pilotOrder: sample.order,
+      ...(sample.status === 'verified-photo' ? { image: sample.photo.localPath, imageKind: 'photograph', imageSourceUrl: sample.photo.sourceUrl, photograph: sample.photo } : {}),
     };
   });
 }

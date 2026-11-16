@@ -1,7 +1,8 @@
+import PlacePhotoCredit from './PlacePhotoCredit';
 import { useEffect, useMemo, useState } from 'react';
 import { loadBaDataPreview } from '../services/baData';
 import usePlanFilters from '../hooks/usePlanFilters';
-import { categoryClass, priceLabel } from '../utils/planUtils';
+import { ideaImageFallback, categoryClass, priceLabel } from '../utils/planUtils';
 
 const CATEGORIES = ['Todas', 'Gastronomía', 'Cultura', 'Aire Libre', 'Viajes'];
 const NO_RATINGS = [];
@@ -49,10 +50,10 @@ export default function BaDataPreview() {
         </div>
         <p className="photo-credit" role="status">{visibleIdeas.length.toLocaleString('es-AR')} resultados. Fuente: BA Data, Gobierno de la Ciudad de Buenos Aires · <a href="https://creativecommons.org/licenses/by/2.5/ar/" target="_blank" rel="noreferrer">CC BY 2.5 AR</a>.</p>
         {!visibleIdeas.length ? <div className="empty-state"><h3>No hay resultados para estos filtros</h3><p>Los recursos no publican presupuestos. No se asignaron precios estimados.</p></div> : <div className="cards-grid">{visibleIdeas.slice(0, count).map((place) => <article className="plan-card" key={place.id}>
-          <div className="card-img-wrapper"><img className="card-img" src={place.image} alt="" loading="lazy" /></div>
+          <div className="card-img-wrapper"><img className="card-img" src={place.image} alt={place.originalName || place.title} loading="lazy" onError={(event) => ideaImageFallback(event, place)} /></div>
           <div className="card-content"><div className="card-meta"><span className={`badge badge-${categoryClass(place.category)}`}>{place.category}</span><span className="budget-badge">{priceLabel(place.budget)}</span></div>
             <h3 className="card-title">{place.title}</h3>{place.subtype && <p className="card-desc">{place.subtype}</p>}
-            <span className="photo-credit">{place.imageKind === 'photograph' ? <a href={place.imageSourceUrl} target="_blank" rel="noreferrer">Fotografía: fuente original</a> : 'Imagen ilustrativa de la categoría; no es una fotografía del lugar.'}</span>
+            <span className="photo-credit"><PlacePhotoCredit plan={place} /></span>
             <div className="card-info-row"><span>⌖ {place.address || `${place.lat}, ${place.lon}`}</span></div>
             <p className="photo-credit">Archivo: {date(place.sourceUpdatedAt)} · Descarga: {date(place.fetchedAt)}</p>
             <div className="card-footer plan-card-actions"><button type="button" className="btn btn-secondary" onClick={() => setSelected(place)}>Ver detalles</button><a className="btn btn-primary" href={place.sourceUrl} target="_blank" rel="noreferrer">Fuente oficial</a></div>
