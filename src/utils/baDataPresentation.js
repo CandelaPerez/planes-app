@@ -11,6 +11,11 @@ const displayName = (name) => name === name.toLocaleUpperCase('es')
 
 export function describePlace(place) {
   const name = displayName(place.title);
+  if (place.wikidataId) return {
+    originalName: place.title,
+    title: `Descubrí ${name}`,
+    description: `${place.subtype ? place.subtype.charAt(0).toLocaleUpperCase('es') + place.subtype.slice(1) + '.' : 'Conocé este atractivo turístico de Buenos Aires.'}`,
+  };
   const prefix = { 'Gastronomía':'Descubrí', Cultura:'Explorá', 'Aire Libre':'Paseá por', Viajes:'Conocé la parada' }[place.category] || 'Conocé';
   const kind = { 'Gastronomía':'Conocé este establecimiento gastronómico', Cultura:'Descubrí este espacio cultural', 'Aire Libre':'Disfrutá un paseo por este espacio verde', Viajes:'Ubicá esta parada del bus turístico' }[place.category] || 'Conocé este lugar';
   return { originalName:place.title, title:`${prefix} ${place.category === 'Viajes' ? name.replace(/^\d+\.\s*/, '') : name}`, description:`${kind}${place.barrio ? ` en ${place.barrio}` : ' en Buenos Aires'}.${place.subtype && place.category !== 'Viajes' ? ` Tipo publicado: ${displayName(place.subtype)}.` : ''}` };

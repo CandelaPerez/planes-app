@@ -5,6 +5,8 @@ const state = JSON.parse(await readFile(new URL('data/photo-batches/progress.jso
 const reviews = JSON.parse(await readFile(new URL('data/photo-batches/reviews.json', root), 'utf8'));
 const publishing = globalThis.process.argv.includes('--publish');
 const catalog = JSON.parse(await readFile(new URL('public/data/ba-data.json', root), 'utf8'));
+const tourism = JSON.parse(await readFile(new URL('src/data/tourismPlaces.json', root), 'utf8'));
+catalog.places.push(...tourism.places);
 const output = new URL('src/data/baDataPhotos.json', root);
 const candidatesDirectory = new URL('.browser-check/photo-batch/', root);
 await mkdir(candidatesDirectory, { recursive:true });
@@ -46,7 +48,7 @@ try {
       const entry = {id:record.id,originalName:record.originalName,address:record.address,category:record.category,lat:record.lat,lon:record.lon,fingerprint:record.fingerprint,photo};
       manifest.entries = manifest.entries.filter((item) => item.id !== record.id).concat(entry);
     }
-    console.log(JSON.stringify({id:review.id,mode:publishing?'published':'prepared-for-visual-review',file:review.file,bytes:bytes.length,sha256}));
+    if (publishing || !review.approvedSha256) console.log(JSON.stringify({id:review.id,mode:publishing?'published':'prepared-for-visual-review',file:review.file,bytes:bytes.length,sha256}));
   }
   if (publishing) {
     manifest.generatedAt = new Date().toISOString();

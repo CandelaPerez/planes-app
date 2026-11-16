@@ -1,3 +1,4 @@
+import { toPlanCards } from '../src/services/baData.js';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { mkdir, mkdtemp, writeFile, readFile } from 'node:fs/promises';
@@ -9,6 +10,7 @@ import { join } from 'node:path';
 // Real Chromium/CDP check, no account login or writes to Firebase.
 const folder = new URL('../.browser-check/', import.meta.url);
 await mkdir(folder, { recursive: true });
+const reviewedPlans = toPlanCards(JSON.parse(await readFile(new URL('../public/data/ba-data.json', import.meta.url), 'utf8')));
 const baData = globalThis.process.argv.includes('--ba-data');
 const baDataHome = globalThis.process.argv.includes('--ba-data-home');
 const production = globalThis.process.argv.includes('--production') || baData;
@@ -84,7 +86,7 @@ try {
   await call('Network.setBlockedURLs', {urls:['https://*']});
   await call('Emulation.setDeviceMetricsOverride',{width:1366,height:900,deviceScaleFactor:1,mobile:false});
   await call('Page.navigate',{url:origin});
-  await until("document.querySelector('#discover-plans')?.textContent.includes('21 planes')");
+  await until("document.querySelector('#discover-plans')?.textContent.includes('"+reviewedPlans.length+" planes')");
   await until("[...document.querySelectorAll('.plan-card img')].every(i=>i.complete&&i.naturalWidth>0)");
   const manifests=await Promise.all(['baDataPilot.json','baDataPhotos.json'].map(async f=>JSON.parse(await readFile(new URL('../src/data/'+f,import.meta.url),'utf8'))));
   const images=manifests.flatMap(m=>m.entries.filter(e=>e.photo).map(e=>e.photo.localPath));
@@ -93,16 +95,52 @@ try {
   assert.ok(await evaluate("[...document.querySelectorAll('.plan-card img')].every(i=>i.getAttribute('src').startsWith('/images/ba-data-'))"));
   await evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent==='Ver m\u00e1s').click()");
   await until("document.querySelectorAll('.plan-card').length===12");
-  for(const [category,total] of [['Cultura',9],['Gastronom\u00eda',8],['Aire Libre',4]]){
-   await evaluate("[...document.querySelectorAll('.category-filter button')].find(b=>b.textContent==="+JSON.stringify(category)+").click()");
+  for(const [category,total] of Object.entries(reviewedPlans.reduce((counts,p)=>(counts[p.category]=(counts[p.category]||0)+1,counts),{}))){
+   await evaluate("[...document.querySelectorAll('.category-filter button')].find(b=>b.textContent==="+JSON.stringify(category === 'Viajes' ? 'Íconos de BA' : category)+").click()");
    await until("document.body.textContent.includes('"+total+" resultados')");
   }
+  assert.deepEqual(await evaluate("[...document.querySelectorAll('.category-filter button')].map(b=>b.textContent)"),['Todas','Gastronomía','Cultura','Aire Libre','Íconos de BA']);
+  await evaluate("[...document.querySelectorAll('.category-filter button')].find(b=>b.textContent==='Íconos de BA').click()");
+  await evaluate("[...document.querySelectorAll('.plan-card button')].find(b=>b.textContent.includes('Agregar a mis planes')).click()");
+  assert.ok(await evaluate("JSON.parse(localStorage.getItem('porhacer_preview_plans')).some(p=>p.catalogId.startsWith('tourism-wikidata-')&&p.photograph.evidence&&p.sourceLicense==='CC0')"));
+  await evaluate("[...document.querySelectorAll('.plan-card button')].find(b=>b.textContent==='Ver detalles').click()");
+  await until("!!document.querySelector('.modal-content')");
+  assert.ok(await evaluate("document.querySelector('.modal-content').textContent.includes('Wikidata') && document.querySelector('.modal-content').textContent.includes('CC0')"));
+  await evaluate("document.querySelector('.modal-close').click()");
   await evaluate("[...document.querySelectorAll('.category-filter button')].find(b=>b.textContent==='Todas').click()");
   await evaluate("(()=>{const input=document.querySelector('input[type=search]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'Tortoni');input.dispatchEvent(new Event('input',{bubbles:true}));})()");
   await until("document.querySelectorAll('.plan-card').length===1");
   await until("document.querySelector('.plan-card img').complete && document.querySelector('.plan-card img').naturalWidth>0");
   await evaluate("[...document.querySelectorAll('.plan-card button')].find(b=>b.textContent.includes('Agregar a mis planes')).click()");
   assert.ok(await evaluate("JSON.parse(localStorage.getItem('porhacer_preview_plans')).some(p=>p.catalogId==='badata-food-1362'&&p.photograph.evidence)"));
+  const tick = () => new Promise(resolve=>setTimeout(resolve,80));
+  const click = async text => { await evaluate("(()=>{const b=[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==="+JSON.stringify(text)+");if(!b)throw Error('Button missing: '+"+JSON.stringify(text)+");b.click();})()"); await tick(); };
+  const fill = async (selector,value,index=0) => { await evaluate("(()=>{const input=document.querySelectorAll("+JSON.stringify(selector)+")["+index+"];Object.getOwnPropertyDescriptor(Object.getPrototypeOf(input),'value').set.call(input,"+JSON.stringify(value)+");input.dispatchEvent(new Event('input',{bubbles:true}));input.dispatchEvent(new Event('change',{bubbles:true}));})()"); await tick(); };
+  await click('Mis planes');
+  await until("!!document.querySelector('.fav-btn')");
+  await evaluate("document.querySelector('.fav-btn').click()");
+  await until("document.querySelector('.fav-btn').classList.contains('is-favorite')");
+  await click('Agregar a calendario');
+  await until("!!document.querySelector('.schedule-modal form')");
+  await evaluate("document.querySelector('.schedule-modal form').requestSubmit()");
+  await until("!!document.querySelector('.calendar-event-card')");
+  await click('Mis planes');
+  await click('Realizado');
+  await click('Recuerdos');
+  await until("!!document.querySelector('.photo-card')");
+  await click('+ Crear plan');
+  await fill('.modal-content input[maxlength="100"]','Plan personalizado de prueba');
+  await fill('.modal-content input[maxlength="100"]','Buenos Aires',1);
+  await fill('.modal-content textarea','Prueba local en perfil aislado.');
+  await evaluate("document.querySelector('.modal-content form').requestSubmit()");
+  await until("!document.querySelector('.modal-content')");
+  assert.ok(await evaluate("JSON.parse(localStorage.getItem('porhacer_preview_plans')).some(p=>p.title==='Plan personalizado de prueba')"));
+  await click('Inicio');
+  await click('Sugerir itinerario');
+  await until("document.querySelectorAll('.itinerary-list li').length===2");
+  await click('Guardar itinerario');
+  await until("JSON.parse(localStorage.getItem('porhacer_preview_plans')).some(p=>p.type==='itinerary')");
+  await fill('input[type=search]','');
   await evaluate("document.querySelector('#discover-plans').scrollIntoView()");
   const shot=await call('Page.captureScreenshot',{format:'png'});await writeFile(new URL('verified-desktop.png',folder),Buffer.from(shot.data,'base64'));
   await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
@@ -114,5 +152,5 @@ try {
   assert.equal(await evaluate("document.querySelectorAll('.discovery-section .plan-card').length"),0);
   assert.ok(await evaluate("JSON.parse(localStorage.getItem('porhacer_preview_plans')).some(p=>p.catalogId==='badata-food-1362')"));
   assert.deepEqual(exceptions,[]);
-  console.log(JSON.stringify({images:'loaded',filters:'passed',pagination:'passed',save:'passed',savedSurvivesCatalogFailure:true,errorWithoutFallback:true,desktopColumns:3,mobileOverflow:false,javascriptExceptions:exceptions}));
+  console.log(JSON.stringify({plans:reviewedPlans.length,images:'all decoded',favorites:'passed',calendar:'passed',memories:'passed',customPlans:'passed',itineraries:'passed',filters:'passed',pagination:'passed',save:'passed',savedSurvivesCatalogFailure:true,errorWithoutFallback:true,desktopColumns:3,mobileOverflow:false,javascriptExceptions:exceptions}));
 } finally { socket?.close();browser.kill();if(typeof server.close==='function')await server.close();else await new Promise(resolve=>server.httpServer.close(resolve)); }

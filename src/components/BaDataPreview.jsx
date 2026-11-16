@@ -34,14 +34,14 @@ export default function BaDataPreview() {
   const key = [category, search, zone, budget, sortBy].join('|');
   const count = pagination.key === key ? pagination.count : 24;
   return <div className="app-container">
-    <header className="navbar"><button type="button" className="nav-brand" onClick={() => window.location.assign('/')}><span className="brand-badge">PH</span><h1>Por Hacer</h1></button><nav><a className="btn btn-secondary" href="/">Volver al catálogo original</a></nav></header>
+    <header className="navbar"><button type="button" className="nav-brand" onClick={() => window.location.assign('/')}><span className="brand-badge">PH</span><h1>Por Hacer</h1></button><nav><a className="btn btn-secondary" href="/">Volver a Por Hacer</a></nav></header>
     <main className="main-content">
       <div className="preview-banner" role="status"><strong>Vista previa BA Data</strong><span>Solo lectura. Tus 129 planes originales y tus datos de Firebase siguen intactos.</span></div>
       <div className="section-header"><h2>Descubrir planes · BA Data</h2><p>{data ? `${catalog.length.toLocaleString('es-AR')} planes con fotografía real verificada.` : 'Cargando la copia local de los recursos oficiales…'}</p></div>
-      {error && <div className="app-alert error" role="alert">{error} Podés volver al catálogo original.</div>}
+      {error && <div className="app-alert error" role="alert">{error} Podés volver a Por Hacer.</div>}
       {data && <>
-        <div className="preview-banner"><strong>Fechas de los archivos, no de cada establecimiento</strong><span>{data.sources.map((source) => `${source.category}: ${date(source.resourceLastModified)}`).join(' · ')}. La fecha de descarga no acredita que el lugar siga abierto. Viajes contiene paradas del bus turístico; no ubicaciones de cada atractivo cercano.</span></div>
-        <div className="category-filter" role="group" aria-label="Filtrar por categoría">{CATEGORIES.filter((item) => item === 'Todas' || catalog.some((plan) => plan.category === item)).map((item) => <button key={item} type="button" className={`category-filter-btn ${category === item ? 'active' : ''}`} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}</div>
+        <div className="preview-banner"><strong>Fechas de los archivos, no de cada establecimiento</strong><span>{data.sources.map((source) => `${source.category}: ${date(source.resourceLastModified)}`).join(' · ')}. La fecha de descarga no acredita que el lugar siga abierto. Viajes muestra atractivos turísticos identificados con Wikidata (CC0); procedencia en cada ficha.</span></div>
+        <div className="category-filter" role="group" aria-label="Filtrar por categoría">{CATEGORIES.map((item) => <button key={item} type="button" className={`category-filter-btn ${category === item ? 'active' : ''}`} aria-pressed={category === item} onClick={() => setCategory(item)}>{item === 'Viajes' ? 'Íconos de BA' : item}</button>)}</div>
         <div className="filter-bar discovery-filters">
           <input aria-label="Buscar por nombre o ubicación" type="search" placeholder="Buscar lugar o barrio…" value={search} onChange={(event) => setSearch(event.target.value)} />
           <select aria-label="Filtrar por zona" value={zone} onChange={(event) => setZone(event.target.value)}><option value="Todas">Todas las zonas</option>{zones.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}</select>

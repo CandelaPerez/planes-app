@@ -14,17 +14,19 @@ import { createHash } from 'node:crypto';
 
 const path = 'public/data/ba-data.json';
 const cache = JSON.parse(await readFile(path, 'utf8'));
+const tourism = JSON.parse(await readFile('src/data/tourismPlaces.json', 'utf8'));
 
 
 
 test('only reviewed photographs become visible; originals remain available', async () => {
  const plans=toPlanCards(cache);
  assert.equal(cache.places.length,6670);
- assert.equal(plans.length,21);
+ assert.ok(plans.length >= 48);
+ assert.equal(new Set(plans.map(p=>p.photograph.sha256)).size, plans.length);
  assert.equal(new Set(plans.map(p=>p.id)).size,plans.length);
  assert.equal(plans.find(p=>p.id==='badata-food-1573'),undefined);
  for(const plan of plans){
-  const original=cache.places.find(p=>p.id===plan.id);
+  const original=[...cache.places,...tourism.places].find(p=>p.id===plan.id);
   assert.equal(plan.originalName,original.title);
   assert.equal(plan.address,original.address);
   assert.equal(plan.imageKind,'photograph');
@@ -36,7 +38,20 @@ test('only reviewed photographs become visible; originals remain available', asy
  const urlOnly=structuredClone(cache);urlOnly.places[0].photoUrl='https://example.com/real.jpg';urlOnly.places[0].photoSourceUrl='https://example.com';
  assert.equal(toPlanCards(urlOnly).length,plans.length);
  assert.equal(variedBaDataOrder(plans).length,plans.length);
- assert.deepEqual(plans.reduce((a,p)=>(a[p.category]=(a[p.category]||0)+1,a),{}),{'Gastronomía':8,Cultura:9,'Aire Libre':4});
+ for (const category of ['Gastronomía', 'Cultura', 'Aire Libre', 'Viajes']) assert.ok(plans.filter(p=>p.category===category).length >= 12, category);
+});
+
+test('tourism entries have stable entity IDs, open provenance and real attractions rather than bus stops', () => {
+ const plans=toPlanCards(cache).filter(p=>p.category==='Viajes');
+ assert.ok(plans.length>=12);
+ for(const plan of plans){
+  assert.equal(plan.id,`tourism-wikidata-${plan.wikidataId.toLowerCase()}`);
+  assert.equal(plan.sourceUrl,`https://www.wikidata.org/wiki/${plan.wikidataId}`);
+  assert.equal(plan.sourceLicense,'CC0');
+  assert.match(plan.sourceName,/Wikidata/);
+  assert.ok(!plan.description.includes('parada del bus'));
+  assert.ok(plan.lat < -34.5 && plan.lat > -34.7 && plan.lon < -58.3 && plan.lon > -58.6);
+ }
 });
 test('HTML errors and malformed CSV cannot be accepted as successful data', () => {
   assert.throws(() => parseCsv('<html>Request Rejected</html>'), /HTML/);
@@ -44,7 +59,7 @@ test('HTML errors and malformed CSV cannot be accepted as successful data', () =
   assert.deepEqual(parseCsv('id,name,note\r\n1,"Real, named field","two\nlines"\r\n'), [{ id: '1', name: 'Real, named field', note: 'two\nlines' }]);
 });
 
-test('invalid persistent catalog triggers fallback instead of showing an empty or duplicated catalog', () => {
+test('invalid persistent catalog fails explicitly instead of showing an empty or duplicated catalog', () => {
   assert.throws(() => toPlanCards({ ...cache, places: [] }), /vacía/);
   assert.throws(() => toPlanCards({ ...cache, places: [cache.places[0], cache.places[0]] }), /duplicados/);
 });

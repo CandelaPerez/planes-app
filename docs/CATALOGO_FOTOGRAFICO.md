@@ -1,5 +1,7 @@
 # Catálogo fotográfico verificado
 
+**Estado actual: 53 planes, con mínimo de 12 en las cuatro categorías.** Ver [ampliación y verificación](AMPLIACION_CATALOGO.md). El resultado de 21 planes que sigue es el informe histórico previo a la ampliación.
+
 Punto de recuperación anterior a estos cambios: `38b9b37`.
 
 ## Resultado del 16 de noviembre de 2026

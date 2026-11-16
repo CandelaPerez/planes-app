@@ -5,12 +5,14 @@ import { toPlanCards } from '../src/services/baData.js';
 const root=new URL('../',import.meta.url);
 const read=async(path)=>JSON.parse(await readFile(new URL(path,root),'utf8'));
 const cache=await read('public/data/ba-data.json');
+const tourism=await read('src/data/tourismPlaces.json');
+const allPlaces=[...cache.places,...tourism.places];
 const manifests=await Promise.all(['src/data/baDataPilot.json','src/data/baDataPhotos.json'].map(read));
 for(const manifest of manifests){
  assert.equal(manifest.version,1);
  assert.equal(new Set(manifest.entries.map(e=>e.id)).size,manifest.entries.length);
  for(const entry of manifest.entries.filter(e=>e.photo)){
-  const place=cache.places.find(p=>p.id===entry.id),photo=entry.photo;
+  const place=allPlaces.find(p=>p.id===entry.id),photo=entry.photo;
   assert.ok(place,entry.id);
   for(const [key,value] of Object.entries({originalName:place.title,address:place.address,category:place.category,lat:place.lat,lon:place.lon}))assert.equal(entry[key],value,`${entry.id}: ${key} changed; review again`);
   assert.ok(photo.evidence && photo.author && photo.description && photo.verifiedAt);
@@ -22,5 +24,7 @@ for(const manifest of manifests){
  }
 }
 const plans=toPlanCards(cache);
+assert.equal(new Set(plans.map(p=>p.photograph.sha256)).size,plans.length,'The same photograph cannot represent different places');
+assert.equal(new Set(plans.map(p=>p.photograph.sourceUrl)).size,plans.length,'Repeated Commons file');
 assert.equal(plans.length,manifests.reduce((n,m)=>n+m.entries.filter(e=>e.photo).length,0),'A reviewed photo was excluded or duplicated');
-console.log(JSON.stringify({originalRecords:cache.places.length,verified:plans.length,excluded:cache.places.length-plans.length,categories:plans.reduce((a,p)=>(a[p.category]=(a[p.category]||0)+1,a),{})},null,2));
+console.log(JSON.stringify({originalRecords:cache.places.length,supplementalRecords:tourism.places.length,verified:plans.length,excludedBaData:cache.places.length-plans.filter(p=>!p.wikidataId).length,categories:plans.reduce((a,p)=>(a[p.category]=(a[p.category]||0)+1,a),{})},null,2));

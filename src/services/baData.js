@@ -1,6 +1,7 @@
 import { describePlace } from '../utils/baDataPresentation.js';
 import pilot from '../data/baDataPilot.json' with { type: 'json' };
 import photos from '../data/baDataPhotos.json' with { type: 'json' };
+import tourism from '../data/tourismPlaces.json' with { type: 'json' };
 
 const pilotById = new Map(pilot.entries.map((entry) => [entry.id, entry]));
 const photosById = new Map(photos.entries.map((entry) => [entry.id, entry]));
@@ -9,9 +10,11 @@ let cachedRequest;
 
 export function toPlanCards(cache) {
   if (cache.version !== 1 || !Array.isArray(cache.places) || !cache.sources?.length) throw new Error('La copia local de BA Data no tiene el formato esperado.');
-  const sources = new Map(cache.sources.map((source) => [source.key, source]));
+  const sources = new Map([...cache.sources, ...tourism.sources].map((source) => [source.key, source]));
   if (!cache.places.length || new Set(cache.places.map((place) => place.id)).size !== cache.places.length) throw new Error('La copia local está vacía o contiene identificadores duplicados.');
-  return cache.places.flatMap((place) => {
+  const places = [...cache.places, ...tourism.places];
+  if (new Set(places.map((place) => place.id)).size !== places.length) throw new Error('El catálogo contiene identificadores duplicados.');
+  return places.flatMap((place) => {
     const source = sources.get(place.sources?.[0]?.key);
     if (!source || !place.title || !Number.isFinite(place.lat) || !Number.isFinite(place.lon)) throw new Error('La copia contiene un registro sin procedencia o ubicación válida.');
     const sample = pilotById.get(place.id);
@@ -24,7 +27,7 @@ export function toPlanCards(cache) {
       budget: 'Sin información',
       ...describePlace(place),
       ...(photo ? { image:photo.localPath, imageKind:'photograph', imageSourceUrl:photo.sourceUrl, photograph:photo } : {}),
-      sourceName: 'BA Data — GCBA', sourceUrl: source.datasetUrl, sourceLicense: source.license,
+      sourceName: place.wikidataId ? 'Wikidata — datos abiertos' : 'BA Data — GCBA', sourceUrl: source.datasetUrl, sourceLicense: source.license,
       resourceUrl: source.url, sourceUpdatedAt: source.resourceLastModified, fetchedAt: source.downloadedAt,
       sourceReferences: place.sources.map((reference) => ({ ...reference, ...sources.get(reference.key) })),
     };

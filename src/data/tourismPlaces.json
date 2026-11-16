@@ -1,0 +1,455 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "key": "wikidata-q478926",
+      "dataset": "Wikidata: Casa Rosada",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q478926",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q478926.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "f431cfc86863617273f4c3897549d4823eaeb1f9155f560bea7c1d3ffc574dc7"
+    },
+    {
+      "key": "wikidata-q2336867",
+      "dataset": "Wikidata: Puente de la Mujer",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q2336867",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2336867.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "0668388ee30cdce5c553678978453b1166a421bd3eb94997f2d19b9090cd8d64"
+    },
+    {
+      "key": "wikidata-q499855",
+      "dataset": "Wikidata: La Bombonera",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q499855",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q499855.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "3d64a5798f5ce0ccb542457b69f04416c711338e5d6ae316d7f04539c222e375"
+    },
+    {
+      "key": "wikidata-q646142",
+      "dataset": "Wikidata: Palacio del Congreso de la Nación Argentina",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q646142",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q646142.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "b6e33dbd9e6dc290c1216fa8939c3414a2c5f448aaede26975bae98cbc4e8368"
+    },
+    {
+      "key": "wikidata-q967929",
+      "dataset": "Wikidata: Catedral de Buenos Aires",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q967929",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q967929.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "03bc1735be9c9751d238e0e27575a875bc37a306d7fa11504d2b45175db50133"
+    },
+    {
+      "key": "wikidata-q570385",
+      "dataset": "Wikidata: Torre Monumental",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q570385",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q570385.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "60da70b22e97d0b61fbf9673520c779ce18791d4340efbb2eb33a6b28068b7b8"
+    },
+    {
+      "key": "wikidata-q831389",
+      "dataset": "Wikidata: Obelisco de Buenos Aires",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q831389",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q831389.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "2194989d8606ce1cb698d86e440637fff12fd5626a0c4311358a3392c98cdf6a"
+    },
+    {
+      "key": "wikidata-q1029566",
+      "dataset": "Wikidata: Caminito",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q1029566",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1029566.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "cde464cf483c0880622241de99fa339c41f812e9dd3da4f7ff03ef944dcaec25"
+    },
+    {
+      "key": "wikidata-q831322",
+      "dataset": "Wikidata: Cementerio de la Recoleta",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q831322",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q831322.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "ba552e2035576142742e6806b9e4d4c1b7dc8487cc207cfe7a01e88eba4407db"
+    },
+    {
+      "key": "wikidata-q1138028",
+      "dataset": "Wikidata: Puente Transbordador Nicolás Avellaneda",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q1138028",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1138028.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "11b47310e3cd2d26107752334a792291ef2a066234bbe172c6698a371c4677b7"
+    },
+    {
+      "key": "wikidata-q4579815",
+      "dataset": "Wikidata: basílica de San Francisco",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q4579815",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4579815.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "a4e79c6cb5ef89213311d5cbe9257e82de184310c143fa46b29b2b7135efde78"
+    },
+    {
+      "key": "wikidata-q3361112",
+      "dataset": "Wikidata: Palacio de Aguas Corrientes",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q3361112",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3361112.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "c1588c7c6ec3ad856826148a47acc683ed0e7e744d0d874ded2562fa4892cc3a"
+    },
+    {
+      "key": "wikidata-q2886930",
+      "dataset": "Wikidata: basílica Nuestra Señora del Pilar (Buenos Aires)",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q2886930",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2886930.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "b6da66629f55a740eb94ddf459135161f5bb92f92f4cef77345bcef1a8868d36"
+    },
+    {
+      "key": "wikidata-q1668230",
+      "dataset": "Wikidata: Palacio Paz",
+      "publisher": "Comunidad de Wikidata",
+      "datasetUrl": "https://www.wikidata.org/wiki/Q1668230",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1668230.json",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadedAt": "2026-11-16T10:46:16.485Z",
+      "sha256": "77fa6d11bcbcd12d3a651f900bdffc7a7e31c4f61a3cfb44103cebe21ecd613f"
+    }
+  ],
+  "places": [
+    {
+      "id": "tourism-wikidata-q478926",
+      "title": "Casa Rosada",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.608055555556,
+      "lon": -58.370277777778,
+      "barrio": "",
+      "subtype": "palacio presidencial y sede del Poder Ejecutivo de la República Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q478926",
+      "coordinatePrecision": 0.00027777777777778,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q478926",
+          "recordId": "Q478926"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q2336867",
+      "title": "Puente de la Mujer",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.607939,
+      "lon": -58.364911,
+      "barrio": "",
+      "subtype": "puente peatonal en Buenos Aires, Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q2336867",
+      "coordinatePrecision": 0.00000277777777778,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q2336867",
+          "recordId": "Q2336867"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q499855",
+      "title": "La Bombonera",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.63565,
+      "lon": -58.36465,
+      "barrio": "",
+      "subtype": "estadio de fútbol en Buenos Aires, Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q499855",
+      "coordinatePrecision": null,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q499855",
+          "recordId": "Q499855"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q646142",
+      "title": "Palacio del Congreso de la Nación Argentina",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.609863888889,
+      "lon": -58.392691666667,
+      "barrio": "",
+      "subtype": "edificio legislativo en Buenos Aires",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q646142",
+      "coordinatePrecision": 0.0000027777777777778,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q646142",
+          "recordId": "Q646142"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q967929",
+      "title": "Catedral de Buenos Aires",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.607408333333,
+      "lon": -58.373277777778,
+      "barrio": "",
+      "subtype": "templo católico de Buenos Aires, Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q967929",
+      "coordinatePrecision": 0.00027777777777778,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q967929",
+          "recordId": "Q967929"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q570385",
+      "title": "Torre Monumental",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.592963,
+      "lon": -58.373192,
+      "barrio": "",
+      "subtype": "torre del reloj en Buenos Aires",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q570385",
+      "coordinatePrecision": 0.000001,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q570385",
+          "recordId": "Q570385"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q831389",
+      "title": "Obelisco de Buenos Aires",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.60376,
+      "lon": -58.38162,
+      "barrio": "",
+      "subtype": "monumento histórico en la ciudad de Buenos Aires, Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q831389",
+      "coordinatePrecision": 0.00001,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q831389",
+          "recordId": "Q831389"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q1029566",
+      "title": "Caminito",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.6393,
+      "lon": -58.3628,
+      "barrio": "",
+      "subtype": "calle del barrio de La Boca en la ciudad de Buenos Aires, Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q1029566",
+      "coordinatePrecision": 0.0001,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q1029566",
+          "recordId": "Q1029566"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q831322",
+      "title": "Cementerio de la Recoleta",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.588055555556,
+      "lon": -58.393055555556,
+      "barrio": "",
+      "subtype": "cementerio en Buenos Aires, Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q831322",
+      "coordinatePrecision": null,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q831322",
+          "recordId": "Q831322"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q1138028",
+      "title": "Puente Transbordador Nicolás Avellaneda",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.63847222,
+      "lon": -58.35625,
+      "barrio": "",
+      "subtype": "puente transbordador en Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q1138028",
+      "coordinatePrecision": 0.00002777777777778,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q1138028",
+          "recordId": "Q1138028"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q4579815",
+      "title": "basílica de San Francisco",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.61069,
+      "lon": -58.371403,
+      "barrio": "",
+      "subtype": "basílica en Buenos Aires",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q4579815",
+      "coordinatePrecision": 0.000001,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q4579815",
+          "recordId": "Q4579815"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q3361112",
+      "title": "Palacio de Aguas Corrientes",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.600555555556,
+      "lon": -58.395,
+      "barrio": "",
+      "subtype": "edificio en Buenos Aires, Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q3361112",
+      "coordinatePrecision": 0.00027777777777778,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q3361112",
+          "recordId": "Q3361112"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q2886930",
+      "title": "basílica Nuestra Señora del Pilar (Buenos Aires)",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.5868,
+      "lon": -58.392,
+      "barrio": "",
+      "subtype": "iglesia en Buenos Aires, Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q2886930",
+      "coordinatePrecision": 0.01,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q2886930",
+          "recordId": "Q2886930"
+        }
+      ]
+    },
+    {
+      "id": "tourism-wikidata-q1668230",
+      "title": "Palacio Paz",
+      "category": "Viajes",
+      "address": "",
+      "lat": -34.595134941735054,
+      "lon": -58.37794453411931,
+      "barrio": "",
+      "subtype": "edificio en Argentina",
+      "coordinateMethod": "Wikidata-P625",
+      "wikidataId": "Q1668230",
+      "coordinatePrecision": 1e-8,
+      "sourceName": "Wikidata",
+      "location": "Buenos Aires, Argentina",
+      "sources": [
+        {
+          "key": "wikidata-q1668230",
+          "recordId": "Q1668230"
+        }
+      ]
+    }
+  ]
+}

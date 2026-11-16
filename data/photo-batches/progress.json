@@ -1,7 +1,7 @@
 {
   "version": 1,
   "batch": 2,
-  "cap": 200,
+  "cap": 222,
   "createdAt": "2026-11-16T00:59:53.163Z",
   "queue": [
     {
@@ -1803,6 +1803,270 @@
       "lat": -34.607122,
       "lon": -58.375366,
       "fingerprint": "169df30776d08af98c9debeec61eced9dde818b7dd40a73102f1e932345af462"
+    },
+    {
+      "id": "badata-food-1985",
+      "originalName": "EL CUARTITO",
+      "address": "TALCAHUANO 937",
+      "category": "Gastronomía",
+      "lat": -34.59784578,
+      "lon": -58.38551982,
+      "fingerprint": "79e814f384e370328c69c73f518de0cdfc1f07bc4d7927608af3e7641d51865d",
+      "searchKey": "81c01c87cdbac5b618d1f889800eac9cd94832dadebd2190ba7d8a054f0bea75",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.711Z"
+    },
+    {
+      "id": "badata-food-2296",
+      "originalName": "GUERRIN",
+      "address": "CORRIENTES AV. 1368",
+      "category": "Gastronomía",
+      "lat": -34.60404428,
+      "lon": -58.38600015,
+      "fingerprint": "e1e01c12840305bb17db527cbb9acb70bd27d8d09a407ba361496da8a227b7a4",
+      "searchKey": "2655fed1be1725f0c0a9e4a192a80ae506b3c29938b568e69390bcd1fddc7c8e",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.714Z"
+    },
+    {
+      "id": "badata-food-170",
+      "originalName": "EL PREFERIDO DE PALERMO",
+      "address": "BORGES, JORGE LUIS 2108",
+      "category": "Gastronomía",
+      "lat": -34.58545725,
+      "lon": -58.42529708,
+      "fingerprint": "0adffcb646096208c3aa544ffa4c19cc9342444b889dfa412d9f1192d0df29fc",
+      "searchKey": "9d54219bd7ed3db9f714325cfc62c20206447d7de483ffb42b192b6cd33639ec",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.714Z"
+    },
+    {
+      "id": "badata-food-565",
+      "originalName": "EL IMPERIO DE LA PIZZA",
+      "address": "CORRIENTES AV. 6891",
+      "category": "Gastronomía",
+      "lat": -34.58704199,
+      "lon": -58.45477406,
+      "fingerprint": "774cb972cd808a0412447cbc06ee23e78f7edd606b736b6be0532a0fc72cfe53",
+      "searchKey": "d5b8166e81fc3ae86ac856ae4faf1a7d9b8cd2733d92abba52748cb3828533bd",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.715Z"
+    },
+    {
+      "id": "badata-culture-1103",
+      "originalName": "CENTRO CULTURAL RECOLETA",
+      "address": "JUNIN 1930, CABA",
+      "category": "Cultura",
+      "lat": -34.586496,
+      "lon": -58.391578,
+      "fingerprint": "dc89f76bc9411b04479cff991a0d7623514ea3a16fa700569507bbf886eadb35",
+      "searchKey": "5ee593423a535b7919034236975263733741d1fcf352e1d59309c612714f4ec5",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.716Z"
+    },
+    {
+      "id": "badata-culture-2599",
+      "originalName": "MUSEO DE ARTE ESPAÑOL ENRIQUE LARRETA",
+      "address": "JURAMENTO AV. 2291, CABA",
+      "category": "Cultura",
+      "lat": -34.561129,
+      "lon": -58.455265,
+      "fingerprint": "c190f043192c39d71be1d7b018a372a5dd1548a31c1fc2d4123b2a05b7849971",
+      "searchKey": "0096a84c3f0cfe51615601986f0b7b4cc1468243a6794122e757076bea2b02f7",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.716Z"
+    },
+    {
+      "id": "badata-culture-2674",
+      "originalName": "MUSEO HISTORICO NACIONAL",
+      "address": "DEFENSA 1600, CABA",
+      "category": "Cultura",
+      "lat": -34.626626,
+      "lon": -58.370973,
+      "fingerprint": "1f5cedd70a6fd0e817acd5fba3349e0cb44fa17356d031d351040b20dd4646c8",
+      "searchKey": "ddb2f176afd26035b22310090594db5afb7380430b8eab032a9871be0eafafec",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.717Z"
+    },
+    {
+      "id": "badata-green-1444",
+      "originalName": "Jardín Japonés",
+      "address": "DEL LIBERTADOR, AV. - SARMIENTO, AV. - BERRO, ADOLFO, AV. - CASARES, AV.",
+      "category": "Aire Libre",
+      "lat": -34.576470556881766,
+      "lon": -58.409710371143966,
+      "fingerprint": "8026b0ba511cbd0b0da714a2e85c196bf85f9ca3441df18efcaf814157781d53",
+      "searchKey": "07dee6805415544cc0060fa082ffea9423231c5e9b99842aca66cca24a35d7f6",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.717Z"
+    },
+    {
+      "id": "tourism-wikidata-q478926",
+      "originalName": "Casa Rosada",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.608055555556,
+      "lon": -58.370277777778,
+      "fingerprint": "f07145243549d0bd41d412e3e3e385c8981a9ea8736062ae3bb8419c2eec0dbd",
+      "searchKey": "235b782632ffa1c7fbd2a6c7600b47c966fd7b3aa9db2f10f55781213d8549c6",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.719Z"
+    },
+    {
+      "id": "tourism-wikidata-q2336867",
+      "originalName": "Puente de la Mujer",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.607939,
+      "lon": -58.364911,
+      "fingerprint": "6bfcc9805acc8327cc9f94ca8d12eeb4cebe8693e9564776cda8bfaf59870095",
+      "searchKey": "e9cf59e46af4d70262473b333b1406d6c912c7c8cae470865c6e5102afa40de6",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.719Z"
+    },
+    {
+      "id": "tourism-wikidata-q499855",
+      "originalName": "La Bombonera",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.63565,
+      "lon": -58.36465,
+      "fingerprint": "6a872fdc95474cbb8a1b880fab8db3e3bacb68f9ae16dbf00e4f79e7e50fcc80",
+      "searchKey": "ba737ba198642d67fd7f6b450acc24bc26e57306a89a5c308a6b43c77d12b02f",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.720Z"
+    },
+    {
+      "id": "tourism-wikidata-q646142",
+      "originalName": "Palacio del Congreso de la Nación Argentina",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.609863888889,
+      "lon": -58.392691666667,
+      "fingerprint": "9f6a935709ac2f09d28b215eba4bc9c20c1cc1b3a118d4cb5ba2a5c8b755ecf1",
+      "searchKey": "f1bd91b80f8d1545ce6e04e31e92d535b61f0bf7efdcbef021ba4fcdb5c9b00d",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.720Z"
+    },
+    {
+      "id": "tourism-wikidata-q967929",
+      "originalName": "Catedral de Buenos Aires",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.607408333333,
+      "lon": -58.373277777778,
+      "fingerprint": "5b818f6e01cfb2760ebdba9b5aa04720e4111fc24c0a3f3eeedd86600dcf1b30",
+      "searchKey": "430dd007de0b04d55ecb8c3614010d2793e3ae0de46b90e710252baf823c6b92",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.720Z"
+    },
+    {
+      "id": "tourism-wikidata-q570385",
+      "originalName": "Torre Monumental",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.592963,
+      "lon": -58.373192,
+      "fingerprint": "afce3522205c6c18f42b98603052e8b391605013bc39ab32565c7f440c56a5dc",
+      "searchKey": "56e85efaf2a6ed9aed8008cd51afc531d525e5feb0e3ce5bbd36f79f1b0fc19f",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.721Z"
+    },
+    {
+      "id": "tourism-wikidata-q831389",
+      "originalName": "Obelisco de Buenos Aires",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.60376,
+      "lon": -58.38162,
+      "fingerprint": "4475283a361448a906f7ac521cc5febe8b3b7d3ad7fdb6f209f81ceb344677e1",
+      "searchKey": "6eb14ea9a1142026a6f1640bebc8f111322fb5e370d943dfe80f6804d221ad95",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.721Z"
+    },
+    {
+      "id": "tourism-wikidata-q1029566",
+      "originalName": "Caminito",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.6393,
+      "lon": -58.3628,
+      "fingerprint": "024e6968e2dc328aade046f19de207b2cb25dd40a8469e4f83e76a6cf0a0359b",
+      "searchKey": "7472cabc397101217ff86d543baa3d9e38195803dda6897ba8c7ee85c09cf65a",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.721Z"
+    },
+    {
+      "id": "tourism-wikidata-q831322",
+      "originalName": "Cementerio de la Recoleta",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.588055555556,
+      "lon": -58.393055555556,
+      "fingerprint": "07b71f072ad13d90f6719a71c8f6b1d559c9802aeb9d87c58d7d4f41e3a7a570",
+      "searchKey": "48531c5f97406fb523b1944a89e61c35396eb9c7b3747b3c8e1490ac6bfa0b13",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.721Z"
+    },
+    {
+      "id": "tourism-wikidata-q1138028",
+      "originalName": "Puente Transbordador Nicolás Avellaneda",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.63847222,
+      "lon": -58.35625,
+      "fingerprint": "81072a399e74565638ee0892ddf37d406c226570defe81cf28444ce99e5531de",
+      "searchKey": "77e79b1f8129f5de97b834802577849f99b3ea1f95935653fe0ff6545ca5463c",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.722Z"
+    },
+    {
+      "id": "tourism-wikidata-q4579815",
+      "originalName": "basílica de San Francisco",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.61069,
+      "lon": -58.371403,
+      "fingerprint": "cb9d9c6b78eab4121df51efbaa768252949436ab2a13f929aede5cdb456db1d9",
+      "searchKey": "d1819975b758fbd4a6aece18dd81057ecb8cfb7948f5eea1b322039cdc0fecbe",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.724Z"
+    },
+    {
+      "id": "tourism-wikidata-q3361112",
+      "originalName": "Palacio de Aguas Corrientes",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.600555555556,
+      "lon": -58.395,
+      "fingerprint": "7b856ab54a15514df55479b231b7474e4040d16923cfc64ebe8ec130700eb676",
+      "searchKey": "ea244da50af4bda316930711d3bf516311059e8827ae822eaa2738f7165ea9ed",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.724Z"
+    },
+    {
+      "id": "tourism-wikidata-q2886930",
+      "originalName": "basílica Nuestra Señora del Pilar (Buenos Aires)",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.5868,
+      "lon": -58.392,
+      "fingerprint": "d14e5db3d828e575b7a640ee61349b8ba0b983f1942f2379c591fdf747f14a78",
+      "searchKey": "70eb6713bf0e3e44a83d9624c210f06472cdd72795f95cbf5861eab1f5bd86f7",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.724Z"
+    },
+    {
+      "id": "tourism-wikidata-q1668230",
+      "originalName": "Palacio Paz",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.595134941735054,
+      "lon": -58.37794453411931,
+      "fingerprint": "38897a3edba36b75d7cc4477639365dfadf56859c9608c1d478ba4d2f1d0e2c6",
+      "searchKey": "9efb6853150ab4540f2dc96b2865443da27c0f2124449139021f762483d2a454",
+      "status": "awaiting-review",
+      "checkedAt": "2026-11-16T10:47:00.725Z"
     }
   ],
   "records": {
@@ -1817,7 +2081,7 @@
       "searchKey": "35750cb633b3543e7e28913ebde82dbf3411de6a9ee00359274426e120a5ea09",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T00:59:54.076Z",
-      "reviewedAt": "2026-11-16T10:38:13.452Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-food-2567": {
       "id": "badata-food-2567",
@@ -1830,7 +2094,7 @@
       "searchKey": "60eec26c1bdebb48b151c78b4c0c0f2d67cea9282c428c506ce51ecf4e3911e2",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T00:59:55.405Z",
-      "reviewedAt": "2026-11-16T10:38:13.453Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-food-2231": {
       "id": "badata-food-2231",
@@ -1843,7 +2107,7 @@
       "searchKey": "804d8a17eb611f9c79bec108c429e7bc6a1ed4748fa6fa7109a426470b0fbfbe",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T00:59:56.987Z",
-      "reviewedAt": "2026-11-16T10:38:13.453Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-food-1780": {
       "id": "badata-food-1780",
@@ -1856,7 +2120,7 @@
       "searchKey": "9ace5bd01110bb1a7dd090764dfa9a0f0d05230fe5038c735fa6ff614b960d35",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T00:59:58.379Z",
-      "reviewedAt": "2026-11-16T10:38:13.453Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-food-2340": {
       "id": "badata-food-2340",
@@ -1881,7 +2145,7 @@
       "searchKey": "44916ff5e1ba951f7f91caf6bbfb5dfc3e4e19b08a2bc5f497acb9b6a8a23ff2",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:01.446Z",
-      "reviewedAt": "2026-11-16T10:38:13.453Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-food-947": {
       "id": "badata-food-947",
@@ -1894,7 +2158,7 @@
       "searchKey": "17ec0ce46151d3b9464d6599ba0b2c3897e7b34b6e774c32b428973a64a78ade",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:03.034Z",
-      "reviewedAt": "2026-11-16T10:38:13.453Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-culture-2989": {
       "id": "badata-culture-2989",
@@ -1907,7 +2171,7 @@
       "searchKey": "077fb7210e03fee1e4aefe51ca10d496134c46393f3d89704229e7ced5552efc",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:04.710Z",
-      "reviewedAt": "2026-11-16T10:38:13.453Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-culture-2675": {
       "id": "badata-culture-2675",
@@ -1920,7 +2184,7 @@
       "searchKey": "66ba97929827fb67fa18eb95bb14b9d0e950cc1639f82c2fec2d275e49babdb4",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:06.058Z",
-      "reviewedAt": "2026-11-16T10:38:13.453Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-culture-2717": {
       "id": "badata-culture-2717",
@@ -1933,7 +2197,7 @@
       "searchKey": "d59a0b9a74ec5ec7fd5d925322d5251512fb2989c5205ed19fd5f61ad663d3d6",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:07.489Z",
-      "reviewedAt": "2026-11-16T10:38:13.453Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-culture-2578": {
       "id": "badata-culture-2578",
@@ -1946,7 +2210,7 @@
       "searchKey": "8af2fc39716b4bcd7c2e379c1cda3bf58de450cd5e646d5f8e48929caacc8068",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:26.541Z",
-      "reviewedAt": "2026-11-16T10:38:13.453Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-culture-1379": {
       "id": "badata-culture-1379",
@@ -1972,7 +2236,7 @@
       "searchKey": "f17cee7793a3e0f81517a6b80ed9f9b54beffcd140a4132a87b8709fe7af51e6",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:29.097Z",
-      "reviewedAt": "2026-11-16T10:38:13.453Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-culture-2467": {
       "id": "badata-culture-2467",
@@ -1985,7 +2249,7 @@
       "searchKey": "60a593cb49724f9fb5991195dc0acf84d737a86f0e5ff01c3918de5c41c47b1f",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:30.457Z",
-      "reviewedAt": "2026-11-16T10:38:13.453Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-green-880": {
       "id": "badata-green-880",
@@ -1998,7 +2262,7 @@
       "searchKey": "0a67c04fa9b4ca75b225d1cba19cd2f02af52ac5638059bf86a4cbfbe0d51e66",
       "status": "verified-photo",
       "checkedAt": "2026-11-16T01:00:32.063Z",
-      "reviewedAt": "2026-11-16T10:38:13.453Z"
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-green-1106": {
       "id": "badata-green-1106",
@@ -2009,8 +2273,9 @@
       "lon": -58.43408581913823,
       "fingerprint": "7e9e059b2c2622c52bc8a45641ac7bb77397ed03657966528e0c3ccf50e35890",
       "searchKey": "eb461137e90d1fe438611dba0aba8579825e25eee0bf513097a87d751ff9156c",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:01:20.365Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:01:20.365Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-green-610": {
       "id": "badata-green-610",
@@ -2021,8 +2286,9 @@
       "lon": -58.44843226746714,
       "fingerprint": "ea894176a1eaf56518b70b383b6a17ee12796d2afcab3586231f560af28cfcc4",
       "searchKey": "efdd4e3ace17ef58a37d3d2748c720397ff847d2b11ce5a3d02ef2187f3537ef",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:01:26.347Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:01:26.347Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-green-872": {
       "id": "badata-green-872",
@@ -2033,8 +2299,9 @@
       "lon": -58.44217798254187,
       "fingerprint": "fdd072b0eb9f0649ffd9cad00cb9018bb66f704a806e58c0ded8673323fb8d9d",
       "searchKey": "29803c8c07f4ea72c9397d1861417684abf81c84af11cfcb5491167b8255f9cf",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:01:32.583Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:01:32.583Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-green-873": {
       "id": "badata-green-873",
@@ -2057,8 +2324,9 @@
       "lon": -58.48062983780544,
       "fingerprint": "c2e07eee1a2daf598a5b0fb119115135f790159c6285e6769711e369962436b8",
       "searchKey": "a7c903953f89aff57a540479173e9bdb10a2b03e22aae7f457adf8576499137c",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:01:44.369Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:01:44.369Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-green-882": {
       "id": "badata-green-882",
@@ -2069,8 +2337,9 @@
       "lon": -58.37613818067067,
       "fingerprint": "68ec9e003af0d422b5d4e2e96b6cfea7e8764c2f2d37e6d412630458dbfd5c7b",
       "searchKey": "b3f774d69c01fc36361da6c2001f46c97ca0756a1d1bd5b6a125c74d736710eb",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:01:50.564Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:01:50.564Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-green-906": {
       "id": "badata-green-906",
@@ -2081,8 +2350,9 @@
       "lon": -58.38955622007369,
       "fingerprint": "b3df98f73003b4075caf53383d1f645180765e5b53dc6d2ae102513a2388fc57",
       "searchKey": "9d84f37972b375f753f80e62687f2f6b99485cdc86a3b737118ee8be1b956496",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:01:56.345Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:01:56.345Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-food-676": {
       "id": "badata-food-676",
@@ -2885,8 +3155,9 @@
       "lon": -58.370747,
       "fingerprint": "d29f2e28160eb67c1b018632e4dbd5eae864a3560f8652006cc56bb8758b2272",
       "searchKey": "4b2a0801bc8f7f8fc863d9080dbfcdfe0b7ac3cc3217426284d16ac46006dc64",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:08:20.971Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:08:20.971Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-green-681": {
       "id": "badata-green-681",
@@ -2945,8 +3216,9 @@
       "lon": -58.42857549662165,
       "fingerprint": "c84c6e48a452611ec25b51596db7f75729fb2c2d43ac9a2fcb75637d9ac3207b",
       "searchKey": "ccf5f0c302e5e52121e8d95e6cd1d833f8fc493e252252e898da1bdf3866913f",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T01:08:44.866Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T01:08:44.866Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-bus-19": {
       "id": "badata-bus-19",
@@ -3101,8 +3373,9 @@
       "lon": -58.45528767703161,
       "fingerprint": "b469416d630145234d5243b3732e1a6dda74f4d230d088bd04cb40d0d7fc2d1e",
       "searchKey": "0162c7f2ed88a4bc1d9548a3543d776483fe21c8ca464497bc0fcddfd867d872",
-      "status": "awaiting-review",
-      "checkedAt": "2026-11-16T10:34:58.976Z"
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:34:58.976Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     },
     "badata-culture-4": {
       "id": "badata-culture-4",
@@ -3139,6 +3412,305 @@
       "searchKey": "fb7f22ffcd6f0b3a8b1b12336f0c28210c59fbabe6d6734ae738433c126b5927",
       "status": "no-candidates",
       "checkedAt": "2026-11-16T10:35:16.944Z"
+    },
+    "badata-food-1985": {
+      "id": "badata-food-1985",
+      "originalName": "EL CUARTITO",
+      "address": "TALCAHUANO 937",
+      "category": "Gastronomía",
+      "lat": -34.59784578,
+      "lon": -58.38551982,
+      "fingerprint": "79e814f384e370328c69c73f518de0cdfc1f07bc4d7927608af3e7641d51865d",
+      "searchKey": "81c01c87cdbac5b618d1f889800eac9cd94832dadebd2190ba7d8a054f0bea75",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.711Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "badata-food-2296": {
+      "id": "badata-food-2296",
+      "originalName": "GUERRIN",
+      "address": "CORRIENTES AV. 1368",
+      "category": "Gastronomía",
+      "lat": -34.60404428,
+      "lon": -58.38600015,
+      "fingerprint": "e1e01c12840305bb17db527cbb9acb70bd27d8d09a407ba361496da8a227b7a4",
+      "searchKey": "2655fed1be1725f0c0a9e4a192a80ae506b3c29938b568e69390bcd1fddc7c8e",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.714Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "badata-food-170": {
+      "id": "badata-food-170",
+      "originalName": "EL PREFERIDO DE PALERMO",
+      "address": "BORGES, JORGE LUIS 2108",
+      "category": "Gastronomía",
+      "lat": -34.58545725,
+      "lon": -58.42529708,
+      "fingerprint": "0adffcb646096208c3aa544ffa4c19cc9342444b889dfa412d9f1192d0df29fc",
+      "searchKey": "9d54219bd7ed3db9f714325cfc62c20206447d7de483ffb42b192b6cd33639ec",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.714Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "badata-food-565": {
+      "id": "badata-food-565",
+      "originalName": "EL IMPERIO DE LA PIZZA",
+      "address": "CORRIENTES AV. 6891",
+      "category": "Gastronomía",
+      "lat": -34.58704199,
+      "lon": -58.45477406,
+      "fingerprint": "774cb972cd808a0412447cbc06ee23e78f7edd606b736b6be0532a0fc72cfe53",
+      "searchKey": "d5b8166e81fc3ae86ac856ae4faf1a7d9b8cd2733d92abba52748cb3828533bd",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.715Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "badata-culture-1103": {
+      "id": "badata-culture-1103",
+      "originalName": "CENTRO CULTURAL RECOLETA",
+      "address": "JUNIN 1930, CABA",
+      "category": "Cultura",
+      "lat": -34.586496,
+      "lon": -58.391578,
+      "fingerprint": "dc89f76bc9411b04479cff991a0d7623514ea3a16fa700569507bbf886eadb35",
+      "searchKey": "5ee593423a535b7919034236975263733741d1fcf352e1d59309c612714f4ec5",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.716Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "badata-culture-2599": {
+      "id": "badata-culture-2599",
+      "originalName": "MUSEO DE ARTE ESPAÑOL ENRIQUE LARRETA",
+      "address": "JURAMENTO AV. 2291, CABA",
+      "category": "Cultura",
+      "lat": -34.561129,
+      "lon": -58.455265,
+      "fingerprint": "c190f043192c39d71be1d7b018a372a5dd1548a31c1fc2d4123b2a05b7849971",
+      "searchKey": "0096a84c3f0cfe51615601986f0b7b4cc1468243a6794122e757076bea2b02f7",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.716Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "badata-culture-2674": {
+      "id": "badata-culture-2674",
+      "originalName": "MUSEO HISTORICO NACIONAL",
+      "address": "DEFENSA 1600, CABA",
+      "category": "Cultura",
+      "lat": -34.626626,
+      "lon": -58.370973,
+      "fingerprint": "1f5cedd70a6fd0e817acd5fba3349e0cb44fa17356d031d351040b20dd4646c8",
+      "searchKey": "ddb2f176afd26035b22310090594db5afb7380430b8eab032a9871be0eafafec",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.717Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "badata-green-1444": {
+      "id": "badata-green-1444",
+      "originalName": "Jardín Japonés",
+      "address": "DEL LIBERTADOR, AV. - SARMIENTO, AV. - BERRO, ADOLFO, AV. - CASARES, AV.",
+      "category": "Aire Libre",
+      "lat": -34.576470556881766,
+      "lon": -58.409710371143966,
+      "fingerprint": "8026b0ba511cbd0b0da714a2e85c196bf85f9ca3441df18efcaf814157781d53",
+      "searchKey": "07dee6805415544cc0060fa082ffea9423231c5e9b99842aca66cca24a35d7f6",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.717Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "badata-green-171": {
+      "id": "badata-green-171",
+      "originalName": "Parque Brig. Gral. Cornelio Saavedra",
+      "address": "GARCIA DEL RIO, AV. - MELIAN, AV. - VILELA - PEREZ, ROQUE - BESARES - CONDE - PINTO - FREIRE, RAMON, CAP. GRAL.",
+      "category": "Aire Libre",
+      "lat": -34.55189629240314,
+      "lon": -58.48128782079968,
+      "fingerprint": "18411297142f5799972446e9f4d5af0034334ec9b3facc962520e6c3b70055c3",
+      "searchKey": "98e3618189b5f99b6aded4aeb70665677ac5f67f4a5d2190442fd91e5d89e419",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.718Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q478926": {
+      "id": "tourism-wikidata-q478926",
+      "originalName": "Casa Rosada",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.608055555556,
+      "lon": -58.370277777778,
+      "fingerprint": "f07145243549d0bd41d412e3e3e385c8981a9ea8736062ae3bb8419c2eec0dbd",
+      "searchKey": "235b782632ffa1c7fbd2a6c7600b47c966fd7b3aa9db2f10f55781213d8549c6",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.719Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q2336867": {
+      "id": "tourism-wikidata-q2336867",
+      "originalName": "Puente de la Mujer",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.607939,
+      "lon": -58.364911,
+      "fingerprint": "6bfcc9805acc8327cc9f94ca8d12eeb4cebe8693e9564776cda8bfaf59870095",
+      "searchKey": "e9cf59e46af4d70262473b333b1406d6c912c7c8cae470865c6e5102afa40de6",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.719Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q499855": {
+      "id": "tourism-wikidata-q499855",
+      "originalName": "La Bombonera",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.63565,
+      "lon": -58.36465,
+      "fingerprint": "6a872fdc95474cbb8a1b880fab8db3e3bacb68f9ae16dbf00e4f79e7e50fcc80",
+      "searchKey": "ba737ba198642d67fd7f6b450acc24bc26e57306a89a5c308a6b43c77d12b02f",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.720Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q646142": {
+      "id": "tourism-wikidata-q646142",
+      "originalName": "Palacio del Congreso de la Nación Argentina",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.609863888889,
+      "lon": -58.392691666667,
+      "fingerprint": "9f6a935709ac2f09d28b215eba4bc9c20c1cc1b3a118d4cb5ba2a5c8b755ecf1",
+      "searchKey": "f1bd91b80f8d1545ce6e04e31e92d535b61f0bf7efdcbef021ba4fcdb5c9b00d",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.720Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q967929": {
+      "id": "tourism-wikidata-q967929",
+      "originalName": "Catedral de Buenos Aires",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.607408333333,
+      "lon": -58.373277777778,
+      "fingerprint": "5b818f6e01cfb2760ebdba9b5aa04720e4111fc24c0a3f3eeedd86600dcf1b30",
+      "searchKey": "430dd007de0b04d55ecb8c3614010d2793e3ae0de46b90e710252baf823c6b92",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.720Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q570385": {
+      "id": "tourism-wikidata-q570385",
+      "originalName": "Torre Monumental",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.592963,
+      "lon": -58.373192,
+      "fingerprint": "afce3522205c6c18f42b98603052e8b391605013bc39ab32565c7f440c56a5dc",
+      "searchKey": "56e85efaf2a6ed9aed8008cd51afc531d525e5feb0e3ce5bbd36f79f1b0fc19f",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.721Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q831389": {
+      "id": "tourism-wikidata-q831389",
+      "originalName": "Obelisco de Buenos Aires",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.60376,
+      "lon": -58.38162,
+      "fingerprint": "4475283a361448a906f7ac521cc5febe8b3b7d3ad7fdb6f209f81ceb344677e1",
+      "searchKey": "6eb14ea9a1142026a6f1640bebc8f111322fb5e370d943dfe80f6804d221ad95",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.721Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q1029566": {
+      "id": "tourism-wikidata-q1029566",
+      "originalName": "Caminito",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.6393,
+      "lon": -58.3628,
+      "fingerprint": "024e6968e2dc328aade046f19de207b2cb25dd40a8469e4f83e76a6cf0a0359b",
+      "searchKey": "7472cabc397101217ff86d543baa3d9e38195803dda6897ba8c7ee85c09cf65a",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.721Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q831322": {
+      "id": "tourism-wikidata-q831322",
+      "originalName": "Cementerio de la Recoleta",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.588055555556,
+      "lon": -58.393055555556,
+      "fingerprint": "07b71f072ad13d90f6719a71c8f6b1d559c9802aeb9d87c58d7d4f41e3a7a570",
+      "searchKey": "48531c5f97406fb523b1944a89e61c35396eb9c7b3747b3c8e1490ac6bfa0b13",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.721Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q1138028": {
+      "id": "tourism-wikidata-q1138028",
+      "originalName": "Puente Transbordador Nicolás Avellaneda",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.63847222,
+      "lon": -58.35625,
+      "fingerprint": "81072a399e74565638ee0892ddf37d406c226570defe81cf28444ce99e5531de",
+      "searchKey": "77e79b1f8129f5de97b834802577849f99b3ea1f95935653fe0ff6545ca5463c",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.722Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q4579815": {
+      "id": "tourism-wikidata-q4579815",
+      "originalName": "basílica de San Francisco",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.61069,
+      "lon": -58.371403,
+      "fingerprint": "cb9d9c6b78eab4121df51efbaa768252949436ab2a13f929aede5cdb456db1d9",
+      "searchKey": "d1819975b758fbd4a6aece18dd81057ecb8cfb7948f5eea1b322039cdc0fecbe",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.724Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q3361112": {
+      "id": "tourism-wikidata-q3361112",
+      "originalName": "Palacio de Aguas Corrientes",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.600555555556,
+      "lon": -58.395,
+      "fingerprint": "7b856ab54a15514df55479b231b7474e4040d16923cfc64ebe8ec130700eb676",
+      "searchKey": "ea244da50af4bda316930711d3bf516311059e8827ae822eaa2738f7165ea9ed",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.724Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q2886930": {
+      "id": "tourism-wikidata-q2886930",
+      "originalName": "basílica Nuestra Señora del Pilar (Buenos Aires)",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.5868,
+      "lon": -58.392,
+      "fingerprint": "d14e5db3d828e575b7a640ee61349b8ba0b983f1942f2379c591fdf747f14a78",
+      "searchKey": "70eb6713bf0e3e44a83d9624c210f06472cdd72795f95cbf5861eab1f5bd86f7",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.724Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
+    },
+    "tourism-wikidata-q1668230": {
+      "id": "tourism-wikidata-q1668230",
+      "originalName": "Palacio Paz",
+      "address": "",
+      "category": "Viajes",
+      "lat": -34.595134941735054,
+      "lon": -58.37794453411931,
+      "fingerprint": "38897a3edba36b75d7cc4477639365dfadf56859c9608c1d478ba4d2f1d0e2c6",
+      "searchKey": "9efb6853150ab4540f2dc96b2865443da27c0f2124449139021f762483d2a454",
+      "status": "verified-photo",
+      "checkedAt": "2026-11-16T10:47:00.725Z",
+      "reviewedAt": "2026-11-16T10:51:00.625Z"
     }
   },
   "searches": {
@@ -7027,7 +7599,685 @@
       "query": "\"ANFITEATRO VILLA CILDAÑEZ\" \"Buenos Aires\"",
       "checkedAt": "2026-11-16T10:35:16.944Z",
       "candidates": []
+    },
+    "81c01c87cdbac5b618d1f889800eac9cd94832dadebd2190ba7d8a054f0bea75": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22El+Cuartito%22+%22Buenos+Aires%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Pizzería El Cuartito 05.jpg",
+      "checkedAt": "2026-11-16T10:47:00.711Z",
+      "candidates": [
+        {
+          "file": "File:Pizzería El Cuartito 05.jpg",
+          "pageId": 176781370,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Pizzer%C3%ADa_El_Cuartito_05.jpg/960px-Pizzer%C3%ADa_El_Cuartito_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Pizzer%C3%ADa_El_Cuartito_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pizzer%C3%ADa_El_Cuartito_05.jpg",
+          "author": "ProtoplasmaKid",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:ProtoplasmaKid\" title=\"User:ProtoplasmaKid\">ProtoplasmaKid</a>",
+          "uploader": "ProtoplasmaKid",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2025-10-03 20:51:09",
+          "description": "Images of El Cuartito pizzeria, Talcahuano 937, Buenos Aires, Argentina.",
+          "categories": "Self-published work|Images of Argentina by User:ProtoplasmaKid|2025 photographs by User:ProtoplasmaKid|Buenos Aires photographs taken on 2025-10-11|El Cuartito",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 22848338
+        },
+        {
+          "file": "File:Pizzería El Cuartito 09.jpg",
+          "pageId": 176781376,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Pizzer%C3%ADa_El_Cuartito_09.jpg/960px-Pizzer%C3%ADa_El_Cuartito_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Pizzer%C3%ADa_El_Cuartito_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pizzer%C3%ADa_El_Cuartito_09.jpg",
+          "author": "ProtoplasmaKid",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:ProtoplasmaKid\" title=\"User:ProtoplasmaKid\">ProtoplasmaKid</a>",
+          "uploader": "ProtoplasmaKid",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2025-10-03 20:52:39",
+          "description": "Images of El Cuartito pizzeria, Talcahuano 937, Buenos Aires, Argentina.",
+          "categories": "Self-published work|Spanish-language plaques in Argentina|Plaques referencing 1934 in Argentina|Images of Argentina by User:ProtoplasmaKid|Plaques in Buenos Aires|2025 photographs by User:ProtoplasmaKid|Buenos Aires photographs taken on 2025-10-11|El Cuartito",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 26920465
+        }
+      ]
+    },
+    "2655fed1be1725f0c0a9e4a192a80ae506b3c29938b568e69390bcd1fddc7c8e": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22G%C3%BCerr%C3%ADn%22+%22Buenos+Aires%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Pizzería Güerrín.jpg",
+      "checkedAt": "2026-11-16T10:47:00.714Z",
+      "candidates": [
+        {
+          "file": "File:Pizzería Güerrín.jpg",
+          "pageId": 109924679,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Pizzer%C3%ADa_G%C3%BCerr%C3%ADn.jpg/960px-Pizzer%C3%ADa_G%C3%BCerr%C3%ADn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Pizzer%C3%ADa_G%C3%BCerr%C3%ADn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pizzer%C3%ADa_G%C3%BCerr%C3%ADn.jpg",
+          "author": "Roberto Fiadone",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Roberto_Fiadone\" title=\"User:Roberto Fiadone\">Roberto Fiadone</a>",
+          "uploader": "Roberto Fiadone",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2021-08-28 18:10:02",
+          "description": "Pizzería Güerrín, en Avenida Corrientes, 1368, Buenos Aires, Argentina",
+          "categories": "Self-published work|Files with coordinates missing SDC location of creation|August 2021 in Buenos Aires|Argentina photographs taken on 2021-08-28|Restaurant signs in Buenos Aires|Taken with Motorola Moto G9 Plus|Guerrin",
+          "gps": {
+            "lat": -34.604004,
+            "lon": -58.386496
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 2748462
+        }
+      ]
+    },
+    "9d54219bd7ed3db9f714325cfc62c20206447d7de483ffb42b192b6cd33639ec": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22El+Preferido%22+%22Buenos+Aires%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Bar El Preferido de Palermo2.jpg",
+      "checkedAt": "2026-11-16T10:47:00.714Z",
+      "candidates": [
+        {
+          "file": "File:Bar El Preferido de Palermo2.jpg",
+          "pageId": 11545640,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Bar_El_Preferido_de_Palermo2.jpg/960px-Bar_El_Preferido_de_Palermo2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Bar_El_Preferido_de_Palermo2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bar_El_Preferido_de_Palermo2.jpg",
+          "author": "Ezarate",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Ezarate\" title=\"User:Ezarate\">Ezarate</a>",
+          "uploader": "Ezarate",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "",
+          "description": "Bar El Preferido de Palermo",
+          "categories": "GFDL|License migration redundant|CC-BY-SA-4.0,3.0,2.5,2.0,1.0|Self-published work|FoP-Argentina|Files with coordinates missing SDC location of creation|Files by Ezarate|Buildings in Palermo, Buenos Aires",
+          "gps": {
+            "lat": -34.585483,
+            "lon": -58.425481
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 1661470
+        }
+      ]
+    },
+    "d5b8166e81fc3ae86ac856ae4faf1a7d9b8cd2733d92abba52748cb3828533bd": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22El+Imperio+de+la+Pizza%22+%22Buenos+Aires%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:El Imperio de la Pizza 02.jpg",
+      "checkedAt": "2026-11-16T10:47:00.715Z",
+      "candidates": [
+        {
+          "file": "File:El Imperio de la Pizza 02.jpg",
+          "pageId": 176895416,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/El_Imperio_de_la_Pizza_02.jpg/960px-El_Imperio_de_la_Pizza_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/eb/El_Imperio_de_la_Pizza_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_Imperio_de_la_Pizza_02.jpg",
+          "author": "ProtoplasmaKid",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:ProtoplasmaKid\" title=\"User:ProtoplasmaKid\">ProtoplasmaKid</a>",
+          "uploader": "ProtoplasmaKid",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2025-10-06 15:47:24",
+          "description": "El Imperio de la Pizza Pizzeria, Chacarita neighborhood, Buenos Aires, Argentina,",
+          "categories": "Self-published work|Files with coordinates missing SDC location of creation|Images of Argentina by User:ProtoplasmaKid|2025 photographs by User:ProtoplasmaKid|Pizzerias in Buenos Aires|Buenos Aires photographs taken on 2025-10-06",
+          "gps": {
+            "lat": -34.586917,
+            "lon": -58.454725
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 11689841
+        }
+      ]
+    },
+    "5ee593423a535b7919034236975263733741d1fcf352e1d59309c612714f4ec5": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Centro+Cultural+Recoleta%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Centro Cultural Recoleta 2012.jpg",
+      "checkedAt": "2026-11-16T10:47:00.716Z",
+      "candidates": [
+        {
+          "file": "File:Centro Cultural Recoleta 2012.jpg",
+          "pageId": 23072629,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Centro_Cultural_Recoleta_2012.jpg/960px-Centro_Cultural_Recoleta_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Centro_Cultural_Recoleta_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centro_Cultural_Recoleta_2012.jpg",
+          "author": "Gobierno de la Ciudad de Buenos Aires",
+          "authorMetadata": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/45122874@N02\">Gobierno de la Ciudad de Buenos Aires</a>",
+          "uploader": "Flickr upload bot",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "restrictions": "",
+          "photoDate": "2012-11-08 00:00:11",
+          "description": "Centro Cultural Recoleta 2012.",
+          "categories": "Centro Cultural Recoleta|Taken with Canon EOS 20D|Flickr images uploaded by Flickr upload bot|FoP-Argentina",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 443773
+        },
+        {
+          "file": "File:CENTROCULTURALRECOLETA2022.jpg",
+          "pageId": 123970834,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/CENTROCULTURALRECOLETA2022.jpg/960px-CENTROCULTURALRECOLETA2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/CENTROCULTURALRECOLETA2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:CENTROCULTURALRECOLETA2022.jpg",
+          "author": "Magabrielave",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Magabrielave&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Magabrielave (page does not exist)\">Magabrielave</a>",
+          "uploader": "Magabrielave",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2022-10-01 15:47:13",
+          "description": "Centro Cultural Recoleta",
+          "categories": "Buildings in Buenos Aires|Self-published work|Uploaded via Campaign:OFBA2022",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 3834237
+        }
+      ]
+    },
+    "0096a84c3f0cfe51615601986f0b7b4cc1468243a6794122e757076bea2b02f7": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Museo+Larreta%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Museo de Arte Español Enrique Larreta esquina.jpg",
+      "checkedAt": "2026-11-16T10:47:00.716Z",
+      "candidates": [
+        {
+          "file": "File:Museo de Arte Español Enrique Larreta esquina.jpg",
+          "pageId": 8702720,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Museo_de_Arte_Espa%C3%B1ol_Enrique_Larreta_esquina.jpg/960px-Museo_de_Arte_Espa%C3%B1ol_Enrique_Larreta_esquina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/Museo_de_Arte_Espa%C3%B1ol_Enrique_Larreta_esquina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museo_de_Arte_Espa%C3%B1ol_Enrique_Larreta_esquina.jpg",
+          "author": "Taken by the uploader, w:es:Usuario:Roberto Fiadone",
+          "authorMetadata": "Taken by the uploader, <a href=\"https://en.wikipedia.org/wiki/es:Usuario:Roberto_Fiadone\" class=\"extiw\" title=\"w:es:Usuario:Roberto Fiadone\">w:es:Usuario:Roberto Fiadone</a>",
+          "uploader": "Roberto Fiadone",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "restrictions": "",
+          "photoDate": "2009-12",
+          "description": "Museo de Arte Español Enrique Larreta, entrada. En Avenida Juramento, barrio de Belgrano, Buenos Aires, Argentina.",
+          "categories": "Museo de Arte Español Enrique Larreta|GFDL|License migration redundant|Self-published work|Facades in Buenos Aires|On OSM|FoP-Argentina|Museums photographed in 2009|Files with coordinates missing SDC location of creation|Corner buildings in Buenos Aires|Cobblestone roads in Argentina",
+          "gps": {
+            "lat": -34.56077,
+            "lon": -58.455542
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 907695
+        }
+      ]
+    },
+    "ddb2f176afd26035b22310090594db5afb7380430b8eab032a9871be0eafafec": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Museo+Hist%C3%B3rico+Nacional%22+%22Buenos+Aires%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Museo Histórico Nacional, Buenos Aires Argentina.jpg",
+      "checkedAt": "2026-11-16T10:47:00.717Z",
+      "candidates": [
+        {
+          "file": "File:Museo Histórico Nacional, Buenos Aires Argentina.jpg",
+          "pageId": 79674292,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Museo_Hist%C3%B3rico_Nacional%2C_Buenos_Aires_Argentina.jpg/960px-Museo_Hist%C3%B3rico_Nacional%2C_Buenos_Aires_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Museo_Hist%C3%B3rico_Nacional%2C_Buenos_Aires_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museo_Hist%C3%B3rico_Nacional,_Buenos_Aires_Argentina.jpg",
+          "author": "Sombra Inquieta",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Sombra_Inquieta\" title=\"User:Sombra Inquieta\">Sombra Inquieta</a>",
+          "uploader": "Sombra Inquieta",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2019-06-02 15:41:51",
+          "description": "Museo Histórico Nacional, Buenos Aires Argentina.",
+          "categories": "Buenos Aires|Self-published work",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 5100581
+        }
+      ]
+    },
+    "07dee6805415544cc0060fa082ffea9423231c5e9b99842aca66cca24a35d7f6": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Jard%C3%ADn+Japon%C3%A9s%22+%22Buenos+Aires%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Buenos Aires - Jardín Japonés - 200806a.jpg",
+      "checkedAt": "2026-11-16T10:47:00.717Z",
+      "candidates": [
+        {
+          "file": "File:Buenos Aires - Jardín Japonés - 200806a.jpg",
+          "pageId": 4536231,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Buenos_Aires_-_Jard%C3%ADn_Japon%C3%A9s_-_200806a.jpg/960px-Buenos_Aires_-_Jard%C3%ADn_Japon%C3%A9s_-_200806a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/af/Buenos_Aires_-_Jard%C3%ADn_Japon%C3%A9s_-_200806a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Jard%C3%ADn_Japon%C3%A9s_-_200806a.jpg",
+          "author": "Luis Argerich from Buenos Aires, Argentina",
+          "authorMetadata": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/29638083@N00\">Luis Argerich</a> from Buenos Aires, Argentina",
+          "uploader": "Barcex",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "restrictions": "",
+          "photoDate": "2008-06-22 19:03",
+          "description": "Japanese garden, Buenos Aires, Argentina.",
+          "categories": "Flickr images reviewed by trusted users|June 2008 in Buenos Aires|Photographs taken on 2008-06-22|Files with coordinates missing SDC location of creation|Red bridges in Argentina|Japanese garden of Buenos Aires bridges|Photographs by Luis Argerich",
+          "gps": {
+            "lat": -34.574778,
+            "lon": -58.408972
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 6122503
+        }
+      ]
+    },
+    "98e3618189b5f99b6aded4aeb70665677ac5f67f4a5d2190442fd91e5d89e419": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%22Parque+Saavedra%22+%22Buenos+Aires%22+filetype%3Abitmap&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:DefPuebloCABA - Barrio Parque Saavedra (1).jpg",
+      "checkedAt": "2026-11-16T10:47:00.718Z",
+      "candidates": [
+        {
+          "file": "File:DefPuebloCABA - Barrio Parque Saavedra (1).jpg",
+          "pageId": 61913505,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/DefPuebloCABA_-_Barrio_Parque_Saavedra_%281%29.jpg/960px-DefPuebloCABA_-_Barrio_Parque_Saavedra_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/DefPuebloCABA_-_Barrio_Parque_Saavedra_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:DefPuebloCABA_-_Barrio_Parque_Saavedra_(1).jpg",
+          "author": "Defensoría del Pueblo de la Ciudad de Buenos Aires",
+          "authorMetadata": "Defensoría del Pueblo de la Ciudad de Buenos Aires",
+          "uploader": "Mauricio V. Genta",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2014-10-30 22:15:23",
+          "description": "Parque Saavedra.",
+          "categories": "Parque Saavedra, Buenos Aires|Items with VRTS permission confirmed|Files provided by the Defensoría del Pueblo de la Ciudad de Buenos Aires",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 612117
+        }
+      ]
+    },
+    "235b782632ffa1c7fbd2a6c7600b47c966fd7b3aa9db2f10f55781213d8549c6": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Casa Rosada Buenos Aires.JPG",
+      "checkedAt": "2026-11-16T10:47:00.719Z",
+      "candidates": [
+        {
+          "file": "File:Casa Rosada Buenos Aires.JPG",
+          "pageId": 15572460,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Casa_Rosada_Buenos_Aires.JPG/960px-Casa_Rosada_Buenos_Aires.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Casa_Rosada_Buenos_Aires.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Casa_Rosada_Buenos_Aires.JPG",
+          "author": "Dragan",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Dragan\" title=\"User:Dragan\">Dragan</a>",
+          "uploader": "Dragan",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "restrictions": "",
+          "photoDate": "2011-04-09",
+          "description": "This is a photo of an Argentine monument identified by the ID",
+          "categories": "Casa Rosada, Buenos Aires|Taken with Canon Digital IXUS 130|Self-published work|April 2011 in Buenos Aires|Cultural heritage monuments in Argentina with known IDs|Photographs taken on 2011-04-09",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 3856094
+        }
+      ]
+    },
+    "e9cf59e46af4d70262473b333b1406d6c912c7c8cae470865c6e5102afa40de6": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Puente de la mujer, Buenos Aires (32008).jpg",
+      "checkedAt": "2026-11-16T10:47:00.719Z",
+      "candidates": [
+        {
+          "file": "File:Puente de la mujer, Buenos Aires (32008).jpg",
+          "pageId": 5853804,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Puente_de_la_mujer%2C_Buenos_Aires_%2832008%29.jpg/960px-Puente_de_la_mujer%2C_Buenos_Aires_%2832008%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/Puente_de_la_mujer%2C_Buenos_Aires_%2832008%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Puente_de_la_mujer,_Buenos_Aires_(32008).jpg",
+          "author": "Carlos Adampol Galindo",
+          "authorMetadata": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/11767501@N07\">Carlos Adampol Galindo</a>",
+          "uploader": "Leoboudv",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "restrictions": "",
+          "photoDate": "2008-03-20 11:14:42",
+          "description": "Santiago Calatrava's \"Woman's Bridge\" (Buenos Aires).",
+          "categories": "Puente de la Mujer|Taken with Canon EOS 400D|Flickr images uploaded by Flickr upload bot|FoP-Argentina|Files with coordinates missing SDC location of creation",
+          "gps": {
+            "lat": -34.608036,
+            "lon": -58.364192
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 543866
+        }
+      ]
+    },
+    "ba737ba198642d67fd7f6b450acc24bc26e57306a89a5c308a6b43c77d12b02f": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:La Bombonera 2.jpg",
+      "checkedAt": "2026-11-16T10:47:00.720Z",
+      "candidates": [
+        {
+          "file": "File:La Bombonera 2.jpg",
+          "pageId": 123611036,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/La_Bombonera_2.jpg/960px-La_Bombonera_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/La_Bombonera_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_Bombonera_2.jpg",
+          "author": "Matibro",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Matibro&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Matibro (page does not exist)\">Matibro</a>",
+          "uploader": "Matibro",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2022-09-25 12:27:49",
+          "description": "La Bombonera",
+          "categories": "Self-published work|Argentina photographs taken on 2022-09-25|Files with coordinates missing SDC location of creation|September 2022 in Buenos Aires|Boca Juniors logos on objects|Taken with Motorola Moto G200 5G|Exterior of La Bombonera in 2022",
+          "gps": {
+            "lat": -34.635215,
+            "lon": -58.366433
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 3676193
+        }
+      ]
+    },
+    "f1bd91b80f8d1545ce6e04e31e92d535b61f0bf7efdcbef021ba4fcdb5c9b00d": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:2019 Buenos Aires - Palacio del Congreso de la Nación Argentina.jpg",
+      "checkedAt": "2026-11-16T10:47:00.720Z",
+      "candidates": [
+        {
+          "file": "File:2019 Buenos Aires - Palacio del Congreso de la Nación Argentina.jpg",
+          "pageId": 81461170,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/2019_Buenos_Aires_-_Palacio_del_Congreso_de_la_Naci%C3%B3n_Argentina.jpg/960px-2019_Buenos_Aires_-_Palacio_del_Congreso_de_la_Naci%C3%B3n_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/2019_Buenos_Aires_-_Palacio_del_Congreso_de_la_Naci%C3%B3n_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2019_Buenos_Aires_-_Palacio_del_Congreso_de_la_Naci%C3%B3n_Argentina.jpg",
+          "author": "Felipe Restrepo Acosta",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Pedro_Felipe\" title=\"User:Pedro Felipe\">Felipe Restrepo Acosta</a>",
+          "uploader": "Pedro Felipe",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2019-03-27 06:47:55",
+          "description": "Palacio del Congreso de la Nación Argentina",
+          "categories": "Palacio del Congreso de la Nación Argentina|Self-published work|Facades in Buenos Aires|March 2019 in Buenos Aires",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 3826637
+        }
+      ]
+    },
+    "430dd007de0b04d55ecb8c3614010d2793e3ae0de46b90e710252baf823c6b92": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Argentina-02271 - Metropolitan Cathedral (49024465657).jpg",
+      "checkedAt": "2026-11-16T10:47:00.720Z",
+      "candidates": [
+        {
+          "file": "File:Argentina-02271 - Metropolitan Cathedral (49024465657).jpg",
+          "pageId": 91188722,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Argentina-02271_-_Metropolitan_Cathedral_%2849024465657%29.jpg/960px-Argentina-02271_-_Metropolitan_Cathedral_%2849024465657%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Argentina-02271_-_Metropolitan_Cathedral_%2849024465657%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Argentina-02271_-_Metropolitan_Cathedral_(49024465657).jpg",
+          "author": "Dennis G. Jarvis",
+          "authorMetadata": "<bdi><a href=\"https://www.wikidata.org/wiki/Q122977591\" class=\"extiw\" title=\"d:Q122977591\"><span title=\"photographer\">Dennis G. Jarvis</span></a></bdi>",
+          "uploader": "Rudolphous",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "restrictions": "",
+          "photoDate": "2019-10-15 07:09",
+          "description": "Metropolitan Cathedral - The twelve Neo-Classical columns at the front represent the twelve apostles of Christ, supporting a triangular frontispiece. It is the former church of Pope Francis.",
+          "categories": "Files with coordinates missing SDC location of creation|October 2019 in Buenos Aires|Flickr images reviewed by FlickreviewR 2|Argentina photographs taken on 2019-10-15|Main facade of the Catedral Metropolitana, Buenos Aires|Photographs of Argentina by Dennis G. Jarvis",
+          "gps": {
+            "lat": -34.607568,
+            "lon": -58.373279
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 10864776
+        }
+      ]
+    },
+    "56e85efaf2a6ed9aed8008cd51afc531d525e5feb0e3ce5bbd36f79f1b0fc19f": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Torre Monumental, Buenos Aires .jpg",
+      "checkedAt": "2026-11-16T10:47:00.721Z",
+      "candidates": [
+        {
+          "file": "File:Torre Monumental, Buenos Aires .jpg",
+          "pageId": 66469624,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Torre_Monumental%2C_Buenos_Aires_.jpg/960px-Torre_Monumental%2C_Buenos_Aires_.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Torre_Monumental%2C_Buenos_Aires_.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torre_Monumental,_Buenos_Aires_.jpg",
+          "author": "Eugenio Hansen, OFS",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Eugenio_Hansen,_OFS\" title=\"User:Eugenio Hansen, OFS\">Eugenio Hansen, OFS</a>",
+          "uploader": "Eugenio Hansen, OFS",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2018-02-07 10:12:20",
+          "description": "Torre Monumental, Buenos Aires",
+          "categories": "Torre Monumental, Buenos Aires|Self-published work|February 2018 in Buenos Aires|Argentina photographs taken on 2018-02-07",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 7089900
+        }
+      ]
+    },
+    "6eb14ea9a1142026a6f1640bebc8f111322fb5e370d943dfe80f6804d221ad95": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:ObeliscoBA2015.jpg",
+      "checkedAt": "2026-11-16T10:47:00.721Z",
+      "candidates": [
+        {
+          "file": "File:ObeliscoBA2015.jpg",
+          "pageId": 64193167,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/ObeliscoBA2015.jpg/960px-ObeliscoBA2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/ObeliscoBA2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:ObeliscoBA2015.jpg",
+          "author": "Sebastianalmaraz",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Sebastianalmaraz&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Sebastianalmaraz (page does not exist)\">Sebastianalmaraz</a>",
+          "uploader": "LLcentury",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2015-10-13 18:21:05",
+          "description": "Obelisco de Buenos Aires",
+          "categories": "Obelisk of Buenos Aires|Self-published work|October 2015 in Buenos Aires|Files with coordinates missing SDC location of creation",
+          "gps": {
+            "lat": -34.604866,
+            "lon": -58.381538
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 2447250
+        }
+      ]
+    },
+    "7472cabc397101217ff86d543baa3d9e38195803dda6897ba8c7ee85c09cf65a": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Caminito+Buenos&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Caminito Tango, Buenos Aires ARG.jpg",
+      "checkedAt": "2026-11-16T10:47:00.721Z",
+      "candidates": [
+        {
+          "file": "File:Caminito Tango, Buenos Aires ARG.jpg",
+          "pageId": 130294038,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Caminito_Tango%2C_Buenos_Aires_ARG.jpg/960px-Caminito_Tango%2C_Buenos_Aires_ARG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Caminito_Tango%2C_Buenos_Aires_ARG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caminito_Tango,_Buenos_Aires_ARG.jpg",
+          "author": "Stefano Vigorelli",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Stefano_Vigorelli&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Stefano Vigorelli (page does not exist)\">Stefano Vigorelli</a>",
+          "uploader": "Stefano Vigorelli",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "2006-12-02 16:38:14",
+          "description": "Caminito Tango, Buenos Aires",
+          "categories": "La Boca, Buenos Aires|Buenos Aires in the 2010s|Self-published work|Shops in Buenos Aires",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 1729589
+        }
+      ]
+    },
+    "48531c5f97406fb523b1944a89e61c35396eb9c7b3747b3c8e1490ac6bfa0b13": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Cementerio de la Recoleta.jpg",
+      "checkedAt": "2026-11-16T10:47:00.721Z",
+      "candidates": [
+        {
+          "file": "File:Cementerio de la Recoleta.jpg",
+          "pageId": 1238045,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Cementerio_de_la_Recoleta.jpg/960px-Cementerio_de_la_Recoleta.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Cementerio_de_la_Recoleta.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cementerio_de_la_Recoleta.jpg",
+          "author": "Sking",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Sking\" title=\"User:Sking\">Sking</a>",
+          "uploader": "Sking",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "restrictions": "",
+          "photoDate": "2006-10-02",
+          "description": "Frente del Cementerio de la Recoleta, en Buenos Aires",
+          "categories": "GFDL|Taken with HP PhotoSmart R717|CC-BY-SA-2.5,2.0,1.0|License migration redundant|Self-published work|FoP-Argentina|Cemeteries in 2006|Main entrance (Recoleta Cemetery)",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 920430
+        }
+      ]
+    },
+    "77e79b1f8129f5de97b834802577849f99b3ea1f95935653fe0ff6545ca5463c": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Buenos Aires Most Transportowy 2.jpg",
+      "checkedAt": "2026-11-16T10:47:00.722Z",
+      "candidates": [
+        {
+          "file": "File:Buenos Aires Most Transportowy 2.jpg",
+          "pageId": 102743535,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Buenos_Aires_Most_Transportowy_2.jpg/960px-Buenos_Aires_Most_Transportowy_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Buenos_Aires_Most_Transportowy_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_Most_Transportowy_2.jpg",
+          "author": "Andrzej Otrębski",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Andrzej_O\" title=\"User:Andrzej O\">Andrzej Otrębski</a>",
+          "uploader": "Andrzej O",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "restrictions": "",
+          "photoDate": "Taken on 8 November 2018, 10:04:29",
+          "description": "Buenos Aires - Transporter Bridge",
+          "categories": "Transbordador Nicolás Avellaneda|Self-published work|Photos by User:Andrzej O|Bridges photographed in 2018|Argentina photographs taken on 2018-11-08",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 3257509
+        }
+      ]
+    },
+    "d1819975b758fbd4a6aece18dd81057ecb8cfb7948f5eea1b322039cdc0fecbe": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Basílica de San Francisco, Buenos Aires.jpg",
+      "checkedAt": "2026-11-16T10:47:00.724Z",
+      "candidates": [
+        {
+          "file": "File:Basílica de San Francisco, Buenos Aires.jpg",
+          "pageId": 23273608,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Bas%C3%ADlica_de_San_Francisco%2C_Buenos_Aires.jpg/960px-Bas%C3%ADlica_de_San_Francisco%2C_Buenos_Aires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Bas%C3%ADlica_de_San_Francisco%2C_Buenos_Aires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_San_Francisco,_Buenos_Aires.jpg",
+          "author": "Banfield",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Banfield\" title=\"User:Banfield\">Banfield</a>",
+          "uploader": "Banfield",
+          "license": "CC BY-SA 2.5 ar",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/ar/deed.en",
+          "restrictions": "",
+          "photoDate": "2012-12-20",
+          "description": "Basílica de San Francisco, Buenos Aires",
+          "categories": "Exterior of the Basílica de San Francisco (Buenos Aires)|Taken with Sony DSC-W150|FoP-Argentina|December 2012 in Buenos Aires|Cultural heritage monuments in Argentina with known IDs|December 2012 Argentina photographs",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 2414779
+        }
+      ]
+    },
+    "ea244da50af4bda316930711d3bf516311059e8827ae822eaa2738f7165ea9ed": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Aguas Corrientes-2011-TM.jpg",
+      "checkedAt": "2026-11-16T10:47:00.724Z",
+      "candidates": [
+        {
+          "file": "File:Aguas Corrientes-2011-TM.jpg",
+          "pageId": 16148346,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Aguas_Corrientes-2011-TM.jpg/960px-Aguas_Corrientes-2011-TM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Aguas_Corrientes-2011-TM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aguas_Corrientes-2011-TM.jpg",
+          "author": "HalloweenHJB (photo)Carl Nyströmer (1856–1913) and Olaf Boye (1864–1933) (building)",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:HalloweenHJB&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:HalloweenHJB (page does not exist)\">HalloweenHJB</a> (photo)<br><a href=\"//commons.wikimedia.org/wiki/Category:Carl_Nystr%C3%B6mer\" title=\"Category:Carl Nyströmer\">Carl Nyströmer</a> (1856–1913) and <a href=\"//commons.wikimedia.org/wiki/Category:Olaf_Boye\" title=\"Category:Olaf Boye\">Olaf Boye</a> (1864–1933) (building)",
+          "uploader": "HalloweenHJB",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "restrictions": "",
+          "photoDate": "2011-07-06",
+          "description": "Palace of Running Water or Water Works Building (Palacio de Aguas Corrientes) in Buenos Aires on Córdoba Avenue between Riobamba and Ayachucho.",
+          "categories": "Palacio de Aguas Corrientes, Buenos Aires|GFDL|License migration redundant|Self-published work|July 2011 in Buenos Aires|Photographs taken on 2011-07-06",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 1328334
+        }
+      ]
+    },
+    "70eb6713bf0e3e44a83d9624c210f06472cdd72795f95cbf5861eab1f5bd86f7": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Buenos Aires - Recoleta - Basílica de Nuestra Señora del Pilar - 1.jpg",
+      "checkedAt": "2026-11-16T10:47:00.724Z",
+      "candidates": [
+        {
+          "file": "File:Buenos Aires - Recoleta - Basílica de Nuestra Señora del Pilar - 1.jpg",
+          "pageId": 22699252,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Buenos_Aires_-_Recoleta_-_Bas%C3%ADlica_de_Nuestra_Se%C3%B1ora_del_Pilar_-_1.jpg/960px-Buenos_Aires_-_Recoleta_-_Bas%C3%ADlica_de_Nuestra_Se%C3%B1ora_del_Pilar_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Buenos_Aires_-_Recoleta_-_Bas%C3%ADlica_de_Nuestra_Se%C3%B1ora_del_Pilar_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Recoleta_-_Bas%C3%ADlica_de_Nuestra_Se%C3%B1ora_del_Pilar_-_1.jpg",
+          "author": "Starus",
+          "authorMetadata": "<a href=\"//commons.wikimedia.org/wiki/User:Starus\" title=\"User:Starus\">Starus</a>",
+          "uploader": "Starus",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "restrictions": "",
+          "photoDate": "2012-11-14 10:35:52",
+          "description": "Buenos Aires - Recoleta - Basílica de Nuestra Señora del Pilar",
+          "categories": "Exterior of the Basílica de Nuestra Señora del Pilar, Buenos Aires|Taken with Nikon D90|Self-published work|FoP-Argentina|Exteriors of churches in Buenos Aires",
+          "gps": null,
+          "mime": "image/jpeg",
+          "originalBytes": 1183612
+        }
+      ]
+    },
+    "9efb6853150ab4540f2dc96b2865443da27c0f2124449139021f762483d2a454": {
+      "endpoint": "https://commons.wikimedia.org/w/api.php?action=query&titles=File%3ACasa+Rosada+Buenos+Aires.JPG%7CFile%3APuente+de+la+mujer%2C+Buenos+Aires+%2832008%29.jpg%7CFile%3ALa+Bombonera+2.jpg%7CFile%3A2019+Buenos+Aires+-+Palacio+del+Congreso+de+la+Naci%C3%B3n+Argentina.jpg%7CFile%3AArgentina-02271+-+Metropolitan+Cathedral+%2849024465657%29.jpg%7CFile%3ATorre+Monumental%2C+Buenos+Aires+.jpg%7CFile%3AObeliscoBA2015.jpg%7CFile%3A2018-10-19+La+Boca%2C+Buenos+Aires%2C+Argentina+%28Martin+Rulsch%29+10.jpg%7CFile%3ACementerio+de+la+Recoleta.jpg%7CFile%3ABuenos+Aires+Most+Transportowy+2.jpg%7CFile%3ABas%C3%ADlica+de+San+Francisco%2C+Buenos+Aires.jpg%7CFile%3AAguas+Corrientes-2011-TM.jpg%7CFile%3ABuenos+Aires+-+Recoleta+-+Bas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Pilar+-+1.jpg%7CFile%3ACirculo+Militar+5821.jpg&prop=imageinfo&iiprop=url%7Cextmetadata%7Cuser%7Csize%7Cmime&iiurlwidth=960&format=json&maxlag=5",
+      "query": "manual-exact-file:File:Circulo Militar 5821.jpg",
+      "checkedAt": "2026-11-16T10:47:00.725Z",
+      "candidates": [
+        {
+          "file": "File:Circulo Militar 5821.jpg",
+          "pageId": 6353147,
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Circulo_Militar_5821.jpg/960px-Circulo_Militar_5821.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Circulo_Militar_5821.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Circulo_Militar_5821.jpg",
+          "author": "Tokyo Tanenhaus",
+          "authorMetadata": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/52331048@N00\">Tokyo Tanenhaus</a>",
+          "uploader": "Flickr upload bot",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "restrictions": "",
+          "photoDate": "2008-05-04 12:28:03",
+          "description": "The Paz Palace, Buenos Aires.",
+          "categories": "Palacio Paz, Buenos Aires|Taken with Canon EOS 300D|Flickr images uploaded by Flickr upload bot|FoP-Argentina|Files with coordinates missing SDC location of creation",
+          "gps": {
+            "lat": -34.595217,
+            "lon": -58.377747
+          },
+          "mime": "image/jpeg",
+          "originalBytes": 4029229
+        }
+      ]
     }
   },
-  "lastRequestAt": 1794825316264
+  "lastRequestAt": 1794825316264,
+  "expansionReviewNotes": [
+    {
+      "file": "File:2018-10-19 La Boca, Buenos Aires, Argentina (Martin Rulsch) 10.jpg",
+      "status": "rejected",
+      "reason": "GPS 33.360693,57.637963 contradictorio; no utilizar."
+    },
+    {
+      "file": "File:Pizzería El Cuartito 05.jpg",
+      "status": "rejected-framing",
+      "reason": "Encuadre hacia restaurante de enfrente; se eligió placa del propio establecimiento."
+    }
+  ]
 }

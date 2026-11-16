@@ -76,5 +76,229 @@
     "file": "File:Parque Lezama 2019.jpg",
     "evidence": "Inspección visual del paseo ajardinado y balaustradas. Ficha identifica Parque Lezama, San Telmo, Buenos Aires; coincide con el espacio verde BA Data delimitado por Brasil, Defensa, Paseo Colón y Martín García. Sin GPS publicado.",
     "approvedSha256": "10b906a35e60e6eed6a4d871987e1fd693085a76794dd7bc58988fc17d092221"
+  },
+  {
+    "id": "badata-green-1106",
+    "file": "File:Parque Rivadavia Monumento a Simón Bolivar (Buenos Aires).jpg",
+    "evidence": "Foto inspeccionada: parque ajardinado y monumento a Simón Bolívar. La ficha Commons ubica explícitamente el monumento dentro de Parque Rivadavia, Buenos Aires; coincide con el parque BA Data delimitado por Rivadavia, Doblas, Rosario y Beauchef. Sin GPS de la fotografía.",
+    "approvedSha256": "03068d55ff049b901f6b7fe1fec629273d2835e11de16df2979f52e8117b1433",
+    "reviewedAt": "2026-11-16T10:51:00.378Z"
+  },
+  {
+    "id": "badata-green-610",
+    "file": "File:Plaza Belgrano Glorieta.jpg",
+    "evidence": "Foto inspeccionada: glorieta y senderos de Barrancas de Belgrano. Descripción identifica el pabellón del parque de Belgrano, Buenos Aires. GPS de toma -34.559678,-58.450269 dentro del espacio delimitado por BA Data; no se confunde con Plaza Manuel Belgrano.",
+    "approvedSha256": "666ea6169fe6b5c9635f97e728b6781a77b82749e5cc34b0879435ac50284f9e",
+    "reviewedAt": "2026-11-16T10:51:00.380Z"
+  },
+  {
+    "id": "badata-green-872",
+    "file": "File:Escultura Yaguareté en Parque Chacabuco - Emilio Jacinto Sarniguet.jpg",
+    "evidence": "Foto inspeccionada: escultura Yaguareté y entorno ajardinado. La ficha sitúa explícitamente la escultura dentro de Parque Chacabuco, Buenos Aires. GPS -34.63481,-58.44013 coincide con el parque entre Eva Perón, Curapaligüe, Asamblea y Emilio Mitre. Es un detalle del parque exacto, no una foto genérica del barrio.",
+    "approvedSha256": "3d17f2dd5286f32fb80f739c0983f3dd528e77c48068a035a88f080cc4e8791a",
+    "reviewedAt": "2026-11-16T10:51:00.380Z"
+  },
+  {
+    "id": "badata-green-874",
+    "file": "File:Casa de los Olivera en el Parque Avellaneda.jpg",
+    "evidence": "Foto inspeccionada: Casa de los Olivera con jardines. Ficha identifica esa casa dentro de Parque Avellaneda. Coincide con el parque BA Data delimitado por Directorio, Lacarra y Monte. Foto del edificio y entorno dentro del parque, sin atribuir GPS ausente.",
+    "approvedSha256": "698d2d171e6b05a025a6fbb88d394dbf6d13dab1d019424f12e3380078a6db63",
+    "reviewedAt": "2026-11-16T10:51:00.380Z"
+  },
+  {
+    "id": "badata-green-882",
+    "file": "File:Plaza San Martín - Buenos Aires.jpg",
+    "evidence": "Foto inspeccionada: jardines y senderos de Plaza San Martín con Torre Monumental al fondo. Ficha identifica explícitamente la vista desde Plaza San Martín en Buenos Aires. GPS -34.593917,-58.375472 corresponde al interior del parque BA Data de Retiro. La torre es referencia de fondo, no el plan de esta tarjeta.",
+    "approvedSha256": "3d52034d7c6ab6cab457d1d20ddc78899d81c7a5ecc0ae03d479a9951ce44946",
+    "reviewedAt": "2026-11-16T10:51:00.381Z"
+  },
+  {
+    "id": "badata-green-906",
+    "file": "File:Plaza Congreso.JPG",
+    "evidence": "Foto inspeccionada: vista panorámica de Plaza del Congreso con jardines, monumento central y Congreso al fondo. Ficha identifica Congressional Plaza, Buenos Aires; corresponde al espacio verde publicado por BA Data, no al edificio del Congreso. Sin GPS de foto.",
+    "approvedSha256": "8f53087afd38b5145bad880345c9a3b8bcc2ee84f9a841af7fd3fd999734e654",
+    "reviewedAt": "2026-11-16T10:51:00.381Z"
+  },
+  {
+    "id": "badata-green-9",
+    "file": "File:PlazaRafaelHernandez1.jpg",
+    "evidence": "Foto inspeccionada: cartel legible PLAZA RAFAEL HERNANDEZ en el propio espacio arbolado de Belgrano. Descripción y categoría Commons identifican esta plaza en Belgrano, Buenos Aires, coincidente con Echeverría/Vuelta de Obligado/Mom de BA Data. Se usa este encuadre identificable, no la foto orientada al edificio de enfrente.",
+    "approvedSha256": "386617676e4d72598154580a21383b9240f04e8b532b75240f9e552589c00dd3",
+    "reviewedAt": "2026-11-16T10:51:00.384Z"
+  },
+  {
+    "id": "badata-green-1529",
+    "file": "File:Plaza Antoine Saint-Exupéry.jpg",
+    "evidence": "Foto inspeccionada: plaza y rampas junto a autopista elevada. Ficha identifica Plaza Antoine Saint-Exupéry. GPS -34.628674,-58.428677 corresponde al lugar BA Data entre Zuviría, Senillosa, Doblas y autopista 25 de Mayo.",
+    "approvedSha256": "f3b32237f74d73ad2a4fbf4592eb164b7b9930a77d75b847f5039fcc02a55e32",
+    "reviewedAt": "2026-11-16T10:51:00.384Z"
+  },
+  {
+    "id": "badata-culture-2545",
+    "file": "File:Academia Nacional de la Historia (Argentina).JPG",
+    "evidence": "Foto inspeccionada: entrada con nombre ACADEMIA NACIONAL DE LA HISTORIA legible. Descripción Commons da Balcarce 139, dirección exacta del registro BA Data. No se usa foto de personas ni una academia homónima.",
+    "approvedSha256": "cb45a5eb095e32009fb7ccd5e1c7dbee980c17b176d627c8b8e09b1b2f44e049",
+    "reviewedAt": "2026-11-16T10:51:00.385Z"
+  },
+  {
+    "id": "badata-food-1985",
+    "file": "File:Pizzería El Cuartito 09.jpg",
+    "evidence": "Foto inspeccionada: placa original PIZZERIA EL CUARTITO sobre fachada de azulejos. Descripción Commons da El Cuartito, Talcahuano 937, Buenos Aires, dirección exacta BA Data. Se publica un detalle identificable del establecimiento; se descartó la toma orientada al local de enfrente.",
+    "approvedSha256": "735acc811beac928b13bd12d21a3a81e9538ff99a8987d123e0d1d9324af4971",
+    "reviewedAt": "2026-11-16T10:51:00.386Z"
+  },
+  {
+    "id": "badata-food-2296",
+    "file": "File:Pizzería Güerrín.jpg",
+    "evidence": "Foto inspeccionada: fachada y letrero Güerrín junto al teatro Apolo. Descripción Commons identifica Pizzería Güerrín, Corrientes 1368, Buenos Aires, dirección exacta BA Data. GPS de toma cercano; el nombre y dirección exacta sostienen la correspondencia.",
+    "approvedSha256": "e0a7ef031c6854ee35a5eea068bf01dd50b67861e49cfd574c205789dfc99480",
+    "reviewedAt": "2026-11-16T10:51:00.388Z"
+  },
+  {
+    "id": "badata-food-170",
+    "file": "File:Bar El Preferido de Palermo2.jpg",
+    "evidence": "Foto inspeccionada: fachada rosa y cartel El Preferido. Ficha identifica Bar El Preferido de Palermo; GPS -34.585483,-58.425481 junto al registro BA Data de Borges 2108. No es un homónimo de otro barrio.",
+    "approvedSha256": "b8185a31439ba85cdf57c1b1317fd12c703d253f9370e9d8ca3af947ed666a67",
+    "reviewedAt": "2026-11-16T10:51:00.389Z"
+  },
+  {
+    "id": "badata-food-565",
+    "file": "File:El Imperio de la Pizza 02.jpg",
+    "evidence": "Foto inspeccionada desde el interior: vidriera con insignias de El Imperio de la Pizza y estación Federico Lacroze al frente. Ficha identifica la pizzería en Chacarita; GPS -34.586917,-58.454725 junto al registro BA Data Corrientes 6891.",
+    "approvedSha256": "99e0b5bfa8283401468c5abccaa4ef5784aa0363f8e4bc4a49669b5610cb27e2",
+    "reviewedAt": "2026-11-16T10:51:00.391Z"
+  },
+  {
+    "id": "badata-culture-1103",
+    "file": "File:CENTROCULTURALRECOLETA2022.jpg",
+    "evidence": "Foto inspeccionada: fachada con mural y texto CENTRO CULTURAL RECOLETA legible en acceso. Ficha Commons identifica Centro Cultural Recoleta; corresponde al centro de Junín 1930 BA Data. Sin GPS publicado; no se derivan coordenadas de la imagen.",
+    "approvedSha256": "2c5ec97b0a7716f3819a89945c85a3372d2e24187aaf0a5241f67d35aee016d6",
+    "reviewedAt": "2026-11-16T10:51:00.393Z"
+  },
+  {
+    "id": "badata-culture-2599",
+    "file": "File:Museo de Arte Español Enrique Larreta esquina.jpg",
+    "evidence": "Foto inspeccionada: entrada y edificio de esquina del Museo Larreta. Ficha especifica Museo de Arte Español Enrique Larreta, entrada en avenida Juramento, Belgrano, Buenos Aires. GPS -34.560770,-58.455542 junto al registro Juramento 2291 de BA Data.",
+    "approvedSha256": "768ca7d491a7477966ad4b45f63132d1adb7fdb3fc178466700ccb3c51858b55",
+    "reviewedAt": "2026-11-16T10:51:00.394Z"
+  },
+  {
+    "id": "badata-culture-2674",
+    "file": "File:Museo Histórico Nacional, Buenos Aires Argentina.jpg",
+    "evidence": "Foto inspeccionada: edificio rojo, galerías y jardín de acceso del Museo Histórico Nacional. Ficha identifica Museo Histórico Nacional, Buenos Aires Argentina; coincide con el museo de Defensa 1600, junto a Parque Lezama. Sin GPS en la ficha; no se confunde con el museo del Cabildo.",
+    "approvedSha256": "1be2a347fea2f9aaeb2aa7bef08bb3da1d9b8b40a91e47939dba9a1ebbebb2f9",
+    "reviewedAt": "2026-11-16T10:51:00.396Z"
+  },
+  {
+    "id": "badata-green-1444",
+    "file": "File:Buenos Aires - Jardín Japonés - 200806a.jpg",
+    "evidence": "Foto inspeccionada: lago, puente rojo y jardín japonés. Ficha identifica Japanese garden, Buenos Aires, Argentina; GPS -34.574778,-58.408972 dentro del Jardín Japonés delimitado por BA Data. No se atribuye al restaurante homónimo.",
+    "approvedSha256": "415580c351d74a5d0e3a331b7c008c00546aa7eaee4169a887f6528a6fbac61b",
+    "reviewedAt": "2026-11-16T10:51:00.398Z"
+  },
+  {
+    "id": "badata-green-171",
+    "file": "File:DefPuebloCABA - Barrio Parque Saavedra (1).jpg",
+    "evidence": "Foto inspeccionada: césped, senderos, árboles y bancos del Parque Saavedra. Ficha y título identifican Barrio Parque Saavedra, de la Defensoría del Pueblo de CABA, correspondiente al Parque Brig. Gral. Cornelio Saavedra entre García del Río y Melián de BA Data. Sin GPS publicado.",
+    "approvedSha256": "c688ada1dc7c33c6e1b7ee4d646a26e32b06e2f965077d8f8bd10311a78bc327",
+    "reviewedAt": "2026-11-16T10:51:00.400Z"
+  },
+  {
+    "id": "tourism-wikidata-q478926",
+    "file": "File:Casa Rosada Buenos Aires.JPG",
+    "evidence": "Fachada rosada de la Casa Rosada, arquerías, balcón central y bandera; imagen P18 de la entidad que identifica el palacio presidencial de Buenos Aires. Correspondencia de identidad confirmada con entidad Wikidata Q478926, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "3d04204ecadd0c60d5549bd025ca1eadcc51250c00b0ef802ac20bd07585ef34",
+    "reviewedAt": "2026-11-16T10:51:00.402Z"
+  },
+  {
+    "id": "tourism-wikidata-q2336867",
+    "file": "File:Puente de la mujer, Buenos Aires (32008).jpg",
+    "evidence": "Puente peatonal blanco de mástil inclinado y plataforma sobre dique de Puerto Madero; descripción identifica Woman’s Bridge, Buenos Aires. GPS de toma junto a P625. Correspondencia de identidad confirmada con entidad Wikidata Q2336867, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "101ac051a9a7fc4c236a83417dadcb7700903fb5cf5fa8a53d901d80f7e98897",
+    "reviewedAt": "2026-11-16T10:51:00.404Z"
+  },
+  {
+    "id": "tourism-wikidata-q499855",
+    "file": "File:La Bombonera 2.jpg",
+    "evidence": "Fachada azul y amarilla con escudos CABJ de La Bombonera; nombre en descripción Commons y enlace P18 de la entidad del estadio en Buenos Aires. GPS corresponde al exterior del mismo estadio. Correspondencia de identidad confirmada con entidad Wikidata Q499855, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "e2e552b53a21aa0b69c92bd2ed8e202374338fa60fb01928dd12a716a21e0397",
+    "reviewedAt": "2026-11-16T10:51:00.406Z"
+  },
+  {
+    "id": "tourism-wikidata-q646142",
+    "file": "File:2019 Buenos Aires - Palacio del Congreso de la Nación Argentina.jpg",
+    "evidence": "Edificio del Congreso Nacional con cúpula verde y acceso monumental. Nombre completo en descripción y P18 de la entidad del edificio legislativo de Buenos Aires. Correspondencia de identidad confirmada con entidad Wikidata Q646142, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "2f15e3f7032b56d2b512abe55932e4dd59b152da5ba02240b46a8c6c780a6432",
+    "reviewedAt": "2026-11-16T10:51:00.408Z"
+  },
+  {
+    "id": "tourism-wikidata-q967929",
+    "file": "File:Argentina-02271 - Metropolitan Cathedral (49024465657).jpg",
+    "evidence": "Pórtico de doce columnas y frontón de la Catedral Metropolitana. Descripción identifica Metropolitan Cathedral; GPS de toma -34.607568,-58.373279 junto al P625 de Catedral de Buenos Aires. Correspondencia de identidad confirmada con entidad Wikidata Q967929, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "8fa1931ae215fee30df994f0f3f1d7168fb2d159945d755923a75a5c288cc415",
+    "reviewedAt": "2026-11-16T10:51:00.410Z"
+  },
+  {
+    "id": "tourism-wikidata-q570385",
+    "file": "File:Torre Monumental, Buenos Aires .jpg",
+    "evidence": "Torre de ladrillos con reloj y base de piedra blanca; ficha identifica Torre Monumental, Buenos Aires y P18 del mismo monumento en Retiro. Correspondencia de identidad confirmada con entidad Wikidata Q570385, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "50852c562bd8afb5d5de1e82b12ad670067c2739f604af129f474b907d7aa881",
+    "reviewedAt": "2026-11-16T10:51:00.412Z"
+  },
+  {
+    "id": "tourism-wikidata-q831389",
+    "file": "File:ObeliscoBA2015.jpg",
+    "evidence": "Obelisco blanco en avenida 9 de Julio. Nombre exacto en descripción y P18 de Obelisco de Buenos Aires. GPS es punto de toma al sur del monumento, no se presenta como posición del edificio. Correspondencia de identidad confirmada con entidad Wikidata Q831389, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "45c42f8e1a0c82890c9e48a577a72fdddf83c8d2af9afc7d5bdbb4a18558b781",
+    "reviewedAt": "2026-11-16T10:51:00.414Z"
+  },
+  {
+    "id": "tourism-wikidata-q1029566",
+    "file": "File:Caminito Tango, Buenos Aires ARG.jpg",
+    "evidence": "Fachada colorida con cartel Caminito Tango, tramo de Caminito de La Boca; nombre exacto en descripción y categoría Commons. Se descartó la imagen P18 original porque publicaba GPS contradictorio fuera de Argentina. La posición del plan procede de P625, no de esta foto sin GPS. Correspondencia de identidad confirmada con entidad Wikidata Q1029566, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "74f4401971f6feba5866fd8f8ccad00ddcde6217e201b8560c92163204836b34",
+    "reviewedAt": "2026-11-16T10:51:00.416Z"
+  },
+  {
+    "id": "tourism-wikidata-q831322",
+    "file": "File:Cementerio de la Recoleta.jpg",
+    "evidence": "Entrada del cementerio con inscripción REQUIESCANT IN PACE y columnas. Ficha identifica frente del Cementerio de la Recoleta, Buenos Aires; P18 de la misma entidad. Correspondencia de identidad confirmada con entidad Wikidata Q831322, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "5cb00823156b8d2196969c5f9a51c08e13fdf91a94beedb539967951a80b5147",
+    "reviewedAt": "2026-11-16T10:51:00.418Z"
+  },
+  {
+    "id": "tourism-wikidata-q1138028",
+    "file": "File:Buenos Aires Most Transportowy 2.jpg",
+    "evidence": "Estructura metálica elevada del antiguo puente transbordador sobre el Riachuelo. Descripción identifica Buenos Aires Transporter Bridge; archivo P18 de Puente Transbordador Nicolás Avellaneda. No es el puente carretero moderno. Correspondencia de identidad confirmada con entidad Wikidata Q1138028, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "10aabfcab9acef9e6da7a1edfa9a8c9b3b7065568e39b2c5b575895e55b14946",
+    "reviewedAt": "2026-11-16T10:51:00.419Z"
+  },
+  {
+    "id": "tourism-wikidata-q4579815",
+    "file": "File:Basílica de San Francisco, Buenos Aires.jpg",
+    "evidence": "Fachada con dos torres barrocas del templo San Francisco. Nombre y ciudad en descripción Commons; P18 de basílica de San Francisco en Buenos Aires. Correspondencia de identidad confirmada con entidad Wikidata Q4579815, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "d8020698ba2562a0712d3f23e5725ea18797423b48dbaa75763d951d744f064e",
+    "reviewedAt": "2026-11-16T10:51:00.421Z"
+  },
+  {
+    "id": "tourism-wikidata-q3361112",
+    "file": "File:Aguas Corrientes-2011-TM.jpg",
+    "evidence": "Fachada ornamental con cerámicas del Palacio de Aguas Corrientes. Descripción identifica nombre y avenida Córdoba entre Riobamba y Ayacucho, Buenos Aires. P18 de la misma entidad. Correspondencia de identidad confirmada con entidad Wikidata Q3361112, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "6340e5d07e715680df536fc5273523f8fb6191bc3a4f4f31b9d7b2feaa9837a1",
+    "reviewedAt": "2026-11-16T10:51:00.423Z"
+  },
+  {
+    "id": "tourism-wikidata-q2886930",
+    "file": "File:Buenos Aires - Recoleta - Basílica de Nuestra Señora del Pilar - 1.jpg",
+    "evidence": "Iglesia blanca y campanario colonial de Nuestra Señora del Pilar en Recoleta. Nombre completo y Recoleta en ficha Commons; P18 de la entidad del templo de Buenos Aires. P625 tiene precisión gruesa, no se inventa dirección. Correspondencia de identidad confirmada con entidad Wikidata Q2886930, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "1d6077a544f20ae64698b55b06920ab05d764e3cb030d357c57b7f45f1e832c1",
+    "reviewedAt": "2026-11-16T10:51:00.425Z"
+  },
+  {
+    "id": "tourism-wikidata-q1668230",
+    "file": "File:Circulo Militar 5821.jpg",
+    "evidence": "Fachada de palacio y cartel CIRCULO MILITAR. Ficha identifica The Paz Palace, Buenos Aires. GPS -34.595217,-58.377747 junto a P625 de Palacio Paz. Correspondencia de identidad confirmada con entidad Wikidata Q1668230, etiqueta y coordenadas publicadas.",
+    "approvedSha256": "d551baa9652d5bee37942bdb51b31618fdfe75e18467f5c53b231f3124e23ea0",
+    "reviewedAt": "2026-11-16T10:51:00.427Z"
   }
 ]

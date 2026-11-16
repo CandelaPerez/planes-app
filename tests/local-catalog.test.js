@@ -32,6 +32,7 @@ test('129 original ideas render, filter and retain valid detail fields without e
     assert.ok(CATALOG.every((plan) => plan.title && plan.description && plan.category && plan.location && plan.budget && plan.image));
     const html = renderToString(createElement(App));
     assert.match(html.replaceAll('<!-- -->', ''), /0 planes con fotografía real verificada/);
+    for (const category of ['Todas', 'Gastronomía', 'Cultura', 'Aire Libre', 'Viajes']) assert.ok(html.includes(`>${category === 'Viajes' ? 'Íconos de BA' : category}</button>`), `${category} filter remains visible while loading`);
     assert.ok(!/OpenStreetMap|Overpass|Planes para hacer hoy|api-preview/.test(html));
     function Results({ search = '', category = 'Todas', zone = 'Todas', budget = 'Todos' }) {
       const { visibleIdeas } = usePlanFilters({ catalog: CATALOG, search, category, zone, budget, sortBy: 'alpha', ratings: [], planPhotos: {} });
