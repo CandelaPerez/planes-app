@@ -28,9 +28,9 @@
         "description": "Frente de uno de los lugares emblemáticos de la Ciudad Autónoma de Buenos Aires, donde se puede ingresar a comer y a disfrutar de la historia del tango argentino.",
         "verifiedAt": "2026-11-16T00:54:45.388Z",
         "evidence": "Fachada con el nombre Tortoni. GPS -34.608944,-58.378151, junto a BA Data -34.60882556,-58.37812207, Av. de Mayo 825.",
-        "sha256": "6fa5070289dc77f5fb9e3598412bdb213bc6e5ffa6635ba8291a283876868ba5",
-        "bytes": 659871,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
+        "sha256": "f555a675b5185c01c964e01f57d2e4a27ad7e77c5ece2614b74e84ac68ea02f4",
+        "bytes": 586166,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS."
       },
       "lat": -34.60882556,
       "lon": -58.37812207
@@ -60,9 +60,9 @@
         "description": "Café \"Las Violetas\", situado en Medrano y Rivadavia, en la ciudad de Buenos Aires. Café fundado en 1884",
         "verifiedAt": "2026-11-16T00:54:45.391Z",
         "evidence": "Nombre visible y esquina Medrano/Rivadavia en foto y descripción. GPS -34.611361,-58.421111, próximo a Rivadavia 3899 de BA Data. No corresponde al homónimo de Uspallata.",
-        "sha256": "94dda301880ba03ea0f935d979f7bd1d90fbd805c3868d9261b48a252d3187cb",
-        "bytes": 157209,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
+        "sha256": "41b5b7fb0e24574fc6ac3fe438389546cc31cde3b5bb88d55715c704d2368b5d",
+        "bytes": 137208,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS."
       },
       "lat": -34.61131564,
       "lon": -58.42077385
@@ -135,9 +135,9 @@
         "description": "National Museum of Fine Arts, Buenos Aires, Argentina.",
         "verifiedAt": "2026-11-16T00:54:45.394Z",
         "evidence": "Nombre completo visible en la fachada. La ficha identifica Buenos Aires, Argentina; coincide con el museo de Av. del Libertador 1473. No se atribuyen coordenadas ausentes a la foto.",
-        "sha256": "d8c0b26bfbb96a31269f0f6740587ee08eb2e0745eb1e394472d9f3b5fd938d1",
-        "bytes": 167158,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
+        "sha256": "402f38967e0775800837bb1ee3b8cd720681d44ed759e1e4e266deab4950b188",
+        "bytes": 145363,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS."
       },
       "lat": -34.583673,
       "lon": -58.394746
@@ -167,9 +167,9 @@
         "description": "Museo de Arte Latinoamericano de Buenos Aires (MALBA).",
         "verifiedAt": "2026-11-16T00:54:45.395Z",
         "evidence": "Cartel MALBA visible, ficha Museo de Arte Latinoamericano de Buenos Aires. GPS -34.577333,-58.404028, próximo al registro de Figueroa Alcorta 3415.",
-        "sha256": "a691ae957505559dcf7e98d107fce17ff030a837e8b38b1b7081e2c247f4e290",
-        "bytes": 127556,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
+        "sha256": "98484a6b57791bd12403a68a45c58be6146fd25d291faf1ab0c0a2eae0c65e66",
+        "bytes": 112688,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS."
       },
       "lat": -34.577246,
       "lon": -58.40377
@@ -199,9 +199,9 @@
         "description": "Vista del lago del Parque Centenario, Buenos Aires.",
         "verifiedAt": "2026-11-16T00:54:45.396Z",
         "evidence": "Ficha Vista del lago del Parque Centenario, Buenos Aires; GPS -34.606917,-58.435528 dentro del entorno del parque publicado por BA Data. Se inspeccionó el lago y su entorno.",
-        "sha256": "9d9d390abaa2af452948a7f1388e6686d409fe10646a5e8d7f024ce1eb307008",
-        "bytes": 216266,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
+        "sha256": "31bcc1bc2ab4017c897502e363013ddf1339837822fa5a5bdcb50957acf63e6a",
+        "bytes": 190480,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS."
       },
       "lat": -34.60857189058353,
       "lon": -58.43602732629859
@@ -263,9 +263,9 @@
         "description": "Entrada del jardín botánico Carlos Thays de la Ciudad Autónoma de Buenos Aires, Argentina.",
         "verifiedAt": "2026-11-16T00:54:45.399Z",
         "evidence": "Ficha identifica el Jardín Botánico Carlos Thays de CABA; GPS -34.582750,-58.419000 próximo al jardín de Santa Fe/Las Heras/Malabia. Revisión visual del edificio y jardín.",
-        "sha256": "64f3d582676b5a6e1e82234077cc628aaf379610c42fcecc6102b0e574ac97be",
-        "bytes": 250170,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
+        "sha256": "8c2520393ed3c4ddc01e035dc9ef3780eed494790cec373217a9740d56378dec",
+        "bytes": 218889,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS."
       },
       "lat": -34.58405532684954,
       "lon": -58.41724926260923

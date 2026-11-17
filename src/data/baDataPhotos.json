@@ -24,9 +24,9 @@
         "description": "Entrance to Bar Británico, on Brasil 399, San Telmo, Buenos Aires. Established in 1928, the bar served as a location for numerous Argentine films such as Tacos altos (1985) and Donde estás amor de mi vida, que no te puedo encontrar? (1992).",
         "verifiedAt": "2026-11-16T10:51:00.534Z",
         "evidence": "Inspección visual: cartel Bar Británico y fachada. La descripción Commons identifica Brasil 399, San Telmo, exactamente la dirección BA Data.",
-        "sha256": "106825345cb90cb84ce56f789643826675fe8e9d0ac9da00ffb77f547bf59c55",
-        "bytes": 177706,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "ee3854e9d6c3ff268e40854e68c5e94bd965f8b5c6c5ce6fa269139082b7eb6f",
+        "bytes": 156116,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -53,9 +53,9 @@
         "description": "Bar El Federal, Carlos Calvo 599, San Telmo, Buenos Aires, Argentina.",
         "verifiedAt": "2026-11-16T10:51:00.542Z",
         "evidence": "Inspección visual: cartel El Federal en interior. La descripción Commons identifica Carlos Calvo 599, Buenos Aires, exactamente la dirección BA Data.",
-        "sha256": "839442f295b145a5249f26f7102663495c3a07d1675efc2c71ca77c732a7d214",
-        "bytes": 160716,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "b9356fd1b05fe1e7c7a2a75821e3ead4cd8a639aa47d0689ab7f8d591aec37b5",
+        "bytes": 143045,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -111,9 +111,9 @@
         "description": "Café La Biela, en el barrio de Recoleta. Ciudad de Buenos Aires",
         "verifiedAt": "2026-11-16T10:51:00.546Z",
         "evidence": "Inspección visual: cartel La Biela y fachada. Ficha identifica La Biela de Recoleta. GPS -34.587722,-58.390833 junto a BA Data -34.58783506,-58.39075439, Quintana 600.",
-        "sha256": "22a0f3c825e257b4e06f126215eeddc5ad302c4e90a7a5c8a9382cb7f8957a8e",
-        "bytes": 226032,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "60f90e5a2ba8aabd038ac7ec1ecc0b286d965237eb7b6712772e08a28db2ed3c",
+        "bytes": 195480,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.587722,
           "lon": -58.390833
@@ -143,9 +143,9 @@
         "description": "Bar Los Galgos, en el barrio de San Nicolás,  Buenos Aires, Argentina.",
         "verifiedAt": "2026-11-16T10:51:00.547Z",
         "evidence": "Inspección visual: cartel Los Galgos y esquina. Ficha identifica Los Galgos, San Nicolás, Buenos Aires. GPS -34.603219,-58.392553 a unos 34 metros del registro Lavalle 1791.",
-        "sha256": "33e5850255200b46abb517348b1576112858be1bd5a750632e9baf564ee2d5d9",
-        "bytes": 190819,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "030b2e655793a69e3eaeedd330f395fcae8d11239d1949a9e3c4542dfa6dad68",
+        "bytes": 168580,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.603219,
           "lon": -58.392553
@@ -175,9 +175,9 @@
         "description": "Cartel del bar Esquina Homero Manzi, en el barrio de Boedo, Buenos Aires",
         "verifiedAt": "2026-11-16T10:51:00.549Z",
         "evidence": "Inspección visual: cartel Esquina Homero Manzi junto a nomenclador de avenida Boedo. Ficha identifica el bar en Boedo, Buenos Aires. Compatible con San Juan 3601 publicado por BA Data; no se atribuye GPS ausente.",
-        "sha256": "a3c07797e2d21fa4df2ef2cd3b57a09b8947dc43aff7afdaa79e2321aeffdeae",
-        "bytes": 126184,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "bc6753f7510a39fe934ae879588d640f68ac53f2a297699e6d41aef3c96460ff",
+        "bytes": 110665,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -204,9 +204,9 @@
         "description": "Teatro Colón rear entrance. Wikipedia:Buenos Aires, Wikipedia:Argentina",
         "verifiedAt": "2026-11-16T10:51:00.551Z",
         "evidence": "Inspección visual de fachada posterior del Teatro Colón. Ficha identifica Teatro Colón, Buenos Aires. GPS -34.601083,-58.383083 a unos 59 metros del registro BA Data; fachada posterior del mismo edificio, no otro teatro.",
-        "sha256": "5c09d6ed108ece2d3903b9c35abb8bb397a227d3307a10771ac130a640ef4661",
-        "bytes": 249995,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "2a782e2cea26d5b792505a89c96940f093e5930b4b38762d4607132b99ed3741",
+        "bytes": 221048,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.601083,
           "lon": -58.383083
@@ -236,9 +236,9 @@
         "description": "The Buenos Aires Cabildo Building",
         "verifiedAt": "2026-11-16T10:51:00.553Z",
         "evidence": "Inspección visual: edificio del Cabildo de Buenos Aires y torre característica frente a Plaza de Mayo. Ficha identifica Buenos Aires Cabildo Building. Corresponde al museo del Cabildo publicado en Bolívar 65. Sin GPS en la ficha.",
-        "sha256": "293918e7fc227c06d20aa681a4c875cf9fd2d04dd61880c19442f43e17f334b2",
-        "bytes": 221886,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "3bc14da0d59c9d53ec241d5b65436d1ddddca17f58d46d4509da266cac3d92f7",
+        "bytes": 200434,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -265,9 +265,9 @@
         "description": "Vista del Planetario desde la Av. Sarmiento",
         "verifiedAt": "2026-11-16T10:51:00.555Z",
         "evidence": "Inspección visual: cúpula y edificio del Planetario Galileo Galilei junto al lago. Ficha indica vista del Planetario desde avenida Sarmiento. GPS -34.569844,-58.410348 del punto de toma, a unos 178 metros del registro del edificio.",
-        "sha256": "55071bc6ee9434da824aba96d9bebf597bbaf89cbbb13e78132574fb1844f344",
-        "bytes": 232043,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "3a6266cd091343031edf3628ef4c016d386b5a544c2a43fdd63b297e2e290462",
+        "bytes": 203585,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.569844,
           "lon": -58.410348
@@ -297,9 +297,9 @@
         "description": "Edificio del Museo Argentino de Ciencias Naturales \"Bernardino Rivadavia\", principal museo de ciencias naturales de la República Argentina, ubicado dentro del Parque Centenario, en el barrio de Caballito (Buenos Aires).",
         "verifiedAt": "2026-11-16T10:51:00.557Z",
         "evidence": "Inspección visual de edificio y acceso del museo. Ficha identifica explícitamente Museo Argentino de Ciencias Naturales Bernardino Rivadavia dentro de Parque Centenario, Caballito, Buenos Aires; coincide con nombre y entorno del registro Ángel Gallardo 490. Sin GPS publicado.",
-        "sha256": "d68af25b67a45e0672808ef60a6fb24f72000fa66b05a0da7a80ee02f93dc33c",
-        "bytes": 163565,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "8ff8cc2fe90c4683a4ad24127fbcc35c57dc51db093435b707bc584606128460",
+        "bytes": 145906,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -512,9 +512,9 @@
         "description": "Vista de la Casa de los Olivera en el parque Avellaneda",
         "verifiedAt": "2026-11-16T10:51:00.573Z",
         "evidence": "Foto inspeccionada: Casa de los Olivera con jardines. Ficha identifica esa casa dentro de Parque Avellaneda. Coincide con el parque BA Data delimitado por Directorio, Lacarra y Monte. Foto del edificio y entorno dentro del parque, sin atribuir GPS ausente.",
-        "sha256": "698d2d171e6b05a025a6fbb88d394dbf6d13dab1d019424f12e3380078a6db63",
-        "bytes": 125954,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "01f9b522de17708eafc8d929eabfb7093c5dbaf38cb4d66b797be91a9b0d65b9",
+        "bytes": 109311,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -573,9 +573,9 @@
         "description": "Congressional Plaza, Buenos Aires, Argentina.",
         "verifiedAt": "2026-11-16T10:51:00.576Z",
         "evidence": "Foto inspeccionada: vista panorámica de Plaza del Congreso con jardines, monumento central y Congreso al fondo. Ficha identifica Congressional Plaza, Buenos Aires; corresponde al espacio verde publicado por BA Data, no al edificio del Congreso. Sin GPS de foto.",
-        "sha256": "8f53087afd38b5145bad880345c9a3b8bcc2ee84f9a841af7fd3fd999734e654",
-        "bytes": 170291,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "374b2993cc6e3ea9851939f45d59f81b589b3ab87c685fd93e208892c29db8f1",
+        "bytes": 148763,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -663,9 +663,9 @@
         "description": "Fotografía de la entrada principal de la Academia Nacional de la Historia, sita en la calle Balcarce 139",
         "verifiedAt": "2026-11-16T10:51:00.582Z",
         "evidence": "Foto inspeccionada: entrada con nombre ACADEMIA NACIONAL DE LA HISTORIA legible. Descripción Commons da Balcarce 139, dirección exacta del registro BA Data. No se usa foto de personas ni una academia homónima.",
-        "sha256": "cb45a5eb095e32009fb7ccd5e1c7dbee980c17b176d627c8b8e09b1b2f44e049",
-        "bytes": 205709,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "96b207b8f5741d6b8edfe01350131291d2336d71f13ad7eedeac20ad582c710b",
+        "bytes": 179214,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -692,9 +692,9 @@
         "description": "Images of El Cuartito pizzeria, Talcahuano 937, Buenos Aires, Argentina.",
         "verifiedAt": "2026-11-16T10:51:00.583Z",
         "evidence": "Foto inspeccionada: placa original PIZZERIA EL CUARTITO sobre fachada de azulejos. Descripción Commons da El Cuartito, Talcahuano 937, Buenos Aires, dirección exacta BA Data. Se publica un detalle identificable del establecimiento; se descartó la toma orientada al local de enfrente.",
-        "sha256": "735acc811beac928b13bd12d21a3a81e9538ff99a8987d123e0d1d9324af4971",
-        "bytes": 164167,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "71f0d369f28d729bf834e5e67411ef40d2eca287a42ad04aa72a37f20d68d85b",
+        "bytes": 141246,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -721,9 +721,9 @@
         "description": "Pizzería Güerrín, en Avenida Corrientes, 1368, Buenos Aires, Argentina",
         "verifiedAt": "2026-11-16T10:51:00.585Z",
         "evidence": "Foto inspeccionada: fachada y letrero Güerrín junto al teatro Apolo. Descripción Commons identifica Pizzería Güerrín, Corrientes 1368, Buenos Aires, dirección exacta BA Data. GPS de toma cercano; el nombre y dirección exacta sostienen la correspondencia.",
-        "sha256": "e0a7ef031c6854ee35a5eea068bf01dd50b67861e49cfd574c205789dfc99480",
-        "bytes": 386484,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "5247fecfa00563a8798e9d04219e7d17bb8157dbe724c66f6b2a6f785348b8e1",
+        "bytes": 340720,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.604004,
           "lon": -58.386496
@@ -753,9 +753,9 @@
         "description": "Bar El Preferido de Palermo",
         "verifiedAt": "2026-11-16T10:51:00.586Z",
         "evidence": "Foto inspeccionada: fachada rosa y cartel El Preferido. Ficha identifica Bar El Preferido de Palermo; GPS -34.585483,-58.425481 junto al registro BA Data de Borges 2108. No es un homónimo de otro barrio.",
-        "sha256": "b8185a31439ba85cdf57c1b1317fd12c703d253f9370e9d8ca3af947ed666a67",
-        "bytes": 160446,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "d73dddd50ce7ecae72f687ce4c3d11067737e0e9848985b5c990f40db5c7bb52",
+        "bytes": 142867,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.585483,
           "lon": -58.425481
@@ -785,9 +785,9 @@
         "description": "El Imperio de la Pizza Pizzeria, Chacarita neighborhood, Buenos Aires, Argentina,",
         "verifiedAt": "2026-11-16T10:51:00.588Z",
         "evidence": "Foto inspeccionada desde el interior: vidriera con insignias de El Imperio de la Pizza y estación Federico Lacroze al frente. Ficha identifica la pizzería en Chacarita; GPS -34.586917,-58.454725 junto al registro BA Data Corrientes 6891.",
-        "sha256": "99e0b5bfa8283401468c5abccaa4ef5784aa0363f8e4bc4a49669b5610cb27e2",
-        "bytes": 349373,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "a79eb9f9bd00552e411105bd29f829cad6fb4370796022df19926049e86736d0",
+        "bytes": 308218,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.586917,
           "lon": -58.454725
@@ -817,9 +817,9 @@
         "description": "Centro Cultural Recoleta",
         "verifiedAt": "2026-11-16T10:51:00.589Z",
         "evidence": "Foto inspeccionada: fachada con mural y texto CENTRO CULTURAL RECOLETA legible en acceso. Ficha Commons identifica Centro Cultural Recoleta; corresponde al centro de Junín 1930 BA Data. Sin GPS publicado; no se derivan coordenadas de la imagen.",
-        "sha256": "2c5ec97b0a7716f3819a89945c85a3372d2e24187aaf0a5241f67d35aee016d6",
-        "bytes": 224455,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "ddb6af392e8d387140040be169694018248f71f3092aa987c01743fa12bc7bd3",
+        "bytes": 194485,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -846,9 +846,9 @@
         "description": "Museo de Arte Español Enrique Larreta, entrada. En Avenida Juramento, barrio de Belgrano, Buenos Aires, Argentina.",
         "verifiedAt": "2026-11-16T10:51:00.591Z",
         "evidence": "Foto inspeccionada: entrada y edificio de esquina del Museo Larreta. Ficha especifica Museo de Arte Español Enrique Larreta, entrada en avenida Juramento, Belgrano, Buenos Aires. GPS -34.560770,-58.455542 junto al registro Juramento 2291 de BA Data.",
-        "sha256": "768ca7d491a7477966ad4b45f63132d1adb7fdb3fc178466700ccb3c51858b55",
-        "bytes": 170808,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "70ea07f72afc1452bd8d7aadb86ad21e1d500137dc3ae8df18ed956a284a8c10",
+        "bytes": 150602,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.56077,
           "lon": -58.455542
@@ -878,9 +878,9 @@
         "description": "Museo Histórico Nacional, Buenos Aires Argentina.",
         "verifiedAt": "2026-11-16T10:51:00.593Z",
         "evidence": "Foto inspeccionada: edificio rojo, galerías y jardín de acceso del Museo Histórico Nacional. Ficha identifica Museo Histórico Nacional, Buenos Aires Argentina; coincide con el museo de Defensa 1600, junto a Parque Lezama. Sin GPS en la ficha; no se confunde con el museo del Cabildo.",
-        "sha256": "1be2a347fea2f9aaeb2aa7bef08bb3da1d9b8b40a91e47939dba9a1ebbebb2f9",
-        "bytes": 217110,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "28fa388aa3f268ec8222e4c622b9feee606e49dc75023449359884c46c36739d",
+        "bytes": 191173,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -907,9 +907,9 @@
         "description": "Japanese garden, Buenos Aires, Argentina.",
         "verifiedAt": "2026-11-16T10:51:00.595Z",
         "evidence": "Foto inspeccionada: lago, puente rojo y jardín japonés. Ficha identifica Japanese garden, Buenos Aires, Argentina; GPS -34.574778,-58.408972 dentro del Jardín Japonés delimitado por BA Data. No se atribuye al restaurante homónimo.",
-        "sha256": "415580c351d74a5d0e3a331b7c008c00546aa7eaee4169a887f6528a6fbac61b",
-        "bytes": 146630,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "b1bc37f7ac2b6ee17f21a943c65e130f2e38b696bb0dda99543202ff5d4172b7",
+        "bytes": 128755,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.574778,
           "lon": -58.408972
@@ -968,9 +968,9 @@
         "description": "This is a photo of an Argentine monument identified by the ID",
         "verifiedAt": "2026-11-16T10:51:00.598Z",
         "evidence": "Fachada rosada de la Casa Rosada, arquerías, balcón central y bandera; imagen P18 de la entidad que identifica el palacio presidencial de Buenos Aires. Correspondencia de identidad confirmada con entidad Wikidata Q478926, etiqueta y coordenadas publicadas.",
-        "sha256": "3d04204ecadd0c60d5549bd025ca1eadcc51250c00b0ef802ac20bd07585ef34",
-        "bytes": 207551,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "47c69cb6e8db101a611b70c37474ccbbf8131bf2639e844c59435d42ea92f136",
+        "bytes": 182357,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -1061,9 +1061,9 @@
         "description": "Palacio del Congreso de la Nación Argentina",
         "verifiedAt": "2026-11-16T10:51:00.606Z",
         "evidence": "Edificio del Congreso Nacional con cúpula verde y acceso monumental. Nombre completo en descripción y P18 de la entidad del edificio legislativo de Buenos Aires. Correspondencia de identidad confirmada con entidad Wikidata Q646142, etiqueta y coordenadas publicadas.",
-        "sha256": "2f15e3f7032b56d2b512abe55932e4dd59b152da5ba02240b46a8c6c780a6432",
-        "bytes": 194507,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "d79f72fa6658e48b4a40a41ed143bbb32f3616c546b9087041327d311181c659",
+        "bytes": 171894,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -1090,9 +1090,9 @@
         "description": "Metropolitan Cathedral - The twelve Neo-Classical columns at the front represent the twelve apostles of Christ, supporting a triangular frontispiece. It is the former church of Pope Francis.",
         "verifiedAt": "2026-11-16T10:51:00.608Z",
         "evidence": "Pórtico de doce columnas y frontón de la Catedral Metropolitana. Descripción identifica Metropolitan Cathedral; GPS de toma -34.607568,-58.373279 junto al P625 de Catedral de Buenos Aires. Correspondencia de identidad confirmada con entidad Wikidata Q967929, etiqueta y coordenadas publicadas.",
-        "sha256": "8fa1931ae215fee30df994f0f3f1d7168fb2d159945d755923a75a5c288cc415",
-        "bytes": 213504,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "e42dfa777305f7dc5966cfe88d76c7c97898436fa296a4acec6d2f1e2626a160",
+        "bytes": 185364,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.607568,
           "lon": -58.373279
@@ -1122,9 +1122,9 @@
         "description": "Torre Monumental, Buenos Aires",
         "verifiedAt": "2026-11-16T10:51:00.610Z",
         "evidence": "Torre de ladrillos con reloj y base de piedra blanca; ficha identifica Torre Monumental, Buenos Aires y P18 del mismo monumento en Retiro. Correspondencia de identidad confirmada con entidad Wikidata Q570385, etiqueta y coordenadas publicadas.",
-        "sha256": "50852c562bd8afb5d5de1e82b12ad670067c2739f604af129f474b907d7aa881",
-        "bytes": 289980,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "5daef8eb806df88ca3e1ea8ca9be70e8a622fbd47b5e6febfb50126ca5f15468",
+        "bytes": 256968,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -1151,9 +1151,9 @@
         "description": "Obelisco de Buenos Aires",
         "verifiedAt": "2026-11-16T10:51:00.612Z",
         "evidence": "Obelisco blanco en avenida 9 de Julio. Nombre exacto en descripción y P18 de Obelisco de Buenos Aires. GPS es punto de toma al sur del monumento, no se presenta como posición del edificio. Correspondencia de identidad confirmada con entidad Wikidata Q831389, etiqueta y coordenadas publicadas.",
-        "sha256": "45c42f8e1a0c82890c9e48a577a72fdddf83c8d2af9afc7d5bdbb4a18558b781",
-        "bytes": 201085,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "56538c585bc0c4509d899b916f8817c45efe12e81276150d1313bf5de9eac022",
+        "bytes": 176181,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.604866,
           "lon": -58.381538
@@ -1212,9 +1212,9 @@
         "description": "Frente del Cementerio de la Recoleta, en Buenos Aires",
         "verifiedAt": "2026-11-16T10:51:00.616Z",
         "evidence": "Entrada del cementerio con inscripción REQUIESCANT IN PACE y columnas. Ficha identifica frente del Cementerio de la Recoleta, Buenos Aires; P18 de la misma entidad. Correspondencia de identidad confirmada con entidad Wikidata Q831322, etiqueta y coordenadas publicadas.",
-        "sha256": "5cb00823156b8d2196969c5f9a51c08e13fdf91a94beedb539967951a80b5147",
-        "bytes": 191623,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "cf8eb239fb4cd27c2448edb4921e154d017a186a954f2f15df9a4f4a1df509d6",
+        "bytes": 169010,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -1270,9 +1270,9 @@
         "description": "Basílica de San Francisco, Buenos Aires",
         "verifiedAt": "2026-11-16T10:51:00.620Z",
         "evidence": "Fachada con dos torres barrocas del templo San Francisco. Nombre y ciudad en descripción Commons; P18 de basílica de San Francisco en Buenos Aires. Correspondencia de identidad confirmada con entidad Wikidata Q4579815, etiqueta y coordenadas publicadas.",
-        "sha256": "d8020698ba2562a0712d3f23e5725ea18797423b48dbaa75763d951d744f064e",
-        "bytes": 144420,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "cba142ef4faef42ec7ef6f19e3edaebccc18eb3b400dd68ea096a1cfdf69b884",
+        "bytes": 128546,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -1328,9 +1328,9 @@
         "description": "Buenos Aires - Recoleta - Basílica de Nuestra Señora del Pilar",
         "verifiedAt": "2026-11-16T10:51:00.623Z",
         "evidence": "Iglesia blanca y campanario colonial de Nuestra Señora del Pilar en Recoleta. Nombre completo y Recoleta en ficha Commons; P18 de la entidad del templo de Buenos Aires. P625 tiene precisión gruesa, no se inventa dirección. Correspondencia de identidad confirmada con entidad Wikidata Q2886930, etiqueta y coordenadas publicadas.",
-        "sha256": "1d6077a544f20ae64698b55b06920ab05d764e3cb030d357c57b7f45f1e832c1",
-        "bytes": 203884,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "bdb4f791fdf19f1be95b80b74f4713fda2c2a0abf75e9c46c8e8b5cde08c2334",
+        "bytes": 179125,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -1390,9 +1390,9 @@
         "verifiedAt": "2026-11-16T11:30:42.965Z",
         "evidence": "Inspección visual del salón y barra de Don Julio. Descripción Commons identifica Don Julio Grill en Palermo, Buenos Aires, no un plato genérico. Entidad Wikidata Q131419956 identifica el restaurante, con P625 -34.5863,-58.4243 junto a BA Data -34.58632489,-58.42429206, Guatemala 4699. Misma identidad y ubicación; la foto no tiene GPS.",
         "identitySources": [],
-        "sha256": "f7bb05139e7c05c2d7c22201193ff294f90fc1f6a41f0b2176f4ece8a1e6994b",
-        "bytes": 238581,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "918598f4c79bab19fdd76039be4dec97ea6270ada57c218cd39869ff49d9c282",
+        "bytes": 207820,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -1457,9 +1457,9 @@
         "verifiedAt": "2026-11-16T11:30:42.975Z",
         "evidence": "Fachada inspeccionada con cartel LA GIRALDA. Descripción Commons da Corrientes 1453, dirección exacta de este registro BA Data CULTURA. GPS -34.604117,-58.387223 junto al punto BA Data. Se descarta el registro gastronómico de Corrientes 1473: no se fuerza esa coincidencia ni se duplica el lugar.",
         "identitySources": [],
-        "sha256": "8b224696486d91d29b1bcc1cb4932bf833e10ca6bf08bf4bfc1549ca7a1f898d",
-        "bytes": 205708,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "6abcbdaed192fca3b649090a3e58f2ceb3f3a1e25d95a45523d54d49e23ef34c",
+        "bytes": 181950,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.604117,
           "lon": -58.387223
@@ -1492,9 +1492,9 @@
         "verifiedAt": "2026-11-16T11:30:42.989Z",
         "evidence": "Entrada e interior inspeccionados con emblema del Café de Los Angelitos. Nombre exacto en ficha Commons y GPS -34.609520,-58.396203 junto a BA Data -34.609527,-58.396007, Rivadavia 2100. Misma esquina e identidad.",
         "identitySources": [],
-        "sha256": "c7a9bf9a2ad9697dfdd394088d0181ab2f493a47ebd32e13784773aa9a283ff4",
-        "bytes": 340752,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "2a2b45ef0b50c474160e48f7cc018b29613e59185f651cf22579053e84dccf9f",
+        "bytes": 301753,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.60952,
           "lon": -58.396203
@@ -1561,9 +1561,9 @@
         "verifiedAt": "2026-11-16T11:30:42.995Z",
         "evidence": "Entrada inspeccionada con cartel Café Margot y número 857 visible. Descripción Commons da Boedo 857 y pasaje San Ignacio, dirección exacta BA Data; GPS -34.623325,-58.416261 junto al punto publicado.",
         "identitySources": [],
-        "sha256": "f5ff1ae085c97471d37cb062d0fa91bef9f6fc73accc858e7328ceb73eea8f89",
-        "bytes": 483647,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "5f6aefcb903d0fcd1393fb428034c52bf6550e4c85a658e96f4c7995c7b76dbf",
+        "bytes": 429198,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.623325,
           "lon": -58.416261
@@ -1630,9 +1630,9 @@
         "verifiedAt": "2026-11-16T11:30:43.001Z",
         "evidence": "Acceso del Café de García inspeccionado, con barra y mesas visibles a través de las puertas. La descripción Commons identifica Sanabria 3302, esquina José P. Varela, Villa Devoto, dirección exacta BA Data. No se usa el homónimo de avenida San Martín 1828.",
         "identitySources": [],
-        "sha256": "0140f69257df0d98ea2cbdcca3658f41d1ff261a0f815d9c3e4450c052361b49",
-        "bytes": 184117,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "77b675ce40d5cbff25a9d6bfc27a4967b39f3267cbeaf3cb6ba0bfb94c24070a",
+        "bytes": 161580,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       },
       "displayCategory": "Gastronomía",
@@ -1724,9 +1724,9 @@
         "verifiedAt": "2026-11-16T11:30:43.009Z",
         "evidence": "Fachada inspeccionada con retrato de Gardel y nombre GARDEL. Ficha identifica museo residencia de Carlos Gardel en Balvanera, Buenos Aires. GPS -34.601673,-58.407812 coincide con el entorno del registro Jean Jaurès 735; P18 de Wikidata Q21480852.",
         "identitySources": [],
-        "sha256": "2ff1bc41ef2594b8d4a413ebcba2b8affab049fa09feb165f2330b3e334aee41",
-        "bytes": 265924,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "88d8417c25eebfa47095b0315a03edc51ef085781ba1f985b96e70c48dd640fd",
+        "bytes": 233441,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.601673,
           "lon": -58.407812
@@ -1757,9 +1757,9 @@
         "verifiedAt": "2026-11-16T11:30:43.012Z",
         "evidence": "Fachada del Palacio Noel inspeccionada. Descripción Commons identifica sede del Museo Isaac Fernández Blanco y Suipacha 1422, dirección exacta BA Data. GPS -34.590797,-58.380116 junto al registro. No se confunde con la Casa Museo Fernández Blanco de Hipólito Yrigoyen.",
         "identitySources": [],
-        "sha256": "38da64a24616a0c8c588a2fe7d3f4233b25fab6fe34bcd5c700113bb6d27eb78",
-        "bytes": 212069,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "f51918e4b5eab2dd3da43116e0f724f212a4f8ec1e10b0c0cf99ffad866e377c",
+        "bytes": 185764,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.590797,
           "lon": -58.380116
@@ -1790,9 +1790,9 @@
         "verifiedAt": "2026-11-16T11:30:43.015Z",
         "evidence": "Edificio de Escuela Pedro de Mendoza y museo Quinquela Martín inspeccionado, frente a la ribera de La Boca. Título y categorías del archivo WLM lo vinculan con Escuela Pedro de Mendoza 19; GPS -34.638983,-58.361368 junto al edificio BA Data Don Pedro de Mendoza 1835. El museo ocupa el mismo edificio escolar; no es una foto genérica de Caminito.",
         "identitySources": [],
-        "sha256": "342c3704bb3121cefd3a93b5b80327d29428f051ed430e403f54c8ee7e0ab6cf",
-        "bytes": 123687,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "517020693171fac6e0d685c7e531b8ad4afdc0dacbd7cb972b80ff26ecffa10c",
+        "bytes": 109710,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.638983,
           "lon": -58.361368
@@ -1823,9 +1823,9 @@
         "verifiedAt": "2026-11-16T11:30:43.017Z",
         "evidence": "Fachada inspeccionada con inscripción MUSEO HISTÓRICO SARMIENTO. Nombre exacto en descripción Commons y archivo P18 de Wikidata Q576857, con coordenadas junto a BA Data Juramento 2180. Se usa solo este ID; se omite el otro registro del mismo museo con dirección Cuba 2079 para evitar duplicación.",
         "identitySources": [],
-        "sha256": "eb6fe75bba553a56eff8c3f6c5d3f1b49a4b216cb6ffedbeee8ac99068ab3fe3",
-        "bytes": 240378,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "bba8810d1c9cb149cc85ba6006dd8fccb01c7416537257c7b9b3d82e88cb9cb8",
+        "bytes": 212565,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -1853,9 +1853,9 @@
         "verifiedAt": "2026-11-16T11:30:43.020Z",
         "evidence": "Edificio vidriado del Museo Malvinas inspeccionado. Ficha Commons identifica Museo Malvinas e Islas del Atlántico Sur, Núñez, Buenos Aires; GPS -34.536597,-58.462316 próximo al registro BA Data Calzadilla 1302. Fotografía del Ministerio de Cultura, mismo archivo P18 de Q17197967. No se trata de una imagen de las islas.",
         "identitySources": [],
-        "sha256": "32751af550dfe389669d4d06021658679b3a5e3a0205c5a3250ff280cb5a0016",
-        "bytes": 148667,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "d0a85a1191346a057ca008bc6495d7b0679afbc9a07186e3d2ca02561d7f9f69",
+        "bytes": 130730,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.536597,
           "lon": -58.462316
@@ -1919,9 +1919,9 @@
         "verifiedAt": "2026-11-16T11:30:43.026Z",
         "evidence": "Plaza y terrazas perimetrales inspeccionadas. Ficha Commons identifica Plaza Dorrego, Buenos Aires, barrio San Telmo; GPS -34.620444,-58.371833 dentro de su entorno. Coincide con plaza BA Data entre Defensa, Humberto I, Aieta y Bethlem. No se atribuye al bar homónimo.",
         "identitySources": [],
-        "sha256": "f3e35b74b07513b872503cabb3eb7294ba70929330029cf57f1d9263c01d69e6",
-        "bytes": 482003,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "43cf0450ec29df79932273933afa865176639f13b27ac5496a48f67750c94bb9",
+        "bytes": 430499,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.620444,
           "lon": -58.371833
@@ -2144,9 +2144,9 @@
         "verifiedAt": "2026-11-16T11:30:43.047Z",
         "evidence": "Pajonales de la reserva y silueta de Puerto Madero inspeccionados. Ficha identifica Reserva ecológica Buenos Aires, Argentina y archivo P18 de Q1034280. Coincide con Reserva Ecológica Costanera Sur BA Data, no con la reserva Costanera Norte. Sin GPS de la foto; las coordenadas BA Data son referencia de límite, no punto de toma.",
         "identitySources": [],
-        "sha256": "f3337fae23583e490e2a7026c9f6c1a08a9e1318a1fc917b6ca65542458b66b9",
-        "bytes": 170783,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "396da332a72bc1bf0bab2b7119eb40c7e0cff99e1858713b2602d1f424a11acd",
+        "bytes": 150180,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -2174,9 +2174,9 @@
         "verifiedAt": "2026-11-16T11:30:43.049Z",
         "evidence": "Paseo y muros del memorial frente al Río de la Plata inspeccionados. Descripción Commons identifica Parque de la Memoria, extremo norte de Belgrano, Buenos Aires. GPS -34.541453,-58.436923 junto al parque BA Data de avenida Costanera Rafael Obligado 7001. No es otro memorial homónimo.",
         "identitySources": [],
-        "sha256": "f8651903fe2aacb14bb2f31c8483aac614c8fa3e4b101a80bbd2514472f9f8eb",
-        "bytes": 164395,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "ddee67a0a101143bc9ace8836e7c9712fd0e7317d436286225190bdea58ead2d",
+        "bytes": 146197,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": {
           "lat": -34.541453,
           "lon": -58.436923
@@ -2207,9 +2207,9 @@
         "verifiedAt": "2026-11-16T11:30:43.052Z",
         "evidence": "Fachada colonial inspeccionada con cartel MANZANA DE LAS LUCES legible. Descripción Commons del Ministerio de Cultura identifica la fachada recuperada del Complejo Histórico Cultural en 2023. Entidad Wikidata Q263127 publica nombre y ubicación de Manzana de las Luces, Monserrat, Buenos Aires. Se eligió este encuadre identificable en lugar de la foto inicial sin cartel.",
         "identitySources": [],
-        "sha256": "556ebf4855f2b1570eb1b742ab89b2c0c810a46c33281ce3e1860fc416abc6fa",
-        "bytes": 141472,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "4fd79f8a6dfd3a421e797d38317ff1b41951f9ac3cabda9c73be4dc1e33bb0f9",
+        "bytes": 125856,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -2237,9 +2237,9 @@
         "verifiedAt": "2026-11-16T11:30:43.055Z",
         "evidence": "Fachada de basílica con torre central y dos laterales inspeccionada. Descripción Commons identifica Basílica del Santísimo Sacramento, Buenos Aires; P18 de Q8243908. P625 -34.595701,-58.374098 sitúa el templo en Retiro. Sin GPS de foto.",
         "identitySources": [],
-        "sha256": "c255b042486a59b0f1b05b054f3fd3381c26878d661b1897c8fce0ba168177fc",
-        "bytes": 298888,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "0ac11a66a9cf9ac1a2a1e077ff7a6609fbf254b28a7ef77b6a0b4cf7583cce06",
+        "bytes": 266827,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -2267,9 +2267,9 @@
         "verifiedAt": "2026-11-16T11:30:43.057Z",
         "evidence": "Fachada inspeccionada con inscripción ESTACION RETIRO y cúpula del edificio ferroviario. Archivo P18 de Q5410626, Estación Retiro Mitre, con ubicación de Buenos Aires. La descripción alemana identifica la parte central del edificio de recepción; el nombre visible y el enlace de entidad verifican esta terminal, no Retiro Belgrano o San Martín.",
         "identitySources": [],
-        "sha256": "57da05f60e3de0aec2c93d10eecfbfb72687ef3662cf8592755eea4bc3c26a83",
-        "bytes": 157128,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "adef5332fd0f6ffa8deb3a07e3bed63258e34d1cce43a4d397c08da5f46ef587",
+        "bytes": 138449,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -2300,9 +2300,9 @@
           "https://turismo.buenosaires.gob.ar/en/atractivo/la-flor-de-barracas",
           "https://data.buenosaires.gob.ar/dataset/oferta-establecimientos-gastronomicos"
         ],
-        "sha256": "afaf37e8f48c34c08e5da1f3259a97e08a74654da27949a77a5c2c6d90c4cb19",
-        "bytes": 161311,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "fa431792dcc7a817b410831abfd0265bdfd51046ff24f7194faaf9f86e649d49",
+        "bytes": 142179,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -2333,9 +2333,9 @@
           "https://turismo.buenosaires.gob.ar/en/node/40999",
           "https://data.buenosaires.gob.ar/dataset/oferta-establecimientos-gastronomicos"
         ],
-        "sha256": "07ac9761c93df336b7cdef7550d58c669bb60ecd75ef47c9c09b7131950d8633",
-        "bytes": 165704,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "7da6b660131ee733a2ebbff7557b9ba348d9a0d331d5e6a736efa3cfb1ef03e7",
+        "bytes": 147113,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },
@@ -2366,9 +2366,9 @@
           "https://turismo.buenosaires.gob.ar/es/gastronomico/bar-el-esta%C3%B1o-1880",
           "https://data.buenosaires.gob.ar/dataset/espacios-culturales"
         ],
-        "sha256": "1625e5879224672e34cb8457b777debab63e30cc3e83311808b27eb27c250304",
-        "bytes": 390661,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "a5249bc778b63f958812d81d8e5ffae05d9b9616d195ed79e4a0d1358b4023e7",
+        "bytes": 342147,
+        "presentation": "Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.",
         "gps": null
       },
       "displayCategory": "Gastronomía",

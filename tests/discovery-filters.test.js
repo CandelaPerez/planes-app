@@ -1,3 +1,4 @@
+import { historicalPhoto } from './optimization-history.js';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { readFile } from 'node:fs/promises';
@@ -46,7 +47,7 @@ test('all 53 previous plans and their full photograph metadata are preserved', a
   assert.equal(plan.originalName,entry.originalName);
   assert.equal(plan.address,entry.address);
   assert.equal(plan.category,entry.category);
-  assert.deepEqual(plan.photograph,entry.photo);
+  assert.deepEqual(historicalPhoto(plan.photograph),entry.photo);
  }
 });
 
