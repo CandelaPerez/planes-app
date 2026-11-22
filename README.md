@@ -1,18 +1,28 @@
 # Por Hacer
 
-Aplicación web responsive desarrollada con React, Vite y Firebase para descubrir lugares de Buenos Aires y organizar salidas. Permite guardar planes, crear itinerarios, marcar favoritos y experiencias realizadas, agendar fechas, valorar y conservar recuerdos con fotografías.
+Aplicación web responsive para descubrir lugares de Buenos Aires y organizar salidas. Permite guardar planes, crear itinerarios, marcar favoritos y experiencias realizadas, agendar fechas, valorar lugares y conservar recuerdos con fotos.
 
-## Catálogo actual
+## Catálogo y funcionalidades
 
-La aplicación muestra **84 lugares con fotografías reales verificadas**: 23 de Gastronomía, 21 de Cultura, 23 de Aire Libre y 17 de Íconos de BA. Los filtros visibles son categoría, zona, búsqueda y orden. Los metadatos de autoría y licencias se conservan; los créditos son accesibles desde el pie de Inicio y desde el enlace discreto de los detalles.
+**Descubrir** reúne **84 lugares con fotografías reales verificadas**: 23 de Gastronomía, 21 de Cultura, 23 de Aire Libre y 17 de Íconos de BA. Se puede filtrar por categoría y zona, buscar por nombre o ubicación y cambiar el orden. Las atribuciones y licencias están disponibles en el pie de página.
 
-Inicio usa la selección incluida en src/data/verifiedCatalog.json y src/data/tourismPlaces.json, junto con los manifiestos baDataPilot.json y baDataPhotos.json. Los 129 identificadores antiguos y el archivo histórico de 6.670 registros no alimentan el catálogo visible. La carga no depende de descargar ese archivo histórico ni de una API externa durante la visita.
+- **Inicio** incluye el acceso **Explorá planes cerca tuyo** antes de **Tu calendario**. El menú principal ubica **Mapa** después de **Mis planes** y se adapta a pantallas chicas.
+- **Mapa interactivo** muestra los **12 planes más cercanos** del catálogo en Leaflet con teselas de OpenStreetMap. Podés acercar, alejar, mover el mapa y centrarlo en tu ubicación.
+- **Geolocalización y distancias.** Con tu permiso, el navegador obtiene tu ubicación. Si no está disponible, podés elegir como referencia un lugar del catálogo. El Obelisco es la referencia inicial. JavaScript calcula y ordena las distancias aproximadas en línea recta mediante la fórmula de Haversine, sin guardar la posición ni llamar al servicio de rutas para calcular la cercanía.
+- **Ver detalles** en un marcador abre una ficha debajo del mapa. En escritorio, la fotografía ocupa la izquierda y la información la derecha. En celular, la foto aparece arriba. **Volver al mapa** regresa a la vista del mapa y conserva sus marcadores y posición.
+- **Cómo llegar** abre un modal con el destino. Si autorizás compartir tu ubicación, OSRM de FOSSGIS calcula el recorrido a pie y Leaflet lo dibuja en el mapa. Si denegás el permiso o no se encuentra una ruta, podés seguir viendo el destino. Las rutas no requieren clave ni facturación.
+
+El catálogo visible se carga desde `src/data/verifiedCatalog.json` y `src/data/tourismPlaces.json`, con los manifiestos `baDataPilot.json` y `baDataPhotos.json`. La selección funciona sin descargar el archivo histórico de 6.670 registros ni consultar una API externa de catálogo durante la visita. Se conservan ese archivo y los 129 identificadores antiguos para auditorías y compatibilidad.
 
 ## Tecnologías
 
-React 19, Vite 8, JavaScript y CSS responsive. Firebase Authentication gestiona las sesiones, Cloud Firestore almacena los datos personales y Cloud Storage conserva las fotografías subidas. Se utiliza ESLint y pruebas de Node. Requiere Node 20.19 o posterior dentro de la rama 20, o Node 22.12 o superior; se recomienda una versión LTS compatible.
+React 19, Vite 8, JavaScript y CSS responsive. Firebase Authentication gestiona las sesiones, Cloud Firestore guarda datos personales y Cloud Storage aloja las fotos subidas. Leaflet muestra el mapa, OpenStreetMap aporta la cartografía y OSRM calcula recorridos a pie. ESLint y el ejecutor de pruebas de Node verifican el proyecto.
 
-## Instalación rápida
+La geolocalización requiere HTTPS o un origen local seguro como `localhost`. La cartografía y los recorridos requieren conexión. Las atribuciones de OpenStreetMap y FOSSGIS aparecen en los mapas correspondientes. [Política de teselas de OpenStreetMap](https://operations.osmfoundation.org/policies/tiles/) · [Uso y privacidad del servicio de rutas de FOSSGIS](https://routing.openstreetmap.de/about.html)
+
+## Instalación y ejecución
+
+Usá Node 20.19 o posterior dentro de la rama 20, o Node 22.12 o posterior. Se recomienda una versión LTS compatible.
 
 ```bash
 git clone https://github.com/CandelaPerez/planes-app.git
@@ -20,108 +30,55 @@ cd planes-app
 npm ci
 ```
 
-En PowerShell, copiar la plantilla:
-
-```powershell
-Copy-Item .env.example .env.local
-```
-
-En macOS o Linux: `cp .env.example .env.local`.
-
-Seleccionar el proyecto en Firebase, registrar una aplicación web y habilitar Authentication con correo y contraseña, Cloud Firestore y Cloud Storage. Completar en .env.local las siete variables de .env.example con la configuración web del mismo proyecto. Nunca colocar claves privadas ni cuentas de servicio en variables VITE_: sus valores se incorporan al cliente.
+Copiá `.env.example` a `.env.local`. En PowerShell, ejecutá `Copy-Item .env.example .env.local`. En macOS o Linux, usá `cp .env.example .env.local`. Para probar Firebase, registrá una aplicación web en el proyecto correspondiente, habilitá Authentication con correo y contraseña, Firestore y Storage, y completá las siete variables de la plantilla con la configuración web. Usá `VITE_USE_FIREBASE=true` para la entrega. Con `VITE_USE_FIREBASE=false` se usa una vista previa local. [Configuración de Firebase](docs/FIREBASE_SETUP.md)
 
 ```bash
 npm run dev
-```
-
-Para comprobar la versión de producción local:
-
-```bash
 npm run build
 npm run preview
 ```
 
-## Configuración y ejecución detallada
-
-Requiere una versión de Node compatible con el Vite instalado. La verificación de esta entrega se realizó con Node 24.21.0.
-
-1. Clonar el repositorio e ingresar en la carpeta que contiene package.json.
-2. Ejecutar npm ci.
-3. Copiar .env.example a .env.local.
-4. Completar todas las variables con la configuración web del mismo proyecto de Firebase.
-5. Mantener VITE_USE_FIREBASE=true para la entrega.
-6. Ejecutar npm run dev y abrir la dirección que indique Vite.
-
-En PowerShell, usar npm.cmd si la política de ejecución bloquea npm.ps1. Reiniciar Vite después de cambiar las variables. .env.local no se comparte ni se sube a GitHub.
-
-Consultar [Configuración de Firebase](docs/FIREBASE_SETUP.md).
+`dev` inicia Vite. `build` audita las fotografías y compila en `dist/`. `preview` sirve esa compilación. Si PowerShell bloquea `npm.ps1`, usá `npm.cmd`. Reiniciá Vite al cambiar variables.
 
 ## Firebase y persistencia
 
-Se usa Authentication con correo y contraseña; no hace falta acceso anónimo. Cloud Firestore guarda los documentos personales en users/{UID}/savedPlans/{ID}. Los lugares tienen un ID estable de catálogo y los itinerarios un UUID con type: itinerary e items. Favorito, estado, fecha de calendario, comentario y valoración se actualizan en ese mismo documento.
-
-Las valoraciones globales se guardan en plans/{ID}/ratings/{UID}. Cloud Storage guarda fotografías personales en users/{UID}/plans/{ID}/{archivo}. La colección plans también conserva documentos históricos; no se realiza una limpieza automática ni una migración automática desde localStorage.
-
-Los registros antiguos se ocultan en las vistas personales sin borrar sus datos. Los itinerarios muestran actividades vigentes y los planes personalizados se conservan. Con la misma cuenta y el mismo proyecto de Firebase, ambos dispositivos consultan la misma ruta. VITE_USE_FIREBASE=false es únicamente una vista previa local y no demuestra persistencia en Firestore.
-
-## Validación
-
-- npm run check: ESLint, todas las pruebas de Node y compilación con auditoría de fotografías.
-- npm run preview: servir la compilación local.
-- npm run test:responsive: recorrido de escritorio y móvil en Chrome con datos sintéticos locales.
-- node scripts/check-verified-browser.js --isolated-build: catálogo completo, créditos, filtros y funciones personales sobre una compilación aislada.
-- node scripts/check-responsive-desktop.js --historical y luego --compare: comparación con la referencia histórica conservada en Git.
-
-Las comprobaciones de navegador requieren Chrome; CHROME_PATH permite indicar otra ruta al ejecutable. Los scripts de Firebase emulado usan únicamente demo-porhacer-tests y requieren Auth en 127.0.0.1:9099 y Firestore en 127.0.0.1:8080. Ver [demostración de Firebase](docs/DEMOSTRACION_FIREBASE.md) y [prueba 3 planes + 5 itinerarios](docs/DIAGNOSTICO_SINCRONIZACION.md).
-
-Las pruebas emuladas no certifican las reglas desplegadas ni la cuenta real. La diferencia reportada entre ocho elementos visibles y cuatro documentos reales continúa pendiente de contrastar con el UID y proyecto de la sesión. El diagnóstico de solo lectura se ejecuta en la consola del navegador mediante window.porHacerDiagnostico().
-
-## Publicar en Vercel
-
-No se ejecutó un despliegue como parte de esta preparación.
-
-1. Subir los commits finales al repositorio GitHub cuando se autorice la publicación. Una integración ya conectada puede generar un despliegue al recibir esos commits.
-2. Importar el repositorio en Vercel y usar la raíz que contiene package.json.
-3. Usar Vite, npm run build y dist; vercel.json deja esos valores definidos.
-4. Cargar en Production las siete variables VITE_ de .env.example con sus valores reales, incluido VITE_USE_FIREBASE=true. Las variables web no son credenciales administrativas.
-5. Desplegar o volver a desplegar después de cambiar variables.
-6. Verificar por separado las reglas publicadas en Firebase. Vercel no publica reglas de Firestore ni Storage.
-7. Desde la URL publicada, repetir CRUD, recarga, inicio de sesión y uso móvil. Registrar URL, fecha, commit y resultado.
-
-Referencia: [documentación oficial de Vite en Vercel](https://vercel.com/docs/frameworks/frontend/vite).
-
-## Entrega TP2
-
-- Repositorio: https://github.com/CandelaPerez/planes-app
-- Aplicación publicada: **pendiente de proporcionar/verificar**.
-- [Informe breve](docs/entrega/INFORME.md).
-- [Bitácora de versiones y decisiones](docs/entrega/BITACORA.md).
-- [Guion del video](docs/entrega/GUION_VIDEO.md).
-- [Lista final de tareas de la estudiante](docs/entrega/PENDIENTES.md).
-- [Pruebas y alcance de la evidencia](docs/entrega/VERIFICACION.md).
-
-La documentación histórica de docs describe etapas anteriores y no debe confundirse con el comportamiento final documentado aquí. Las capturas incluidas en docs/entrega/evidencias provienen de pruebas locales o emuladas, no de cuentas reales.
+- Firestore guarda planes, itinerarios, fechas, favoritos y valoraciones personales en `users/{UID}/savedPlans/{ID}`. Los lugares usan su ID de catálogo y los itinerarios un UUID con `type: itinerary` e `items`.
+- Las valoraciones globales se guardan en `plans/{ID}/ratings/{UID}`. Cloud Storage guarda fotos personales en `users/{UID}/plans/{ID}/{archivo}`.
+- Las vistas personales ocultan registros históricos identificados sin borrarlos. Los itinerarios muestran actividades vigentes y los personalizados independientes se conservan. El proyecto no migra automáticamente datos de `localStorage` a Firestore.
+- Las reglas incluidas en `firestore.rules` y `storage.rules` se revisan aparte de la publicación web. El diagnóstico `window.porHacerDiagnostico()` es de solo lectura y permite comparar el proyecto, el UID y los registros de la sesión. [Diagnóstico de sincronización](docs/DIAGNOSTICO_SINCRONIZACION.md)
 
 ## Organización
 
-src/AppFirebase.jsx coordina las vistas. components contiene controles compartidos; hooks, filtros; services, Firebase y catálogo; utils, proyecciones no destructivas y utilidades; styles, hojas de estilo. public contiene las fotografías locales, fuentes y recursos. scripts y tests contienen las comprobaciones. docs contiene instrucciones e informes.
+| Ruta | Contenido |
+| --- | --- |
+| `src/AppFirebase.jsx`, `src/components/` | Navegación, vistas y componentes del mapa y sus modales |
+| `src/hooks/`, `src/utils/` | Filtros, Haversine y utilidades de Leaflet y planes personales |
+| `src/services/` | Firebase, catálogo y consultas de rutas a OSRM |
+| `src/data/`, `public/` | Catálogo, manifiestos, fotos, fuentes y archivo histórico |
+| `src/styles/` | Estilos compartidos, diseño responsive y vistas |
+| `scripts/`, `tests/`, `docs/` | Mantenimiento, pruebas y documentación de entrega |
 
-No subir .env, .env.local, node_modules, dist, .browser-check ni credenciales administrativas. .env.example y las reglas sí forman parte de la entrega.
+Las fotos optimizadas conservan sus rutas y dimensiones para mantener la compatibilidad con los planes guardados. El inventario con tamaños y hashes está en [la documentación de optimización](docs/optimization/README.md).
 
-## Seguridad del repositorio
+## Validación y publicación
 
-Las reglas incluidas en firestore.rules no permiten acceso anónimo general: los documentos personales requieren el UID propietario y las valoraciones verifican identidad y valores permitidos. La lectura del catálogo y de valoraciones requiere autenticación. Las reglas locales no certifican las que están desplegadas en Firebase; verificar ambas por separado. storage.rules también está incluida. Actualizar la web no publica estas reglas.
+- `npm run check` ejecuta ESLint, pruebas de Node y compilación.
+- `node scripts/check-verified-browser.js --isolated-build` verifica el catálogo, sus fotos, la navegación, los filtros y las funciones personales con almacenamiento local.
+- `npm run test:responsive` comprueba el diseño en Chrome. `CHROME_PATH` permite indicar la ruta del navegador.
+- Las pruebas de Firebase emulado usan el proyecto `demo-porhacer-tests`, con Auth en `127.0.0.1:9099` y Firestore en `127.0.0.1:8080`. Estas pruebas no certifican las reglas desplegadas ni una cuenta real. [Demostración de Firebase](docs/DEMOSTRACION_FIREBASE.md)
 
-.gitignore excluye .env, sus variantes locales, node_modules, dist, .browser-check, .vercel y los ZIP de entrega. .env.example contiene ejemplos y debe permanecer versionado. Las fotografías, sus licencias, la documentación y las pruebas forman parte del proyecto.
+Vercel utiliza Vite, `npm run build` y `dist` según `vercel.json`. Si está conectado al repositorio de GitHub, los cambios en la rama de producción generan un despliegue automático. Las siete variables de la plantilla se configuran en el entorno **Production**. Vercel no publica las reglas de Firebase. [Vite en Vercel](https://vercel.com/docs/frameworks/frontend/vite)
 
-## Subir la documentación final a GitHub
+`.env.local`, las variantes locales, los artefactos de compilación y los resultados de pruebas están excluidos de Git. Solo se versiona `.env.example`. Las variables `VITE_` llegan al navegador y nunca deben contener claves privadas ni credenciales de cuentas de servicio.
 
-```bash
-git status --short
-git diff -- README.md
-git add README.md
-git commit -m "docs: completar README de Por Hacer para entrega final"
-git push origin main
-```
+## Entrega TP2
 
-Ejecutar el push solo al decidir publicar: si el repositorio está conectado a Vercel puede activar un despliegue automático. Los commits locales anteriores también se enviarán. No es necesario modificar los datos de Firebase para actualizar la documentación.
+- [Repositorio GitHub](https://github.com/CandelaPerez/planes-app)
+- [Aplicación en Vercel](https://planes-app-one.vercel.app)
+- [Informe breve](docs/entrega/INFORME.md)
+- [Bitácora de versiones y decisiones](docs/entrega/BITACORA.md)
+- [Guion del video](docs/entrega/GUION_VIDEO.md)
+- [Tareas de entrega](docs/entrega/PENDIENTES.md)
+- [Pruebas y alcance de la evidencia](docs/entrega/VERIFICACION.md)
+
+La documentación histórica describe etapas anteriores. Las capturas de entrega provienen de pruebas locales o emuladas.

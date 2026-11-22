@@ -91,3 +91,7 @@ function imageFallback(event) {
 }
 
 export { cityFor, zoneFor, priceRank, priceLabel, categoryClass, budgetLevel, ratingDescriptions, aggregateRating, ideaImageFallback, planPhotoFallback, localDateValue, readLocalJson, loadPreviewPlans, imageFallback };
+
+export function visiblePlanDescription(plan) {
+  return plan.sourceName ? plan.description?.replace('Tipo publicado:', 'Tipo de lugar:') : plan.description;
+}

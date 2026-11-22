@@ -1,0 +1,145 @@
+.map-teaser-icon {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.nearby-section {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.nearby-section .section-header {
+  margin-bottom: 0;
+}
+
+.nearby-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.5rem;
+}
+
+.nearby-controls label {
+  display: grid;
+  gap: 0.3rem;
+  max-width: 100%;
+}
+
+.nearby-controls select {
+  min-width: 0;
+  max-width: 100%;
+  min-height: 2.65rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--palette-blush);
+  color: var(--text-main);
+}
+
+.nearby-origin {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.nearby-section .nearby-map {
+  height: clamp(20rem, 58dvh, 34rem);
+}
+
+.nearby-location-marker {
+  border: 3px solid white;
+  border-radius: 50%;
+  background: #623390;
+  box-shadow: 0 0 0 2px #623390, 0 1px 6px #2226;
+}
+
+.nearby-location-marker.is-reference {
+  background: #fff;
+  border-color: #623390;
+  box-shadow: 0 0 0 2px white, 0 1px 6px #2226;
+}
+
+.nearby-detail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: 19rem;
+  margin-top: 0.85rem;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+}
+
+.nearby-detail-photo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: var(--palette-blush);
+}
+
+.nearby-detail .nearby-detail-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+.nearby-detail-photo > .form-hint {
+  padding: 1rem;
+}
+
+.nearby-detail-content {
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  overflow-wrap: anywhere;
+  gap: 0.8rem;
+  padding: clamp(0.9rem, 3vw, 1.5rem);
+}
+
+@media (max-width: 760px) {
+  .nearby-detail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nearby-detail-photo {
+    min-height: clamp(13rem, 62vw, 20rem);
+  }
+}
+
+.nearby-detail-facts {
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.nearby-detail:focus-visible,
+.nearby-map:focus-visible {
+  outline: 2px solid var(--primary-cta);
+  outline-offset: 2px;
+}
+
+.nearby-popup strong {
+  font-weight: 700;
+}
+
+.nearby-popup p {
+  margin: 0.3rem 0;
+}
+
+.nearby-plan-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nearby-plan-actions .btn {
+  flex: none;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}

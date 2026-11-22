@@ -581,5 +581,17 @@
     "originalSha256": "1625e5879224672e34cb8457b777debab63e30cc3e83311808b27eb27c250304",
     "optimizedSha256": "a5249bc778b63f958812d81d8e5ffae05d9b9616d195ed79e4a0d1358b4023e7",
     "originalPresentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar."
+  },
+  {
+    "originalSha256": "6d3f7042ed5ee59578ebfdfdc1f6fe8faec3f32ead6dd2d37ec2c2f5b28d3feb",
+    "originalPresentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+    "optimizedSha256": "2ef70e653ad30c30087cbf2c0bc2abcef7ea3031f035e6b6624f353de409aaff",
+    "path": "/images/ba-data-batches/badata-culture-1379.jpg",
+    "before": 193061,
+    "after": 182570,
+    "width": 960,
+    "height": 640,
+    "rmse": 3.563003969591725,
+    "quality": 0.85
   }
 ]

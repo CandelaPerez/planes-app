@@ -38,13 +38,22 @@ try {
       const canvas = document.createElement('canvas'); canvas.width = image.naturalWidth; canvas.height = image.naturalHeight;
       const ctx = canvas.getContext('2d', {willReadFrequently:true}); ctx.drawImage(image,0,0);
       const original = ctx.getImageData(0,0,canvas.width,canvas.height).data;
-      const data = canvas.toDataURL('image/jpeg', 0.8); const compressed = new Image(); compressed.src = data; await compressed.decode();
-      ctx.drawImage(compressed,0,0); const pixels = ctx.getImageData(0,0,canvas.width,canvas.height).data;
-      let error=0; for(let i=0;i<pixels.length;i++) if(i%4!==3) error+=(pixels[i]-original[i])**2;
-      return {data, width:canvas.width, height:canvas.height, rmse:Math.sqrt(error/(pixels.length*0.75))};
+      for (const quality of [0.75, 0.8, 0.85, 0.9]) {
+        ctx.drawImage(image,0,0);
+        const data = canvas.toDataURL('image/jpeg', quality);
+        const compressed = new Image(); compressed.src = data; await compressed.decode();
+        ctx.drawImage(compressed,0,0);
+        const pixels = ctx.getImageData(0,0,canvas.width,canvas.height).data;
+        let error = 0;
+        for (let i=0;i<pixels.length;i++) if (i%4!==3) error += (pixels[i]-original[i])**2;
+        const rmse = Math.sqrt(error/(pixels.length*0.75));
+        if (rmse <= 5) return {data, width:canvas.width, height:canvas.height, rmse, quality};
+      }
+      return null;
     })()`);
     if (response.exceptionDetails) throw new Error(JSON.stringify(response.exceptionDetails));
     const result = response.result.value;
+    if (!result) continue;
     const after = Buffer.from(result.data.split(',')[1], 'base64');
     if (after.length >= before.length * 0.95 || result.rmse > 5) continue;
     await writeFile(path, after);
@@ -52,8 +61,8 @@ try {
     const originalPresentation = photo.presentation;
     photo.bytes = after.length;
     photo.sha256 = createHash('sha256').update(after).digest('hex');
-    photo.presentation = 'Compresi?n JPEG de alta calidad, sin cambiar dimensiones ni encuadre; encuadre de tarjeta mediante CSS.';
-    report.push({ originalSha256, originalPresentation, optimizedSha256:photo.sha256, path:photo.localPath, before:before.length, after:after.length, width:result.width, height:result.height, rmse:result.rmse });
+    photo.presentation = 'Compresión JPEG de alta calidad, sin cambiar dimensiones ni encuadre. Encuadre de tarjeta mediante CSS.';
+    report.push({ originalSha256, originalPresentation, optimizedSha256:photo.sha256, path:photo.localPath, before:before.length, after:after.length, width:result.width, height:result.height, rmse:result.rmse, quality:result.quality });
   }
   for(let i=0;i<paths.length;i++) await writeFile(new URL(paths[i],root), JSON.stringify(manifests[i], null, 2)+'\n');
   await mkdir(new URL('docs/optimization/',root),{recursive:true});

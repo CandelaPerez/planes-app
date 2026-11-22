@@ -30,3 +30,9 @@ Los resultados de Firebase emulado y del despliegue se informan por separado al 
 
 Firebase emulado: correctos CRUD, favoritos, estado, calendario, valoración, recarga, aislamiento de cuentas y conservación de valoraciones. También correctos 3 planes + 5 itinerarios en 8 documentos, edición del mismo ID y persistencia tras cerrar sesión y volver a entrar. Proyecto exclusivo demo-porhacer-tests; producción no modificada.
 
+
+## Actualización de la versión con Mapa
+
+Se revisaron las 31 fotografías que quedaban fuera de la primera ronda. Solo `badata-culture-1379.jpg` cumplió el ahorro mínimo del 5 % y el umbral de diferencia de píxeles. Bajó de 193.061 a 182.570 bytes (10.491 bytes, 5,43 %) y mantuvo sus 960 × 640 píxeles. La RMSE RGB fue de 3,56 sobre 255. En ambas rondas se ahorraron 1.417.113 bytes en 54 fotografías.
+
+Los JPEG mantienen sus rutas y dimensiones, incluidas las rutas almacenadas en planes guardados. Se retiró `src/components/BaDataSource.jsx`, que no tenía consumidores. Las atribuciones siguen disponibles en el pie de la aplicación. Los archivos históricos se conservan para auditorías y pruebas.

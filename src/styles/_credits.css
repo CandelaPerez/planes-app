@@ -7,23 +7,6 @@
 
 .credits-footer a { color: inherit; }
 
-.photo-credits-link {
-  justify-self: end;
-  padding: 0.3rem 0;
-  border: 0;
-  background: transparent;
-  color: var(--text-muted);
-  font: inherit;
-  font-size: 0.75rem;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.photo-credits-link:focus-visible {
-  outline: 2px solid var(--primary-cta);
-  outline-offset: 3px;
-}
-
 .credits-dialog {
   margin: auto;
   width: min(42rem, calc(100% - 2rem));

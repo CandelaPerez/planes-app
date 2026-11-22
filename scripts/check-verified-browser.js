@@ -127,8 +127,8 @@ try {
   assert.ok(await evaluate("!document.querySelector('.discovery-section [data-photo-credit]') && !/Fuente:|CC BY|Wikidata|fotografía real verificada/.test(document.querySelector('.discovery-section').textContent)"));
   await evaluate("document.querySelector('.credits-footer a').click()");
   await until("document.querySelector('#creditos-y-fuentes')?.open===true");
-  assert.equal(await evaluate("document.querySelectorAll('[data-credit-plan-id]').length"),reviewedPlans.length);
-  for(const plan of reviewedPlans){
+  assert.equal(await evaluate("document.querySelectorAll('[data-credit-plan-id]').length"),reviewedPlans.filter(plan => plan.photograph.license !== 'Public domain').length);
+  for(const plan of reviewedPlans.filter(plan => plan.photograph.license !== 'Public domain')){
     const row=await evaluate("(()=>{const li=document.querySelector('[data-credit-plan-id=\""+plan.id+"\"]');return {text:li.textContent,links:[...li.querySelectorAll('a')].map(a=>a.href)};})()");
     assert.ok(row.text.includes(plan.photograph.author));
     assert.ok(row.links.includes(plan.photograph.sourceUrl));
@@ -208,7 +208,7 @@ try {
   assert.ok(await evaluate("JSON.parse(localStorage.getItem('porhacer_preview_plans')).some(p=>p.catalogId.startsWith('tourism-wikidata-')&&p.photograph.evidence&&p.sourceLicense==='CC0')"));
   await evaluate("[...document.querySelectorAll('.plan-card button')].find(b=>b.textContent==='Ver detalles').click()");
   await until("!!document.querySelector('.modal-content')");
-  assert.ok(await evaluate("!document.querySelector('.modal-content').textContent.includes('Wikidata') && !document.querySelector('.modal-content').textContent.includes('CC0') && !!document.querySelector('.photo-credits-link')"));
+  assert.ok(await evaluate("!document.querySelector('.modal-content').textContent.includes('Wikidata') && !document.querySelector('.modal-content').textContent.includes('CC0') && !document.querySelector('.modal-content [data-photo-credit]') && !!document.querySelector('.credits-footer a')"));
   await evaluate("document.querySelector('.modal-close').click()");
   await evaluate("[...document.querySelectorAll('.category-filter button')].find(b=>b.textContent==='Todas').click()");
   await evaluate("(()=>{const input=document.querySelector('input[type=search]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'Tortoni');input.dispatchEvent(new Event('input',{bubbles:true}));})()");
@@ -221,6 +221,9 @@ try {
   const fill = async (selector,value,index=0) => { await evaluate("(()=>{const input=document.querySelectorAll("+JSON.stringify(selector)+")["+index+"];Object.getOwnPropertyDescriptor(Object.getPrototypeOf(input),'value').set.call(input,"+JSON.stringify(value)+");input.dispatchEvent(new Event('input',{bubbles:true}));input.dispatchEvent(new Event('change',{bubbles:true}));})()"); await tick(); };
   await click('Mis planes');
   await until("!!document.querySelector('.fav-btn')");
+  assert.deepEqual(await evaluate("[...document.querySelectorAll('.nav-btn')].map(button=>button.textContent.trim())"),
+    ['Inicio', 'Mis planes', 'Mapa', 'Calendario', 'Recuerdos']);
+  assert.equal(await evaluate("Boolean(document.querySelector('.personal-plans-section [data-photo-credit]'))"), false);
   await evaluate("document.querySelector('.fav-btn').click()");
   await until("document.querySelector('.fav-btn').classList.contains('is-favorite')");
   await click('Agregar a calendario');
@@ -231,6 +234,7 @@ try {
   await click('Realizado');
   await click('Recuerdos');
   await until("!!document.querySelector('.photo-card')");
+  assert.equal(await evaluate("Boolean(document.querySelector('.photo-card [data-photo-credit]'))"), false);
   await click('+ Crear plan');
   await fill('.modal-content input[maxlength="100"]','Plan personalizado de prueba');
   await fill('.modal-content input[maxlength="100"]','Buenos Aires',1);
@@ -243,6 +247,37 @@ try {
   await until("document.querySelectorAll('.itinerary-list li').length===2");
   await click('Guardar itinerario');
   await until("JSON.parse(localStorage.getItem('porhacer_preview_plans')).some(p=>p.type==='itinerary')");
+  await call('Browser.setPermission', { permission: { name: 'geolocation' }, setting: 'denied', origin });
+  assert.ok(await evaluate("document.querySelector('.map-teaser').nextElementSibling.matches('.calendar-teaser')"));
+  const matchingTeaserTypography = `['h2', 'p'].every(tag => {
+    const map = getComputedStyle(document.querySelector('.map-teaser ' + tag));
+    const calendar = getComputedStyle(document.querySelector('.calendar-teaser-header ' + tag));
+    return ['fontFamily', 'fontSize', 'fontStyle', 'fontWeight', 'lineHeight', 'letterSpacing'].every(property => map[property] === calendar[property]);
+  })`;
+  assert.ok(await evaluate(matchingTeaserTypography));
+  await call('Emulation.setDeviceMetricsOverride',{width:320,height:720,deviceScaleFactor:1,mobile:true});
+  assert.ok(await evaluate(matchingTeaserTypography));
+  assert.ok(await evaluate("document.querySelector('.map-teaser').getBoundingClientRect().right <= innerWidth"));
+  await evaluate("window.homeMapNavigation = true; const map = document.querySelector('.map-teaser'); map.scrollIntoView(); map.click()");
+  await until("document.querySelectorAll('.nearby-map img.leaflet-marker-icon').length===12");
+  assert.ok(await evaluate("window.homeMapNavigation && document.querySelector('.nav-btn[aria-current=page]').textContent.trim()==='Mapa' && window.scrollY===0"));
+  await call('Emulation.setDeviceMetricsOverride',{width:1366,height:900,deviceScaleFactor:1,mobile:false});
+  assert.ok(await evaluate("!!document.querySelector('.nearby-map .leaflet-control-attribution a[href*=\"openstreetmap.org/copyright\"]')"));
+  await evaluate("document.querySelector('.nearby-map img.leaflet-marker-icon').click()");
+  await until("!!document.querySelector('.nearby-popup button')");
+  const popupActionsFit = `(() => {
+    const popup = document.querySelector('.nearby-popup').getBoundingClientRect();
+    const [first, second] = [...document.querySelectorAll('.nearby-popup button')].map(button => button.getBoundingClientRect());
+    return Math.abs(first.top - second.top) < 1 && first.right < second.left && second.right <= popup.right;
+  })()`;
+  assert.ok(await evaluate(popupActionsFit));
+  await call('Emulation.setDeviceMetricsOverride',{width:320,height:720,deviceScaleFactor:1,mobile:true});
+  assert.ok(await evaluate(popupActionsFit));
+  await call('Emulation.setDeviceMetricsOverride',{width:1366,height:900,deviceScaleFactor:1,mobile:false});
+  await evaluate("document.querySelector('.nearby-popup button').click()");
+  await until("!!document.querySelector('.nearby-detail img')");
+  assert.equal(await evaluate("Boolean(document.querySelector('.nearby-detail [data-photo-credit]'))"), false);
+  await click('Inicio');
   await fill('input[type=search]','');
   await evaluate("document.querySelector('#discover-plans').scrollIntoView()");
   const shot=await call('Page.captureScreenshot',{format:'png'});await writeFile(new URL('verified-desktop.png',folder),Buffer.from(shot.data,'base64'));
@@ -263,5 +298,5 @@ try {
   await chooseCategory('Todas');await checkResults(reviewedPlans);
   assert.ok(await evaluate("JSON.parse(localStorage.getItem('porhacer_preview_plans')).some(p=>p.catalogId==='badata-food-1362')"));
   assert.deepEqual(exceptions,[]);
-  console.log(JSON.stringify({plans:reviewedPlans.length,cleanDiscoveryCards:true,footerCredits:reviewedPlans.length,images:'all decoded',favorites:'passed',calendar:'passed',memories:'passed',customPlans:'passed',itineraries:'passed',filters:'passed',pagination:'passed',save:'passed',savedSurvivesCatalogFailure:true,completeCatalogWithoutRawArchive:true,allCategoriesWithoutRawArchive:true,desktopColumns:3,mobileOverflow:false,javascriptExceptions:exceptions}));
+  console.log(JSON.stringify({plans:reviewedPlans.length,cleanDiscoveryCards:true,footerCredits:reviewedPlans.filter(plan => plan.photograph.license !== 'Public domain').length,images:'all decoded',favorites:'passed',calendar:'passed',memories:'passed',customPlans:'passed',itineraries:'passed',filters:'passed',pagination:'passed',save:'passed',savedSurvivesCatalogFailure:true,completeCatalogWithoutRawArchive:true,allCategoriesWithoutRawArchive:true,desktopColumns:3,mobileOverflow:false,javascriptExceptions:exceptions}));
 } finally { socket?.close();browser.kill();if(typeof server.close==='function')await server.close();else await new Promise(resolve=>server.httpServer.close(resolve)); }

@@ -1664,9 +1664,9 @@
         "identitySources": [
           "https://www.wikidata.org/wiki/Q6158147"
         ],
-        "sha256": "6d3f7042ed5ee59578ebfdfdc1f6fe8faec3f32ead6dd2d37ec2c2f5b28d3feb",
-        "bytes": 193061,
-        "presentation": "Encuadre adaptado a la tarjeta mediante CSS; archivo sin editar.",
+        "sha256": "2ef70e653ad30c30087cbf2c0bc2abcef7ea3031f035e6b6624f353de409aaff",
+        "bytes": 182570,
+        "presentation": "Compresión JPEG de alta calidad, sin cambiar dimensiones ni encuadre. Encuadre de tarjeta mediante CSS.",
         "gps": null
       }
     },

@@ -7,7 +7,6 @@ import { categoryClass, priceLabel } from '../utils/planUtils';
 const CATEGORIES = ['Todas', 'Gastronomía', 'Cultura', 'Aire Libre', 'Viajes'];
 const NO_RATINGS = [];
 const NO_PHOTOS = {};
-const date = (value) => value ? new Date(value).toLocaleDateString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }) : 'No informada';
 const safeWebsite = (value) => {
   if (!value) return '';
   try { const url = new URL(/^https?:\/\//i.test(value) ? value : `https://${value}`); return ['http:', 'https:'].includes(url.protocol) && url.hostname.includes('.') && !/\s/.test(value) ? url.href : ''; }
@@ -26,7 +25,7 @@ export default function BaDataPreview() {
   const [selected, setSelected] = useState(null);
   useEffect(() => {
     let active = true;
-    loadBaDataPreview().then((result) => { if (active) setData(result); }).catch((reason) => { if (active) setError(reason.message); });
+    loadBaDataPreview().then((result) => { if (active) setData(result); }).catch(() => { if (active) setError('No pudimos cargar los planes.'); });
     return () => { active = false; };
   }, []);
   const catalog = useMemo(() => data?.plans || [], [data]);
@@ -37,8 +36,8 @@ export default function BaDataPreview() {
   return <div className="app-container">
     <header className="navbar"><button type="button" className="nav-brand" onClick={() => window.location.assign('/')}><span className="brand-badge">PH</span><h1>Por Hacer</h1></button><nav><a className="btn btn-secondary" href="/">Volver a Por Hacer</a></nav></header>
     <main className="main-content">
-      <div className="preview-banner" role="status"><strong>Vista previa BA Data</strong><span>Solo lectura. Tus 129 planes originales y tus datos de Firebase siguen intactos.</span></div>
-      <div className="section-header"><h2>Descubrir planes · BA Data</h2><p>Descubrí lugares y experiencias para disfrutar en Buenos Aires</p></div>
+      <div className="preview-banner" role="status"><strong>Vista previa del catálogo</strong><span>Solo lectura.</span></div>
+      <div className="section-header"><h2>Descubrir planes</h2><p>Descubrí lugares y experiencias para disfrutar en Buenos Aires</p></div>
       {error && <div className="app-alert error" role="alert">{error} Podés volver a Por Hacer.</div>}
       {data && <>
         <div className="category-filter" role="group" aria-label="Filtrar por categoría">{CATEGORIES.map((item) => <button key={item} type="button" className={`category-filter-btn ${category === item ? 'active' : ''}`} aria-pressed={category === item} onClick={() => updateDiscoveryFilter(setCategory, item)}>{item === 'Viajes' ? 'Íconos de BA' : item}</button>)}</div>
@@ -66,13 +65,12 @@ export default function BaDataPreview() {
     {selected && <div className="modal-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelected(null); }}><section className="modal-content plan-detail-modal" role="dialog" aria-modal="true" aria-labelledby="preview-detail-title">
       <div className="modal-header"><div><span className={`badge badge-${categoryClass(selected.category)}`}>{selected.category}</span><h2 id="preview-detail-title">{selected.title}</h2></div><button type="button" className="modal-close" aria-label="Cerrar detalles" onClick={() => setSelected(null)}>×</button></div>
       <dl className="plan-detail-facts">
-        <div><dt>Dirección publicada</dt><dd>{selected.address || 'No informada; consultá las coordenadas.'}</dd></div>
-        <div><dt>Coordenadas publicadas (longitud, latitud)</dt><dd>{selected.lon}, {selected.lat}{selected.coordinateMethod === 'published-boundary-vertex' && <p>Referencia del límite del espacio verde; no indica una entrada.</p>}</dd></div>
-        <div><dt>Horario publicado</dt><dd>{selected.openingHours || 'No informado en el recurso.'}</dd></div>
-        <div><dt>Presupuesto</dt><dd>No informado en el recurso.</dd></div>
-        {selected.sourceReferences.map((source) => <div key={`${source.key}-${source.recordId}`}><dt>{source.dataset} · Registro {source.recordId}</dt><dd>{source.publisher}<br />Archivo: {date(source.resourceLastModified)} · Descarga: {date(source.downloadedAt)}<br />Ficha del portal: {date(source.metadataModified || source.resourceMetadataModified || source.portalUpdatedOn)} (no es fecha de actualización individual).<br /><a href={source.url} target="_blank" rel="noreferrer">Recurso original</a> · <a href={source.licenseUrl} target="_blank" rel="noreferrer">{source.license}</a></dd></div>)}
+        <div><dt>Dirección</dt><dd>{selected.address || 'No informada; consultá las coordenadas.'}</dd></div>
+        <div><dt>Coordenadas (longitud, latitud)</dt><dd>{selected.lon}, {selected.lat}{selected.coordinateMethod === 'published-boundary-vertex' && <p>Referencia del límite del espacio verde; no indica una entrada.</p>}</dd></div>
+        <div><dt>Horario</dt><dd>{selected.openingHours || 'No informado.'}</dd></div>
+        <div><dt>Presupuesto</dt><dd>No informado.</dd></div>
       </dl>
-      <div className="modal-actions">{safeWebsite(selected.website) && <a className="btn btn-secondary" href={safeWebsite(selected.website)} target="_blank" rel="noreferrer">Sitio informado por la fuente</a>}<button type="button" className="btn btn-primary" onClick={() => setSelected(null)}>Cerrar</button></div>
+      <div className="modal-actions">{safeWebsite(selected.website) && <a className="btn btn-secondary" href={safeWebsite(selected.website)} target="_blank" rel="noreferrer">Sitio web</a>}<button type="button" className="btn btn-primary" onClick={() => setSelected(null)}>Cerrar</button></div>
     </section></div>}
   </div>;
 }

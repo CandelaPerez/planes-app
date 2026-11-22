@@ -11,6 +11,10 @@ entrega/*.zip
 .env.*
 !.env.example
 *.local
+*.pem
+*.key
+*serviceAccount*.json
+*service-account*.json
 
 # Logs
 logs/
